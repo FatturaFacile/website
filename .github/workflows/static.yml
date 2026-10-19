@@ -16,7 +16,6 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
     group: "pages"
-    cancel-in-running: false
 
 jobs:
     deploy:
