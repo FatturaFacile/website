@@ -25,13 +25,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v4
+              uses: actions/checkout@v7
 
             - name: Setup Pages
               uses: actions/configure-pages@v4
 
             - name: Upload static artifact from src
-              uses: actions/upload-pages-artifact@v3
+              uses: actions/upload-pages-artifact@v5
               with:
                   # Points to the static web files in src
                   path: "./src"
