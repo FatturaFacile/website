@@ -31,7 +31,7 @@ jobs:
               uses: actions/configure-pages@v4
 
             - name: Upload static artifact from src
-              uses: actions/upload-pages-artifact@v3
+              uses: actions/upload-pages-artifact@v5
               with:
                   # Points to the static web files in src
                   path: "./src"
