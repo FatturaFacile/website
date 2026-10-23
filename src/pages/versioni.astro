@@ -1,0 +1,371 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Confronto Versioni: Desktop Standalone vs Cloud Self-Hosted | Fattura Facile',
+  url: 'https://fatturafacile.eu/versioni/',
+  description:
+    'Confronto tecnico completo tra Fattura Facile Desktop (C# WPF + SQLite portabile su chiavetta USB) e Fattura Facile Private Cloud (Docker, multi-utente, SQL Server / Postgres).',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Fattura Facile Teams',
+  },
+};
+---
+
+<BaseLayout
+  title="Versioni a Confronto: Desktop vs Cloud Self-Hosted | Fattura Facile"
+  description="Confronta l'edizione portabile Desktop su USB (SQLite, 100% offline, zero installazione) e l'edizione Cloud Privato Self-Hosted multi-utente (Docker/SQL)."
+  schema={pageSchema}
+>
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 mb-6">
+        Massima Flessibilità di Distribuzione
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+        Desktop Standalone o Cloud Self-Hosted:{' '}
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400">
+          scegli la tua libertà
+        </span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+        Due soluzioni ingegneristiche distinte per soddisfare sia il professionista singolo che
+        lavora sul campo in mobilità, sia lo studio con più collaboratori e commercialista connessi
+        contemporaneamente.
+      </p>
+    </div>
+  </section>
+
+  <!-- Side by Side Comparative Analysis -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Standalone Desktop Box -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 border-2 border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 uppercase"
+                data-i18n="box_desktop_tag"
+              >
+                Standalone / USB
+              </span>
+              <span
+                class="text-emerald-600 dark:text-emerald-400 font-bold text-sm"
+                data-i18n="box_desktop_free"
+              >
+                100% Gratuito
+              </span>
+            </div>
+            <h2
+              class="mt-4 text-2xl font-black text-slate-900 dark:text-white"
+              data-i18n="box_desktop_title"
+            >
+              Fattura Facile Desktop
+            </h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300 text-sm" data-i18n="box_desktop_sub">
+              Sviluppato in C#/.NET WPF nativo con database SQLite incorporato.
+            </p>
+
+            <ul class="mt-8 space-y-4 text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_desktop_f1">
+                  <strong>Zero installazione:</strong> cartella portabile su chiavetta USB o SSD
+                  esterno.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_desktop_f2">
+                  <strong>Totale isolamento dati:</strong> nessun dato fiscale lascia il tuo
+                  computer (Privacy By Design).
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_desktop_f3">
+                  <strong>Funziona ovunque:</strong> in cantiere, in furgone o in officina senza
+                  connessione internet.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_desktop_f4">
+                  <strong>Velocità istantanea:</strong> tempi di avvio e salvataggio inferiori a 1
+                  secondo.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-slate-400 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+                <span class="text-slate-500 dark:text-slate-400" data-i18n="box_desktop_lim">
+                  Singolo operatore per file (concorrenza file SQLite locale).
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <a
+              href="https://github.com/FatturaFacile/desktop/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Scarica Portable ZIP per Windows 10/11"
+              aria-label="Scarica Portable ZIP per Windows 10/11"
+              data-i18n-title="box_desktop_btn_title"
+              data-i18n-aria-label="box_desktop_btn_title"
+              class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              data-i18n="box_desktop_btn"
+            >
+              Scarica Portable ZIP (Win 10/11)
+            </a>
+          </div>
+        </div>
+
+        <!-- Cloud Self-Hosted Box -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 sm:p-10 border-2 border-teal-500/50 shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between">
+              <span
+                class="px-3.5 py-1 rounded-full text-xs font-bold bg-teal-500/20 text-teal-300 border border-teal-400/30 uppercase"
+                data-i18n="box_cloud_tag"
+              >
+                Multi-Utente & Self-Hosted
+              </span>
+              <span class="text-teal-400 font-bold text-sm" data-i18n="box_cloud_fee">
+                Software Gratuito (Hosting a tuo carico)
+              </span>
+            </div>
+            <h2 class="mt-4 text-2xl font-black text-white" data-i18n="box_cloud_title">
+              Fattura Facile Private Cloud
+            </h2>
+            <p class="mt-2 text-slate-300 text-sm" data-i18n="box_cloud_sub">
+              Da ospitare sulla tua VPS, cloud o server aziendale (Docker / SQL Server o
+              PostgreSQL).
+            </p>
+
+            <ul class="mt-8 space-y-4 text-sm text-slate-200">
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-teal-400 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_cloud_f1">
+                  <strong>Accesso multi-utente contemporaneo:</strong> collaboratori e
+                  commercialista collegati in rete.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-teal-400 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_cloud_f2">
+                  <strong>Zero costi di licenza o tenant:</strong> nessun abbonamento o canone SaaS
+                  a noi dovuto.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-teal-400 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_cloud_f3">
+                  <strong>Sovranità legale e Privacy:</strong> gestisci tu l'infrastruttura, quindi
+                  nessun rischio di DPA o data processor terzi.
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-teal-400 shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span data-i18n="box_cloud_f4">
+                  <strong>Migrazione 1-Click:</strong> importi il file SQLite desktop direttamente
+                  nel database cloud.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-700">
+            <a
+              href="https://github.com/FatturaFacile"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Consulta Guida Self-Hosted su GitHub"
+              aria-label="Consulta Guida Self-Hosted su GitHub"
+              data-i18n-title="box_cloud_btn_title"
+              data-i18n-aria-label="box_cloud_btn_title"
+              class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-slate-900 bg-teal-400 hover:bg-teal-300 transition-colors"
+              data-i18n="box_cloud_btn"
+            >
+              Consulta Guida Self-Hosted (GitHub)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Feature Comparison Table -->
+  <section class="py-16 bg-white dark:bg-slate-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-8">
+        Matrice di Raffronto Tecnico
+      </h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm border-collapse border border-slate-200 dark:border-slate-800">
+          <thead>
+            <tr class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white">
+              <th class="p-4 border border-slate-200 dark:border-slate-700">Caratteristica</th>
+              <th class="p-4 border border-slate-200 dark:border-slate-700">Desktop Standalone</th>
+              <th class="p-4 border border-slate-200 dark:border-slate-700">Cloud Self-Hosted</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+            <tr>
+              <td class="p-4 font-semibold">Tecnologia Core</td>
+              <td class="p-4">C# .NET 8 WPF Nativo</td>
+              <td class="p-4">Web API / Docker Containers</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold">Database</td>
+              <td class="p-4">SQLite locale integrato</td>
+              <td class="p-4">PostgreSQL / SQL Server</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold">Funzionamento Offline</td>
+              <td class="p-4 text-emerald-600 dark:text-emerald-400 font-bold">
+                100% Nativo senza internet
+              </td>
+              <td class="p-4">Richiede connessione al server</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold">Operatori Contemporanei</td>
+              <td class="p-4">1 operatore per cartella</td>
+              <td class="p-4 text-teal-600 dark:text-teal-400 font-bold">
+                Multi-utente concorrente illimitato
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold">Costo di Licenza</td>
+              <td class="p-4 text-emerald-600 dark:text-emerald-400 font-bold">
+                0 € Gratuito per sempre
+              </td>
+              <td class="p-4 text-emerald-600 dark:text-emerald-400 font-bold">
+                0 € Gratuito (infrastruttura propria)
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold">FatturaPA & QR-Bill</td>
+              <td class="p-4">Inclusi entrambi</td>
+              <td class="p-4">Inclusi entrambi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

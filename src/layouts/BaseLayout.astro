@@ -1,0 +1,242 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PrivacyModal from '../components/PrivacyModal.astro';
+import type { Locale } from '../i18n/types';
+import { getLangFromUrl } from '../i18n/utils';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonicalUrl?: string;
+  lang?: Locale;
+  alternates?: Record<Locale | 'x-default', string>;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const detectedLang = getLangFromUrl(Astro.url);
+const {
+  title,
+  description,
+  keywords,
+  canonicalUrl,
+  lang = detectedLang,
+  alternates,
+  schema,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} data-page-lang={lang} class="scroll-smooth">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      keywords={keywords}
+      canonicalUrl={canonicalUrl}
+      lang={lang}
+      alternates={alternates}
+      schema={schema}
+    />
+    <!-- Inline anti-FOUC script for theme selection -->
+    <script is:inline>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch {
+          // LocalStorage inaccessible or disabled
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased font-sans selection:bg-teal-500 selection:text-white transition-colors duration-200 min-h-screen flex flex-col">
+    <Header lang={lang} />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <PrivacyModal lang={lang} />
+
+    <!-- Client Script for Interactive Behaviors: Theme, Modal, Accordion, Translations -->
+    <script is:inline src="/js/translations.js"></script>
+    <script is:inline>
+      // Runtime initialization for theme, modal and interactive logic
+      document.addEventListener('DOMContentLoaded', () => {
+        initTheme();
+        initLanguage();
+        initYear();
+      });
+
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme === 'dark' || (!savedTheme && prefersDark) ? 'dark' : 'light');
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      }
+
+      function applyTheme(theme) {
+        const lightIcon = document.getElementById('theme-icon-light');
+        const darkIcon = document.getElementById('theme-icon-dark');
+        const logoPaths = document.querySelectorAll('.logo-stroke-adaptive');
+
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          if (lightIcon) lightIcon.classList.remove('hidden');
+          if (darkIcon) darkIcon.classList.add('hidden');
+          logoPaths.forEach((el) => el.setAttribute('stroke', '#f8fafc'));
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          if (lightIcon) lightIcon.classList.add('hidden');
+          if (darkIcon) darkIcon.classList.remove('hidden');
+          logoPaths.forEach((el) => el.setAttribute('stroke', '#0f172a'));
+          localStorage.setItem('theme', 'light');
+        }
+      }
+
+      window.toggleTheme = function () {
+        const isDark = document.documentElement.classList.contains('dark');
+        applyTheme(isDark ? 'light' : 'dark');
+      };
+
+      const SUPPORTED_LANGS = ['it', 'en', 'fr', 'de'];
+      function initLanguage() {
+        const pathParts = window.location.pathname.split('/').filter(Boolean);
+        const urlLang = SUPPORTED_LANGS.includes(pathParts[0]) ? pathParts[0] : null;
+        const pageLang = document.documentElement.getAttribute('data-page-lang');
+        const initialLang = urlLang || pageLang || localStorage.getItem('lang') || 'it';
+        setLanguage(initialLang);
+      }
+
+      window.setLanguage = function (lang) {
+        if (!SUPPORTED_LANGS.includes(lang)) return;
+        localStorage.setItem('lang', lang);
+        document.documentElement.lang = lang;
+
+        SUPPORTED_LANGS.forEach((l) => {
+          const btn = document.getElementById(`lang-${l}-btn`);
+          if (btn) {
+            if (l === lang) {
+              btn.classList.add('tab-active');
+              btn.setAttribute('aria-pressed', 'true');
+            } else {
+              btn.classList.remove('tab-active');
+              btn.setAttribute('aria-pressed', 'false');
+            }
+          }
+        });
+
+        if (typeof translations !== 'undefined' && translations[lang]) {
+          const dict = translations[lang];
+          if (dict.page_title && window.location.pathname === '/') {
+            document.title = dict.page_title;
+          }
+
+          document.querySelectorAll('[data-i18n]').forEach((el) => {
+            const rawVal = el.getAttribute('data-i18n');
+            if (!rawVal) return;
+            if (dict[rawVal] !== undefined) {
+              el.innerHTML = dict[rawVal];
+            }
+          });
+
+          document.querySelectorAll('*').forEach((el) => {
+            for (let i = 0; i < el.attributes.length; i++) {
+              const attr = el.attributes[i];
+              if (attr.name.startsWith('data-i18n-')) {
+                const targetAttr = attr.name.substring(10);
+                const key = attr.value.trim();
+                if (dict[key] !== undefined) {
+                  el.setAttribute(targetAttr, dict[key]);
+                }
+              }
+            }
+          });
+        }
+
+        window.dispatchEvent(new CustomEvent('ff:language-change', { detail: { lang } }));
+      };
+
+      window.toggleFaq = function (button) {
+        const content = button.nextElementSibling;
+        const arrow = button.querySelector('svg');
+        const isHidden = content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-answer').forEach((el) => el.classList.add('hidden'));
+        document
+          .querySelectorAll('svg.faq-arrow')
+          .forEach((el) => el.classList.remove('rotate-180'));
+
+        if (isHidden) {
+          content.classList.remove('hidden');
+          if (arrow) arrow.classList.add('rotate-180');
+          button.setAttribute('aria-expanded', 'true');
+        } else {
+          button.setAttribute('aria-expanded', 'false');
+        }
+      };
+
+      window.openPrivacyModal = function () {
+        const modal = document.getElementById('privacy-modal');
+        const dialog = document.getElementById('privacy-dialog');
+        if (!modal || !dialog) return;
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          dialog.classList.remove('scale-95');
+          dialog.classList.add('scale-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closePrivacyModal = function () {
+        const modal = document.getElementById('privacy-modal');
+        const dialog = document.getElementById('privacy-dialog');
+        if (!modal || !dialog) return;
+
+        modal.classList.add('opacity-0');
+        dialog.classList.remove('scale-100');
+        dialog.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 200);
+      };
+
+      document.addEventListener('click', (e) => {
+        const modal = document.getElementById('privacy-modal');
+        if (modal && e.target === modal) {
+          window.closePrivacyModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          window.closePrivacyModal();
+        }
+      });
+
+      function initYear() {
+        const yearSpan = document.getElementById('year-span');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      }
+    </script>
+  </body>
+</html>

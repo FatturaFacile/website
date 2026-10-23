@@ -9,9 +9,18 @@ on:
   issues:
     types: [opened, closed, reopened]
 
+# Best practice SonarQube: nessun token di accesso al codice concesso al workflow
+permissions: {}
+
+concurrency:
+  group: telegram-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   notify:
+    name: Send Telegram Alert
     runs-on: ubuntu-latest
+    permissions: {}
     steps:
       - name: Send Telegram Message
         uses: appleboy/telegram-action@v1.1.1

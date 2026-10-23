@@ -1,0 +1,702 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Locale } from '../i18n/types';
+import { STORIA_ALTERNATES, STORIA_TRANSLATIONS } from '../i18n/storia';
+
+export interface Props {
+  lang: Locale;
+  canonicalUrl?: string;
+}
+
+const { lang = 'it', canonicalUrl = STORIA_ALTERNATES[lang] } = Astro.props;
+
+const t = STORIA_TRANSLATIONS[lang];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': `${canonicalUrl}#aboutpage`,
+      url: canonicalUrl,
+      name: t.seo.title,
+      description: t.seo.description,
+      inLanguage: lang,
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://fatturafacile.eu/#website',
+        name: 'Fattura Facile',
+        url: 'https://fatturafacile.eu/',
+      },
+    },
+    {
+      '@type': 'Article',
+      '@id': `${canonicalUrl}#article`,
+      headline: t.seo.title,
+      description: t.seo.description,
+      inLanguage: lang,
+      author: {
+        '@type': 'Organization',
+        name: 'Fattura Facile Teams',
+        url: 'https://fatturafacile.eu/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://fatturafacile.eu/#organization',
+        name: 'Fattura Facile',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://fatturafacile.eu/img/fattura_facile_logo.svg',
+        },
+      },
+      mainEntityOfPage: {
+        '@id': `${canonicalUrl}#aboutpage`,
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://fatturafacile.eu/#organization',
+      name: 'Fattura Facile',
+      url: 'https://fatturafacile.eu/',
+      logo: 'https://fatturafacile.eu/img/fattura_facile_logo.svg',
+      sameAs: ['https://github.com/FatturaFacile'],
+      areaServed: ['IT', 'CH'],
+    },
+  ],
+};
+
+const localeLinks: { code: Locale; label: string; flag: string; href: string }[] = [
+  { code: 'it', label: 'Italiano', flag: '🇮🇹', href: '/storia/' },
+  { code: 'en', label: 'English', flag: '🇬🇧', href: '/en/storia/' },
+  { code: 'fr', label: 'Français', flag: '🇨🇭', href: '/fr/storia/' },
+  { code: 'de', label: 'Deutsch', flag: '🇨🇭', href: '/de/storia/' },
+];
+---
+
+<BaseLayout
+  title={t.seo.title}
+  description={t.seo.description}
+  keywords={t.seo.keywords}
+  canonicalUrl={canonicalUrl}
+  lang={lang}
+  alternates={STORIA_ALTERNATES}
+  schema={pageSchema}
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Top Badges & Localized Route Switcher -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+          <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+          <span id="storia-hero-eyebrow">{t.hero.eyebrow}</span>
+        </span>
+
+        <span
+          id="storia-hero-badge-market"
+          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60"
+        >
+          {t.hero.badgeDualMarket}
+        </span>
+
+        <span
+          id="storia-hero-badge-oss"
+          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+        >
+          {t.hero.badgeOpenSource}
+        </span>
+      </div>
+
+      <!-- Direct Crawl-Friendly Language Links Bar -->
+      <nav
+        aria-label="Selettore lingua pagina Storia"
+        class="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 mb-8"
+      >
+        {localeLinks.map((loc) => (
+          <a
+            href={loc.href}
+            data-storia-lang-pill={loc.code}
+            onclick={`window.setLanguage('${loc.code}')`}
+            class={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+              loc.code === lang
+                ? 'bg-white dark:bg-teal-600 text-slate-900 dark:text-white shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            <span>{loc.flag}</span>
+            <span>{loc.label}</span>
+          </a>
+        ))}
+      </nav>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight max-w-4xl mx-auto">
+        <span id="storia-hero-h1-p1">{t.hero.headingPart1}</span>{' '}
+        <span
+          id="storia-hero-h1-hl"
+          class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400"
+        >
+          {t.hero.headingHighlight}
+        </span>
+      </h1>
+
+      <p
+        id="storia-hero-lead"
+        class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
+      >
+        {t.hero.lead}
+      </p>
+
+      <!-- Hero CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/#download"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm sm:text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <svg
+            class="w-5 h-5 text-teal-400 dark:text-slate-950"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            ></path>
+          </svg>
+          <span id="storia-hero-cta-dl">{t.hero.ctaDownload}</span>
+        </a>
+
+        <a
+          href="/moduli/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm transition-all duration-200"
+        >
+          <span id="storia-hero-cta-mod">{t.hero.ctaModules}</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+
+        <a
+          href="/community-richieste/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/60 border border-teal-200 dark:border-teal-800 rounded-2xl transition-all duration-200"
+        >
+          <span id="storia-hero-cta-comm">{t.hero.ctaCommunity}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. The Origin & Problem Statement -->
+  <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span
+          id="storia-origin-badge"
+          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+        >
+          {t.origin.badge}
+        </span>
+        <h2
+          id="storia-origin-heading"
+          class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
+        >
+          {t.origin.heading}
+        </h2>
+        <p
+          id="storia-origin-lead"
+          class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+        >
+          {t.origin.lead}
+        </p>
+      </div>
+
+      <!-- Two Narrative Pillars: Anti-ERP & Anti-SaaS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
+        <!-- Card A: Anti-ERP -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center mb-6 shadow-md shadow-teal-600/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3
+            id="storia-origin-prob-title"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            {t.origin.problemTitle}
+          </h3>
+          <p
+            id="storia-origin-prob-text"
+            class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"
+          >
+            {t.origin.problemText}
+          </p>
+        </div>
+
+        <!-- Card B: Anti-SaaS -->
+        <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6 shadow-md shadow-emerald-600/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              ></path>
+            </svg>
+          </div>
+          <h3
+            id="storia-origin-saas-title"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            {t.origin.antiSaasTitle}
+          </h3>
+          <p
+            id="storia-origin-saas-text"
+            class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"
+          >
+            {t.origin.antiSaasText}
+          </p>
+        </div>
+      </div>
+
+      <!-- Manifesto Quote Callout -->
+      <blockquote class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl border border-teal-500/30 mb-14">
+        <p
+          id="storia-quote-text"
+          class="text-lg sm:text-xl font-medium italic text-slate-100 leading-relaxed mb-6"
+        >
+          {t.origin.quote.text}
+        </p>
+        <footer class="flex items-center gap-3">
+          <span class="w-8 h-0.5 bg-teal-400"></span>
+          <div>
+            <div id="storia-quote-author" class="text-sm font-bold text-white">
+              {t.origin.quote.author}
+            </div>
+            <div id="storia-quote-role" class="text-xs text-teal-400">
+              {t.origin.quote.role}
+            </div>
+          </div>
+        </footer>
+      </blockquote>
+
+      <!-- Side-by-Side Comparison: Bloated ERP vs Fattura Facile -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- ERP Column -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200/80 dark:border-rose-900/50">
+          <h4
+            id="storia-comp-erp-title"
+            class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2"
+          >
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+            <span>{t.origin.comparison.erpTitle}</span>
+          </h4>
+          <ul
+            id="storia-comp-erp-list"
+            class="space-y-3 text-sm text-slate-600 dark:text-slate-300"
+          >
+            {t.origin.comparison.erpPoints.map((pt) => (
+              <li class="flex items-start gap-2.5">
+                <span class="text-rose-500 font-bold shrink-0">✕</span>
+                <span>{pt}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Fattura Facile Column -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-emerald-50/60 dark:bg-emerald-950/25 border border-emerald-200 dark:border-emerald-800/60">
+          <h4
+            id="storia-comp-ff-title"
+            class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2"
+          >
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span>{t.origin.comparison.ffTitle}</span>
+          </h4>
+          <ul id="storia-comp-ff-list" class="space-y-3 text-sm text-slate-700 dark:text-slate-200">
+            {t.origin.comparison.ffPoints.map((pt) => (
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">✓</span>
+                <span>{pt}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Core Architectural Philosophy -->
+  <section class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span
+          id="storia-arch-badge"
+          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+        >
+          {t.architecture.badge}
+        </span>
+        <h2
+          id="storia-arch-heading"
+          class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
+        >
+          {t.architecture.heading}
+        </h2>
+        <p
+          id="storia-arch-lead"
+          class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+        >
+          {t.architecture.lead}
+        </p>
+      </div>
+
+      <div id="storia-arch-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {t.architecture.pillars.map((pillar, idx) => (
+          <div
+            class="flex flex-col justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all"
+            data-arch-card={idx}
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-6">
+                <span class="arch-tag px-3 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                  {pillar.tag}
+                </span>
+                <span class="text-xs font-mono text-slate-400">0{idx + 1}</span>
+              </div>
+
+              <h3 class="arch-title text-xl font-bold text-slate-900 dark:text-white mb-3">
+                {pillar.title}
+              </h3>
+              <p class="arch-desc text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                {pillar.desc}
+              </p>
+            </div>
+
+            <ul class="arch-highlights space-y-2.5 pt-5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
+              {pillar.highlights.map((hl) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>{hl}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Open-Source & Social Ethics -->
+  <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span
+          id="storia-ethics-badge"
+          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+        >
+          {t.ethics.badge}
+        </span>
+        <h2
+          id="storia-ethics-heading"
+          class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
+        >
+          {t.ethics.heading}
+        </h2>
+        <p
+          id="storia-ethics-lead"
+          class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+        >
+          {t.ethics.lead}
+        </p>
+      </div>
+
+      <div id="storia-ethics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {t.ethics.cards.map((card, idx) => (
+          <div
+            class="flex flex-col justify-between p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:border-teal-500/50 transition-all"
+            data-ethics-card={idx}
+          >
+            <div>
+              <span class="ethics-badge inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 mb-4">
+                {card.badge}
+              </span>
+              <h3 class="ethics-title text-xl font-bold text-slate-900 dark:text-white mb-3">
+                {card.title}
+              </h3>
+              <p class="ethics-desc text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                {card.desc}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200/70 dark:border-slate-800">
+              <a
+                href={card.linkHref}
+                class="ethics-link text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+              >
+                {card.linkLabel}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Timeline & Milestone Chronicle -->
+  <section class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span
+          id="storia-chronicle-badge"
+          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+        >
+          {t.chronicle.badge}
+        </span>
+        <h2
+          id="storia-chronicle-heading"
+          class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
+        >
+          {t.chronicle.heading}
+        </h2>
+        <p
+          id="storia-chronicle-lead"
+          class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+        >
+          {t.chronicle.lead}
+        </p>
+      </div>
+
+      <!-- Vertical Milestone Timeline -->
+      <div id="storia-timeline-list" class="space-y-8 relative">
+        {t.chronicle.milestones.map((ms, idx) => (
+          <div
+            class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all"
+            data-milestone-card={idx}
+          >
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="ms-year inline-flex items-center justify-center px-3 py-1 rounded-xl text-xs font-black bg-slate-900 dark:bg-teal-600 text-white">
+                  {ms.year}
+                </span>
+                <span class="ms-phase text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+                  {ms.phase}
+                </span>
+              </div>
+              <span class="ms-badge px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                {ms.badge}
+              </span>
+            </div>
+
+            <h3 class="ms-title text-xl font-bold text-slate-900 dark:text-white mb-2">
+              {ms.title}
+            </h3>
+            <p class="ms-desc text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              {ms.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Final Call to Action Banner -->
+  <section class="py-20 bg-slate-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="storia-cta-heading" class="text-3xl sm:text-4xl font-black tracking-tight">
+        {t.ctaBanner.heading}
+      </h2>
+      <p
+        id="storia-cta-subtitle"
+        class="mt-4 text-slate-300 text-base sm:text-lg max-w-2xl mx-auto"
+      >
+        {t.ctaBanner.subtitle}
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/#download"
+          id="storia-cta-btn-dl"
+          class="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold rounded-2xl shadow-lg transition-all"
+        >
+          {t.ctaBanner.btnDownload}
+        </a>
+        <a
+          href="/moduli/"
+          id="storia-cta-btn-mod"
+          class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold rounded-2xl transition-all"
+        >
+          {t.ctaBanner.btnModules}
+        </a>
+        <a
+          href="/community-richieste/"
+          id="storia-cta-btn-comm"
+          class="px-8 py-4 bg-slate-800/60 hover:bg-slate-800 text-teal-300 border border-teal-500/40 font-bold rounded-2xl transition-all"
+        >
+          {t.ctaBanner.btnCommunity}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline define:vars={{ STORIA_TRANSLATIONS }}>
+  function applyStoriaLocale(lang) {
+    const data = STORIA_TRANSLATIONS[lang];
+    if (!data) return;
+
+    document.title = data.seo.title;
+
+    const setText = (id, val) => {
+      const el = document.getElementById(id);
+      if (el && val !== undefined) el.textContent = val;
+    };
+
+    // Hero
+    setText('storia-hero-eyebrow', data.hero.eyebrow);
+    setText('storia-hero-badge-market', data.hero.badgeDualMarket);
+    setText('storia-hero-badge-oss', data.hero.badgeOpenSource);
+    setText('storia-hero-h1-p1', data.hero.headingPart1);
+    setText('storia-hero-h1-hl', data.hero.headingHighlight);
+    setText('storia-hero-lead', data.hero.lead);
+    setText('storia-hero-cta-dl', data.hero.ctaDownload);
+    setText('storia-hero-cta-mod', data.hero.ctaModules);
+    setText('storia-hero-cta-comm', data.hero.ctaCommunity);
+
+    // Language pills active state
+    document.querySelectorAll('[data-storia-lang-pill]').forEach((pill) => {
+      const code = pill.getAttribute('data-storia-lang-pill');
+      if (code === lang) {
+        pill.classList.add(
+          'bg-white',
+          'dark:bg-teal-600',
+          'text-slate-900',
+          'dark:text-white',
+          'shadow-sm',
+        );
+        pill.classList.remove('text-slate-600', 'dark:text-slate-300');
+      } else {
+        pill.classList.remove(
+          'bg-white',
+          'dark:bg-teal-600',
+          'text-slate-900',
+          'dark:text-white',
+          'shadow-sm',
+        );
+        pill.classList.add('text-slate-600', 'dark:text-slate-300');
+      }
+    });
+
+    // Origin
+    setText('storia-origin-badge', data.origin.badge);
+    setText('storia-origin-heading', data.origin.heading);
+    setText('storia-origin-lead', data.origin.lead);
+    setText('storia-origin-prob-title', data.origin.problemTitle);
+    setText('storia-origin-prob-text', data.origin.problemText);
+    setText('storia-origin-saas-title', data.origin.antiSaasTitle);
+    setText('storia-origin-saas-text', data.origin.antiSaasText);
+    setText('storia-quote-text', data.origin.quote.text);
+    setText('storia-quote-author', data.origin.quote.author);
+    setText('storia-quote-role', data.origin.quote.role);
+
+    setText('storia-comp-erp-title', data.origin.comparison.erpTitle);
+    const erpList = document.getElementById('storia-comp-erp-list');
+    if (erpList) {
+      erpList.innerHTML = data.origin.comparison.erpPoints
+        .map(
+          (pt) =>
+            `<li class="flex items-start gap-2.5"><span class="text-rose-500 font-bold shrink-0">✕</span><span>${pt}</span></li>`,
+        )
+        .join('');
+    }
+
+    setText('storia-comp-ff-title', data.origin.comparison.ffTitle);
+    const ffList = document.getElementById('storia-comp-ff-list');
+    if (ffList) {
+      ffList.innerHTML = data.origin.comparison.ffPoints
+        .map(
+          (pt) =>
+            `<li class="flex items-start gap-2.5"><span class="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">✓</span><span>${pt}</span></li>`,
+        )
+        .join('');
+    }
+
+    // Architecture
+    setText('storia-arch-badge', data.architecture.badge);
+    setText('storia-arch-heading', data.architecture.heading);
+    setText('storia-arch-lead', data.architecture.lead);
+    data.architecture.pillars.forEach((pillar, idx) => {
+      const card = document.querySelector(`[data-arch-card="${idx}"]`);
+      if (!card) return;
+      const tagEl = card.querySelector('.arch-tag');
+      const titleEl = card.querySelector('.arch-title');
+      const descEl = card.querySelector('.arch-desc');
+      const hlList = card.querySelector('.arch-highlights');
+      if (tagEl) tagEl.textContent = pillar.tag;
+      if (titleEl) titleEl.textContent = pillar.title;
+      if (descEl) descEl.textContent = pillar.desc;
+      if (hlList) {
+        hlList.innerHTML = pillar.highlights
+          .map(
+            (hl) =>
+              `<li class="flex items-start gap-2"><span class="text-teal-600 dark:text-teal-400 font-bold">✓</span><span>${hl}</span></li>`,
+          )
+          .join('');
+      }
+    });
+
+    // Ethics
+    setText('storia-ethics-badge', data.ethics.badge);
+    setText('storia-ethics-heading', data.ethics.heading);
+    setText('storia-ethics-lead', data.ethics.lead);
+    data.ethics.cards.forEach((c, idx) => {
+      const card = document.querySelector(`[data-ethics-card="${idx}"]`);
+      if (!card) return;
+      const badgeEl = card.querySelector('.ethics-badge');
+      const titleEl = card.querySelector('.ethics-title');
+      const descEl = card.querySelector('.ethics-desc');
+      const linkEl = card.querySelector('.ethics-link');
+      if (badgeEl) badgeEl.textContent = c.badge;
+      if (titleEl) titleEl.textContent = c.title;
+      if (descEl) descEl.textContent = c.desc;
+      if (linkEl) linkEl.textContent = c.linkLabel;
+    });
+
+    // Chronicle
+    setText('storia-chronicle-badge', data.chronicle.badge);
+    setText('storia-chronicle-heading', data.chronicle.heading);
+    setText('storia-chronicle-lead', data.chronicle.lead);
+    data.chronicle.milestones.forEach((ms, idx) => {
+      const card = document.querySelector(`[data-milestone-card="${idx}"]`);
+      if (!card) return;
+      const yearEl = card.querySelector('.ms-year');
+      const phaseEl = card.querySelector('.ms-phase');
+      const badgeEl = card.querySelector('.ms-badge');
+      const titleEl = card.querySelector('.ms-title');
+      const descEl = card.querySelector('.ms-desc');
+      if (yearEl) yearEl.textContent = ms.year;
+      if (phaseEl) phaseEl.textContent = ms.phase;
+      if (badgeEl) badgeEl.textContent = ms.badge;
+      if (titleEl) titleEl.textContent = ms.title;
+      if (descEl) descEl.textContent = ms.desc;
+    });
+
+    // Bottom CTA
+    setText('storia-cta-heading', data.ctaBanner.heading);
+    setText('storia-cta-subtitle', data.ctaBanner.subtitle);
+    setText('storia-cta-btn-dl', data.ctaBanner.btnDownload);
+    setText('storia-cta-btn-mod', data.ctaBanner.btnModules);
+    setText('storia-cta-btn-comm', data.ctaBanner.btnCommunity);
+  }
+
+  window.addEventListener('ff:language-change', (e) => {
+    if (e.detail && e.detail.lang) {
+      applyStoriaLocale(e.detail.lang);
+    }
+  });
+</script>

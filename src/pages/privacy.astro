@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Informativa sulla Privacy & Conformità Normativa | Fattura Facile',
+  url: 'https://fatturafacile.eu/privacy/',
+  description:
+    'Informativa estesa sulla privacy e conformità al Regolamento Generale sulla Protezione dei Dati UE (GDPR 2016/679) e alla Legge federale svizzera sulla protezione dei dati (nLPD).',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Fattura Facile Teams',
+  },
+};
+---
+
+<BaseLayout
+  title="Informativa sulla Privacy & Conformità (GDPR & nLPD) | Fattura Facile"
+  description="Informativa completa sul trattamento dei dati personali: conformità GDPR UE 2016/679, nLPD Svizzera e architettura Privacy by Design con SQLite locale."
+  schema={pageSchema}
+>
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 mb-6">
+        Quadro Normativo & Tutela dei Dati
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+        Informativa Privacy &{' '}
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400">
+          Conformità Normativa
+        </span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+        GDPR UE (Regolamento 2016/679) e nuova Legge Federale sulla Protezione dei Dati Svizzera
+        (nLPD).
+      </p>
+    </div>
+  </section>
+
+  <!-- Legal Body -->
+  <section class="py-16 bg-white dark:bg-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 text-slate-700 dark:text-slate-300 leading-relaxed">
+      <!-- Callout -->
+      <div class="p-6 bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800 rounded-3xl text-teal-900 dark:text-teal-200 text-sm">
+        <strong class="font-bold">Principio Ingegneristico Fondamentale:</strong> In Fattura Facile,
+        la riservatezza delle informazioni contabili non è un vincolo burocratico ma il pilastro
+        progettuale su cui poggia l'intera architettura software.
+      </div>
+
+      <!-- Section 1 -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          1. Architettura Desktop Standalone (SQLite Locale)
+        </h2>
+        <p class="mb-3">
+          Quando si utilizza l'applicazione portabile Fattura Facile Desktop (distribuita come
+          archivio eseguibile senza installatore di sistema):
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Zero Trasmissione Verso l'Esterno:</strong> Tutti i dati anagrafici, fatture,
+            importi, aliquote IVA, coordinate bancarie IBAN e codici fiscali risiedono
+            esclusivamente all'interno del database SQLite salvato nella medesima cartella
+            dell'eseguibile o sulla chiavetta USB.
+          </li>
+          <li>
+            <strong>Assenza di Telemetria e Tracciamento:</strong> Il software non include tracker
+            comportamentali, analytics in background o chiamate API verso server di Fattura Facile.
+          </li>
+          <li>
+            <strong>Sovranità del Titolare:</strong> L'utilizzatore del software agisce come unico
+            ed esclusivo Titolare del Trattamento (Data Controller) ai sensi dell'Art. 4 del GDPR.
+            Non sussiste alcun trasferimento transfrontaliero e non è necessario alcun accordo per
+            il trattamento dei dati (DPA) con Fattura Facile.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 2 -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          2. Edizione Cloud Self-Hosted (Infrastruttura del Cliente)
+        </h2>
+        <p class="mb-3">
+          Quando si sceglie di implementare la versione multi-utente su server locale o Virtual
+          Private Server (VPS):
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Infrastruttura di Proprietà Diretta:</strong> I container Docker e i database
+            relazionali (PostgreSQL o Microsoft SQL Server) sono installati sull'hardware o
+            sull'abbonamento cloud di competenza diretta del cliente.
+          </li>
+          <li>
+            <strong>Zero Accesso ai Dati:</strong> Gli sviluppatori di Fattura Facile non possiedono
+            chiavi d'accesso, credenziali di root o visibilità sui database del cliente.
+          </li>
+          <li>
+            <strong>Isolamento Legale:</strong> La conformità alle misure di sicurezza tecniche e
+            organizzative (Art. 32 GDPR) e alle disposizioni della nLPD svizzera resta interamente
+            sotto il controllo della governance IT dell'azienda utilizzatrice.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          3. Diritti degli Interessati & Conservazione Documentale
+        </h2>
+        <p class="mb-3">
+          In ottemperanza agli articoli 15-22 del Regolamento UE 2016/679 (GDPR) e agli articoli
+          25-29 della Legge federale sulla protezione dei dati (nLPD):
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Diritto di Accesso e Portabilità:</strong> Poiché il database è in formato
+            standard SQLite, il titolare può estrarre o esportare l'intero archivio documentale in
+            formato aperto senza dipendere da strumenti proprietari di decodifica.
+          </li>
+          <li>
+            <strong>Rettifica e Cancellazione:</strong> Ogni record di cliente o bozza di preventivo
+            può essere cancellato o rettificato direttamente dall'interfaccia utente in tempo reale.
+          </li>
+          <li>
+            <strong>Conservazione Sostitutiva e Fiscale:</strong> La conservazione a norma delle
+            fatture elettroniche XML trasmesse a SDI (Italia) deve avvenire tramite i canali
+            ufficiali dell'Agenzia delle Entrate o conservatori accreditati, conformemente alle
+            scadenze di legge decennali.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 4 -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          4. Contatti e Responsabilità
+        </h2>
+        <p>
+          Per qualsiasi domanda relativa all'architettura di sicurezza o per proporre miglioramenti
+          tecnici alla tutela della privacy:
+        </p>
+        <p class="mt-3 font-semibold text-teal-600 dark:text-teal-400">
+          Email:{' '}
+          <a href="mailto:info@fatturafacile.eu" class="hover:underline">
+            info@fatturafacile.eu
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

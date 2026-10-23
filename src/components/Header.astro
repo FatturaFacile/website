@@ -1,0 +1,631 @@
+---
+const currentPath = Astro.url.pathname;
+
+const isProductActive =
+  currentPath.startsWith('/perche') ||
+  currentPath.startsWith('/funzionalita') ||
+  currentPath.startsWith('/moduli') ||
+  currentPath.startsWith('/versioni');
+const isCommunityActive =
+  currentPath.startsWith('/community-richieste') ||
+  currentPath.startsWith('/scuole-e-sociale') ||
+  currentPath.startsWith('/sponsor');
+const isNetworkActive =
+  currentPath.startsWith('/supporto-locale') || currentPath.startsWith('/faq');
+const isAboutActive =
+  currentPath.includes('/storia') ||
+  currentPath.includes('#storia') ||
+  currentPath.includes('#team');
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/95 dark:bg-slate-900/95 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Logo Branding -->
+    <a
+      href="/"
+      class="flex items-center gap-3 group shrink-0"
+      aria-label="Fattura Facile Home"
+      title="Fattura Facile Home"
+      data-i18n-aria-label="logo_aria"
+      data-i18n-title="logo_aria"
+    >
+      <svg
+        class="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-105"
+        viewBox="0 0 512 512"
+        fill="none"
+      >
+        <path
+          class="logo-stroke-adaptive"
+          d="M 200,450 L 130,450 C 100,450 80,430 80,400 L 80,110 C 80,80 100,60 130,60 L 330,60"
+          stroke="#0f172a"
+          stroke-width="26"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          class="logo-stroke-adaptive"
+          d="M 330,60 L 420,150 L 420,280"
+          stroke="#0f172a"
+          stroke-width="26"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          class="logo-stroke-adaptive"
+          d="M 330,60 L 330,150 L 420,150"
+          stroke="#0f172a"
+          stroke-width="24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <line
+          class="logo-stroke-adaptive"
+          x1="150"
+          y1="180"
+          x2="270"
+          y2="180"
+          stroke="#0f172a"
+          stroke-width="22"
+          stroke-linecap="round"
+        />
+        <line
+          class="logo-stroke-adaptive"
+          x1="150"
+          y1="240"
+          x2="235"
+          y2="240"
+          stroke="#0f172a"
+          stroke-width="22"
+          stroke-linecap="round"
+        />
+        <path
+          d="M 135,335 L 168,368 L 215,310"
+          stroke="#10b981"
+          stroke-width="24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M 235,455 A 52,52 0 0 1 230,365 A 72,72 0 0 1 345,300 A 82,82 0 0 1 455,365 A 56,56 0 0 1 445,455 Z"
+          fill="#0d9488"
+        />
+        <line
+          x1="345"
+          y1="452"
+          x2="345"
+          y2="375"
+          stroke="#FFFFFF"
+          stroke-width="13"
+          stroke-linecap="round"
+        />
+        <circle cx="345" cy="370" r="11" fill="#FFFFFF" />
+        <path
+          d="M 295,452 L 295,415 L 313,397"
+          stroke="#FFFFFF"
+          stroke-width="11"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="313" cy="397" r="9" fill="#FFFFFF" />
+        <path
+          d="M 395,452 L 395,417 L 377,399"
+          stroke="#FFFFFF"
+          stroke-width="11"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <circle cx="377" cy="399" r="9" fill="#FFFFFF" />
+      </svg>
+      <div class="flex flex-col">
+        <span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+          Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span>
+        </span>
+        <span
+          class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mt-1"
+          data-i18n="logo_claim"
+        >
+          Fatture semplici, offline e cloud
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation with Dropdowns -->
+    <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+      <!-- 1. Product Dropdown -->
+      <div class="relative group py-2">
+        <button
+          type="button"
+          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isProductActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
+          aria-haspopup="true"
+        >
+          <span>Prodotto</span>
+          <svg
+            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
+          <a
+            href="/perche/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">Perché Noi</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Filosofia anti-ERP per artigiani e PMI
+            </span>
+          </a>
+          <a
+            href="/funzionalita/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              Funzionalità & Moduli
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              FatturaPA, Swiss QR-Bill e roadmap
+            </span>
+          </a>
+          <a
+            href="/versioni/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">Offline vs Cloud</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Desktop USB SQLite vs Docker Privato
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Community & Social Dropdown -->
+      <div class="relative group py-2">
+        <button
+          type="button"
+          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isCommunityActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
+          aria-haspopup="true"
+        >
+          <span>Community & Sociale</span>
+          <svg
+            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-2 w-72 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
+          <a
+            href="/community-richieste/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-teal-600 dark:text-teal-400 text-xs">
+              Richiedi Moduli (Gratis)
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Sviluppo a costo zero rilasciato a tutti
+            </span>
+          </a>
+          <a
+            href="/community-richieste/#collaborare"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">Come Collaborare</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Devs, commercialisti, traduttori e tester
+            </span>
+          </a>
+          <a
+            href="/scuole-e-sociale/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">Scuole & Sociale</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Didattica per istituti e impatto sociale
+            </span>
+          </a>
+          <a
+            href="/sponsor/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              Sponsor & Sostenibilità
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Sostieni certificati e server CI/CD
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Network & Support Dropdown -->
+      <div class="relative group py-2">
+        <button
+          type="button"
+          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isNetworkActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
+          aria-haspopup="true"
+        >
+          <span>Supporto & Rete</span>
+          <svg
+            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
+          <a
+            href="/supporto-locale/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              Supporto Locale (IT/CH)
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Tecnici e fiduciarie sul territorio
+            </span>
+          </a>
+          <a
+            href="/faq/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              Domande Frequenti (FAQ)
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Guida rapida a USB, backup e SDI/QR
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. About Dropdown / Links -->
+      <div class="relative group py-2">
+        <button
+          type="button"
+          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isAboutActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
+          aria-haspopup="true"
+        >
+          <span>Chi Siamo</span>
+          <svg
+            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div class="absolute right-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
+          <a
+            href="/storia/"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">La Nostra Storia</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Dall'esigenza reale all'open source
+            </span>
+          </a>
+          <a
+            href="/community-richieste/#team"
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              Team & Contributori
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">
+              Chi sviluppa e mantiene il progetto
+            </span>
+          </a>
+          <a
+            href="/privacy/"
+            class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-t border-slate-100 dark:border-slate-800/80 mt-1"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              Privacy & Sovranità Dati
+            </span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Controls: Dark/Light Mode, Language & Mobile Hamburger -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Theme Switcher -->
+      <button
+        id="theme-toggle"
+        onclick="window.toggleTheme()"
+        aria-label="Toggle light/dark theme"
+        title="Toggle light/dark theme"
+        data-i18n-aria-label="theme_toggle_aria"
+        data-i18n-title="theme_toggle_title"
+        class="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+      >
+        <svg
+          id="theme-icon-light"
+          class="w-5 h-5 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        <svg
+          id="theme-icon-dark"
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Language Selector -->
+      <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">
+        <button
+          id="lang-it-btn"
+          onclick="window.setLanguage('it')"
+          class="px-2 py-1 rounded-lg transition-all duration-200 tab-active"
+          title="Italiano"
+          aria-label="Italiano"
+          data-i18n-title="lang_it"
+          data-i18n-aria-label="lang_it"
+        >
+          IT
+        </button>
+        <button
+          id="lang-en-btn"
+          onclick="window.setLanguage('en')"
+          class="px-2 py-1 rounded-lg transition-all duration-200"
+          title="English"
+          aria-label="English"
+          data-i18n-title="lang_en"
+          data-i18n-aria-label="lang_en"
+        >
+          EN
+        </button>
+        <button
+          id="lang-fr-btn"
+          onclick="window.setLanguage('fr')"
+          class="px-2 py-1 rounded-lg transition-all duration-200"
+          title="Français"
+          aria-label="Français"
+          data-i18n-title="lang_fr"
+          data-i18n-aria-label="lang_fr"
+        >
+          FR
+        </button>
+        <button
+          id="lang-de-btn"
+          onclick="window.setLanguage('de')"
+          class="px-2 py-1 rounded-lg transition-all duration-200"
+          title="Deutsch"
+          aria-label="Deutsch"
+          data-i18n-title="lang_de"
+          data-i18n-aria-label="lang_de"
+        >
+          DE
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+        aria-label="Apri menu principale"
+        aria-expanded="false"
+      >
+        <svg
+          id="hamburger-icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+        <svg
+          id="close-icon"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-4 pb-8 space-y-6 max-h-[calc(100vh-5rem)] overflow-y-auto"
+  >
+    <!-- Product Group -->
+    <div>
+      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
+        Prodotto
+      </div>
+      <div class="space-y-1 pl-2">
+        <a
+          href="/perche/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Perché Noi
+        </a>
+        <a
+          href="/funzionalita/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Funzionalità & Moduli
+        </a>
+        <a
+          href="/versioni/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Offline vs Cloud
+        </a>
+      </div>
+    </div>
+
+    <!-- Community & Social Group -->
+    <div>
+      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
+        Community & Sociale
+      </div>
+      <div class="space-y-1 pl-2">
+        <a
+          href="/community-richieste/"
+          class="block py-1.5 text-sm font-medium text-teal-600 dark:text-teal-400 font-bold"
+        >
+          Richiedi Moduli (Gratis)
+        </a>
+        <a
+          href="/community-richieste/#collaborare"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Come Collaborare
+        </a>
+        <a
+          href="/scuole-e-sociale/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Scuole & Sociale
+        </a>
+        <a
+          href="/sponsor/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Sponsor
+        </a>
+      </div>
+    </div>
+
+    <!-- Network & Support Group -->
+    <div>
+      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
+        Supporto & Rete
+      </div>
+      <div class="space-y-1 pl-2">
+        <a
+          href="/supporto-locale/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Supporto Locale (IT/CH)
+        </a>
+        <a
+          href="/faq/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Domande Frequenti (FAQ)
+        </a>
+      </div>
+    </div>
+
+    <!-- About Group -->
+    <div>
+      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
+        Chi Siamo & Privacy
+      </div>
+      <div class="space-y-1 pl-2">
+        <a
+          href="/storia/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          La Nostra Storia
+        </a>
+        <a
+          href="/community-richieste/#team"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Team & Contributori
+        </a>
+        <a
+          href="/privacy/"
+          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
+        >
+          Informativa Privacy Completa
+        </a>
+      </div>
+    </div>
+
+    <!-- Direct CTA -->
+    <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+      <a
+        href="/#download"
+        class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 text-white font-bold rounded-xl text-sm shadow-md"
+      >
+        Scarica Desktop Free
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+        mobileMenu.classList.toggle('hidden');
+        if (hamburgerIcon) hamburgerIcon.classList.toggle('hidden');
+        if (closeIcon) closeIcon.classList.toggle('hidden');
+      });
+    }
+  });
+</script>

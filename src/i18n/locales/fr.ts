@@ -1,0 +1,631 @@
+import type { SiteTranslations } from '../types';
+
+export const fr: SiteTranslations = {
+  common: {
+    siteName: 'FatturaFacile',
+    tagline: 'Factures simples, hors ligne et cloud',
+    nav: {
+      product: 'Produit',
+      whyUs: 'Pourquoi Nous',
+      featuresModules: 'Fonctionnalités & Modules',
+      offlineVsCloud: 'Hors Ligne vs Cloud',
+      communitySocial: 'Communauté & Social',
+      requestModulesFree: 'Demander des Modules (Gratuit)',
+      contribute: 'Comment Contribuer',
+      schoolsSocial: 'Écoles & Éducation',
+      sponsors: 'Sponsors & Soutien',
+      networkSupport: 'Réseau & Assistance',
+      localSupport: 'Support Local (IT/CH)',
+      faq: 'FAQ',
+      about: 'À Propos',
+      story: 'Notre Histoire',
+      team: 'Équipe & Contributeurs',
+      privacy: 'Confidentialité & Conformité',
+    },
+    actions: {
+      downloadDesktop: "Télécharger l'Édition Desktop (Gratuit)",
+      exploreCloud: "Explorer l'Édition Cloud",
+      requestModule: 'Proposer un Module Gratuit',
+      joinCommunity: 'Rejoindre le Groupe Telegram',
+      becomePartner: 'Devenir Partenaire Local',
+      contactUs: 'Nous Écrire par E-mail',
+      learnMore: 'En Savoir Plus',
+      understood: "J'ai Compris",
+      filterAll: 'Tous',
+      backToHome: "Retour à l'Accueil",
+    },
+    footer: {
+      description:
+        'Le système de facturation léger et indépendant, conçu spécifiquement pour les artisans, micro-entreprises et indépendants en Italie et en Suisse. Architecture basée sur SQLite local et option cloud auto-hébergée.',
+      emailLabel: 'Contact E-mail :',
+      productColTitle: 'Produit',
+      legalColTitle: 'Confidentialité & Légal',
+      marketsColTitle: 'Marchés Régionaux',
+      italyMarketDesc:
+        'Italie 🇮🇹 : Compatible avec FatturaPA XML, suivi des paiements et régimes forfaitaire et ordinaire.',
+      swissMarketDesc:
+        'Suisse 🇨🇭 : Conforme à la QR-facture (norme SIX) et aux taux de TVA fédéraux (normal, réduit, hébergement).',
+      copyright: "Fattura Facile. Projet ouvert et sans frais d'abonnement.",
+      telegramCommunity: 'Communauté Telegram',
+      githubRepo: 'Dépôt GitHub',
+    },
+    privacyModal: {
+      title: 'Politique de Confidentialité et Conformité Réglementaire',
+      subtitle: 'RGPD UE (Règlement 2016/679) & Nouvelle LPD Suisse (nLPA)',
+      calloutTitle: "Principe Fondamental d'Ingénierie :",
+      calloutDesc:
+        "Chez Fattura Facile, la confidentialité n'est pas une contrainte juridique ajoutée après coup, mais la base même de la conception de notre logiciel.",
+      section1Title: '1. Édition Desktop Autonome (SQLite Local)',
+      section1Text: 'Lorsque vous utilisez la version portable sur PC ou clé USB :',
+      section1Bullets: [
+        'Zéro Transmission de Données : Les registres de facturation, fichiers clients, identifiants fiscaux et coordonnées bancaires résident exclusivement dans le fichier SQLite local sur votre périphérique.',
+        "Aucun Serveur Intermédiaire : Nous ne collectons aucune télémétrie, aucune métrique d'utilisation et aucune donnée analytique sur vos factures émises.",
+        "Souveraineté Complète : L'entreprise agit en tant que seul Responsable du Traitement. Aucune donnée ne franchit de frontière et aucun accord externe de sous-traitance (DPA) n'est requis pour l'usage local.",
+      ],
+      section2Title: '2. Édition Cloud Auto-Hébergée (Hébergement géré par vos soins)',
+      section2Text: "Même lors du déploiement de l'édition multi-utilisateurs en réseau :",
+      section2Bullets: [
+        "Infrastructure Propriétaire : Le système est installé sur votre propre serveur privé ou VPS (Docker / PostgreSQL). L'équipe de Fattura Facile n'a aucun accès à votre base de données.",
+        'Conformité Directe : Le respect du RGPD et de la LPD reste sous votre gouvernance interne totale, écartant tout risque de fuite de données chez des prestataires SaaS tiers.',
+        "Contact Direct : Pour toute question technique ou précision sur l'architecture, l'adresse de contact direct est info@fatturafacile.eu.",
+      ],
+      section3Title: '3. Droits des Personnes Concernées',
+      section3Text:
+        "Conformément aux articles 15 à 22 du RGPD européen et aux articles 25 à 29 de la LPD suisse, les personnes physiques conservent l'ensemble de leurs droits d'accès, de rectification, de portabilité et d'effacement. Avec l'édition desktop, vous détenez déjà la garde physique directe du fichier de base de données brut.",
+      closeBtn: "Fermer l'Information",
+    },
+  },
+  home: {
+    seo: {
+      title: 'Fattura Facile | Facturation Simple pour Artisans, PME et Indépendants',
+      description:
+        'Logiciel de facturation gratuit et hors ligne avec SQLite ou Cloud auto-hébergé. Conforme à FatturaPA SDI (Italie) et QR-facture SIX (Suisse). Sans abonnement.',
+      keywords:
+        'fattura facile, logiciel facturation artisans, factures hors ligne, facturation cle usb portable, sqlite factures, facture electronique sdi, qr-facture suisse, facturation tessin, rgpd, lpd suisse, facturation wpf, logiciel facturation gratuit',
+    },
+    hero: {
+      badgeGeo: "Adapté pour l'Italie 🇮🇹 (FatturaPA / SDI) & la Suisse 🇨🇭 (QR-facture SIX)",
+      badgePrivacy: 'Conforme à la protection des données : RGPD UE & LPD Suisse',
+      titlePart1: 'La facturation simplifiée, rapide et',
+      titlePart2: 'sous votre contrôle absolu.',
+      subtitle:
+        "Fini les logiciels de gestion d'entreprise lourds et lents. Émettez devis et factures en 30 secondes depuis votre PC ou votre clé USB avec une base SQLite locale, 100 % gratuit et sans abonnement mensuel, ou hébergez votre propre cloud privé multi-utilisateurs.",
+      ctaPrimary: "Télécharger l'Édition Desktop (Gratuit)",
+      ctaSecondary: "Explorer l'Édition Cloud",
+      badges: {
+        zeroSubTitle: 'Zéro Abonnement',
+        zeroSubDesc: 'Version desktop gratuite pour toujours',
+        portableTitle: 'Portable sur Clé USB',
+        portableDesc: 'Aucune installation système requise',
+        offlineTitle: '100 % Hors Ligne',
+        offlineDesc: 'Fonctionne sans connexion Internet',
+        dataOwnershipTitle: 'Vos Données Vous Appartiennent',
+        dataOwnershipDesc: 'Aucun serveur intermédiaire',
+      },
+    },
+    quickSummary: {
+      eyebrow: 'Ingénierie Épurée',
+      heading: 'Un outil rapide pensé pour les professionnels sur le terrain',
+      lead: "Électriciens, plombiers, installateurs, paysagistes et indépendants émettent en moyenne 10 à 20 factures par mois. Ils n'ont pas besoin de la lourdeur d'un ERP d'entreprise, mais d'un outil fiable pour être payés ponctuellement.",
+    },
+  },
+  perche: {
+    seo: {
+      title: 'Pourquoi Choisir Fattura Facile | Notre Philosophie',
+      description:
+        'Découvrez notre philosophie contre les logiciels surchargés : logiciel léger, devis en une minute, factures en un clic et zéro abonnement récurrent.',
+      keywords:
+        'pourquoi fattura facile, logiciel facturation leger, alternative erp couteux, devis rapide artisan, facturation sans abonnement',
+    },
+    eyebrow: 'La Philosophie de Fattura Facile',
+    heading: 'Pas un monstre aux 500 boutons, mais votre compagnon de travail quotidien',
+    lead: "Nous avons supprimé la complexité superflue des logiciels de gestion d'entreprise traditionnels pour nous concentrer sur l'essentiel : rapidité d'exécution, conformité fiscale stricte et fonctionnement immédiat.",
+    pillars: [
+      {
+        title: 'Devis en 1 minute, Facture en 1 clic',
+        description:
+          'Rédigez vos devis directement sur le chantier. Une fois validés par le client, convertissez-les en facture officielle en un clic tout en respectant la numérotation séquentielle.',
+      },
+      {
+        title: 'Double Marché Natif : Italie 🇮🇹 et Suisse 🇨🇭',
+        description:
+          "Prise en charge intégrée des fichiers XML FatturaPA pour l'administration fiscale italienne (SDI) et des QR-factures suisses conformes aux normes SIX avec calcul précis de la TVA.",
+      },
+      {
+        title: 'Sauvegarde Chiffrée Portable en 1 Clic',
+        description:
+          'Créez des instantanés compressés et protégés de votre base de données sur une seconde clé USB, un NAS réseau ou un dossier synchronisé. Ne perdez aucun document, même en changeant de PC.',
+      },
+    ],
+    antiErpHeading: 'Fini les redevances mensuelles obligatoires pour émettre quelques factures',
+    antiErpText:
+      "Les services cloud modernes par abonnement imposent des coûts récurrents continus et verrouillent l'accès à vos propres archives en cas d'interruption du paiement. Avec Fattura Facile, le moteur desktop vous appartient sans aucun engagement contractuel et sans dépendre d'un accès Internet.",
+    quoteToInvoiceHeading: 'Un flux de travail fluide entre le chantier et le bureau',
+    quoteToInvoiceText:
+      "Oubliez les doubles saisies et les feuilles de calcul éparpillées. Le carnet d'adresses réutilisable et les articles préenregistrés permettent de finaliser une facture en moins d'une minute pour vous concentrer sur votre métier.",
+  },
+  versioni: {
+    seo: {
+      title: 'Hors Ligne Autonome vs Cloud Privé | Fattura Facile',
+      description:
+        'Comparatif détaillé entre la version portable sur clé USB en C# WPF avec SQLite et la version cloud multi-utilisateurs en conteneurs Docker.',
+      keywords:
+        'versions fattura facile, factures hors ligne usb sqlite, cloud prive facturation docker, wpf sqlite gestion',
+    },
+    eyebrow: "Liberté d'Architecture",
+    heading: "Deux moteurs d'exécution, 100 % gratuits pour tous",
+    lead: 'Aucun droit de licence à verser à notre équipe. Travaillez en toute autonomie : en local sur votre bureau ou auto-hébergé sur votre propre infrastructure.',
+    desktopCard: {
+      tag: 'Autonome / Clé USB',
+      badge: '100 % Gratuit',
+      title: 'Fattura Facile Desktop',
+      subtitle:
+        'Conçu en C#/.NET WPF natif avec base de données SQLite embarquée sans configuration requise.',
+      features: [
+        'Zéro installation : dossier portable exécutable depuis une clé USB ou un disque externe.',
+        'Confidentialité absolue : aucune donnée financière ne quitte votre ordinateur (Privacy by Design).',
+        "Fonctionne partout : sur les chantiers, en camionnette ou à l'atelier sans Wi-Fi.",
+        'Démarrage instantané : temps de boot immédiat et enregistrement temps réel des écritures.',
+      ],
+      limitation:
+        'Un seul utilisateur simultané par fichier (contrainte de verrouillage du fichier SQLite local).',
+      cta: 'Télécharger le Fichier ZIP (Windows 10/11)',
+    },
+    cloudCard: {
+      tag: 'Multi-Utilisateurs & Auto-Hébergé',
+      badge: 'Logiciel Gratuit (Hébergement à votre charge)',
+      title: 'Fattura Facile Private Cloud',
+      subtitle:
+        'Déployez-le sur votre serveur VPS, NAS de bureau ou infrastructure locale via Docker.',
+      features: [
+        'Accès multi-utilisateurs simultané : collaborateurs et cabinet fiduciaire connectés ensemble.',
+        'Zéro frais de licence par utilisateur : aucun abonnement indexé sur le volume de factures.',
+        'Souveraineté juridique : en maîtrisant les serveurs, vous éliminez la dépendance envers des tiers.',
+        "Migration aisée : exportez et importez votre fichier SQLite local directement sur l'instance cloud.",
+      ],
+      migrationNote:
+        "Nécessite des compétences d'administration système de base pour gérer les conteneurs Docker.",
+      cta: 'Consulter le Guide sur GitHub',
+    },
+    comparisonTable: {
+      title: 'Tableau Comparatif Technique',
+      headers: ['Caractéristique', 'Desktop Autonome', 'Cloud Privé'],
+      rows: [
+        {
+          feature: 'Licence Logicielle',
+          desktop: 'Gratuite pour toujours (Open Source)',
+          cloud: 'Gratuite pour toujours (Open Source)',
+        },
+        {
+          feature: "Frais d'Abonnement",
+          desktop: 'Aucun (0 € / 0 CHF)',
+          cloud: 'Aucun (0 € / 0 CHF)',
+        },
+        {
+          feature: 'Connexion Internet',
+          desktop: 'Non requise (100 % hors ligne)',
+          cloud: "Requise pour l'accès distant",
+        },
+        {
+          feature: 'Moteur de Base de Données',
+          desktop: 'SQLite local (sur disque ou clé USB)',
+          cloud: 'PostgreSQL / SQL Server',
+        },
+        {
+          feature: 'Utilisateurs Simultanés',
+          desktop: '1 opérateur par fichier de données',
+          cloud: 'Multi-utilisateurs concurrents',
+        },
+        {
+          feature: 'Conformité Fiscale',
+          desktop: 'Italie (SDI) & Suisse (QR-facture)',
+          cloud: 'Italie (SDI) & Suisse (QR-facture)',
+        },
+        {
+          feature: 'Installation Système',
+          desktop: 'Aucune (exécutable portable)',
+          cloud: 'Conteneur Docker / VPS',
+        },
+      ],
+    },
+  },
+  moduli: {
+    seo: {
+      title: 'Catalogue des Modules & Feuille de Route Publique | Fattura Facile',
+      description:
+        "Découvrez les modules de Fattura Facile pour l'Italie et la Suisse. Consultez notre roadmap transparente et proposez de nouveaux modules gratuits.",
+      keywords:
+        'modules fattura facile, roadmap logiciel facturation, module fatturapa, module qr-facture, echeancier paiements gratuit',
+    },
+    eyebrow: 'Écosystème Modulaire & Transparent',
+    heading: "Modules prêts à l'emploi et développement guidé par la communauté",
+    lead: 'Fattura Facile intègre les outils nécessaires pour facturer immédiatement et évolue selon les besoins concrets de la communauté. Tout module validé est programmé sans frais et inclus pour tous dans les versions officielles.',
+    availableSectionTitle: 'Modules Disponibles Immédiatement',
+    roadmapSectionTitle: 'Feuille de Route Ouverte du Développement',
+    roadmapStages: {
+      inDevelopment: 'En Cours de Développement',
+      planned: 'Planifié Prochainement',
+      backlog: 'Idées de la Communauté',
+    },
+    requestForm: {
+      badge: 'Orienté Communauté & 100 % Gratuit',
+      title: "Besoin d'un module spécifique ou d'une fonctionnalité manquante ?",
+      description:
+        "Décrivez-nous les processus de travail de votre entreprise ou les règles métier de votre secteur. Si la demande présente un intérêt collectif, nous la développerons gratuitement pour l'intégrer à la version publique.",
+      nameLabel: 'Nom et Prénom / Raison Sociale',
+      emailLabel: 'Adresse E-mail de Contact',
+      marketLabel: 'Marché Visé',
+      tradeLabel: 'Secteur ou Activité (ex. Plombier, Électricien, BTP, Fiduciaire)',
+      detailsLabel: 'Description du Module Souhaité et Problématique Métier',
+      submitBtn: 'Envoyer la Proposition de Module Gratuit',
+      disclaimer:
+        "Notre équipe d'ingénierie étudie directement les propositions pour définir les spécifications ouvertes.",
+    },
+  },
+  team: {
+    seo: {
+      title: "L'Équipe & Les Contributeurs | Fattura Facile",
+      description:
+        "Rencontrez les architectes logiciels, ingénieurs et conseillers fiscaux qui conçoivent Fattura Facile entre la Suisse et l'Italie.",
+      keywords:
+        'equipe fattura facile, davide nava, developpeurs net open source, fiscalite suisse italie, contributeurs',
+    },
+    eyebrow: 'Initiative Ouverte et Sans But Lucratif',
+    heading: 'Les personnes derrière le projet Fattura Facile',
+    lead: "Un collectif d'ingénieurs logiciels, de spécialistes fiscaux et d'enseignants convaincus que les outils essentiels au travail ne doivent pas être soumis à des péages récurrents.",
+    regions: {
+      switzerland: 'Suisse 🇨🇭 (Canton du Tessin & Grisons)',
+      italy: 'Italie 🇮🇹 (Lombardie & Autres Régions)',
+    },
+    coreMaintainerBadge: 'Mainteneur Principal',
+    joinCta: {
+      title: "Vous souhaitez rejoindre l'équipe ou participer ?",
+      description:
+        'Nous accueillons volontiers des développeurs C#/.NET, des spécialistes frontend Astro, des conseillers fiscaux pour relire les spécifications et des traducteurs pour les langues nationales.',
+      githubBtn: 'Contribuer sur GitHub',
+      telegramBtn: 'Échanger sur Telegram',
+    },
+  },
+  scuoleSociale: {
+    seo: {
+      title: 'Écoles, Formation Pédagogique & Mission Sociale | Fattura Facile',
+      description:
+        "Projets éducatifs pour instituts techniques et écoles de commerce. Code source réel pour apprendre le .NET et logiciel gratuit pour la simulation d'entreprise.",
+      keywords:
+        'ecoles fattura facile, formation informatique net, simulation gestion commerciale gratuite, logiciel educatif facturation, social',
+    },
+    hero: {
+      badge: 'Éducation & Impact Social',
+      heading: 'Apporter le logiciel de gestion réel dans les écoles et le domaine social',
+      lead: "Fini les projets d'école simplistes et les fragments de code déconnectés de la réalité. Nous mettons à la disposition des établissements une plateforme complète, conforme aux lois et dotée d'une architecture professionnelle.",
+      ctaApply: 'Demander un Partenariat pour Votre Établissement',
+      ctaGithub: 'Explorer le Code Pédagogique',
+    },
+    technicalTrack: {
+      badge:
+        'Pour Écoles Techniques & Informatiques (Lycées Techniques / Universités / Apprentissage)',
+      title: 'Apprendre le Génie Logiciel sur une Application Réelle',
+      lead: 'Une base de code moderne bâtie sur les principes Clean Code et SOLID, idéale pour les enseignants et étudiants désireux de dépasser le cadre théorique.',
+      bullets: [
+        {
+          title: 'Clean Architecture & Modèle CQRS',
+          desc: 'Compréhension pratique du découpage entre logique métier, commandes applicatives et interfaces utilisateurs en C# .NET.',
+        },
+        {
+          title: 'Base de Données Embarquée & Transactions ACID',
+          desc: 'Maîtrise avancée de SQLite en local, indexation, contraintes relationnelles et migrations de schéma sans infrastructure serveur.',
+        },
+        {
+          title: 'Pipelines CI/CD et Exigences de Qualité',
+          desc: "Pratique concrète des workflows GitHub Actions, des revues de code SonarQube, de l'analyse statique Qodana et du packaging automatisé.",
+        },
+        {
+          title: 'Stages, Projets Pratiques et Travaux de Diplôme',
+          desc: 'Opportunité pour les étudiants de programmer des modules opérationnels et de les publier sous leur propre nom dans la distribution publique.',
+        },
+      ],
+    },
+    commercialTrack: {
+      badge: 'Pour Écoles de Commerce, Économie & Gestion Fiduciaire',
+      title: "Simulation d'Entreprise et Pratique Comptable sans Frais de Licence",
+      lead: 'Un outil opérationnel identique à celui déployé par les professionnels sur le terrain, sans coût de licence ni restriction sur le nombre de postes.',
+      bullets: [
+        {
+          title: 'Émission Réelle de Factures Électroniques (SDI)',
+          desc: "Exercices pratiques sur la génération et la vérification des fichiers XML pour l'administration fiscale italienne.",
+        },
+        {
+          title: 'QR-Facture Suisse Conforme aux Normes SIX',
+          desc: 'Création et émission de bordereaux de paiement avec QR code conformes aux normes bancaires suisses et gestion de la TVA.',
+        },
+        {
+          title: 'Salles Informatiques Libres de Droits',
+          desc: "Déployable sur tous les ordinateurs de l'établissement ou utilisable sur clé USB pour les travaux et exercices à domicile.",
+        },
+      ],
+    },
+    socialMission: {
+      badge: 'Inclusion & Accessibilité',
+      title: 'Notre Engagement Social et Éthique',
+      description:
+        'Nous sommes convaincus que les compétences numériques et la possibilité de lancer une micro-activité professionnelle doivent être accessibles à tous, sans barrière financière.',
+      points: [
+        'Soutien concret aux apprentis, jeunes diplômés et artisans qui lancent leur activité professionnelle.',
+        'Réduction de la fracture technologique pour les micro-entreprises aux moyens financiers limités.',
+        'Protection intégrale de la confidentialité des données économiques et comptables des utilisateurs.',
+      ],
+    },
+    teacherContact: {
+      title: "Vous êtes enseignant, responsable pédagogique ou directeur d'école ?",
+      lead: "Contactez-nous pour organiser la mise à disposition de kits pédagogiques, de guides pratiques et d'exercices d'application pour vos cours.",
+      btnLabel: 'Demander le Matériel Pédagogique',
+    },
+  },
+  supportoLocale: {
+    seo: {
+      title: 'Réseau de Partenaires & Support Régional (IT/CH) | Fattura Facile',
+      description:
+        "Trouvez des consultants informatiques, fiduciaires et techniciens de proximité accrédités pour l'installation, l'assistance et la formation.",
+      keywords:
+        'support local fattura facile, partenaire gestion tessin, assistance factures lombardie, conseil qr-facture sdi',
+    },
+    eyebrow: 'Proximité Géographique',
+    heading: 'Consultants, techniciens et fiduciaires à vos côtés sur le terrain',
+    lead: "Le logiciel est entièrement gratuit. Si vous avez besoin d'une installation sur mesure dans vos locaux, d'une configuration réseau ou de former votre équipe, vous pouvez vous appuyer sur des experts certifiés de votre région.",
+    regions: {
+      switzerland: 'Suisse 🇨🇭 (Canton du Tessin & Grisons)',
+      italy: 'Italie 🇮🇹 (Lombardie, Piémont & Autres Régions)',
+    },
+    partnerForm: {
+      badge: 'Réseau Professionnel Ouvert',
+      title: 'Postuler pour Devenir Partenaire ou Consultant Régional',
+      lead: 'Vous êtes technicien informatique, prestataire IT ou cabinet comptable ? Rejoignez gratuitement le répertoire des partenaires Fattura Facile et proposez vos services aux utilisateurs de votre zone.',
+      companyLabel: 'Raison Sociale ou Nom du Cabinet',
+      contactLabel: 'Personne de Contact',
+      emailLabel: 'E-mail Professionnel',
+      phoneLabel: 'Téléphone / Mobile',
+      countryLabel: 'Pays (Italie ou Suisse)',
+      regionLabel: "Région ou Canton d'Intervention",
+      servicesLabel:
+        'Services Proposés (Installation locale, Serveur/Cloud, Sauvegarde, Formation, Comptabilité)',
+      notesLabel: 'Présentation Sommaire de Votre Expérience de Terrain',
+      submitBtn: 'Envoyer ma Candidature Gratuite de Partenaire',
+    },
+  },
+  faq: {
+    seo: {
+      title: 'Foire Aux Questions (FAQ) | Fattura Facile',
+      description:
+        "Réponses détaillées sur l'usage hors ligne, la sécurité SQLite, FatturaPA, la QR-facture suisse, notre modèle gratuit et le support.",
+      keywords:
+        'faq fattura facile, questions frequentes facturation, securite sqlite factures, support gratuit fatturapa',
+    },
+    eyebrow: 'Éclaircissements & Réponses',
+    heading: 'Foire Aux Questions sur Fattura Facile',
+    lead: "Tout ce qu'il faut savoir sur la technologie, la conformité légale et le modèle de développement communautaire du projet.",
+    searchPlaceholder: 'Rechercher une réponse (ex. clé USB, sauvegarde, SDI, QR-facture)...',
+    categories: {
+      general: 'Général & Philosophie',
+      technical: 'Architecture & Données',
+      compliance: 'Normes & Fiscalité',
+      partners: 'Support & Communauté',
+    },
+    items: [
+      {
+        id: 'faq-usb',
+        category: 'technical',
+        question:
+          'Comment fonctionne la version sur clé USB ? Est-elle réellement utilisable sans installation ?',
+        answer:
+          "Oui ! Il vous suffit de télécharger le fichier d'archive (.ZIP), d'en extraire le contenu sur n'importe quelle clé USB ou disque externe et de double-cliquer sur le fichier exécutable. Le logiciel ne modifie pas le registre Windows et conserve l'ensemble des écritures dans la base SQLite locale située dans ce même dossier. Branchez-la sur un PC Windows 10 ou 11 et travaillez immédiatement.",
+      },
+      {
+        id: 'faq-backup-loss',
+        category: 'technical',
+        question: 'Que se passe-t-il si je perds ma clé USB ou si mon ordinateur tombe en panne ?',
+        answer:
+          'Comme vos données restent strictement stockées en local pour préserver votre vie privée, les sauvegardes régulières sont primordiales. Fattura Facile intègre un outil de « Sauvegarde Chiffrée » en un clic qui génère une archive sécurisée à dupliquer sur un disque externe, un NAS de bureau ou un dossier cloud synchronisé.',
+      },
+      {
+        id: 'faq-compliance-it-ch',
+        category: 'compliance',
+        question:
+          'Comment sont gérées la facturation électronique italienne et la QR-facture suisse ?',
+        answer:
+          "Pour l'Italie, le logiciel génère des fichiers XML officiels conformes au format FatturaPA pour le Système d'Échange (SDI), prêts pour l'envoi par PEC ou code destinataire. Pour la Suisse, il produit des QR-factures aux normes SIX avec QR code de paiement vérifié et application des taux légaux de TVA fédérale.",
+      },
+      {
+        id: 'faq-free-model',
+        category: 'general',
+        question:
+          'Comment le logiciel peut-il être gratuit ? Y a-t-il des frais cachés ou des limites de factures ?',
+        answer:
+          "Il n'y a aucun frais masqué, aucune période d'essai limitée et aucun plafond sur le volume de factures générées. Le projet est créé et maintenu par des spécialistes du logiciel dans un cadre bénévole et open source, avec la volonté d'offrir un outil professionnel sans barrière pécuniaire.",
+      },
+      {
+        id: 'faq-custom-requests',
+        category: 'partners',
+        question: 'Comment puis-je demander une fonctionnalité spécifique pour mon activité ?',
+        answer:
+          "Vous pouvez soumettre votre idée via le formulaire du site, nous contacter à info@fatturafacile.eu ou en parler dans le groupe Telegram. Si la fonctionnalité demandée répond à un besoin professionnel réel, nous la programmerons gratuitement pour l'intégrer aux futures versions publiques.",
+      },
+      {
+        id: 'faq-support-types',
+        category: 'partners',
+        question: 'Quelle est la différence entre le support communautaire et le support local ?',
+        answer:
+          "Le support communautaire (via GitHub et Telegram) est toujours gratuit et couvre le fonctionnement de l'application ainsi que la correction des bugs. Le support local est assuré par des professionnels indépendants référencés (consultants IT, fiduciaires) pour des prestations personnalisées sur place telles que l'installation réseau, le paramétrage matériel ou la formation des équipes.",
+      },
+    ],
+  },
+  sponsor: {
+    seo: {
+      title: 'Sponsors & Soutien au Projet | Fattura Facile',
+      description:
+        "Soutenez le développement indépendant de Fattura Facile. Découvrez notre gestion transparente dédiée aux certificats de signature et à l'infrastructure.",
+      keywords:
+        'sponsor fattura facile, dons open source, certificat signature windows, soutenir logiciel libre',
+    },
+    eyebrow: 'Transparence & Pérennité',
+    heading: 'Aidez-nous à préserver un logiciel libre, indépendant et sécurisé',
+    lead: 'Fattura Facile ne commercialise aucune donnée et ne facture aucun abonnement. Les dons et parrainages servent exclusivement à couvrir les frais techniques obligatoires pour garantir la sécurité et la continuité du service.',
+    transparencyTitle: 'Transparence Totale sur les Frais Techniques',
+    transparencyText:
+      'Chaque contribution reçue via GitHub Sponsors ou nos plateformes de soutien est affectée à des postes de dépenses précis et justifiés :',
+    costsList: [
+      {
+        item: 'Certificat de Signature Numérique de Code (Code Signing)',
+        description:
+          "Indispensable pour éviter les alertes de sécurité Windows SmartScreen lors du premier lancement de l'application sur les ordinateurs des utilisateurs.",
+      },
+      {
+        item: 'Infrastructure de Tests et Serveurs CI/CD',
+        description:
+          "Serveurs d'intégration continue pour l'exécution des tests automatisés, l'analyse de sécurité SonarQube et la publication des paquets d'installation.",
+      },
+      {
+        item: 'Maintenance des Noms de Domaine et Documentation',
+        description:
+          'Frais de renouvellement des domaines officiels (.eu, .ch) et hébergement des ressources documentaires pour les écoles et utilisateurs.',
+      },
+    ],
+    tiers: {
+      individualTitle: 'Bienfaiteur Individuel',
+      individualDesc:
+        'Un café symbolique pour encourager les heures de programmation investies dans le développement ouvert du logiciel.',
+      corporateTitle: 'Entreprise Mécène',
+      corporateDesc:
+        "Mise en avant du logo de votre société avec lien direct sur la page d'accueil, dans le pied de page et sur le dépôt GitHub officiel.",
+      technicalTitle: 'Partenaire Technique',
+      technicalDesc:
+        "Mise à disposition directe de ressources serveurs, de connectivité, de certificats de sécurité ou d'outils de développement.",
+    },
+    actions: {
+      kofiBtn: 'Offrir un Soutien sur Ko-fi',
+      githubSponsorsBtn: 'Devenir Sponsor sur GitHub',
+    },
+  },
+  storia: {
+    seo: {
+      title: 'Notre Histoire & Origine du Projet | Fattura Facile',
+      description:
+        "L'histoire de Fattura Facile : de l'écoute des difficultés des artisans face aux logiciels complexes à la création d'une solution indépendante et sans enfermement.",
+      keywords:
+        'histoire fattura facile, origine logiciel factures, alternative abonnement logiciel, informatique ethique tessin lombardie',
+    },
+    eyebrow: 'Origines & Vision',
+    heading: "De l'expérience du terrain à l'émancipation du logiciel libre",
+    lead: "Fattura Facile n'est pas née dans une salle de réunion pour maximiser des revenus récurrents, mais du constat direct des difficultés quotidiennes des plombiers, électriciens et artisans confrontés à des outils logiciels trop lourds, complexes et chers.",
+    problemTitle: "L'Écueil des ERP Démesurés",
+    problemText:
+      "Ces dernières années, l'industrie logicielle a forcé la transition vers des modèles SaaS à abonnement mensuel systématique. Si ce schéma se justifie pour de grandes chaînes logistiques, il représente pour les artisans et petits indépendants un coût disproportionné, des interfaces encombrées de boutons inutiles et l'inquiétude permanente de perdre l'accès à ses historiques sans connexion ou en cas de résiliation.",
+    philosophyTitle: "Nos Quatre Piliers d'Ingénierie",
+    philosophyBullets: [
+      {
+        title: 'Simplicité Radicale',
+        desc: 'Un parcours limpide qui va droit au but : informations client, désignation des prestations, calcul des taxes et génération immédiate au format PDF.',
+      },
+      {
+        title: 'Souveraineté des Données Personnelles',
+        desc: 'La base de données tient dans un fichier unique entre vos mains. Aucun profilage publicitaire, aucune télémétrie et aucun stockage sur des serveurs tiers non contrôlés.',
+      },
+      {
+        title: 'Conception Transfrontalière',
+        desc: "Pensé dès les premières lignes de code pour l'espace frontalier italo-suisse, avec une prise en charge native de la norme SDI italienne et des QR-factures suisses.",
+      },
+      {
+        title: 'Contribution au Bien Commun',
+        desc: "Le code source et les exécutables restent libres de droits afin que les apprentis et nouveaux créateurs d'entreprise puissent débuter sans dette d'exploitation logicielle.",
+      },
+    ],
+    timeline: [
+      {
+        year: '2025',
+        title: 'Premières Ébauches sur le Terrain',
+        desc: "Mise au point d'un premier prototype portable en C# avec base SQLite pour répondre au besoin d'émettre rapidement des factures sur clé USB en déplacement.",
+      },
+      {
+        year: '2026',
+        title: 'Intégration Complète des Deux Normes Fiscales',
+        desc: 'Développement des modules officiels pour la facturation électronique italienne FatturaPA (SDI) et la QR-facture suisse SIX avec calcul précis des taux de TVA.',
+      },
+      {
+        year: '2026',
+        title: 'Publication Open Source, Portail Astro et Partenariats Écoles',
+        desc: 'Ouverture publique du dépôt sur GitHub, lancement des collaborations avec les écoles professionnelles et création du réseau de partenaires locaux de proximité.',
+      },
+    ],
+  },
+  privacy: {
+    seo: {
+      title: 'Politique de Confidentialité & Conformité (RGPD & nLPD) | Fattura Facile',
+      description:
+        'Notice complète sur la protection des données personnelles : conformité RGPD UE 2016/679, nLPD suisse et architecture Privacy by Design avec SQLite local.',
+      keywords:
+        'confidentialite fattura facile, rgpd logiciel facturation, nlpd suisse factures, sqlite privacy by design, zero telemetrie facturation',
+    },
+    eyebrow: 'Cadre Réglementaire & Protection des Données',
+    headingPart1: 'Politique de Confidentialité &',
+    headingPart2: 'Conformité Légale',
+    subtitle:
+      'Règlement Général sur la Protection des Données UE (RGPD 2016/679) et nouvelle Loi fédérale suisse sur la protection des données (nLPD).',
+    calloutTitle: "Principe d'Ingénierie Fondamental :",
+    calloutText:
+      "Dans Fattura Facile, la confidentialité des données comptables n'est pas une formalité administrative, mais le pilier architectural sur lequel repose l'ensemble du logiciel.",
+    section1Title: '1. Architecture Desktop Autonome (SQLite Local)',
+    section1Intro:
+      "Lors de l'utilisation de l'application portable Fattura Facile Desktop (distribuée sous forme d'exécutable autonome sans installateur système) :",
+    section1Bullets: [
+      {
+        title: "Zéro Transmission vers l'Extérieur",
+        desc: "Toutes les fiches clients, factures, montants, taux de TVA, coordonnées bancaires IBAN et numéros IDE/TVA résident exclusivement dans le fichier SQLite local enregistré dans le dossier de l'application ou sur la clé USB.",
+      },
+      {
+        title: 'Absence de Télémétrie et de Pistage',
+        desc: "Le logiciel ne comporte aucun traceur comportemental, outil d'analyse en arrière-plan ni appel API vers des serveurs de Fattura Facile.",
+      },
+      {
+        title: 'Souveraineté du Responsable de Traitement',
+        desc: "L'utilisateur agit en tant qu'unique Responsable du Traitement (Art. 4 RGPD). Aucun transfert transfrontalier n'a lieu et aucun contrat de sous-traitance (DPA) avec Fattura Facile n'est requis.",
+      },
+    ],
+    section2Title: '2. Édition Cloud Auto-Hébergée (Infrastructure du Client)',
+    section2Intro:
+      "Lors du déploiement de la version multi-utilisateurs sur un serveur local ou un serveur privé virtuel (VPS) :",
+    section2Bullets: [
+      {
+        title: "Propriété Directe de l'Infrastructure",
+        desc: "Les conteneurs Docker et les bases de données relationnelles (PostgreSQL ou Microsoft SQL Server) sont installés sur le matériel ou l'hébergement cloud relevant directement du client.",
+      },
+      {
+        title: 'Zéro Accès aux Données',
+        desc: "Les développeurs de Fattura Facile ne détiennent aucune clé d'accès, identifiant administrateur ou visibilité sur les bases de données du client.",
+      },
+      {
+        title: 'Isolation Juridique',
+        desc: "Le respect des mesures de sécurité techniques et organisationnelles (Art. 32 RGPD) et des dispositions de la nLPD suisse demeure intégralement sous le contrôle de l'entreprise utilisatrice.",
+      },
+    ],
+    section3Title: '3. Droits des Personnes Concernées & Conservation Légale',
+    section3Intro:
+      'Conformément aux articles 15 à 22 du Règlement UE 2016/679 (RGPD) et aux articles 25 à 29 de la Loi fédérale sur la protection des données (nLPD) :',
+    section3Bullets: [
+      {
+        title: "Droit d'Accès et de Portabilité",
+        desc: "La base de données étant au format standard ouvert SQLite, le responsable peut extraire ou exporter l'intégralité de son archive sans dépendre d'outils propriétaires.",
+      },
+      {
+        title: 'Rectification et Effacement',
+        desc: "Chaque fiche client ou brouillon de devis peut être rectifié ou supprimé directement depuis l'interface utilisateur en temps réel.",
+      },
+      {
+        title: 'Conservation Fiscale Réglementaire',
+        desc: "L'archivage légal des factures électroniques XML transmises au SDI (Italie) ou des pièces comptables suisses (conservation décennale selon l'art. 958f CO) s'effectue selon les canaux officiels ou supports certifiés.",
+      },
+    ],
+    section4Title: '4. Contact et Responsabilité',
+    section4Text:
+      "Pour toute question relative à l'architecture de sécurité ou pour proposer des améliorations techniques en matière de protection des données :",
+    contactLabel: 'E-mail :',
+  },
+};

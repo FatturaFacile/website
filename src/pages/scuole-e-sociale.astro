@@ -1,0 +1,678 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SCHOOLS_DATA, SCHOOL_TYPE_LABELS, COLLABORATION_PROGRAM_LABELS } from '../data/schools';
+
+const schemaGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'EducationalOrganization',
+      '@id': 'https://fatturafacile.eu/scuole-e-sociale/#organization',
+      name: 'Fattura Facile Open Educational & Social Initiative',
+      url: 'https://fatturafacile.eu/scuole-e-sociale/',
+      description:
+        'Iniziativa aperta per portare il software gestionale reale, open source e gratuito nelle scuole tecniche e commerciali di Italia e Svizzera.',
+      sameAs: ['https://github.com/FatturaFacile'],
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        description:
+          'Licenza accademica 100% gratuita per studenti, docenti e istituti scolastici.',
+      },
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://fatturafacile.eu/scuole-e-sociale/#track-technical',
+      name: 'Laboratorio Software Reale (.NET, Clean Architecture, SQLite)',
+      description:
+        'Percorso formativo per istituti tecnici: CQRS, pattern MVVM, SQLite embedded, pipeline CI/CD GitHub Actions e controlli qualità SonarQube/Qodana.',
+      provider: {
+        '@id': 'https://fatturafacile.eu/scuole-e-sociale/#organization',
+      },
+      isAccessibleForFree: true,
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://fatturafacile.eu/scuole-e-sociale/#track-commercial',
+      name: "Simulazione d'Impresa & Fatturazione Pratica (SDI & QR-Bill)",
+      description:
+        'Percorso formativo per istituti commerciali ed economici: preventivazione, fattura elettronica XML SDI (Italia), QR-Bill SIX (Svizzera) e contabilità pratica senza costi.',
+      provider: {
+        '@id': 'https://fatturafacile.eu/scuole-e-sociale/#organization',
+      },
+      isAccessibleForFree: true,
+    },
+    ...SCHOOLS_DATA.map((school) => ({
+      '@type': 'EducationalOrganization',
+      '@id': `https://fatturafacile.eu/scuole-e-sociale/#${school.id}`,
+      name: school.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: school.location.city,
+        addressRegion: school.location.regionOrCanton,
+        addressCountry: school.location.country,
+      },
+      ...(school.contact.website ? { url: school.contact.website } : {}),
+      description: school.description,
+    })),
+  ],
+};
+
+const mailtoSubject = encodeURIComponent('[Collaborazione Didattica] Nome Istituto');
+const mailtoBody = encodeURIComponent(
+  'Richiesta di attivazione percorso didattico gratuito con Fattura Facile:\n\n' +
+    'Istituto Scolastico:\n' +
+    'Città / Cantone o Regione:\n' +
+    'Docente / Referente:\n' +
+    'Recapito Email / Telefono:\n' +
+    'Indirizzo di studio (es. Informatica / Amministrazione Finanza Marketing / CFP):\n' +
+    'Numero indicativo studenti:\n' +
+    "Percorso di interesse (Laboratorio Software / Simulazione d'Impresa / PCTO / Tesi):\n" +
+    "Note ed esigenze dell'istituto:\n\n" +
+    '---\nInviato da https://fatturafacile.eu/scuole-e-sociale/',
+);
+const mailtoLink = `mailto:scuole@fatturafacile.eu?subject=${mailtoSubject}&body=${mailtoBody}`;
+---
+
+<BaseLayout
+  title="Scuole, Formazione & Missione Sociale | Fattura Facile"
+  description="Fattura Facile per le scuole tecniche e commerciali in Italia e Svizzera: software gestionale reale e gratuito per imparare lo sviluppo .NET e la contabilità pratica."
+  schema={schemaGraph}
+>
+  <!-- 1. Hero Section -->
+  <section class="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-b from-teal-50/70 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60 mb-6 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+        Software Libero per le Nuove Generazioni
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight max-w-5xl mx-auto">
+        Portiamo il software gestionale reale
+        <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400">
+          nelle scuole e nel sociale
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Basta con gli esempi giocattolo. Fattura Facile è un progetto aperto, reale e conforme alle
+        normative (Italia 🇮🇹 e Svizzera 🇨🇭) che mettiamo gratuitamente a disposizione di studenti,
+        docenti e istituti.
+      </p>
+
+      <!-- Quick Action CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#contatto-scuole"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-bold text-white bg-teal-600 hover:bg-teal-500 dark:bg-teal-600 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+            ></path>
+          </svg>
+          <span>Richiedi Collaborazione Scolastica</span>
+        </a>
+
+        <a
+          href="https://github.com/FatturaFacile"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow transition-all duration-200"
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            ></path>
+          </svg>
+          <span>Esplora il Codice su GitHub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Dual Educational Tracks (Two-Column Comparison Grid) -->
+  <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+          Due Percorsi Formativi Distinti
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
+          Pensato per Ingegneri del Software e per Esperti Contabili
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+          Che si tratti di analizzare classi in C# o di simulare la registrazione di una fattura con
+          imposta sul valore aggiunto, offriamo risorse verticali per ogni indirizzo scolastico.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Track 1: Istituti Tecnici & Informatici -->
+        <div class="flex flex-col justify-between bg-slate-50/80 dark:bg-slate-900/70 border-2 border-teal-500/30 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-800">
+                Track A: Informatica & Sistemi
+              </span>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                ITIS • CFP • SUP • Ingegneria
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4">
+              Imparare lo Sviluppo Software su un'Applicazione Reale
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+              Troppo spesso gli studenti affrontano solo progetti giocattolo privi di complessità
+              reale. Fattura Facile è una piattaforma professionale completa, open-source e
+              strutturata secondo i moderni standard di ingegneria del software.
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                  Clean Architecture & SOLID
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Separazione netta dei livelli Domain, Application, Infrastructure e Presentation
+                  (WPF nativo in C# .NET) con Dependency Injection e pattern CQRS pratico.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                  Database Locale & Sovranità dei Dati
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Gestione transazioni ACID con SQLite embedded, migrazioni dello schema e
+                  isolamento completo dei file senza dipendere da server esterni.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                  CI/CD & Code Quality
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Automazione dei test con GitHub Actions, static analysis con SonarQube / JetBrains
+                  Qodana e conformità least-privilege token nei workflow.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                  Tesi & Percorsi PCTO Riconosciuti
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Possibilità di sviluppare plugin, esportatori o test automatici vedendo il proprio
+                  codice pubblicato e rilasciato con menzione personale nella release note
+                  ufficiale.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <a
+              href="https://github.com/FatturaFacile"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              <span>Consulta la documentazione architetturale su GitHub</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 2: Istituti Commerciali, Economici & Aziendali -->
+        <div class="flex flex-col justify-between bg-slate-50/80 dark:bg-slate-900/70 border-2 border-emerald-500/30 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+                Track B: Economia & Pratica Commerciale
+              </span>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                ITE • Ragioneria • AFM • Fiduciari AFC
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-4">
+              Simulazione d'Impresa e Contabilità Senza Costi di Licenza
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+              Gli istituti scolastici non devono essere costretti a spendere migliaia di euro
+              all'anno per complessi ERP aziendali. Fattura Facile consente a ogni allievo di
+              gestire un'impresa simulata completa dal proprio banco.
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Fattura Elettronica Vera (Italia SDI)
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Generazione e verifica dei file XML conformi al tracciato FatturaPA v1.2
+                  dell'Agenzia delle Entrate, gestione del bollo virtuale per forfettari e codici
+                  destinatario a 7 caratteri.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  QR-Bill Svizzera Standard SIX
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Emissione di polizze con croce svizzera centrata, coordinate bancarie QR-IBAN,
+                  riferimenti strutturati e aliquote IVA federali elvetiche (8.1%, 2.6%, 3.8%).
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Zero Costi per l'Istituto & Portabilità Totale
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Nessuna installazione sui PC d'aula: il programma gira direttamente da chiavetta
+                  USB. Ogni studente salva i suoi dati e continua le simulazioni a casa su PC
+                  Windows.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+                <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white text-sm mb-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Flusso Completo: dal Preventivo all'Incasso
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-4">
+                  Studio del ciclo attivo aziendale: bozza, approvazione cliente, conversione in
+                  fattura numerata sequenzialmente e monitoraggio stato dei pagamenti.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <a
+              href="#contatto-scuole"
+              class="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
+            >
+              <span>Richiedi il pacchetto per il tuo laboratorio commerciale</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Participating Schools & Pilot Projects Showcase -->
+  <section class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+            Rete Accademica & Territoriale
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
+            Istituti & Progetti Pilota Attivi
+          </h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            Gli istituti che collaborano con Fattura Facile tra il Canton Ticino e il Nord Italia.
+          </p>
+        </div>
+
+        <!-- Filter Pills for Switzerland & Italy -->
+        <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shrink-0">
+          <button
+            type="button"
+            class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-teal-600 text-slate-900 dark:text-white shadow-sm cursor-pointer"
+            data-filter="ALL"
+          >
+            Tutti gli Istituti
+          </button>
+          <button
+            type="button"
+            class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white cursor-pointer"
+            data-filter="CH"
+          >
+            🇨🇭 Svizzera
+          </button>
+          <button
+            type="button"
+            class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white cursor-pointer"
+            data-filter="IT"
+          >
+            🇮🇹 Italia
+          </button>
+        </div>
+      </div>
+
+      <!-- Schools Grid -->
+      <div id="schools-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {SCHOOLS_DATA.map((school) => {
+          const typeMeta = SCHOOL_TYPE_LABELS[school.type];
+          return (
+            <article
+              id={school.id}
+              class="school-card flex flex-col justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all duration-200"
+              data-country={school.location.country}
+            >
+              <div>
+                <!-- Header: Name, Country Badge, School Type -->
+                <div class="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <span
+                      class={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold border mb-2 ${typeMeta.badgeClass}`}
+                    >
+                      {typeMeta.label}
+                    </span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug">
+                      {school.name}
+                    </h3>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5">
+                      <svg
+                        class="w-3.5 h-3.5 text-slate-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        ></path>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
+                      </svg>
+                      <span>
+                        {school.location.city} • {school.location.regionOrCanton}
+                      </span>
+                    </div>
+                  </div>
+
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shrink-0">
+                    {school.location.country === 'CH' ? '🇨🇭 CH' : '🇮🇹 IT'}
+                  </span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  {school.description}
+                </p>
+
+                <!-- Active Programs List -->
+                <div class="mb-6">
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    Programmi & Metodologie Attive:
+                  </div>
+                  <div class="flex flex-wrap gap-2">
+                    {school.programs.map((programKey) => {
+                      const progMeta = COLLABORATION_PROGRAM_LABELS[programKey];
+                      return (
+                        <span
+                          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/80"
+                          title={progMeta.summary}
+                        >
+                          <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                          {progMeta.label}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer: Student Counter & Contact Department -->
+              <div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                  <svg
+                    class="w-4 h-4 text-emerald-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    ></path>
+                  </svg>
+                  <span>
+                    <strong class="text-slate-900 dark:text-white font-bold">
+                      {school.studentsInvolvedCount ?? 30}+
+                    </strong>{' '}
+                    studenti coinvolti
+                  </span>
+                </div>
+
+                {school.contact.website && (
+                  <a
+                    href={school.contact.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-teal-600 dark:text-teal-400 font-bold hover:underline flex items-center gap-1"
+                  >
+                    <span>Sito Istituto</span>
+                    <span>&rarr;</span>
+                  </a>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Social Mission & Digital Inclusion Pillars -->
+  <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+          Valori Fondamentali
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
+          La Nostra Missione Sociale & Inclusione Digitale
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+          La digitalizzazione non deve diventare una tassa occulta. Vogliamo garantire a chiunque
+          inizi un'attività autonoma l'accesso a strumenti professionali e sicuri.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pillar 1: Nuove Generazioni di Artigiani -->
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            Supporto ai Giovani Artigiani
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Elettricisti, idraulici, posatori e manutentori appena usciti dalle scuole professionali
+            devono concentrarsi sul lavoro sul campo. Offriamo loro uno strumento completo per
+            partire subito senza debiti né canoni software.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Abbattimento Barriere Ricorrenti -->
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            Zero Canoni Ricorrenti (No SaaS Lock-in)
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            I modelli di abbonamento mensile estraggono valore continuo dalle micro-attività e ne
+            ostacolano la crescita. Con Fattura Facile il software è gratuito al 100% per sempre,
+            senza trappole "freemium".
+          </p>
+        </div>
+
+        <!-- Pillar 3: Privacy by Design Assoluta -->
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            Sovranità & Zero Telemetria
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            I dati fiscali e i clienti non devono mai essere profilati o ceduti a server remoti. La
+            persistenza SQLite garantisce che ogni documento rimanga solo e soltanto sul dispositivo
+            dell'utente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Teacher Onboarding & Application Section (#contatto-scuole) -->
+  <section id="contatto-scuole" class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 mb-4">
+          <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+          Area Riservata a Docenti & Coordinatori
+        </div>
+
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+          Sei un docente, coordinatore o dirigente scolastico?
+        </h3>
+        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+          Forniamo supporto gratuito ai docenti per predisporre pacchetti didattici, linee guida e
+          tracce per esercitazioni. Possiamo concordare sessioni di presentazione online o in aula e
+          fornire guide per i laboratori di informatica e commerciale.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={mailtoLink}
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-2xl text-sm sm:text-base shadow-lg hover:shadow-xl transition-all cursor-pointer"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <span>Invia Email per Collaborazione Didattica</span>
+          </a>
+
+          <a
+            href="https://t.me/+sRauQINBDFQ5NjU0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#229ED9] hover:bg-[#1E88E5] text-white font-bold rounded-2xl text-sm sm:text-base shadow-md transition-all cursor-pointer"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.536-.196 1.006.128.832.92z"></path>
+            </svg>
+            <span>Gruppo Telegram per Docenti & Devs</span>
+          </a>
+        </div>
+
+        <p class="mt-6 text-xs text-slate-500 dark:text-slate-400">
+          Rispondiamo direttamente con il nostro team didattico entro 24-48 ore. Nessun costo di
+          adesione.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.school-filter-btn');
+    const schoolCards = document.querySelectorAll('.school-card');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetFilter = btn.getAttribute('data-filter');
+
+        // Reset styling for all buttons
+        filterButtons.forEach((b) => {
+          b.classList.remove(
+            'bg-white',
+            'dark:bg-teal-600',
+            'text-slate-900',
+            'dark:text-white',
+            'shadow-sm',
+          );
+          b.classList.add('text-slate-600', 'dark:text-slate-300');
+        });
+
+        // Set active style
+        btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+        btn.classList.add(
+          'bg-white',
+          'dark:bg-teal-600',
+          'text-slate-900',
+          'dark:text-white',
+          'shadow-sm',
+        );
+
+        // Filter cards
+        schoolCards.forEach((card) => {
+          const cardCountry = card.getAttribute('data-country');
+          if (targetFilter === 'ALL' || cardCountry === targetFilter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>

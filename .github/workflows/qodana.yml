@@ -8,13 +8,16 @@ on:
     branches:
       - main
 
-# Cancel redundant in-flight analysis runs for the same branch or PR
+# Best practice SonarQube: revoca permessi impliciti a livello globale
+permissions: {}
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   qodana:
+    name: Qodana Code Quality Scan
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -24,11 +27,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Qodana Scan
-        uses: JetBrains/qodana-action@v2026.3
+        uses: JetBrains/qodana-action@v2026.2
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-10-19
 
 ### Added
+
 - Initial public release of the official institutional landing page (`fatturafacile.eu`).
 - Multi-language client-side internationalization (`i18n`) supporting English (`EN`), Italian (`IT`), French (`FR`), and German (`DE`) via `js/translations.js` and `js/main.js`.
 - Adaptive Dark and Light theme switcher with automatic OS preference detection (`prefers-color-scheme`) and `localStorage` persistence.

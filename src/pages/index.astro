@@ -1,0 +1,510 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Fattura Facile',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Windows 10, Windows 11, Linux, Docker',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+  },
+  description:
+    'Software di fatturazione semplice, rapido e offline con SQLite per artigiani e PMI. Supporta FatturaPA (SDI) e QR-Bill svizzera.',
+  url: 'https://fatturafacile.eu/',
+  author: {
+    '@type': 'Organization',
+    name: 'Fattura Facile Teams',
+  },
+};
+---
+
+<BaseLayout
+  title="Fattura Facile | Semplice, Veloce, Offline e Cloud per Artigiani e PMI"
+  description="Software di fatturazione gratuito e offline con SQLite o Cloud self-hosted. Conforme a FatturaPA SDI per l'Italia e QR-Bill SIX per la Svizzera."
+  schema={softwareSchema}
+>
+  <!-- Hero Section -->
+  <section
+    id="hero"
+    class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-slate-100/70 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200/60 dark:border-slate-800"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Top Market Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span data-i18n="hero_badge_geo">
+            Pronto per Italia 🇮🇹 (FatturaPA / SDI) & Svizzera 🇨🇭 (QR-Bill)
+          </span>
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
+          <svg
+            class="w-3.5 h-3.5 text-teal-600 dark:text-teal-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 002 0V7z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span data-i18n="hero_badge_privacy">Privacy Compliant: GDPR UE & nLPD Svizzera</span>
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+          <span data-i18n="hero_title_part1">Fatturazione semplice, veloce e</span>
+          <br class="hidden sm:inline" />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400"
+            data-i18n="hero_title_part2"
+          >
+            sotto il tuo totale controllo.
+          </span>
+        </h1>
+        <p
+          class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed"
+          data-i18n="hero_subtitle"
+        >
+          Basta software contabili sovradimensionati e lenti. Emetti fatture in 30 secondi dal tuo
+          PC o chiavetta USB con SQLite, 100% gratuito e senza abbonamenti, oppure sfrutta la
+          versione Cloud ospitata sul tuo server.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#download"
+            title="Scarica Versione Desktop (Gratis)"
+            aria-label="Scarica Versione Desktop (Gratis)"
+            data-i18n-title="hero_cta_primary_title"
+            data-i18n-aria-label="hero_cta_primary_title"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <svg
+              class="w-5 h-5 text-teal-400 dark:text-slate-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              ></path>
+            </svg>
+            <span data-i18n="hero_cta_primary">Scarica Versione Desktop (Gratis)</span>
+          </a>
+          <a
+            href="/versioni/"
+            title="Scopri la Soluzione Cloud"
+            aria-label="Scopri la Soluzione Cloud"
+            data-i18n-title="hero_cta_secondary_title"
+            data-i18n-aria-label="hero_cta_secondary_title"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow transition-all duration-200"
+          >
+            <svg
+              class="w-5 h-5 text-teal-600 dark:text-teal-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"
+              ></path>
+            </svg>
+            <span data-i18n="hero_cta_secondary">Scopri la Soluzione Cloud</span>
+          </a>
+        </div>
+
+        <!-- Pillar highlights -->
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+          <div class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+            <div class="p-2 bg-emerald-50 dark:bg-emerald-950/60 rounded-xl text-emerald-600 dark:text-emerald-400 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h2
+                class="text-xs font-bold text-slate-900 dark:text-white uppercase"
+                data-i18n="p1_title"
+              >
+                Zero Abbonamento
+              </h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" data-i18n="p1_desc">
+                Desktop free per sempre
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+            <div class="p-2 bg-teal-50 dark:bg-teal-950/60 rounded-xl text-teal-600 dark:text-teal-400 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h2
+                class="text-xs font-bold text-slate-900 dark:text-white uppercase"
+                data-i18n="p2_title"
+              >
+                Portabile su USB
+              </h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" data-i18n="p2_desc">
+                Nessuna installazione
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+            <div class="p-2 bg-cyan-50 dark:bg-cyan-950/60 rounded-xl text-cyan-600 dark:text-cyan-400 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 4.243a9 9 0 01-12.728 0m0 0l2.829-2.829m-2.829 2.829L3 21"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h2
+                class="text-xs font-bold text-slate-900 dark:text-white uppercase"
+                data-i18n="p3_title"
+              >
+                100% Offline
+              </h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" data-i18n="p3_desc">
+                Funziona senza internet
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-3">
+            <div class="p-2 bg-slate-100 dark:bg-slate-700/60 rounded-xl text-slate-700 dark:text-slate-300 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h2
+                class="text-xs font-bold text-slate-900 dark:text-white uppercase"
+                data-i18n="p4_title"
+              >
+                I Tuoi Dati Sono Tuoi
+              </h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" data-i18n="p4_desc">
+                Zero server intermediari
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy & Value Summary Preview -->
+  <section class="py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2
+          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+          data-i18n="why_badge"
+        >
+          La filosofia di Fattura Facile
+        </h2>
+        <p
+          class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight"
+          data-i18n="why_heading"
+        >
+          Non un ERP complicato da 500 bottoni, ma il tuo strumento quotidiano
+        </p>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="why_sub">
+          Idraulici, elettricisti, installatori, giardinieri e liberi professionisti emettono in
+          media 10-20 documenti al mese. Non hanno bisogno di gestire una supply chain complessa:
+          hanno solo bisogno di farsi pagare puntuali.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center mb-6 shadow-md shadow-teal-600/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="feat1_title">
+            Preventivo in 1 minuto, Fattura in 1 click
+          </h3>
+          <p
+            class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            data-i18n="feat1_desc"
+          >
+            Compila il preventivo mentre sei ancora dal cliente. Quando approvato, basta un solo
+            click per convertirlo in fattura con numerazione automatica.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-slate-900 dark:bg-teal-500 text-white dark:text-slate-950 flex items-center justify-center mb-6 shadow-md shadow-slate-900/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="feat2_title">
+            Dual Market: Italia 🇮🇹 & Svizzera 🇨🇭
+          </h3>
+          <p
+            class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            data-i18n="feat2_desc"
+          >
+            Supporto all'XML FatturaPA per il Sistema di Interscambio (SDI) italiano con PEC o
+            Codice Destinatario, e modulo svizzero per l'emissione istantanea di QR-Bill con codice
+            QR conforme e calcolo IVA CH.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 hover:border-teal-500/50 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6 shadow-md shadow-emerald-600/20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="feat3_title">
+            Backup Portatile Immediato
+          </h3>
+          <p
+            class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            data-i18n="feat3_desc"
+          >
+            Basta un tasto per creare un archivio ZIP crittografato su chiavetta secondaria, NAS
+            locale o cartella cloud. Zero rischio di perdere dati se cambi PC.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="/perche/"
+          class="inline-flex items-center gap-2 text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+        >
+          Approfondisci la nostra filosofia progettuale &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Versions Overview Link -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2
+        class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+        data-i18n="versions_badge"
+      >
+        La Libertà di Scegliere
+      </h2>
+      <p
+        class="mt-2 text-3xl font-extrabold text-slate-900 dark:text-white"
+        data-i18n="versions_heading"
+      >
+        Due motori, 100% gratuiti per tutti
+      </p>
+      <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="versions_sub">
+        Nessun canone SaaS da versare a noi. Lavori in totale autonomia: in locale sulla tua
+        scrivania oppure sul tuo server privato.
+      </p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-6">
+        <a
+          href="/versioni/"
+          class="px-6 py-3.5 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold rounded-2xl transition-all shadow-sm"
+        >
+          Confronta Desktop vs Cloud Self-Hosted &rarr;
+        </a>
+        <a
+          href="/funzionalita/"
+          class="px-6 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold rounded-2xl transition-all"
+        >
+          Esplora Dettaglio FatturaPA & QR-Bill &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Support & Schools Call-out -->
+  <section class="py-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Supporto Locale -->
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 mb-4">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Assistenza sul Territorio
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+              Supporto Locale in Canton Ticino, Lombardia e Piemonte
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Hai bisogno di configurare la rete aziendale, predisporre i backup su NAS o
+              raccordarti con il tuo commercialista/fiduciario? Trova tecnici e fiduciarie
+              accreditati vicino a te.
+            </p>
+          </div>
+          <div>
+            <a
+              href="/supporto-locale/"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              <span>Consulta la Directory Partner o Candidati</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scuole & Sociale -->
+        <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60 mb-4">
+              <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+              Didattica & Impatto Sociale
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+              Software Libero per Istituti Tecnici e Nuove Partite IVA
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Codice sorgente C# .NET e SQLite per insegnare Clean Architecture a scuola, laboratori
+              di ragioneria a costo zero ed eliminazione delle barriere digitali per neodiplomati.
+            </p>
+          </div>
+          <div>
+            <a
+              href="/scuole-e-sociale/"
+              class="inline-flex items-center gap-2 text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              <span>Scopri il Programma per le Scuole</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section Anchor -->
+  <section
+    id="download"
+    class="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800"
+  >
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <span
+        class="px-4 py-1.5 rounded-full text-xs font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30"
+        data-i18n="dl_badge"
+      >
+        Download Immediato
+      </span>
+      <h2 class="mt-4 text-3xl sm:text-5xl font-black tracking-tight" data-i18n="dl_title">
+        Inizia a fatturare in modo semplice oggi stesso
+      </h2>
+      <p class="mt-4 text-slate-300 max-w-2xl mx-auto" data-i18n="dl_sub">
+        Scarica il pacchetto portabile Windows gratuito. Nessuna carta di credito richiesta, nessuna
+        registrazione account necessaria.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://github.com/FatturaFacile/desktop/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Scarica Release v1.0 da GitHub"
+          aria-label="Scarica Release v1.0 da GitHub"
+          data-i18n-title="dl_btn_github_title"
+          data-i18n-aria-label="dl_btn_github_title"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold rounded-2xl shadow-xl transition-all"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            ></path>
+          </svg>
+          <span data-i18n="dl_btn_github">Scarica Release v1.0 (GitHub)</span>
+        </a>
+
+        <button
+          onclick="window.openPrivacyModal()"
+          title="Consulta Scheda Privacy & Conformità"
+          aria-label="Consulta Scheda Privacy & Conformità"
+          data-i18n-title="dl_btn_compliance_title"
+          data-i18n-aria-label="dl_btn_compliance_title"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-2xl transition-colors"
+        >
+          <svg
+            class="w-5 h-5 text-emerald-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
+          </svg>
+          <span data-i18n="dl_btn_compliance">Consulta Scheda Privacy & Conformità</span>
+        </button>
+      </div>
+
+      <div class="mt-8 text-xs text-slate-400 flex flex-wrap justify-center gap-6">
+        <span data-i18n="dl_feat_win">✓ Compatibile con Windows 10 e Windows 11</span>
+        <span data-i18n="dl_feat_runtime">✓ Richiede runtime .NET 8 Desktop</span>
+        <span data-i18n="dl_feat_portable">✓ Codice Trasparente & Portabile</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

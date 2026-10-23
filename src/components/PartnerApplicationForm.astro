@@ -1,0 +1,295 @@
+---
+import { SERVICE_LABELS, type ServiceCapability } from '../data/partners';
+
+const serviceOptions: ServiceCapability[] = [
+  'on_site_setup',
+  'network_cloud_setup',
+  'backup_strategy',
+  'staff_training',
+  'tax_accounting_sync',
+  'custom_integration',
+];
+---
+
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
+  <div class="max-w-2xl mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 mb-3">
+      <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+      Candidatura Aperta & Gratuita
+    </div>
+    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+      Diventa Partner Locale Riconosciuto
+    </h3>
+    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+      Sei un tecnico informatico, un sistemista o una fiduciaria/commercialista in Italia o
+      Svizzera? Unisciti alla nostra rete territoriale: offri supporto sul campo e servizi a valore
+      aggiunto alle attività della tua zona.
+    </p>
+  </div>
+
+  <form id="partner-application-form" class="space-y-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Nome Azienda / Professionista -->
+      <div>
+        <label
+          for="companyName"
+          class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+        >
+          Ragione Sociale o Ditta <span class="text-teal-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="companyName"
+          name="companyName"
+          required
+          placeholder="es. Studio Informatico Ticino Sagl"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        />
+      </div>
+
+      <!-- Referente -->
+      <div>
+        <label
+          for="contactPerson"
+          class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+        >
+          Nome Referente <span class="text-teal-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="contactPerson"
+          name="contactPerson"
+          required
+          placeholder="es. Marco Rossi"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label
+          for="email"
+          class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+        >
+          Email Aziendale / Contatto <span class="text-teal-600">*</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="es. info@tuodominio.ch"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        />
+      </div>
+
+      <!-- Telefono -->
+      <div>
+        <label
+          for="phone"
+          class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+        >
+          Numero di Telefono <span class="text-teal-600">*</span>
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          placeholder="es. +41 91 123 45 67 o +39 0332 123456"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        />
+      </div>
+
+      <!-- Nazione -->
+      <div>
+        <label
+          for="country"
+          class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+        >
+          Nazione di Copertura <span class="text-teal-600">*</span>
+        </label>
+        <select
+          id="country"
+          name="country"
+          required
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        >
+          <option value="" disabled selected>
+            Seleziona nazione...
+          </option>
+          <option value="CH">Svizzera 🇨🇭</option>
+          <option value="IT">Italia 🇮🇹</option>
+        </select>
+      </div>
+
+      <!-- Regione o Cantone -->
+      <div>
+        <label
+          for="region"
+          class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+        >
+          Regione / Cantone Principale <span class="text-teal-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="region"
+          name="region"
+          required
+          placeholder="es. Canton Ticino, Grigioni, Lombardia, Piemonte..."
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        />
+      </div>
+    </div>
+
+    <!-- Ruolo Principale -->
+    <div>
+      <label
+        for="role"
+        class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+      >
+        Tipologia di Attività <span class="text-teal-600">*</span>
+      </label>
+      <select
+        id="role"
+        name="role"
+        required
+        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+      >
+        <option value="IT Consultant">Consulente IT / Tecnico Hardware & Software</option>
+        <option value="System Integrator">System Integrator / Reti & NAS</option>
+        <option value="Fiduciaria / Commercialista">
+          Fiduciaria / Commercialista / Esperto Contabile
+        </option>
+        <option value="Software House">Software House / Sviluppatore Soluzioni Custom</option>
+      </select>
+    </div>
+
+    <!-- Servizi Offerti (Multi-Select Checkboxes) -->
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        Competenze & Servizi Offerti per Fattura Facile <span class="text-teal-600">*</span>
+      </label>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {serviceOptions.map((srv) => (
+          <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-teal-500/50 cursor-pointer transition-colors text-xs text-slate-700 dark:text-slate-200">
+            <input
+              type="checkbox"
+              name="services"
+              value={srv}
+              class="mt-0.5 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+            />
+            <span>{SERVICE_LABELS[srv].label}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+
+    <!-- Note & Esperienza -->
+    <div>
+      <label
+        for="notes"
+        class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
+      >
+        Note su Copertura Geografica ed Esperienza
+      </label>
+      <textarea
+        id="notes"
+        name="notes"
+        rows="3"
+        placeholder="es. Assistenza a domicilio o da remoto nelle province di Varese e Como. Esperienza decennale con PMI artigiane..."
+        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors resize-none"
+      ></textarea>
+    </div>
+
+    <!-- Submit CTA & Status -->
+    <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-xs text-slate-500 dark:text-slate-400">
+        La candidatura verrà esaminata dal team entro 48 ore lavorative. Zero costi di affiliazione.
+      </div>
+      <button
+        type="submit"
+        id="partner-submit-btn"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+        Invia Candidatura Partner
+      </button>
+    </div>
+  </form>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('partner-application-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const company = form.companyName.value.trim();
+      const contact = form.contactPerson.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const country = form.country.value === 'CH' ? 'Svizzera 🇨🇭' : 'Italia 🇮🇹';
+      const region = form.region.value.trim();
+      const role = form.role.value;
+      const notes = form.notes.value.trim();
+
+      const checkedServices = [];
+      form.querySelectorAll('input[name="services"]:checked').forEach((cb) => {
+        checkedServices.push(cb.value);
+      });
+
+      if (checkedServices.length === 0) {
+        alert('Seleziona almeno una competenza o servizio offerto.');
+        return;
+      }
+
+      const subject = encodeURIComponent(
+        '[Nuova Candidatura Partner Locale] ' + company + ' (' + region + ')',
+      );
+      const body = encodeURIComponent(
+        'Richiesta di accreditamento come Partner Locale:\n\n' +
+          'Ragione Sociale: ' +
+          company +
+          '\n' +
+          'Referente: ' +
+          contact +
+          '\n' +
+          'Email: ' +
+          email +
+          '\n' +
+          'Telefono: ' +
+          phone +
+          '\n' +
+          'Nazione: ' +
+          country +
+          '\n' +
+          'Regione/Cantone: ' +
+          region +
+          '\n' +
+          'Ruolo: ' +
+          role +
+          '\n' +
+          'Servizi Selezionati:\n - ' +
+          checkedServices.join('\n - ') +
+          '\n\n' +
+          'Note / Copertura:\n' +
+          (notes || 'Nessuna nota specificata.') +
+          '\n\n' +
+          '---\nInviato dal form partner su https://fatturafacile.eu/supporto-locale/',
+      );
+
+      // Trigger mailto client directly
+      window.location.href = 'mailto:info@fatturafacile.eu?subject=' + subject + '&body=' + body;
+    });
+  });
+</script>

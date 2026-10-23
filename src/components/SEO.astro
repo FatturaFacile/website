@@ -1,0 +1,151 @@
+---
+import type { Locale } from '../i18n/types';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  lang?: Locale;
+  alternates?: Record<Locale | 'x-default', string>;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const detectedLang = getLangFromUrl(Astro.url);
+const lang: Locale = Astro.props.lang ?? detectedLang;
+const t = useTranslations(lang);
+
+const siteOrigin = 'https://fatturafacile.eu';
+const defaultAlternates: Record<Locale | 'x-default', string> = {
+  it: `${siteOrigin}${getLocalizedPath(Astro.url.pathname, 'it')}`,
+  en: `${siteOrigin}${getLocalizedPath(Astro.url.pathname, 'en')}`,
+  fr: `${siteOrigin}${getLocalizedPath(Astro.url.pathname, 'fr')}`,
+  de: `${siteOrigin}${getLocalizedPath(Astro.url.pathname, 'de')}`,
+  'x-default': `${siteOrigin}${getLocalizedPath(Astro.url.pathname, 'it')}`,
+};
+
+const {
+  title = t.home.seo.title,
+  description = t.home.seo.description,
+  keywords = t.home.seo.keywords,
+  canonicalUrl = `${siteOrigin}${Astro.url.pathname}`,
+  ogImage = 'https://fatturafacile.eu/img/fattura_facile_logo.svg',
+  alternates = defaultAlternates,
+  schema,
+} = Astro.props;
+
+const ogLocaleMap: Record<Locale, string> = {
+  it: 'it_IT',
+  en: 'en_US',
+  fr: 'fr_CH',
+  de: 'de_CH',
+};
+
+const activeOgLocale = ogLocaleMap[lang];
+const alternateOgLocales = (Object.keys(ogLocaleMap) as Locale[])
+  .filter((l) => l !== lang)
+  .map((l) => ogLocaleMap[l]);
+
+const defaultSoftwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: t.common.siteName,
+  alternateName: 'Fattura Facile',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Windows 10, Windows 11, Linux, Docker',
+  inLanguage: lang,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+  },
+  description: t.home.seo.description,
+  url: `${siteOrigin}${getLocalizedPath('/', lang)}`,
+  author: {
+    '@type': 'Organization',
+    name: 'Fattura Facile Teams',
+  },
+  featureList: [
+    'Fatturazione portabile offline su chiavetta USB con SQLite',
+    'Zero installazione e zero abbonamenti a vita',
+    "Supporto XML FatturaPA e SDI per l'Italia",
+    'Supporto QR-Bill standard SIX per la Svizzera',
+    'Conformità nativa GDPR UE e nLPD Svizzera',
+    'Opzione Cloud Self-Hosted multi-utente gratuita',
+  ],
+};
+
+const finalSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [defaultSoftwareSchema];
+---
+
+<!-- Global Metadata -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Fattura Facile Teams" />
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+/>
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Geographic Meta -->
+<meta name="geo.region" content="IT;CH" />
+<meta name="geo.placename" content="Italy; Switzerland" />
+<meta name="distribution" content="global" />
+<meta name="rating" content="general" />
+<meta name="theme-color" content="#0d9488" />
+
+<!-- Alternate Locales -->
+<link rel="alternate" hreflang="it" href={alternates.it} />
+<link rel="alternate" hreflang="en" href={alternates.en} />
+<link rel="alternate" hreflang="fr" href={alternates.fr} />
+<link rel="alternate" hreflang="de" href={alternates.de} />
+<link rel="alternate" hreflang="x-default" href={alternates['x-default']} />
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content={activeOgLocale} />
+{alternateOgLocales.map((altLoc) => (
+  <meta property="og:locale:alternate" content={altLoc} />
+))}
+<meta property="og:site_name" content="Fattura Facile" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Favicon & Icons -->
+<link rel="alternate icon" href="/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+<link rel="manifest" href="/img/favicon/site.webmanifest" />
+
+<!-- Google Tag Manager (G-JNQJZBL6PJ) with zero layout shift -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JNQJZBL6PJ"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args) {
+    dataLayer.push(args);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-JNQJZBL6PJ');
+</script>
+
+<!-- Structured Data (JSON-LD) -->
+{finalSchemas.map((s) => (
+  /* eslint-disable-next-line astro/no-set-html-directive */
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

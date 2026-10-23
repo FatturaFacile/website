@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Perché Fattura Facile | La Nostra Storia e Filosofia Anti-ERP',
+  url: 'https://fatturafacile.eu/perche/',
+  description:
+    'Perché scegliere Fattura Facile: software di fatturazione leggero contro ERP elefantiaci da 500 bottoni. Preventivi in 1 minuto, conversione in 1 click, la nostra storia e zero lock-in.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Fattura Facile Teams',
+  },
+};
+---
+
+<BaseLayout
+  title="Perché Fattura Facile | Filosofia Snella & La Nostra Storia"
+  description="Scopri la filosofia di Fattura Facile: niente ERP elefantiaci da 500 bottoni, ma uno strumento veloce per emettere fatture e preventivi in 30 secondi senza canoni."
+  schema={pageSchema}
+>
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 mb-6">
+        La Nostra Filosofia Progettuale
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+        Non un ERP da 500 bottoni, ma il tuo{' '}
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400">
+          compagno quotidiano
+        </span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+        Chi lavora sul campo non ha il tempo né la voglia di perdersi in menu contabili astrusi o
+        aspettare 15 secondi per caricare una pagina web lenta. Fattura Facile nasce per fare una
+        sola cosa, in modo impeccabile: emettere documenti fiscali e farti incassare subito.
+      </p>
+    </div>
+  </section>
+
+  <!-- Deep Dive Content -->
+  <section class="py-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <!-- Point 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-4 flex justify-center">
+          <div class="w-24 h-24 rounded-3xl bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 flex items-center justify-center text-teal-600 dark:text-teal-400 shadow-md">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="md:col-span-8">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+            Preventivo in 1 minuto, Fattura in 1 click
+          </h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
+            Sei ancora sul cantiere o a casa del cliente? Apri il portatile, componi il preventivo
+            con le voci di manodopera e materiali in meno di 60 secondi e consegnalo al volo. Quando
+            il cliente dà il via libera, basta premere un pulsante: il preventivo viene convertito
+            istantaneamente in fattura ufficiale con numerazione progressiva sequenziale senza dover
+            reinserire una sola riga.
+          </p>
+        </div>
+      </div>
+
+      <!-- Point 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-4 flex justify-center md:order-last">
+          <div class="w-24 h-24 rounded-3xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-md">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 4.243a9 9 0 01-12.728 0m0 0l2.829-2.829m-2.829 2.829L3 21"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="md:col-span-8">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+            Zero Lock-In Cloud e Totale Indipendenza dalla Rete
+          </h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
+            I servizi in abbonamento mensile bloccano l'accesso ai tuoi dati fiscali non appena
+            smetti di pagare la quota. In Fattura Facile i tuoi file sono salvati in un database
+            aperto SQLite direttamente nella cartella del programma. Funziona in cantina, in
+            furgone, in officina o senza connessione internet: sei sempre operativo al 100%.
+          </p>
+        </div>
+      </div>
+
+      <!-- Point 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-4 flex justify-center">
+          <div class="w-24 h-24 rounded-3xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-800 dark:text-slate-200 shadow-md">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="md:col-span-8">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+            Costruito con e per la Community degli Artigiani
+          </h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
+            Non siamo una multinazionale che vende licenze enterprise. Quando un elettricista o un
+            idraulico ci segnala una necessità pratica – come un campo specifico per la ritenuta
+            d'acconto, la cassa previdenziale o un template di stampa su misura – sviluppiamo il
+            modulo gratuitamente e lo rilasciamo a tutti.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La Nostra Storia Section (#storia) -->
+  <section
+    id="storia"
+    class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-20"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 mb-3">
+          Le Nostre Radici
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          La Nostra Storia: Dall'Esigenza Reale al Software Libero
+        </h2>
+      </div>
+
+      <div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
+        <p>
+          Il progetto <strong>Fattura Facile</strong> è nato osservando la frustrazione quotidiana
+          di amici artigiani – idraulici, fabbri, elettricisti e piccoli professionisti tra la
+          Lombardia e il Canton Ticino. Costretti ad abbonamenti mensili sempre più costosi per
+          programmi complessi, lenti o dipendenti da una connessione internet spesso assente nei
+          seminterrati o nei cantieri.
+        </p>
+        <p>
+          Ci siamo chiesti:{' '}
+          <em>
+            "Perché un professionista che emette 15 fatture al mese deve pagare centinaia di euro
+            all'anno e cedere la proprietà dei propri archivi a piattaforme cloud terze?"
+          </em>
+        </p>
+        <p>
+          Abbiamo così sviluppato una prima versione snella su una chiavetta USB, basata su un
+          robusto file database SQLite e sull'infrastruttura nativa C#/.NET. Il successo passaparola
+          tra colleghi ha convinto il team a rendere il progetto completamente aperto, gratuito e a
+          disposizione di tutta la comunità di Italia e Svizzera.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team & Contributori Anchor (#team) -->
+  <section
+    id="team"
+    class="py-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-20"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+        Team Aperto & Contributori
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
+        Fattura Facile è guidato da ingegneri del software, consulenti fiscali italo-svizzeri e da
+        una comunità attiva di artigiani che collaudano ogni nuova versione.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/community-richieste/#collaborare"
+          class="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl text-sm transition-colors shadow-md"
+        >
+          Unisciti ai Contributori &rarr;
+        </a>
+        <a
+          href="https://github.com/FatturaFacile"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold rounded-xl text-sm transition-colors border border-slate-200 dark:border-slate-700"
+        >
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-slate-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold tracking-tight">
+        Pronto a semplificare la tua fatturazione?
+      </h2>
+      <p class="mt-4 text-slate-300">
+        Nessuna installazione complessa. Scarica lo ZIP ed emetti la tua prima fattura in pochi
+        istanti.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/#download"
+          class="px-8 py-3.5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-2xl transition-all shadow-lg"
+        >
+          Scarica Desktop Gratis
+        </a>
+        <a
+          href="/funzionalita/"
+          class="px-8 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-2xl transition-all"
+        >
+          Vedi Tutte le Funzionalità
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

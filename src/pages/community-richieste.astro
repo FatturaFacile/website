@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Community, Richiesta Moduli & Come Collaborare | Fattura Facile',
+  url: 'https://fatturafacile.eu/community-richieste/',
+  description:
+    'Richiedi moduli su misura a costo zero e scopri come collaborare con Fattura Facile: sviluppatori .NET/Astro, commercialisti, traduttori e beta tester.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Fattura Facile Teams',
+  },
+};
+
+const contributionRoles = [
+  {
+    title: 'Sviluppatori C# / .NET & Astro',
+    badge: 'Engineering',
+    badgeColor: 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300',
+    desc: 'Contribuisci al client Desktop WPF o al frontend documentale e sito Astro. Clean Architecture, pattern MVVM e test unitari robusti.',
+    action: 'Guarda le Issue su GitHub',
+    link: 'https://github.com/FatturaFacile',
+  },
+  {
+    title: 'Commercialisti & Fiduciarie (IT/CH)',
+    badge: 'Fiscale & Normativa',
+    badgeColor: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
+    desc: "Aiutaci a convalidare i tracciati XML SDI per l'Italia e le direttive SIX QR-Bill per la Svizzera per garantire conformità al 100% senza sorprese.",
+    action: 'Partecipa alla Validazione',
+    link: 'mailto:info@fatturafacile.eu?subject=[Collaborazione%20Fiscale]',
+  },
+  {
+    title: 'Traduttori Multilingua (IT, EN, FR, DE)',
+    badge: 'Localizzazione',
+    badgeColor: 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300',
+    desc: "La Svizzera e l'Europa parlano più lingue. Aiuta ad affinare i testi dell'applicazione e le sezioni informative in francese, tedesco e inglese.",
+    action: 'Proponi Traduzioni',
+    link: 'mailto:info@fatturafacile.eu?subject=[Collaborazione%20Traduzioni]',
+  },
+  {
+    title: 'Artigiani & Beta Tester sul Campo',
+    badge: 'User Experience',
+    badgeColor: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
+    desc: "Usa le versioni di anteprima in cantiere, officina o furgone e segnalaci cosa può essere reso ancora più rapido o pratico nell'uso quotidiano.",
+    action: 'Entra nel Canale Telegram',
+    link: 'https://t.me/+sRauQINBDFQ5NjU0',
+  },
+];
+---
+
+<BaseLayout
+  title="Community, Richiesta Moduli & Collaborazione | Fattura Facile"
+  description="Hai bisogno di un modulo personalizzato o vuoi collaborare allo sviluppo? Scrivici: codice aperto, team indipendente e contributi benvenuti."
+  schema={pageSchema}
+>
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-teal-50/60 to-white dark:from-slate-900 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span
+        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 mb-6"
+        data-i18n="custom_badge"
+      >
+        Sviluppo Aperto & Gratuito
+      </span>
+      <h1
+        class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight"
+        data-i18n="custom_title"
+      >
+        Hai bisogno di una funzione specifica o di un modulo personalizzato?
+      </h1>
+      <p
+        class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed"
+        data-i18n="custom_desc"
+      >
+        Scrivici all'indirizzo{' '}
+        <a
+          href="mailto:info@fatturafacile.eu"
+          class="font-bold text-teal-600 dark:text-teal-400 hover:underline"
+        >
+          info@fatturafacile.eu
+        </a>{' '}
+        per informazioni o per descrivere le tue esigenze di lavoro.{' '}
+        <strong>Svilupperemo la funzionalità o il modulo su misura a costo zero (GRATIS)</strong> e
+        lo integreremo direttamente nelle prossime versioni pubbliche per metterlo a disposizione di
+        tutti gli artigiani della community.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3-Step Workflow -->
+  <section class="py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+          Il Flusso Collaborativo
+        </h2>
+        <p class="mt-2 text-3xl font-extrabold text-slate-900 dark:text-white">
+          Come funziona in 3 semplici passi
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-black text-xl mb-6 shadow-md shadow-teal-600/20">
+            1
+          </div>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white"
+            data-i18n="custom_step1_title"
+          >
+            1. Scrivici
+          </h3>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed"
+            data-i18n="custom_step1"
+          >
+            Raccontaci il tuo flusso di lavoro e cosa ti serve (es. un modello di fattura
+            particolare, un campo per ritenute specifiche, o la gestione di articoli complessi).
+          </p>
+        </div>
+
+        <div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-slate-900 dark:bg-teal-500 text-white dark:text-slate-950 flex items-center justify-center font-black text-xl mb-6 shadow-md shadow-slate-900/20">
+            2
+          </div>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white"
+            data-i18n="custom_step2_title"
+          >
+            2. Sviluppo 0 €
+          </h3>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed"
+            data-i18n="custom_step2"
+          >
+            Implementiamo il codice gratuitamente nel progetto C#/.NET WPF o nella Web API cloud con
+            test automatici e standard di sicurezza elevati.
+          </p>
+        </div>
+
+        <div class="p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-black text-xl mb-6 shadow-md shadow-emerald-600/20">
+            3
+          </div>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white"
+            data-i18n="custom_step3_title"
+          >
+            3. Rilascio per Tutti
+          </h3>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed"
+            data-i18n="custom_step3"
+          >
+            La nuova versione viene pubblicata su GitHub e su fatturafacile.eu. Tu ottieni ciò che
+            ti serve senza spendere un centesimo e aiuti tutti i colleghi del settore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Come Collaborare Section (#collaborare) -->
+  <section
+    id="collaborare"
+    class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-20"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+          Opportunità Aperte
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
+          Come Collaborare al Progetto
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+          Non serve essere programmatori senior per fare la differenza: ogni contributo che migliori
+          l'esperienza per gli artigiani è prezioso.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {contributionRoles.map((role) => (
+          <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class={`px-2.5 py-1 rounded-full text-xs font-bold ${role.badgeColor}`}>
+                {role.badge}
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-4 mb-2">
+                {role.title}
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                {role.desc}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+              <a
+                href={role.link}
+                class="inline-flex items-center gap-2 text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+              >
+                <span>{role.action}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team & Contributori Section (#team) -->
+  <section
+    id="team"
+    class="py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-20"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+        Dietro le Quinte
+      </span>
+      <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
+        Team & Contributori
+      </h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+        Fattura Facile è coordinato da un team volontario di professionisti IT con esperienza in
+        architetture desktop e cloud, coadiuvato da consulenti tributari italo-svizzeri e supportato
+        da feedback continui di artigiani reali.
+      </p>
+
+      <div class="mt-10 p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-left text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3">
+        <div class="flex items-start gap-3">
+          <span class="text-teal-600 font-bold">✓</span>
+          <div>
+            <strong>Core Architecture:</strong> Sviluppo in C# .NET WPF, SQLite nativo,
+            containerizzazione Docker e Web API.
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-teal-600 font-bold">✓</span>
+          <div>
+            <strong>Tax & Legal Compliance:</strong> Controllo tracciati SDI XML per l'Agenzia delle
+            Entrate e standard SIX Interbank Clearing per la Svizzera.
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-teal-600 font-bold">✓</span>
+          <div>
+            <strong>Documentation & Web:</strong> Sito web statico performante in Astro e
+            documentazione di onboarding per utenti e scuole.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Links & Contact Action -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">
+        Unisciti alla Community di Fattura Facile
+      </h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-300">
+        Comunica direttamente con il team principale di ingegneri e con gli altri utilizzatori.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="mailto:info@fatturafacile.eu?subject=Richiesta%20modulo%20o%20funzionalit%C3%A0%20Fattura%20Facile"
+          title="Invia una richiesta email"
+          aria-label="Invia una richiesta email"
+          data-i18n-title="custom_btn_title"
+          data-i18n-aria-label="custom_btn_title"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-lg shadow-teal-600/30 transition-all text-base"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <span data-i18n="custom_btn">Invia Email a info@fatturafacile.eu</span>
+        </a>
+
+        <a
+          href="https://t.me/+sRauQINBDFQ5NjU0"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Unisciti al Gruppo Telegram"
+          aria-label="Unisciti al Gruppo Telegram"
+          class="inline-flex items-center gap-2.5 px-6 py-4 bg-[#229ED9] hover:bg-[#1E88E5] text-white font-bold rounded-2xl shadow-lg shadow-[#229ED9]/25 transition-all text-base"
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.536-.196 1.006.128.832.92z" />
+          </svg>
+          <span>Gruppo Telegram Ufficiale</span>
+        </a>
+
+        <a
+          href="https://github.com/FatturaFacile"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-6 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-2xl shadow-lg transition-all text-base"
+        >
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            ></path>
+          </svg>
+          <span>Organizzazione GitHub</span>
+        </a>
+      </div>
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-6"
+        data-i18n="custom_hint"
+      >
+        Rispondiamo direttamente con il nostro team di sviluppo.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

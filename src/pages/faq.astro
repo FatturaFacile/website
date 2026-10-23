@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'Come funziona la versione su chiavetta USB? È davvero senza installazione?',
+    a: "Sì! Scarichi una cartella .ZIP, la estrai su qualsiasi chiavetta USB o hard disk esterno e avvii l'eseguibile 'FatturaFacile.exe'. Il programma non scrive nel registro di sistema di Windows e conserva il database SQLite e le fatture generate nella stessa chiavetta. Puoi collegarla a qualsiasi PC con Windows 10 o Windows 11 e continuare a lavorare.",
+    category: 'usb',
+  },
+  {
+    q: 'Perché il database SQLite locale garantisce sicurezza e conformità privacy?',
+    a: 'SQLite è il motore di database più collaudato al mondo, conforme agli standard ACID. Non invia dati in rete: tutto rimane sul tuo disco o chiavetta. Questo elimina alla radice il rischio di violazioni dati da server terzi e rispetta pienamente i principi di Privacy by Design del GDPR UE (Regolamento 2016/679) e della nuova Legge federale sulla protezione dei dati (nLPD) in Svizzera.',
+    category: 'security',
+  },
+  {
+    q: 'Cosa succede se perdo la chiavetta o il computer si rompe? Come faccio il backup?',
+    a: "Poiché i dati risiedono solo localmente per garantire la massima privacy, è fondamentale fare backup regolari. Fattura Facile include un pulsante automatico 'Copia di sicurezza': con un click puoi esportare l'intero database e i documenti in uno zip cifrato AES con password da salvare su una seconda chiavetta, su un NAS o nel tuo cloud personale (Google Drive, OneDrive, Dropbox).",
+    category: 'backup',
+  },
+  {
+    q: 'Come gestite la Fatturazione Elettronica italiana e la QR-Bill svizzera?',
+    a: 'Per il mercato italiano, il software genera file XML FatturaPA (standard AdE) conformi che puoi esportare e trasmettere al Sistema di Interscambio (SDI) tramite PEC o codice destinatario. Per il mercato svizzero, supportiamo la generazione ufficiale delle sezioni pagamento con codice QR Svizzero (QR-Fattura SIX) con croce elvetica, coordinate QR-IBAN e calcolo automatico delle aliquote IVA federali (8.1%, 2.6%, 3.8%).',
+    category: 'tax',
+  },
+  {
+    q: 'Qual è la differenza tra il supporto gratuito della community e i partner locali?',
+    a: 'Il software è libero e gratuito: puoi chiedere supporto, proporre miglioramenti e segnalare anomalie nel nostro gruppo Telegram pubblico e su GitHub senza spendere un centesimo. Se invece hai bisogno di un tecnico che venga di persona nella tua officina, configuri la rete aziendale, formi i dipendenti o si raccordi con il tuo commercialista/fiduciario, puoi rivolgerti alla nostra rete di partner territoriali indipendenti presenti in Italia e Svizzera.',
+    category: 'support',
+  },
+  {
+    q: 'Fattura Facile può essere utilizzato nelle scuole e per corsi di formazione?',
+    a: "Assolutamente sì. Incoraggiamo dirigenti scolastici e docenti di istituti tecnici commerciali, licei economici e facoltà universitarie a impiegare Fattura Facile sia per simulazioni contabili pratiche in aula (senza costi di licenza per l'istituto), sia come caso di studio software in C# .NET e Clean Architecture nei corsi di informatica.",
+    category: 'schools',
+  },
+  {
+    q: 'Come posso richiedere una personalizzazione per la mia attività?',
+    a: 'Basta inviare una mail a info@fatturafacile.eu descrivendo cosa vorresti (ad esempio un campo specifico, un modello di stampa personalizzato, ecc.). Se è utile al settore, lo programmiamo gratuitamente e lo rilasciamo nella nuova versione aperta a tutti.',
+    category: 'community',
+  },
+  {
+    q: 'Ci sono costi nascosti o abbonamenti dopo un periodo di prova?',
+    a: 'No. Fattura Facile Desktop è gratuito al 100% per sempre, senza limiti di fatture emesse, scadenze di prova o funzioni bloccate dietro paywall.',
+    category: 'pricing',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Domande Frequenti (FAQ) & Assistenza | Fattura Facile"
+  description="Tutte le risposte su portabilità USB, sicurezza backup SQLite, conformità SDI italiana, QR-Bill svizzera, supporto locale e uso nelle scuole."
+  schema={faqSchema}
+>
+  <!-- Hero Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span
+        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 mb-6"
+        data-i18n="faq_badge"
+      >
+        Chiarezza & Risposte
+      </span>
+      <h1
+        class="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight"
+        data-i18n="faq_heading"
+      >
+        Domande Frequenti
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+        Hai dubbi su portabilità, database SQLite, conformità fiscale o supporto? Usa la barra di
+        ricerca o consulta le risposte qui sotto.
+      </p>
+
+      <!-- Live Search Input -->
+      <div class="mt-8 max-w-xl mx-auto">
+        <div class="relative">
+          <input
+            type="text"
+            id="faq-search-input"
+            placeholder="Cerca una risposta (es. USB, backup, SDI, Svizzera, scuole...)"
+            class="w-full px-5 py-4 pl-12 rounded-2xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          />
+          <svg
+            class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-4" id="faq-container">
+        {faqs.map((item, index) => (
+          <div
+            class="faq-item border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm transition-all"
+            data-faq-index={index}
+          >
+            <button
+              class="w-full px-6 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center focus:outline-none cursor-pointer"
+              onclick="window.toggleFaq(this)"
+              aria-expanded="false"
+            >
+              <span class="faq-question-text pr-4">{item.q}</span>
+              <svg
+                class="faq-arrow w-5 h-5 text-teal-600 dark:text-teal-400 transform transition-transform duration-200 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div class="faq-answer px-6 pb-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed hidden border-t border-slate-100 dark:border-slate-800/60 pt-4">
+              <span class="faq-answer-text">{item.a}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        id="no-faq-results"
+        class="hidden text-center py-12 text-slate-500 dark:text-slate-400 text-sm"
+      >
+        Nessuna risposta corrispondente alla ricerca. Prova con parole chiave diverse oppure
+        <a
+          href="mailto:info@fatturafacile.eu"
+          class="text-teal-600 dark:text-teal-400 font-bold hover:underline"
+        >
+          scrivici direttamente
+        </a>
+        .
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('faq-search-input');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const noResults = document.getElementById('no-faq-results');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        let matchCount = 0;
+
+        faqItems.forEach((item) => {
+          const qText = item.querySelector('.faq-question-text')?.textContent.toLowerCase() || '';
+          const aText = item.querySelector('.faq-answer-text')?.textContent.toLowerCase() || '';
+
+          if (qText.includes(query) || aText.includes(query)) {
+            item.classList.remove('hidden');
+            matchCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        if (noResults) {
+          if (matchCount === 0) {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
+        }
+      });
+    }
+  });
+</script>

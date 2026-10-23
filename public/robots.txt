@@ -1,0 +1,8 @@
+# robots.txt per https://fatturafacile.eu/
+
+User-agent: *
+Allow: /
+
+# Percorso Sitemap
+Sitemap: https://fatturafacile.eu/sitemap-index.xml
+Sitemap: https://fatturafacile.eu/sitemap-0.xml
