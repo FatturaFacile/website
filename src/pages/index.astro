@@ -1,20 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Fattura Facile',
+  name: t.common.siteName,
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Windows 10, Windows 11, Linux, Docker',
+  inLanguage: lang,
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'EUR',
   },
-  description:
-    'Software di fatturazione semplice, rapido e offline con SQLite per artigiani e PMI. Supporta FatturaPA (SDI) e QR-Bill svizzera.',
-  url: 'https://fatturafacile.eu/',
+  description: t.home.seo.description,
+  url: `https://fatturafacile.eu${getLocalizedPath('/', lang)}`,
   author: {
     '@type': 'Organization',
     name: 'Fattura Facile Teams',
@@ -23,8 +27,10 @@ const softwareSchema = {
 ---
 
 <BaseLayout
-  title="Fattura Facile | Semplice, Veloce, Offline e Cloud per Artigiani e PMI"
-  description="Software di fatturazione gratuito e offline con SQLite o Cloud self-hosted. Conforme a FatturaPA SDI per l'Italia e QR-Bill SIX per la Svizzera."
+  title={t.home.seo.title}
+  description={t.home.seo.description}
+  keywords={t.home.seo.keywords}
+  lang={lang}
   schema={softwareSchema}
 >
   <!-- Hero Section -->

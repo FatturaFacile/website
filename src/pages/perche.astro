@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Perché Fattura Facile | La Nostra Storia e Filosofia Anti-ERP',
-  url: 'https://fatturafacile.eu/perche/',
-  description:
-    'Perché scegliere Fattura Facile: software di fatturazione leggero contro ERP elefantiaci da 500 bottoni. Preventivi in 1 minuto, conversione in 1 click, la nostra storia e zero lock-in.',
+  name: t.perche.seo.title,
+  url: `https://fatturafacile.eu${getLocalizedPath('/perche/', lang)}`,
+  inLanguage: lang,
+  description: t.perche.seo.description,
   publisher: {
     '@type': 'Organization',
     name: 'Fattura Facile Teams',
@@ -16,8 +20,10 @@ const pageSchema = {
 ---
 
 <BaseLayout
-  title="Perché Fattura Facile | Filosofia Snella & La Nostra Storia"
-  description="Scopri la filosofia di Fattura Facile: niente ERP elefantiaci da 500 bottoni, ma uno strumento veloce per emettere fatture e preventivi in 30 secondi senza canoni."
+  title={t.perche.seo.title}
+  description={t.perche.seo.description}
+  keywords={t.perche.seo.keywords}
+  lang={lang}
   schema={pageSchema}
 >
   <!-- Hero Section -->

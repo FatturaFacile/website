@@ -1,0 +1,13 @@
+---
+import ScuoleSocialePage from '../scuole-e-sociale.astro';
+import type { Locale } from '../../i18n/types';
+
+export function getStaticPaths() {
+  const locales: Locale[] = ['it', 'en', 'fr', 'de'];
+  return locales.map((lang) => ({
+    params: { lang },
+  }));
+}
+---
+
+<ScuoleSocialePage />

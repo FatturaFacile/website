@@ -1,0 +1,13 @@
+---
+import IndexPage from '../index.astro';
+import type { Locale } from '../../i18n/types';
+
+export function getStaticPaths() {
+  const locales: Locale[] = ['en', 'fr', 'de'];
+  return locales.map((lang) => ({
+    params: { lang },
+  }));
+}
+---
+
+<IndexPage />

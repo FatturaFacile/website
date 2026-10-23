@@ -2,6 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PartnerApplicationForm from '../components/PartnerApplicationForm.astro';
 import { PARTNERS_DATA, SERVICE_LABELS } from '../data/partners';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // LocalBusiness / ProfessionalService schema for local support providers
 const partnersSchema = {
@@ -32,8 +36,10 @@ const partnersSchema = {
 ---
 
 <BaseLayout
-  title="Supporto Locale & Partner Territoriali (Italia e Svizzera) | Fattura Facile"
-  description="Trova tecnici IT, fiduciarie e sistemisti certificati per assistenza on-site, setup reti, backup e consulenza per Fattura Facile in Canton Ticino, Lombardia e Piemonte."
+  title={t.supportoLocale.seo.title}
+  description={t.supportoLocale.seo.description}
+  keywords={t.supportoLocale.seo.keywords}
+  lang={lang}
   schema={partnersSchema}
 >
   <!-- Page Hero -->

@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Funzionalità & Catalogo Moduli | Fattura Facile',
-  url: 'https://fatturafacile.eu/funzionalita/',
-  description:
-    'Catalogo moduli e specifiche tecniche di Fattura Facile: preventivi rapidi, fatturazione elettronica SDI (Italia), QR-Bill SIX (Svizzera), backup crittografati e roadmap pubblica.',
+  name: t.moduli.seo.title,
+  url: `https://fatturafacile.eu${getLocalizedPath('/funzionalita/', lang)}`,
+  inLanguage: lang,
+  description: t.moduli.seo.description,
   publisher: {
     '@type': 'Organization',
     name: 'Fattura Facile Teams',
@@ -106,8 +110,10 @@ const roadmapItems = [
 ---
 
 <BaseLayout
-  title="Funzionalità & Catalogo Moduli (Italia & Svizzera) | Fattura Facile"
-  description="Catalogo completo dei moduli: preventivi, FatturaPA SDI, Swiss QR-Bill SIX, backup crittografati SQLite e roadmap interattiva della community."
+  title={t.moduli.seo.title}
+  description={t.moduli.seo.description}
+  keywords={t.moduli.seo.keywords}
+  lang={lang}
   schema={pageSchema}
 >
   <!-- Hero Section -->

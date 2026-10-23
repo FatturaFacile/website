@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Community, Richiesta Moduli & Come Collaborare | Fattura Facile',
-  url: 'https://fatturafacile.eu/community-richieste/',
-  description:
-    'Richiedi moduli su misura a costo zero e scopri come collaborare con Fattura Facile: sviluppatori .NET/Astro, commercialisti, traduttori e beta tester.',
+  name: t.team.seo.title,
+  url: `https://fatturafacile.eu${getLocalizedPath('/community-richieste/', lang)}`,
+  inLanguage: lang,
+  description: t.team.seo.description,
   publisher: {
     '@type': 'Organization',
     name: 'Fattura Facile Teams',
@@ -51,8 +55,10 @@ const contributionRoles = [
 ---
 
 <BaseLayout
-  title="Community, Richiesta Moduli & Collaborazione | Fattura Facile"
-  description="Hai bisogno di un modulo personalizzato o vuoi collaborare allo sviluppo? Scrivici: codice aperto, team indipendente e contributi benvenuti."
+  title={t.team.seo.title}
+  description={t.team.seo.description}
+  keywords={t.team.seo.keywords}
+  lang={lang}
   schema={pageSchema}
 >
   <!-- Hero Section -->

@@ -1,134 +1,148 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  MODULES_DATA,
+  MODULE_STATUS_META,
+  MARKET_SCOPE_LABELS,
+  type ModuleItem,
+} from '../data/modules';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const m = t.moduli;
+
+const availableModules: ModuleItem[] = MODULES_DATA.filter((item) => item.status === 'available');
+const roadmapModules: ModuleItem[] = MODULES_DATA.filter((item) => item.status !== 'available');
 
 const modulesSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Catalogo Moduli & Roadmap | Fattura Facile',
-  url: 'https://fatturafacile.eu/moduli/',
-  description:
-    'Elenco dettagliato dei moduli di Fattura Facile: preventivi, FatturaPA SDI, Swiss QR-Bill, backup crittografato e roadmap.',
+  name: m.seo.title,
+  url: `https://fatturafacile.eu${getLocalizedPath('/moduli/', lang)}`,
+  inLanguage: lang,
+  description: m.seo.description,
 };
-
-const modules = [
-  {
-    id: 'invoicing-engine',
-    title: 'Motore di Fatturazione & Numerazione',
-    badge: 'Core',
-    badgeColor: 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300',
-    desc: 'Emissione immediata di fatture commerciali e parcelle professionali in meno di 30 secondi. Gestione automatica della numerazione progressiva annuale, calcolo scorporo o imponibile, sconti e note di credito.',
-    features: [
-      'Numerazione progressiva per anno/sezionale',
-      'Calcolo automatico totali e imposte',
-      'Generazione PDF vettoriale nitido da stampare o inviare',
-    ],
-  },
-  {
-    id: 'quick-quotes',
-    title: 'Preventivi Rapidi sul Campo',
-    badge: '1-Click Convert',
-    badgeColor: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
-    desc: 'Crea il preventivo sul portatile o chiavetta direttamente dal cliente durante il sopralluogo in cantiere. Quando il cliente accetta, un singolo click converte il preventivo in fattura senza dover ridigitare una sola riga.',
-    features: [
-      'Stima immediata di materiali e manodopera',
-      'Tracking stato: Bozza, Inviato, Accettato, Rifiutato',
-      'Conversione istantanea in fattura ufficiale',
-    ],
-  },
-  {
-    id: 'fatturapa-sdi',
-    title: 'Modulo Fattura Elettronica Italia (SDI)',
-    badge: 'Italia 🇮🇹',
-    badgeColor: 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300',
-    desc: "Generazione certificata di file XML FatturaPA conformi alle specifiche dell'Agenzia delle Entrate per la trasmissione al Sistema di Interscambio (SDI) tramite PEC o Codice Destinatario.",
-    features: [
-      'Supporto B2B, B2C e Pubblica Amministrazione',
-      'Regime Forfettario con bollo virtuale automatico',
-      "Ritenuta d'acconto 20% e Casse Previdenziali",
-    ],
-  },
-  {
-    id: 'qr-bill-ch',
-    title: 'Modulo Svizzera QR-Bill (SIX Standard)',
-    badge: 'Svizzera 🇨🇭',
-    badgeColor: 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300',
-    desc: 'Generazione ufficiale della sezione di pagamento con codice QR svizzero e croce elvetica unificata, pronta per la scansione da e-banking o pagamento allo sportello.',
-    features: [
-      'Codici QR vettoriali conformi alle direttive SIX',
-      'Aliquote IVA Svizzere (8.1%, 2.6%, 3.8%)',
-      'Valute CHF ed EUR con riferimenti strutturati',
-    ],
-  },
-  {
-    id: 'encrypted-backups',
-    title: 'Snapshot & Backup Crittografato 1-Click',
-    badge: 'Sicurezza',
-    badgeColor: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
-    desc: 'Nessun rischio di smarrimento dati. Con un solo tasto generi un archivio compresso e protetto da password contenente il database SQLite, i PDF e le impostazioni.',
-    features: [
-      'Archivio ZIP completo portabile',
-      'Crittografia AES per proteggere i dati dei clienti',
-      'Copia immediata su chiavetta secondaria o cloud',
-    ],
-  },
-];
 ---
 
 <BaseLayout
-  title="Catalogo Moduli & Estensioni | Fattura Facile"
-  description="Esplora tutti i moduli inclusi in Fattura Facile: preventivi, SDI XML Italia, QR-Bill SIX Svizzera e backup crittografato."
+  title={m.seo.title}
+  description={m.seo.description}
+  keywords={m.seo.keywords}
+  lang={lang}
   schema={modulesSchema}
 >
   <section class="py-16 sm:py-20 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-b border-slate-200/60 dark:border-slate-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60 mb-6">
         <span class="w-2 h-2 rounded-full bg-teal-500"></span>
-        Directory Ufficiale dei Moduli
+        {m.eyebrow}
       </div>
       <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-        Moduli Funzionali Inclusi & Gratuiti
+        {m.heading}
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-        Tutti i moduli sono inclusi senza costi di attivazione, canoni nascosti o limitazioni di
-        emissione.
+        {m.lead}
       </p>
     </div>
   </section>
 
-  <section class="py-16 bg-white dark:bg-slate-950">
+  <!-- Available Modules -->
+  <section class="py-16 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {modules.map((mod) => (
-          <div class="flex flex-col justify-between bg-slate-50/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all">
-            <div>
-              <span class={`px-2.5 py-1 rounded-full text-xs font-bold ${mod.badgeColor}`}>
-                {mod.badge}
-              </span>
-              <h2 class="text-xl font-bold text-slate-900 dark:text-white mt-4 mb-2">
-                {mod.title}
-              </h2>
-              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                {mod.desc}
-              </p>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-10">
+        {m.availableSectionTitle}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {availableModules.map((mod) => {
+          const statusMeta = MODULE_STATUS_META[mod.status];
+          const marketMeta = MARKET_SCOPE_LABELS[mod.market];
+          return (
+            <div
+              id={mod.id}
+              class="flex flex-col justify-between bg-slate-50/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition-all"
+            >
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <span
+                    class={`px-2.5 py-1 rounded-full text-xs font-bold border ${statusMeta.badgeClass}`}
+                  >
+                    {statusMeta.label} {mod.version ? `• ${mod.version}` : ''}
+                  </span>
+                  <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    {marketMeta.flag} {marketMeta.label}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">{mod.title}</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  {mod.description}
+                </p>
+              </div>
+              <ul class="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-600 dark:text-slate-400">
+                {mod.features.map((f) => (
+                  <li class="flex items-center gap-2">
+                    <span class="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul class="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-600 dark:text-slate-400">
-              {mod.features.map((f) => (
-                <li class="flex items-center gap-2">
-                  <span class="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Modules -->
+  <section id="roadmap" class="py-16 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-10">
+        {m.roadmapSectionTitle}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {roadmapModules.map((mod) => {
+          const statusMeta = MODULE_STATUS_META[mod.status];
+          const marketMeta = MARKET_SCOPE_LABELS[mod.market];
+          return (
+            <div
+              id={mod.id}
+              class="flex flex-col justify-between bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8"
+            >
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <span
+                    class={`px-2.5 py-1 rounded-full text-xs font-bold border ${statusMeta.badgeClass}`}
+                  >
+                    {statusMeta.label} {mod.plannedMilestone ? `• ${mod.plannedMilestone}` : ''}
+                  </span>
+                  <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    {marketMeta.flag} {marketMeta.label}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">{mod.title}</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  {mod.description}
+                </p>
+              </div>
+              <ul class="space-y-2 border-t border-slate-200 dark:border-slate-800 pt-4 text-xs text-slate-600 dark:text-slate-400">
+                {mod.features.map((f) => (
+                  <li class="flex items-center gap-2">
+                    <span class="text-teal-600 dark:text-teal-400 font-bold">•</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
       </div>
 
       <div class="mt-16 text-center">
         <a
-          href="/funzionalita/#roadmap"
+          href={getLocalizedPath('/community-richieste/', lang)}
           class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl text-sm shadow-md transition-all"
         >
-          Visualizza la Roadmap dei Prossimi Moduli &rarr;
+          {t.common.actions.requestModule} &rarr;
         </a>
       </div>
     </div>

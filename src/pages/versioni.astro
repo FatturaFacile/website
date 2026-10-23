@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Confronto Versioni: Desktop Standalone vs Cloud Self-Hosted | Fattura Facile',
-  url: 'https://fatturafacile.eu/versioni/',
-  description:
-    'Confronto tecnico completo tra Fattura Facile Desktop (C# WPF + SQLite portabile su chiavetta USB) e Fattura Facile Private Cloud (Docker, multi-utente, SQL Server / Postgres).',
+  name: t.versioni.seo.title,
+  url: `https://fatturafacile.eu${getLocalizedPath('/versioni/', lang)}`,
+  inLanguage: lang,
+  description: t.versioni.seo.description,
   publisher: {
     '@type': 'Organization',
     name: 'Fattura Facile Teams',
@@ -16,8 +20,10 @@ const pageSchema = {
 ---
 
 <BaseLayout
-  title="Versioni a Confronto: Desktop vs Cloud Self-Hosted | Fattura Facile"
-  description="Confronta l'edizione portabile Desktop su USB (SQLite, 100% offline, zero installazione) e l'edizione Cloud Privato Self-Hosted multi-utente (Docker/SQL)."
+  title={t.versioni.seo.title}
+  description={t.versioni.seo.description}
+  keywords={t.versioni.seo.keywords}
+  lang={lang}
   schema={pageSchema}
 >
   <!-- Hero Section -->

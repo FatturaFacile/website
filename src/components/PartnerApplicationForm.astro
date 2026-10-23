@@ -233,20 +233,19 @@ const serviceOptions: ServiceCapability[] = [
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!(form instanceof HTMLFormElement)) return;
 
-      const company = form.companyName.value.trim();
-      const contact = form.contactPerson.value.trim();
-      const email = form.email.value.trim();
-      const phone = form.phone.value.trim();
-      const country = form.country.value === 'CH' ? 'Svizzera 🇨🇭' : 'Italia 🇮🇹';
-      const region = form.region.value.trim();
-      const role = form.role.value;
-      const notes = form.notes.value.trim();
+      const formData = new FormData(form);
+      const company = String(formData.get('companyName') || '').trim();
+      const contact = String(formData.get('contactPerson') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const phone = String(formData.get('phone') || '').trim();
+      const country = formData.get('country') === 'CH' ? 'Svizzera 🇨🇭' : 'Italia 🇮🇹';
+      const region = String(formData.get('region') || '').trim();
+      const role = String(formData.get('role') || '');
+      const notes = String(formData.get('notes') || '').trim();
 
-      const checkedServices = [];
-      form.querySelectorAll('input[name="services"]:checked').forEach((cb) => {
-        checkedServices.push(cb.value);
-      });
+      const checkedServices = formData.getAll('services').map((v) => String(v));
 
       if (checkedServices.length === 0) {
         alert('Seleziona almeno una competenza o servizio offerto.');

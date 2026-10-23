@@ -1,31 +1,112 @@
 ---
+import type { Locale } from '../i18n/types';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang?: Locale;
+}
+
 const currentPath = Astro.url.pathname;
+const lang: Locale = Astro.props.lang ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const isProductActive =
-  currentPath.startsWith('/perche') ||
-  currentPath.startsWith('/funzionalita') ||
-  currentPath.startsWith('/moduli') ||
-  currentPath.startsWith('/versioni');
+  currentPath.includes('/perche') ||
+  currentPath.includes('/funzionalita') ||
+  currentPath.includes('/moduli') ||
+  currentPath.includes('/versioni');
 const isCommunityActive =
-  currentPath.startsWith('/community-richieste') ||
-  currentPath.startsWith('/scuole-e-sociale') ||
-  currentPath.startsWith('/sponsor');
-const isNetworkActive =
-  currentPath.startsWith('/supporto-locale') || currentPath.startsWith('/faq');
+  currentPath.includes('/community-richieste') ||
+  currentPath.includes('/scuole-e-sociale') ||
+  currentPath.includes('/sponsor');
+const isNetworkActive = currentPath.includes('/supporto-locale') || currentPath.includes('/faq');
 const isAboutActive =
   currentPath.includes('/storia') ||
+  currentPath.includes('/team') ||
   currentPath.includes('#storia') ||
   currentPath.includes('#team');
+
+const dropdownSubtitles: Record<
+  Locale,
+  {
+    whyUs: string;
+    features: string;
+    versions: string;
+    requestModules: string;
+    contribute: string;
+    schools: string;
+    sponsors: string;
+    localSupport: string;
+    faq: string;
+    story: string;
+    team: string;
+  }
+> = {
+  it: {
+    whyUs: 'Filosofia anti-ERP per artigiani e PMI',
+    features: 'FatturaPA, Swiss QR-Bill e roadmap',
+    versions: 'Desktop USB SQLite vs Docker Privato',
+    requestModules: 'Sviluppo a costo zero rilasciato a tutti',
+    contribute: 'Devs, commercialisti, traduttori e tester',
+    schools: 'Didattica per istituti e impatto sociale',
+    sponsors: 'Sostieni certificati e server CI/CD',
+    localSupport: 'Tecnici e fiduciarie sul territorio',
+    faq: 'Guida rapida a USB, backup e SDI/QR',
+    story: "Dall'esigenza reale all'open source",
+    team: 'Chi sviluppa e mantiene il progetto',
+  },
+  en: {
+    whyUs: 'Anti-ERP philosophy for tradespeople & SMEs',
+    features: 'FatturaPA, Swiss QR-Bill & public roadmap',
+    versions: 'USB SQLite Desktop vs Private Docker',
+    requestModules: 'Zero-cost custom modules shared with all',
+    contribute: 'Devs, accountants, translators & testers',
+    schools: 'Vocational education & social impact',
+    sponsors: 'Support certificates & CI/CD build servers',
+    localSupport: 'IT technicians & fiduciaries near you',
+    faq: 'Quick guide to USB, backups & SDI/QR',
+    story: 'From real field needs to open source',
+    team: 'Who builds and maintains the project',
+  },
+  fr: {
+    whyUs: 'Philosophie anti-ERP pour artisans et PME',
+    features: 'FatturaPA, QR-facture suisse et roadmap',
+    versions: 'Desktop USB SQLite vs Docker Privé',
+    requestModules: 'Développement gratuit partagé avec tous',
+    contribute: 'Devs, fiduciaires, traducteurs et testeurs',
+    schools: 'Formation professionnelle et impact social',
+    sponsors: 'Soutenir certificats et serveurs CI/CD',
+    localSupport: 'Techniciens et fiduciaires de proximité',
+    faq: 'Guide rapide clé USB, sauvegardes et SDI/QR',
+    story: "Du besoin réel de terrain à l'open source",
+    team: 'Qui développe et maintient le projet',
+  },
+  de: {
+    whyUs: 'Anti-ERP-Philosophie für Handwerk & KMU',
+    features: 'FatturaPA, Schweizer QR-Rechnung & Roadmap',
+    versions: 'Desktop USB SQLite vs Privates Docker',
+    requestModules: 'Kostenlose Module für alle veröffentlicht',
+    contribute: 'Entwickler, Treuhänder, Übersetzer & Tester',
+    schools: 'Berufsbildung & gesellschaftlicher Beitrag',
+    sponsors: 'Zertifikate & CI/CD-Server unterstützen',
+    localSupport: 'IT-Techniker und Treuhänder vor Ort',
+    faq: 'Kurzanleitung zu USB, Backups & SDI/QR',
+    story: 'Vom Praxisbedarf zur freien Software',
+    team: 'Wer das Projekt entwickelt und pflegt',
+  },
+};
+
+const sub = dropdownSubtitles[lang];
 ---
 
 <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/95 dark:bg-slate-900/95 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     <!-- Logo Branding -->
     <a
-      href="/"
+      href={getLocalizedPath('/', lang)}
       class="flex items-center gap-3 group shrink-0"
-      aria-label="Fattura Facile Home"
-      title="Fattura Facile Home"
+      aria-label={`${t.common.siteName} Home`}
+      title={`${t.common.siteName} Home`}
       data-i18n-aria-label="logo_aria"
       data-i18n-title="logo_aria"
     >
@@ -124,7 +205,7 @@ const isAboutActive =
           class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mt-1"
           data-i18n="logo_claim"
         >
-          Fatture semplici, offline e cloud
+          {t.common.tagline}
         </span>
       </div>
     </a>
@@ -138,7 +219,7 @@ const isAboutActive =
           class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isProductActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
           aria-haspopup="true"
         >
-          <span>Prodotto</span>
+          <span>{t.common.nav.product}</span>
           <svg
             class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
             fill="none"
@@ -155,33 +236,31 @@ const isAboutActive =
         </button>
         <div class="absolute left-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
           <a
-            href="/perche/"
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">Perché Noi</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Filosofia anti-ERP per artigiani e PMI
-            </span>
-          </a>
-          <a
-            href="/funzionalita/"
+            href={getLocalizedPath('/perche/', lang)}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             <span class="font-bold text-slate-900 dark:text-white text-xs">
-              Funzionalità & Moduli
+              {t.common.nav.whyUs}
             </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              FatturaPA, Swiss QR-Bill e roadmap
-            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.whyUs}</span>
           </a>
           <a
-            href="/versioni/"
+            href={getLocalizedPath('/funzionalita/', lang)}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">Offline vs Cloud</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Desktop USB SQLite vs Docker Privato
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              {t.common.nav.featuresModules}
             </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.features}</span>
+          </a>
+          <a
+            href={getLocalizedPath('/versioni/', lang)}
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              {t.common.nav.offlineVsCloud}
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.versions}</span>
           </a>
         </div>
       </div>
@@ -193,7 +272,7 @@ const isAboutActive =
           class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isCommunityActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
           aria-haspopup="true"
         >
-          <span>Community & Sociale</span>
+          <span>{t.common.nav.communitySocial}</span>
           <svg
             class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
             fill="none"
@@ -210,44 +289,40 @@ const isAboutActive =
         </button>
         <div class="absolute left-0 mt-2 w-72 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
           <a
-            href="/community-richieste/"
+            href={getLocalizedPath('/community-richieste/', lang)}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             <span class="font-bold text-teal-600 dark:text-teal-400 text-xs">
-              Richiedi Moduli (Gratis)
+              {t.common.nav.requestModulesFree}
             </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Sviluppo a costo zero rilasciato a tutti
-            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.requestModules}</span>
           </a>
           <a
-            href="/community-richieste/#collaborare"
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">Come Collaborare</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Devs, commercialisti, traduttori e tester
-            </span>
-          </a>
-          <a
-            href="/scuole-e-sociale/"
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">Scuole & Sociale</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Didattica per istituti e impatto sociale
-            </span>
-          </a>
-          <a
-            href="/sponsor/"
+            href={`${getLocalizedPath('/community-richieste/', lang)}#collaborare`}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             <span class="font-bold text-slate-900 dark:text-white text-xs">
-              Sponsor & Sostenibilità
+              {t.common.nav.contribute}
             </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Sostieni certificati e server CI/CD
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.contribute}</span>
+          </a>
+          <a
+            href={getLocalizedPath('/scuole-e-sociale/', lang)}
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              {t.common.nav.schoolsSocial}
             </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.schools}</span>
+          </a>
+          <a
+            href={getLocalizedPath('/sponsor/', lang)}
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              {t.common.nav.sponsors}
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.sponsors}</span>
           </a>
         </div>
       </div>
@@ -259,7 +334,7 @@ const isAboutActive =
           class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isNetworkActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
           aria-haspopup="true"
         >
-          <span>Supporto & Rete</span>
+          <span>{t.common.nav.networkSupport}</span>
           <svg
             class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
             fill="none"
@@ -276,26 +351,20 @@ const isAboutActive =
         </button>
         <div class="absolute left-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
           <a
-            href="/supporto-locale/"
+            href={getLocalizedPath('/supporto-locale/', lang)}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             <span class="font-bold text-slate-900 dark:text-white text-xs">
-              Supporto Locale (IT/CH)
+              {t.common.nav.localSupport}
             </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Tecnici e fiduciarie sul territorio
-            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.localSupport}</span>
           </a>
           <a
-            href="/faq/"
+            href={getLocalizedPath('/faq/', lang)}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              Domande Frequenti (FAQ)
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Guida rapida a USB, backup e SDI/QR
-            </span>
+            <span class="font-bold text-slate-900 dark:text-white text-xs">{t.common.nav.faq}</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.faq}</span>
           </a>
         </div>
       </div>
@@ -307,7 +376,7 @@ const isAboutActive =
           class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isAboutActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
           aria-haspopup="true"
         >
-          <span>Chi Siamo</span>
+          <span>{t.common.nav.about}</span>
           <svg
             class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
             fill="none"
@@ -324,31 +393,29 @@ const isAboutActive =
         </button>
         <div class="absolute right-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
           <a
-            href="/storia/"
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">La Nostra Storia</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Dall'esigenza reale all'open source
-            </span>
-          </a>
-          <a
-            href="/community-richieste/#team"
+            href={getLocalizedPath('/storia/', lang)}
             class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
           >
             <span class="font-bold text-slate-900 dark:text-white text-xs">
-              Team & Contributori
+              {t.common.nav.story}
             </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">
-              Chi sviluppa e mantiene il progetto
-            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.story}</span>
           </a>
           <a
-            href="/privacy/"
+            href={getLocalizedPath('/team/', lang)}
+            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+          >
+            <span class="font-bold text-slate-900 dark:text-white text-xs">
+              {t.common.nav.team}
+            </span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.team}</span>
+          </a>
+          <a
+            href={getLocalizedPath('/privacy/', lang)}
             class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-t border-slate-100 dark:border-slate-800/80 mt-1"
           >
             <span class="font-bold text-slate-900 dark:text-white text-xs">
-              Privacy & Sovranità Dati
+              {t.common.nav.privacy}
             </span>
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           </a>
@@ -400,50 +467,54 @@ const isAboutActive =
 
       <!-- Language Selector -->
       <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">
-        <button
+        <a
           id="lang-it-btn"
-          onclick="window.setLanguage('it')"
-          class="px-2 py-1 rounded-lg transition-all duration-200 tab-active"
+          href={getLocalizedPath(currentPath, 'it')}
+          onclick="localStorage.setItem('lang', 'it')"
+          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'it' ? 'tab-active' : ''}`}
           title="Italiano"
           aria-label="Italiano"
           data-i18n-title="lang_it"
           data-i18n-aria-label="lang_it"
         >
           IT
-        </button>
-        <button
+        </a>
+        <a
           id="lang-en-btn"
-          onclick="window.setLanguage('en')"
-          class="px-2 py-1 rounded-lg transition-all duration-200"
+          href={getLocalizedPath(currentPath, 'en')}
+          onclick="localStorage.setItem('lang', 'en')"
+          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'en' ? 'tab-active' : ''}`}
           title="English"
           aria-label="English"
           data-i18n-title="lang_en"
           data-i18n-aria-label="lang_en"
         >
           EN
-        </button>
-        <button
+        </a>
+        <a
           id="lang-fr-btn"
-          onclick="window.setLanguage('fr')"
-          class="px-2 py-1 rounded-lg transition-all duration-200"
+          href={getLocalizedPath(currentPath, 'fr')}
+          onclick="localStorage.setItem('lang', 'fr')"
+          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'fr' ? 'tab-active' : ''}`}
           title="Français"
           aria-label="Français"
           data-i18n-title="lang_fr"
           data-i18n-aria-label="lang_fr"
         >
           FR
-        </button>
-        <button
+        </a>
+        <a
           id="lang-de-btn"
-          onclick="window.setLanguage('de')"
-          class="px-2 py-1 rounded-lg transition-all duration-200"
+          href={getLocalizedPath(currentPath, 'de')}
+          onclick="localStorage.setItem('lang', 'de')"
+          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'de' ? 'tab-active' : ''}`}
           title="Deutsch"
           aria-label="Deutsch"
           data-i18n-title="lang_de"
           data-i18n-aria-label="lang_de"
         >
           DE
-        </button>
+        </a>
       </div>
 
       <!-- Mobile Menu Toggle Button -->
@@ -451,7 +522,7 @@ const isAboutActive =
         id="mobile-menu-btn"
         type="button"
         class="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
-        aria-label="Apri menu principale"
+        aria-label="Menu"
         aria-expanded="false"
       >
         <svg
@@ -494,26 +565,26 @@ const isAboutActive =
     <!-- Product Group -->
     <div>
       <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        Prodotto
+        {t.common.nav.product}
       </div>
       <div class="space-y-1 pl-2">
         <a
-          href="/perche/"
+          href={getLocalizedPath('/perche/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Perché Noi
+          {t.common.nav.whyUs}
         </a>
         <a
-          href="/funzionalita/"
+          href={getLocalizedPath('/funzionalita/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Funzionalità & Moduli
+          {t.common.nav.featuresModules}
         </a>
         <a
-          href="/versioni/"
+          href={getLocalizedPath('/versioni/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Offline vs Cloud
+          {t.common.nav.offlineVsCloud}
         </a>
       </div>
     </div>
@@ -521,32 +592,32 @@ const isAboutActive =
     <!-- Community & Social Group -->
     <div>
       <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        Community & Sociale
+        {t.common.nav.communitySocial}
       </div>
       <div class="space-y-1 pl-2">
         <a
-          href="/community-richieste/"
+          href={getLocalizedPath('/community-richieste/', lang)}
           class="block py-1.5 text-sm font-medium text-teal-600 dark:text-teal-400 font-bold"
         >
-          Richiedi Moduli (Gratis)
+          {t.common.nav.requestModulesFree}
         </a>
         <a
-          href="/community-richieste/#collaborare"
+          href={`${getLocalizedPath('/community-richieste/', lang)}#collaborare`}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Come Collaborare
+          {t.common.nav.contribute}
         </a>
         <a
-          href="/scuole-e-sociale/"
+          href={getLocalizedPath('/scuole-e-sociale/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Scuole & Sociale
+          {t.common.nav.schoolsSocial}
         </a>
         <a
-          href="/sponsor/"
+          href={getLocalizedPath('/sponsor/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Sponsor
+          {t.common.nav.sponsors}
         </a>
       </div>
     </div>
@@ -554,20 +625,20 @@ const isAboutActive =
     <!-- Network & Support Group -->
     <div>
       <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        Supporto & Rete
+        {t.common.nav.networkSupport}
       </div>
       <div class="space-y-1 pl-2">
         <a
-          href="/supporto-locale/"
+          href={getLocalizedPath('/supporto-locale/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Supporto Locale (IT/CH)
+          {t.common.nav.localSupport}
         </a>
         <a
-          href="/faq/"
+          href={getLocalizedPath('/faq/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Domande Frequenti (FAQ)
+          {t.common.nav.faq}
         </a>
       </div>
     </div>
@@ -575,26 +646,26 @@ const isAboutActive =
     <!-- About Group -->
     <div>
       <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        Chi Siamo & Privacy
+        {t.common.nav.about}
       </div>
       <div class="space-y-1 pl-2">
         <a
-          href="/storia/"
+          href={getLocalizedPath('/storia/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          La Nostra Storia
+          {t.common.nav.story}
         </a>
         <a
-          href="/community-richieste/#team"
+          href={getLocalizedPath('/team/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Team & Contributori
+          {t.common.nav.team}
         </a>
         <a
-          href="/privacy/"
+          href={getLocalizedPath('/privacy/', lang)}
           class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
         >
-          Informativa Privacy Completa
+          {t.common.nav.privacy}
         </a>
       </div>
     </div>
@@ -602,10 +673,10 @@ const isAboutActive =
     <!-- Direct CTA -->
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
       <a
-        href="/#download"
+        href={`${getLocalizedPath('/', lang)}#download`}
         class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 text-white font-bold rounded-xl text-sm shadow-md"
       >
-        Scarica Desktop Free
+        {t.common.actions.downloadDesktop}
       </a>
     </div>
   </div>

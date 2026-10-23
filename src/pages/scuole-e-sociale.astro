@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SCHOOLS_DATA, SCHOOL_TYPE_LABELS, COLLABORATION_PROGRAM_LABELS } from '../data/schools';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const schemaGraph = {
   '@context': 'https://schema.org',
@@ -77,8 +81,10 @@ const mailtoLink = `mailto:scuole@fatturafacile.eu?subject=${mailtoSubject}&body
 ---
 
 <BaseLayout
-  title="Scuole, Formazione & Missione Sociale | Fattura Facile"
-  description="Fattura Facile per le scuole tecniche e commerciali in Italia e Svizzera: software gestionale reale e gratuito per imparare lo sviluppo .NET e la contabilità pratica."
+  title={t.scuoleSociale.seo.title}
+  description={t.scuoleSociale.seo.description}
+  keywords={t.scuoleSociale.seo.keywords}
+  lang={lang}
   schema={schemaGraph}
 >
   <!-- 1. Hero Section -->

@@ -591,7 +591,7 @@ export const fr: SiteTranslations = {
     ],
     section2Title: '2. Édition Cloud Auto-Hébergée (Infrastructure du Client)',
     section2Intro:
-      "Lors du déploiement de la version multi-utilisateurs sur un serveur local ou un serveur privé virtuel (VPS) :",
+      'Lors du déploiement de la version multi-utilisateurs sur un serveur local ou un serveur privé virtuel (VPS) :',
     section2Bullets: [
       {
         title: "Propriété Directe de l'Infrastructure",

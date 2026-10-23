@@ -1,19 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const sponsorSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Sponsor e Sostenibilità | Fattura Facile',
-  url: 'https://fatturafacile.eu/sponsor/',
-  description:
-    'Come finanziamo e garantiamo la sostenibilità open source di Fattura Facile: certificati crittografici di firma codice Windows, server di test CI/CD e supporto trasparente.',
+  name: t.sponsor.seo.title,
+  url: `https://fatturafacile.eu${getLocalizedPath('/sponsor/', lang)}`,
+  inLanguage: lang,
+  description: t.sponsor.seo.description,
 };
 ---
 
 <BaseLayout
-  title="Sponsor & Sostenibilità Open Source | Fattura Facile"
-  description="Scopri come sostenere lo sviluppo di Fattura Facile. Finanziamento trasparente per certificati di firma digitale, runner CI/CD e licenze di test."
+  title={t.sponsor.seo.title}
+  description={t.sponsor.seo.description}
+  keywords={t.sponsor.seo.keywords}
+  lang={lang}
   schema={sponsorSchema}
 >
   <!-- Hero Section -->

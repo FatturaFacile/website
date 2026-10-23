@@ -1,4 +1,14 @@
 ---
+import type { Locale } from '../i18n/types';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang?: Locale;
+}
+
+const lang: Locale = Astro.props.lang ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const pm = t.common.privacyModal;
 ---
 
 <div
@@ -23,18 +33,18 @@
         </div>
         <div>
           <h3 class="text-lg font-bold" data-i18n="mod_title">
-            Informativa Privacy & Conformità Normativa
+            {pm.title}
           </h3>
           <p class="text-xs text-slate-300" data-i18n="mod_sub">
-            GDPR UE (Regolamento 2016/679) & nLPD Svizzera
+            {pm.subtitle}
           </p>
         </div>
       </div>
       <button
         onclick="window.closePrivacyModal()"
         class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-colors"
-        aria-label="Chiudi finestra privacy"
-        title="Chiudi finestra privacy"
+        aria-label={pm.closeBtn}
+        title={pm.closeBtn}
         data-i18n-aria-label="mod_close_aria"
         data-i18n-title="mod_close_aria"
       >
@@ -52,81 +62,56 @@
     <!-- Modal Body (Scrollable) -->
     <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-700 dark:text-slate-300 text-sm leading-relaxed custom-scrollbar">
       <div class="p-4 bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800 rounded-2xl text-teal-900 dark:text-teal-200 text-xs">
-        <strong data-i18n="mod_callout_title">Principio Architetturale Base:</strong>{' '}
-        <span data-i18n="mod_callout_desc">
-          In Fattura Facile la riservatezza non è un modulo accessorio, bensì il fondamento
-          strutturale del software.
-        </span>
+        <strong data-i18n="mod_callout_title">{pm.calloutTitle}</strong>{' '}
+        <span data-i18n="mod_callout_desc">{pm.calloutDesc}</span>
       </div>
 
       <div>
         <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-teal-600 dark:text-teal-400"></span>
-          <span data-i18n="mod_sec1_title">1. Versione Desktop Standalone (SQLite Locale)</span>
+          <span class="w-2 h-2 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          <span data-i18n="mod_sec1_title">{pm.section1Title}</span>
         </h4>
         <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="mod_sec1_text">
-          Utilizzando la versione portabile Desktop su USB:
+          {pm.section1Text}
         </p>
         <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600 dark:text-slate-400">
-          <li data-i18n="mod_sec1_b1">
-            <strong>Zero Trasmissione Dati:</strong> Fatture, clienti, codici fiscali, IBAN e prezzi
-            risiedono unicamente nel file SQLite locale sul tuo dispositivo.
-          </li>
-          <li data-i18n="mod_sec1_b2">
-            <strong>Zero Server Intermediari:</strong> Non raccogliamo telemetria, non tracciamo
-            l'uso né archiviamo le tue fatture.
-          </li>
-          <li data-i18n="mod_sec1_b3">
-            <strong>Governo della Privacy:</strong> Tu sei l'unico Titolare del trattamento. Nessun
-            trasferimento transfrontaliero e nessun DPA necessario per la versione locale.
-          </li>
+          <li data-i18n="mod_sec1_b1">{pm.section1Bullets[0]}</li>
+          <li data-i18n="mod_sec1_b2">{pm.section1Bullets[1]}</li>
+          <li data-i18n="mod_sec1_b3">{pm.section1Bullets[2]}</li>
         </ul>
       </div>
 
       <div>
         <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-teal-600 dark:text-teal-400"></span>
-          <span data-i18n="mod_sec2_title">
-            2. Versione Cloud Self-Hosted (Hosting gestito da te)
-          </span>
+          <span class="w-2 h-2 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          <span data-i18n="mod_sec2_title">{pm.section2Title}</span>
         </h4>
         <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="mod_sec2_text">
-          Anche con la versione multi-utente su container:
+          {pm.section2Text}
         </p>
         <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600 dark:text-slate-400">
-          <li data-i18n="mod_sec2_b1">
-            <strong>Infrastruttura di tua proprietà:</strong> Il sistema risiede su VPS o server
-            aziendale di tua competenza. Noi non abbiamo accesso ai database.
-          </li>
-          <li data-i18n="mod_sec2_b2">
-            <strong>Conformità Diretta:</strong> Rispetto di GDPR e nLPD sotto il tuo diretto
-            controllo interno, senza rischi derivanti da sub-responsabili esterni.
-          </li>
-          <li data-i18n="mod_sec2_b3">
-            <strong>Contatto diretto:</strong> Per quesiti o richieste sui moduli:
-            info@fatturafacile.eu.
-          </li>
+          <li data-i18n="mod_sec2_b1">{pm.section2Bullets[0]}</li>
+          <li data-i18n="mod_sec2_b2">{pm.section2Bullets[1]}</li>
+          <li data-i18n="mod_sec2_b3">{pm.section2Bullets[2]}</li>
         </ul>
       </div>
 
       <div>
         <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-teal-600 dark:text-teal-400"></span>
-          <span data-i18n="mod_sec3_title">3. Diritti degli Interessati</span>
+          <span class="w-2 h-2 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          <span data-i18n="mod_sec3_title">{pm.section3Title}</span>
         </h4>
         <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="mod_sec3_text">
-          In conformità agli articoli 15-22 del GDPR UE e agli articoli 25-29 della nLPD Svizzera,
-          l'interessato gode del diritto di accesso, rettifica, portabilità e cancellazione. Nella
-          versione Desktop disponi già del controllo fisico immediato e totale dell'archivio.
+          {pm.section3Text}
         </p>
       </div>
 
       <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
         <a
-          href="/privacy/"
+          href={getLocalizedPath('/privacy/', lang)}
           class="text-xs text-teal-600 dark:text-teal-400 font-bold hover:underline flex items-center gap-1"
         >
-          Visualizza l'informativa completa permanente su pagina dedicata &rarr;
+          {t.common.nav.privacy} &rarr;
         </a>
       </div>
     </div>
@@ -138,7 +123,7 @@
         class="px-6 py-2.5 bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold rounded-xl text-sm transition-colors"
         data-i18n="mod_close_btn"
       >
-        Ho Capito
+        {t.common.actions.understood}
       </button>
     </div>
   </div>

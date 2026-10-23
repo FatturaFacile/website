@@ -1,4 +1,13 @@
 ---
+import type { Locale } from '../i18n/types';
+import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang?: Locale;
+}
+
+const lang: Locale = Astro.props.lang ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm mt-auto">
@@ -12,14 +21,13 @@
           </span>
         </div>
         <p class="text-xs font-semibold text-teal-400" data-i18n="logo_claim">
-          Fatture semplici, offline e cloud
+          {t.common.tagline}
         </p>
         <p class="text-xs text-slate-400 leading-relaxed" data-i18n="foot_desc">
-          Il sistema di fatturazione snello creato appositamente per artigiani e micro-imprese in
-          Italia e Svizzera. Con architettura SQLite locale e opzione cloud self-hosted.
+          {t.common.footer.description}
         </p>
         <div class="text-xs text-slate-300">
-          <strong data-i18n="foot_email_label">Email di contatto:</strong>{' '}
+          <strong data-i18n="foot_email_label">{t.common.footer.emailLabel}</strong>{' '}
           <a href="mailto:info@fatturafacile.eu" class="text-teal-400 hover:underline">
             info@fatturafacile.eu
           </a>
@@ -32,55 +40,71 @@
           class="text-white text-xs font-bold uppercase tracking-wider mb-4"
           data-i18n="foot_col_prod"
         >
-          Prodotto & Community
+          {t.common.footer.productColTitle}
         </h4>
         <ul class="space-y-2 text-xs">
           <li>
-            <a href="/perche/" class="hover:text-white transition-colors" data-i18n="nav_why">
-              Perché Fattura Facile
+            <a
+              href={getLocalizedPath('/perche/', lang)}
+              class="hover:text-white transition-colors"
+              data-i18n="nav_why"
+            >
+              {t.common.nav.whyUs}
             </a>
           </li>
           <li>
-            <a href="/storia/" class="hover:text-white transition-colors">
-              La Nostra Storia
-            </a>
-          </li>
-          <li>
-            <a href="/funzionalita/" class="hover:text-white transition-colors">
-              Funzionalità & Moduli
+            <a href={getLocalizedPath('/storia/', lang)} class="hover:text-white transition-colors">
+              {t.common.nav.story}
             </a>
           </li>
           <li>
             <a
-              href="/versioni/"
+              href={getLocalizedPath('/funzionalita/', lang)}
+              class="hover:text-white transition-colors"
+            >
+              {t.common.nav.featuresModules}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath('/versioni/', lang)}
               class="hover:text-white transition-colors"
               data-i18n="nav_versions"
             >
-              Desktop vs Cloud
+              {t.common.nav.offlineVsCloud}
             </a>
           </li>
           <li>
             <a
-              href="/community-richieste/"
+              href={getLocalizedPath('/community-richieste/', lang)}
               class="hover:text-teal-400 transition-colors"
               data-i18n="nav_community"
             >
-              Richiedi Moduli Gratis
+              {t.common.nav.requestModulesFree}
             </a>
           </li>
           <li>
-            <a href="/scuole-e-sociale/" class="hover:text-white transition-colors">
-              Scuole & Sociale
+            <a
+              href={getLocalizedPath('/scuole-e-sociale/', lang)}
+              class="hover:text-white transition-colors"
+            >
+              {t.common.nav.schoolsSocial}
             </a>
           </li>
           <li>
-            <a href="/sponsor/" class="hover:text-white transition-colors">
-              Sponsor & Sostenibilità
+            <a
+              href={getLocalizedPath('/sponsor/', lang)}
+              class="hover:text-white transition-colors"
+            >
+              {t.common.nav.sponsors}
             </a>
           </li>
           <li>
-            <a href="/supporto-locale/" class="hover:text-teal-400 transition-colors">
-              Rete Partner Territoriali
+            <a
+              href={getLocalizedPath('/supporto-locale/', lang)}
+              class="hover:text-teal-400 transition-colors"
+            >
+              {t.common.nav.localSupport}
             </a>
           </li>
           <li>
@@ -90,7 +114,7 @@
               rel="noopener noreferrer"
               class="hover:text-white transition-colors"
             >
-              Community Telegram
+              {t.common.footer.telegramCommunity}
             </a>
           </li>
           <li>
@@ -101,7 +125,7 @@
               class="hover:text-white transition-colors"
               data-i18n="foot_github_repo"
             >
-              Repository GitHub
+              {t.common.footer.githubRepo}
             </a>
           </li>
         </ul>
@@ -113,25 +137,25 @@
           class="text-white text-xs font-bold uppercase tracking-wider mb-4"
           data-i18n="foot_col_legal"
         >
-          Privacy & Normativa
+          {t.common.footer.legalColTitle}
         </h4>
         <ul class="space-y-2 text-xs">
           <li>
             <a
-              href="/privacy/"
+              href={getLocalizedPath('/privacy/', lang)}
               class="hover:text-white transition-colors text-left block"
               data-i18n="foot_gdpr"
             >
-              Conformità GDPR (UE 2016/679)
+              GDPR (EU 2016/679)
             </a>
           </li>
           <li>
             <a
-              href="/privacy/"
+              href={getLocalizedPath('/privacy/', lang)}
               class="hover:text-white transition-colors text-left block"
               data-i18n="foot_nlpd"
             >
-              Conformità nLPD Svizzera
+              Swiss FADP / nLPD
             </a>
           </li>
           <li>
@@ -140,7 +164,7 @@
               class="hover:text-white transition-colors text-left cursor-pointer"
               data-i18n="foot_offline_priv"
             >
-              Scheda Privacy & Architettura
+              {t.common.privacyModal.title}
             </button>
           </li>
           <li>
@@ -151,12 +175,12 @@
               class="hover:text-white transition-colors"
               data-i18n="foot_license"
             >
-              Licenza Software (MIT/Open)
+              MIT / Open Source License
             </a>
           </li>
           <li>
-            <a href="/faq/" class="hover:text-white transition-colors">
-              Domande Frequenti (FAQ)
+            <a href={getLocalizedPath('/faq/', lang)} class="hover:text-white transition-colors">
+              {t.common.nav.faq}
             </a>
           </li>
         </ul>
@@ -168,22 +192,20 @@
           class="text-white text-xs font-bold uppercase tracking-wider mb-4"
           data-i18n="foot_col_geo"
         >
-          Mercati Regionali
+          {t.common.footer.marketsColTitle}
         </h4>
         <p class="text-xs text-slate-400 mb-2" data-i18n="foot_geo_it">
-          <strong>Italia 🇮🇹:</strong> Compatibile con FatturaPA XML, tracciamento pagamenti e regimi
-          forfettario/ordinario.
+          {t.common.footer.italyMarketDesc}
         </p>
         <p class="text-xs text-slate-400 mb-4" data-i18n="foot_geo_ch">
-          <strong>Svizzera 🇨🇭:</strong> Compatibile con QR-Bill (standard SIX), calcolo aliquote IVA
-          CH (standard, ridotta, speciale).
+          {t.common.footer.swissMarketDesc}
         </p>
         <div class="pt-3 border-t border-slate-900">
           <a
-            href="/supporto-locale/"
+            href={getLocalizedPath('/supporto-locale/', lang)}
             class="inline-flex items-center gap-1.5 text-xs text-teal-400 font-bold hover:underline"
           >
-            <span>Trova supporto locale o fiduciaria</span>
+            <span>{t.common.nav.localSupport}</span>
             <span>&rarr;</span>
           </a>
         </div>
@@ -192,12 +214,15 @@
 
     <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
       <div>
-        &copy; <span id="year-span">2026</span> Fattura Facile. Software libero rilasciato sotto
-        licenza open source.
+        &copy; <span id="year-span">2026</span> {t.common.footer.copyright}
       </div>
       <div class="flex gap-4">
-        <a href="/privacy/" class="hover:text-slate-300" data-i18n="foot_privacy_policy">
-          Privacy Policy
+        <a
+          href={getLocalizedPath('/privacy/', lang)}
+          class="hover:text-slate-300"
+          data-i18n="foot_privacy_policy"
+        >
+          {t.common.nav.privacy}
         </a>
         <span>•</span>
         <a
