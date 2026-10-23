@@ -4,13 +4,18 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request:
+    branches:
+      - main
+
+# Cancel redundant in-flight analysis runs for the same branch or PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   qodana:
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
       checks: write
@@ -18,7 +23,7 @@ jobs:
       security-events: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
