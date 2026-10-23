@@ -15,27 +15,29 @@ export interface ModuleItem {
   features: string[];
 }
 
+type StatusBadgeTone = 'emerald' | 'teal' | 'blue' | 'slate';
+
+const STATUS_BADGE_TONES: Record<StatusBadgeTone, string> = {
+  emerald:
+    'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
+  teal: 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800',
+  blue: 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800',
+  slate:
+    'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700',
+};
+
+function createStatusMeta(
+  label: string,
+  tone: StatusBadgeTone,
+): { label: string; badgeClass: string } {
+  return { label, badgeClass: STATUS_BADGE_TONES[tone] };
+}
+
 export const MODULE_STATUS_META: Record<ModuleStatus, { label: string; badgeClass: string }> = {
-  available: {
-    label: 'Disponibile Subito',
-    badgeClass:
-      'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
-  },
-  in_development: {
-    label: 'In Sviluppo Attivo',
-    badgeClass:
-      'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800',
-  },
-  planned: {
-    label: 'Pianificato',
-    badgeClass:
-      'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800',
-  },
-  community_backlog: {
-    label: 'Proposta Community',
-    badgeClass:
-      'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700',
-  },
+  available: createStatusMeta('Disponibile Subito', 'emerald'),
+  in_development: createStatusMeta('In Sviluppo Attivo', 'teal'),
+  planned: createStatusMeta('Pianificato', 'blue'),
+  community_backlog: createStatusMeta('Proposta Community', 'slate'),
 };
 
 export const MARKET_SCOPE_LABELS: Record<MarketScope, { label: string; flag: string }> = {
@@ -44,140 +46,159 @@ export const MARKET_SCOPE_LABELS: Record<MarketScope, { label: string; flag: str
   CH: { label: 'Svizzera (QR-Bill / SIX)', flag: '🇨🇭' },
 };
 
+const AVAILABLE_MODULE_BASE = {
+  status: 'available' as const,
+  version: 'v1.0',
+};
+
+const ROADMAP_MODULE_BASE = {
+  market: 'ALL' as const,
+  plannedMilestone: 'Da definire',
+};
+
+type AvailableModuleSeed = readonly [
+  id: string,
+  title: string,
+  category: ModuleCategory,
+  market: MarketScope,
+  description: string,
+  featuresText: string,
+];
+
+type RoadmapModuleSeed = readonly [
+  id: string,
+  title: string,
+  category: ModuleCategory,
+  status: Exclude<ModuleStatus, 'available'>,
+  votesCount: number,
+  description: string,
+  featuresText: string,
+  plannedMilestone?: string,
+];
+
+function splitFeatures(featuresText: string): string[] {
+  return featuresText.split('|').map((item) => item.trim());
+}
+
+function createAvailableModule([
+  id,
+  title,
+  category,
+  market,
+  description,
+  featuresText,
+]: AvailableModuleSeed): ModuleItem {
+  return {
+    ...AVAILABLE_MODULE_BASE,
+    id,
+    title,
+    category,
+    market,
+    description,
+    features: splitFeatures(featuresText),
+  };
+}
+
+function createRoadmapModule([
+  id,
+  title,
+  category,
+  status,
+  votesCount,
+  description,
+  featuresText,
+  plannedMilestone,
+]: RoadmapModuleSeed): ModuleItem {
+  return {
+    ...ROADMAP_MODULE_BASE,
+    id,
+    title,
+    category,
+    status,
+    votesCount,
+    plannedMilestone: plannedMilestone ?? ROADMAP_MODULE_BASE.plannedMilestone,
+    description,
+    features: splitFeatures(featuresText),
+  };
+}
+
+const AVAILABLE_MODULE_SEEDS: readonly AvailableModuleSeed[] = [
+  [
+    'mod-core-invoicing',
+    'Fatturazione Rapida & Preventivi 1-Click',
+    'Core',
+    'ALL',
+    'Creazione ed emissione istantanea di preventivi e fatture con numerazione sequenziale automatica e generazione PDF pulita.',
+    'Conversione istantanea da preventivo a fattura in 1 click|Numerazione sequenziale automatica e gestione note di credito|Layout PDF vettoriale pronto per stampa o invio email|Funzionamento 100% offline con database SQLite embedded',
+  ],
+  [
+    'mod-sdi-fatturapa',
+    'FatturaPA XML & Interscambio SDI',
+    'Tax & Compliance',
+    'IT',
+    "Supporto nativo per il formato XML conforme all'Agenzia delle Entrate per regimi forfettari e ordinari.",
+    'Generazione file XML standard FatturaPA senza errori di validazione|Gestione Codice Destinatario o PEC del cliente|Supporto regimi fiscali italiani (RF19 forfettario, RF01 ordinario)|Verifica immediata schema XSD prima della trasmissione',
+  ],
+  [
+    'mod-six-qrbill',
+    'Polizze QR-Bill SIX & IVA Svizzera',
+    'Tax & Compliance',
+    'CH',
+    'Generazione conforme dello Swiss QR-Bill con codice di pagamento standard SIX e calcolo delle aliquote IVA federali.',
+    'Generazione automatica QR-Code di pagamento certificato SIX|Supporto QR-IBAN con Riferimento QR e IBAN standard con SCOR/NON|Aliquote IVA svizzere (normale, ridotta, speciale alloggio)|Doppia valuta supportata nativamente (CHF / EUR)',
+  ],
+  [
+    'mod-encrypted-backup',
+    'Backup Cifrato 1-Click & Restore',
+    'Safety',
+    'ALL',
+    'Snapshot crittografato del database locale SQLite su memoria secondaria, unità di rete o cartella cloud sincronizzata.',
+    'Archivio ZIP cifrato pronto con un solo clic|Nessuna dipendenza da server esterni di backup proprietari|Ripristino immediato su qualsiasi altra macchina Windows 10/11|Integrità del database verificata pre e post backup',
+  ],
+];
+
+const ROADMAP_MODULE_SEEDS: readonly RoadmapModuleSeed[] = [
+  [
+    'mod-payments-schedule',
+    'Scadenziario Pagamenti & Riconciliazione',
+    'Finance',
+    'in_development',
+    84,
+    'Monitoraggio rapido delle fatture insolute, scadenze passive e ricezione pagamenti con promemoria.',
+    'Cruscotto visivo per fatture saldate, in scadenza o scadute|Solleciti di pagamento generabili in un click via email|Riconciliazione manuale veloce delle rate incassate',
+    'Q1 2027',
+  ],
+  [
+    'mod-stock-simplified',
+    'Magazzino Semplificato & Giacenze Artigiani',
+    'Operations',
+    'planned',
+    67,
+    'Tracciamento essenziale dei materiali più utilizzati (cavi, tubature, raccordi) con scarico automatico alla fatturazione.',
+    'Anagrafica articoli e prezzi unitari con codice a barre opzionale|Avvisi di scorta minima per riordino materiali di lavoro|Scarico automatico della merce collegata alle voci in fattura',
+    'Q2 2027',
+  ],
+  [
+    'mod-advanced-address-book',
+    'Anagrafica Clienti/Fornitori Multi-Listino',
+    'Operations',
+    'community_backlog',
+    42,
+    'Gestione di listini prezzo personalizzati per cliente con sconti dedicati e storico cantieri/interventi.',
+    'Listini differenziati (Privati, Aziende, Subappalti)|Storico interventi e fatture per singolo cliente in una sola scheda|Importazione/esportazione massiva da file Excel o CSV',
+  ],
+  [
+    'mod-cash-register',
+    'Registro Corrispettivi & Prima Nota Cassa',
+    'Finance',
+    'community_backlog',
+    35,
+    'Annotazione rapida delle entrate e uscite giornaliere contanti senza obbligo di registratore telematico.',
+    'Chiusura cassa giornaliera semplice e veloce|Report esportabile per il commercialista o la fiduciaria|Riconciliazione con piccole spese di cantiere documentate',
+  ],
+];
+
 export const MODULES_DATA: ModuleItem[] = [
-  // --- Moduli Disponibili ---
-  {
-    id: 'mod-core-invoicing',
-    title: 'Fatturazione Rapida & Preventivi 1-Click',
-    category: 'Core',
-    description:
-      'Creazione ed emissione istantanea di preventivi e fatture con numerazione sequenziale automatica e generazione PDF pulita.',
-    status: 'available',
-    market: 'ALL',
-    version: 'v1.0',
-    features: [
-      'Conversione istantanea da preventivo a fattura in 1 click',
-      'Numerazione sequenziale automatica e gestione note di credito',
-      'Layout PDF vettoriale pronto per stampa o invio email',
-      'Funzionamento 100% offline con database SQLite embedded',
-    ],
-  },
-  {
-    id: 'mod-sdi-fatturapa',
-    title: 'FatturaPA XML & Interscambio SDI',
-    category: 'Tax & Compliance',
-    description:
-      "Supporto nativo per il formato XML conforme all'Agenzia delle Entrate per regimi forfettari e ordinari.",
-    status: 'available',
-    market: 'IT',
-    version: 'v1.0',
-    features: [
-      'Generazione file XML standard FatturaPA senza errori di validazione',
-      'Gestione Codice Destinatario o PEC del cliente',
-      'Supporto regimi fiscali italiani (RF19 forfettario, RF01 ordinario)',
-      'Verifica immediata schema XSD prima della trasmissione',
-    ],
-  },
-  {
-    id: 'mod-six-qrbill',
-    title: 'Polizze QR-Bill SIX & IVA Svizzera',
-    category: 'Tax & Compliance',
-    description:
-      'Generazione conforme dello Swiss QR-Bill con codice di pagamento standard SIX e calcolo delle aliquote IVA federali.',
-    status: 'available',
-    market: 'CH',
-    version: 'v1.0',
-    features: [
-      'Generazione automatica QR-Code di pagamento certificato SIX',
-      'Supporto QR-IBAN con Riferimento QR e IBAN standard con SCOR/NON',
-      'Aliquote IVA svizzere (normale, ridotta, speciale alloggio)',
-      'Doppia valuta supportata nativamente (CHF / EUR)',
-    ],
-  },
-  {
-    id: 'mod-encrypted-backup',
-    title: 'Backup Cifrato 1-Click & Restore',
-    category: 'Safety',
-    description:
-      'Snapshot crittografato del database locale SQLite su memoria secondaria, unità di rete o cartella cloud sincronizzata.',
-    status: 'available',
-    market: 'ALL',
-    version: 'v1.0',
-    features: [
-      'Archivio ZIP cifrato pronto con un solo clic',
-      'Nessuna dipendenza da server esterni di backup proprietari',
-      'Ripristino immediato su qualsiasi altra macchina Windows 10/11',
-      'Integrità del database verificata pre e post backup',
-    ],
-  },
-
-  // --- Roadmap: In Sviluppo ---
-  {
-    id: 'mod-payments-schedule',
-    title: 'Scadenziario Pagamenti & Riconciliazione',
-    category: 'Finance',
-    description:
-      'Monitoraggio rapido delle fatture insolute, scadenze passive e ricezione pagamenti con promemoria.',
-    status: 'in_development',
-    market: 'ALL',
-    plannedMilestone: 'Q1 2027',
-    votesCount: 84,
-    features: [
-      'Cruscotto visivo per fatture saldate, in scadenza o scadute',
-      'Solleciti di pagamento generabili in un click via email',
-      'Riconciliazione manuale veloce delle rate incassate',
-    ],
-  },
-
-  // --- Roadmap: Pianificati ---
-  {
-    id: 'mod-stock-simplified',
-    title: 'Magazzino Semplificato & Giacenze Artigiani',
-    category: 'Operations',
-    description:
-      'Tracciamento essenziale dei materiali più utilizzati (cavi, tubature, raccordi) con scarico automatico alla fatturazione.',
-    status: 'planned',
-    market: 'ALL',
-    plannedMilestone: 'Q2 2027',
-    votesCount: 67,
-    features: [
-      'Anagrafica articoli e prezzi unitari con codice a barre opzionale',
-      'Avvisi di scorta minima per riordino materiali di lavoro',
-      'Scarico automatico della merce collegata alle voci in fattura',
-    ],
-  },
-
-  // --- Roadmap: Proposte Backlog Community ---
-  {
-    id: 'mod-advanced-address-book',
-    title: 'Anagrafica Clienti/Fornitori Multi-Listino',
-    category: 'Operations',
-    description:
-      'Gestione di listini prezzo personalizzati per cliente con sconti dedicati e storico cantieri/interventi.',
-    status: 'community_backlog',
-    market: 'ALL',
-    plannedMilestone: 'Da definire',
-    votesCount: 42,
-    features: [
-      'Listini differenziati (Privati, Aziende, Subappalti)',
-      'Storico interventi e fatture per singolo cliente in una sola scheda',
-      'Importazione/esportazione massiva da file Excel o CSV',
-    ],
-  },
-  {
-    id: 'mod-cash-register',
-    title: 'Registro Corrispettivi & Prima Nota Cassa',
-    category: 'Finance',
-    description:
-      'Annotazione rapida delle entrate e uscite giornaliere contanti senza obbligo di registratore telematico.',
-    status: 'community_backlog',
-    market: 'ALL',
-    plannedMilestone: 'Da definire',
-    votesCount: 35,
-    features: [
-      'Chiusura cassa giornaliera semplice e veloce',
-      'Report esportabile per il commercialista o la fiduciaria',
-      'Riconciliazione con piccole spese di cantiere documentate',
-    ],
-  },
+  ...AVAILABLE_MODULE_SEEDS.map(createAvailableModule),
+  ...ROADMAP_MODULE_SEEDS.map(createRoadmapModule),
 ];
