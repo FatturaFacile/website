@@ -1,7 +1,10 @@
 export type CountryCode = 'IT' | 'CH';
 export type SchoolType = 'Technical' | 'Commercial' | 'Vocational' | 'University';
 export type CollaborationProgram =
-  'real_codebase_lab' | 'enterprise_simulation' | 'internship_pcto' | 'thesis_project';
+  | 'real_codebase_lab'
+  | 'enterprise_simulation'
+  | 'internship_pcto'
+  | 'thesis_project';
 
 export interface SchoolLocation {
   city: string;
@@ -123,55 +126,55 @@ function createEducationalInstitution([
 
 const SCHOOL_SEEDS: readonly SchoolSeedTuple[] = [
   [
-    'ch-cpt-trevano',
-    'Centro Professionale Tecnico (CPT) Trevano',
+    'ch-school-01',
+    'XXX',
     'Technical',
-    'Lugano / Canobbio',
-    'Ticino',
+    'XXX',
+    'XXX',
     'CH',
     ['real_codebase_lab', 'internship_pcto'],
     35,
     'Sezione Informatica Applicata',
-    'https://cpttrevano.ti.ch',
+    'https://XXX',
     "Laboratori didattici per apprendisti informatici e sviluppatori di applicazioni focalizzati sull'adozione di Clean Architecture in C# e persistenza locale con SQLite.",
   ],
   [
-    'ch-scc-bellinzona',
-    'Scuola Cantonale di Commercio (SCC)',
+    'ch-school-02',
+    'XXX',
     'Commercial',
-    'Bellinzona',
-    'Ticino',
+    'XXX',
+    'XXX',
     'CH',
     ['enterprise_simulation'],
     60,
     'Dipartimento Economia Aziendale & Pratica Commerciale',
-    'https://sccbellinzona.ti.ch',
+    'https://XXX',
     'Utilizzo del software nelle aule di simulazione contabile per addestrare gli studenti alla compilazione di preventivi, fatture e gestione delle polizze QR-Bill standard SIX.',
   ],
   [
-    'it-itis-varese',
-    'ITIS Informatica & Telecomunicazioni',
+    'it-school-01',
+    'XXX',
     'Technical',
-    'Varese',
-    'Lombardia',
+    'XXX',
+    'XXX',
     'IT',
     ['real_codebase_lab', 'thesis_project'],
     45,
     'Dipartimento di Informatica & Sistemi',
-    'https://itisvarese.edu.it',
+    'https://XXX',
     "Studio dell'architettura a livelli, implementazione di parser XML FatturaPA per l'Agenzia delle Entrate e sviluppo di pipeline CI/CD con controlli di qualità del codice SonarQube.",
   ],
   [
-    'it-ite-como',
-    'Istituto Tecnico Economico (ITE)',
+    'it-school-02',
+    'XXX',
     'Commercial',
-    'Como',
-    'Lombardia',
+    'XXX',
+    'XXX',
     'IT',
     ['enterprise_simulation', 'internship_pcto'],
     50,
     'Indirizzo Amministrazione, Finanza e Marketing (AFM)',
-    'https://itecomo.edu.it',
+    'https://XXX',
     "Esercitazioni guidate di simulazione d'impresa per micro-aziende e artigiani, gestione dei regimi fiscali italiani (forfettario vs ordinario) e verifica scadenze.",
   ],
 ];
