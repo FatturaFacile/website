@@ -1,13 +1,6 @@
 ---
 import PerchePage from '../perche.astro';
-import type { Locale } from '../../i18n/types';
-
-export function getStaticPaths() {
-  const locales: Locale[] = ['it', 'en', 'fr', 'de'];
-  return locales.map((lang) => ({
-    params: { lang },
-  }));
-}
+export { getAllLocaleStaticPaths as getStaticPaths } from '../../utils/i18n-helper';
 ---
 
 <PerchePage />

@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+import { serializeJsonLd } from '../utils/security';
 
 export interface Props {
   title?: string;
@@ -147,5 +148,5 @@ const finalSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [def
 <!-- Structured Data (JSON-LD) -->
 {finalSchemas.map((s) => (
   /* eslint-disable-next-line astro/no-set-html-directive */
-  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  <script type="application/ld+json" is:inline set:html={serializeJsonLd(s)} />
 ))}

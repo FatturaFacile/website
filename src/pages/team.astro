@@ -1,14 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { TEAM_MEMBERS, TEAM_DOMAIN_LABELS, type TeamMember } from '../data/team';
+import TeamMemberCard from '../components/TeamMemberCard.astro';
+import { TEAM_MEMBERS, type TeamMember } from '../data/team';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const tm = t.team;
 
-const chMembers: TeamMember[] = TEAM_MEMBERS.filter((m) => m.location.country === 'CH');
-const itMembers: TeamMember[] = TEAM_MEMBERS.filter((m) => m.location.country === 'IT');
+const regionalSections: Array<{ title: string; members: TeamMember[] }> = [
+  {
+    title: tm.regions.switzerland,
+    members: TEAM_MEMBERS.filter((m) => m.location.country === 'CH'),
+  },
+  {
+    title: tm.regions.italy,
+    members: TEAM_MEMBERS.filter((m) => m.location.country === 'IT'),
+  },
+];
 
 const teamSchema = {
   '@context': 'https://schema.org',
@@ -39,15 +48,6 @@ const teamSchema = {
     })),
   ],
 };
-
-function getInitials(fullName: string): string {
-  return fullName
-    .split(' ')
-    .map((part) => part[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
-}
 ---
 
 <BaseLayout
@@ -75,123 +75,18 @@ function getInitials(fullName: string): string {
   <!-- Regional Team Grid -->
   <section class="py-16 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-      <!-- Switzerland (CH) -->
-      <div>
-        <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-          <span>{tm.regions.switzerland}</span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {chMembers.map((member) => (
-            <article
-              id={member.id}
-              class="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-4 mb-4">
-                  <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white font-black flex items-center justify-center text-base shrink-0">
-                      {getInitials(member.name)}
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 dark:text-white">
-                        {member.name}
-                      </h3>
-                      <p class="text-xs font-semibold text-teal-600 dark:text-teal-400">
-                        {member.role}
-                      </p>
-                      <p class="text-xs text-slate-500 dark:text-slate-400">
-                        {member.location.city} ({member.location.regionOrCanton},{' '}
-                        {member.location.country})
-                      </p>
-                    </div>
-                  </div>
-                  {member.isCoreMaintainer && (
-                    <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300">
-                      {tm.coreMaintainerBadge}
-                    </span>
-                  )}
-                </div>
-
-                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                  {member.bio}
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800">
-                {member.domains.map((domainKey) => {
-                  const dom = TEAM_DOMAIN_LABELS[domainKey];
-                  return (
-                    <span
-                      class={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border ${dom.badgeClass}`}
-                    >
-                      {dom.label}
-                    </span>
-                  );
-                })}
-              </div>
-            </article>
-          ))}
+      {regionalSections.map((section) => (
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+            <span>{section.title}</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {section.members.map((member) => (
+              <TeamMemberCard member={member} coreMaintainerBadge={tm.coreMaintainerBadge} />
+            ))}
+          </div>
         </div>
-      </div>
-
-      <!-- Italy (IT) -->
-      <div>
-        <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-          <span>{tm.regions.italy}</span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {itMembers.map((member) => (
-            <article
-              id={member.id}
-              class="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm"
-            >
-              <div>
-                <div class="flex items-start justify-between gap-4 mb-4">
-                  <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white font-black flex items-center justify-center text-base shrink-0">
-                      {getInitials(member.name)}
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-bold text-slate-900 dark:text-white">
-                        {member.name}
-                      </h3>
-                      <p class="text-xs font-semibold text-teal-600 dark:text-teal-400">
-                        {member.role}
-                      </p>
-                      <p class="text-xs text-slate-500 dark:text-slate-400">
-                        {member.location.city} ({member.location.regionOrCanton},{' '}
-                        {member.location.country})
-                      </p>
-                    </div>
-                  </div>
-                  {member.isCoreMaintainer && (
-                    <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300">
-                      {tm.coreMaintainerBadge}
-                    </span>
-                  )}
-                </div>
-
-                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                  {member.bio}
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800">
-                {member.domains.map((domainKey) => {
-                  const dom = TEAM_DOMAIN_LABELS[domainKey];
-                  return (
-                    <span
-                      class={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border ${dom.badgeClass}`}
-                    >
-                      {dom.label}
-                    </span>
-                  );
-                })}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
+      ))}
     </div>
   </section>
 

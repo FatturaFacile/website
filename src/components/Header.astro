@@ -28,19 +28,20 @@ const isAboutActive =
 
 const dropdownSubtitles: Record<
   Locale,
-  {
-    whyUs: string;
-    features: string;
-    versions: string;
-    requestModules: string;
-    contribute: string;
-    schools: string;
-    sponsors: string;
-    localSupport: string;
-    faq: string;
-    story: string;
-    team: string;
-  }
+  Record<
+    | 'whyUs'
+    | 'features'
+    | 'versions'
+    | 'requestModules'
+    | 'contribute'
+    | 'schools'
+    | 'sponsors'
+    | 'localSupport'
+    | 'faq'
+    | 'story'
+    | 'team',
+    string
+  >
 > = {
   it: {
     whyUs: 'Filosofia anti-ERP per artigiani e PMI',
@@ -97,6 +98,103 @@ const dropdownSubtitles: Record<
 };
 
 const sub = dropdownSubtitles[lang];
+
+interface NavGroupItem {
+  label: string;
+  href: string;
+  subtitle?: string;
+  highlight?: boolean;
+  hasStatusDot?: boolean;
+}
+
+interface NavGroup {
+  title: string;
+  isActive: boolean;
+  alignRight?: boolean;
+  wide?: boolean;
+  items: NavGroupItem[];
+}
+
+const navGroups: NavGroup[] = [
+  {
+    title: t.common.nav.product,
+    isActive: isProductActive,
+    items: [
+      { label: t.common.nav.whyUs, href: getLocalizedPath('/perche/', lang), subtitle: sub.whyUs },
+      {
+        label: t.common.nav.featuresModules,
+        href: getLocalizedPath('/funzionalita/', lang),
+        subtitle: sub.features,
+      },
+      {
+        label: t.common.nav.offlineVsCloud,
+        href: getLocalizedPath('/versioni/', lang),
+        subtitle: sub.versions,
+      },
+    ],
+  },
+  {
+    title: t.common.nav.communitySocial,
+    isActive: isCommunityActive,
+    wide: true,
+    items: [
+      {
+        label: t.common.nav.requestModulesFree,
+        href: getLocalizedPath('/community-richieste/', lang),
+        subtitle: sub.requestModules,
+        highlight: true,
+      },
+      {
+        label: t.common.nav.contribute,
+        href: `${getLocalizedPath('/community-richieste/', lang)}#collaborare`,
+        subtitle: sub.contribute,
+      },
+      {
+        label: t.common.nav.schoolsSocial,
+        href: getLocalizedPath('/scuole-e-sociale/', lang),
+        subtitle: sub.schools,
+      },
+      {
+        label: t.common.nav.sponsors,
+        href: getLocalizedPath('/sponsor/', lang),
+        subtitle: sub.sponsors,
+      },
+    ],
+  },
+  {
+    title: t.common.nav.networkSupport,
+    isActive: isNetworkActive,
+    items: [
+      {
+        label: t.common.nav.localSupport,
+        href: getLocalizedPath('/supporto-locale/', lang),
+        subtitle: sub.localSupport,
+      },
+      { label: t.common.nav.faq, href: getLocalizedPath('/faq/', lang), subtitle: sub.faq },
+    ],
+  },
+  {
+    title: t.common.nav.about,
+    isActive: isAboutActive,
+    alignRight: true,
+    items: [
+      { label: t.common.nav.story, href: getLocalizedPath('/storia/', lang), subtitle: sub.story },
+      { label: t.common.nav.team, href: getLocalizedPath('/team/', lang), subtitle: sub.team },
+      {
+        label: t.common.nav.privacy,
+        href: getLocalizedPath('/privacy/', lang),
+        hasStatusDot: true,
+      },
+    ],
+  },
+];
+
+const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: string }> = [
+  { code: 'it', label: 'IT', title: 'Italiano', i18nKey: 'lang_it' },
+  { code: 'en', label: 'EN', title: 'English', i18nKey: 'lang_en' },
+  { code: 'fr', label: 'FR', title: 'Français', i18nKey: 'lang_fr' },
+  { code: 'de', label: 'DE', title: 'Deutsch', i18nKey: 'lang_de' },
+];
 ---
 
 <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/95 dark:bg-slate-900/95 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
@@ -212,215 +310,69 @@ const sub = dropdownSubtitles[lang];
 
     <!-- Desktop Navigation with Dropdowns -->
     <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-      <!-- 1. Product Dropdown -->
-      <div class="relative group py-2">
-        <button
-          type="button"
-          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isProductActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
-          aria-haspopup="true"
-        >
-          <span>{t.common.nav.product}</span>
-          <svg
-            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+      {navGroups.map((group) => (
+        <div class="relative group py-2">
+          <button
+            type="button"
+            class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${
+              group.isActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''
+            }`}
+            aria-haspopup="true"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </button>
-        <div class="absolute left-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
-          <a
-            href={getLocalizedPath('/perche/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            <span>{group.title}</span>
+            <svg
+              class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            class={`absolute ${group.alignRight ? 'right-0' : 'left-0'} mt-2 ${
+              group.wide ? 'w-72' : 'w-64'
+            } rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50`}
           >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.whyUs}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.whyUs}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/funzionalita/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.featuresModules}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.features}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/versioni/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.offlineVsCloud}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.versions}</span>
-          </a>
+            {group.items.map((item) =>
+              item.hasStatusDot ? (
+                <a
+                  href={item.href}
+                  class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-t border-slate-100 dark:border-slate-800/80 mt-1"
+                >
+                  <span class="font-bold text-slate-900 dark:text-white text-xs">{item.label}</span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                </a>
+              ) : (
+                <a
+                  href={item.href}
+                  class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <span
+                    class={`font-bold text-xs ${
+                      item.highlight
+                        ? 'text-teal-600 dark:text-teal-400'
+                        : 'text-slate-900 dark:text-white'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                  {item.subtitle && (
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400">
+                      {item.subtitle}
+                    </span>
+                  )}
+                </a>
+              ),
+            )}
+          </div>
         </div>
-      </div>
-
-      <!-- 2. Community & Social Dropdown -->
-      <div class="relative group py-2">
-        <button
-          type="button"
-          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isCommunityActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
-          aria-haspopup="true"
-        >
-          <span>{t.common.nav.communitySocial}</span>
-          <svg
-            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </button>
-        <div class="absolute left-0 mt-2 w-72 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
-          <a
-            href={getLocalizedPath('/community-richieste/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-teal-600 dark:text-teal-400 text-xs">
-              {t.common.nav.requestModulesFree}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.requestModules}</span>
-          </a>
-          <a
-            href={`${getLocalizedPath('/community-richieste/', lang)}#collaborare`}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.contribute}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.contribute}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/scuole-e-sociale/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.schoolsSocial}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.schools}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/sponsor/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.sponsors}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.sponsors}</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- 3. Network & Support Dropdown -->
-      <div class="relative group py-2">
-        <button
-          type="button"
-          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isNetworkActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
-          aria-haspopup="true"
-        >
-          <span>{t.common.nav.networkSupport}</span>
-          <svg
-            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </button>
-        <div class="absolute left-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
-          <a
-            href={getLocalizedPath('/supporto-locale/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.localSupport}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.localSupport}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/faq/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">{t.common.nav.faq}</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.faq}</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- 4. About Dropdown / Links -->
-      <div class="relative group py-2">
-        <button
-          type="button"
-          class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${isAboutActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''}`}
-          aria-haspopup="true"
-        >
-          <span>{t.common.nav.about}</span>
-          <svg
-            class="w-4 h-4 transition-transform group-hover:rotate-180 duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </button>
-        <div class="absolute right-0 mt-2 w-64 rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50">
-          <a
-            href={getLocalizedPath('/storia/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.story}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.story}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/team/', lang)}
-            class="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.team}
-            </span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">{sub.team}</span>
-          </a>
-          <a
-            href={getLocalizedPath('/privacy/', lang)}
-            class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-t border-slate-100 dark:border-slate-800/80 mt-1"
-          >
-            <span class="font-bold text-slate-900 dark:text-white text-xs">
-              {t.common.nav.privacy}
-            </span>
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          </a>
-        </div>
-      </div>
+      ))}
     </nav>
 
     <!-- Controls: Dark/Light Mode, Language & Mobile Hamburger -->
@@ -467,54 +419,22 @@ const sub = dropdownSubtitles[lang];
 
       <!-- Language Selector -->
       <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">
-        <a
-          id="lang-it-btn"
-          href={getLocalizedPath(currentPath, 'it')}
-          onclick="localStorage.setItem('lang', 'it')"
-          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'it' ? 'tab-active' : ''}`}
-          title="Italiano"
-          aria-label="Italiano"
-          data-i18n-title="lang_it"
-          data-i18n-aria-label="lang_it"
-        >
-          IT
-        </a>
-        <a
-          id="lang-en-btn"
-          href={getLocalizedPath(currentPath, 'en')}
-          onclick="localStorage.setItem('lang', 'en')"
-          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'en' ? 'tab-active' : ''}`}
-          title="English"
-          aria-label="English"
-          data-i18n-title="lang_en"
-          data-i18n-aria-label="lang_en"
-        >
-          EN
-        </a>
-        <a
-          id="lang-fr-btn"
-          href={getLocalizedPath(currentPath, 'fr')}
-          onclick="localStorage.setItem('lang', 'fr')"
-          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'fr' ? 'tab-active' : ''}`}
-          title="Français"
-          aria-label="Français"
-          data-i18n-title="lang_fr"
-          data-i18n-aria-label="lang_fr"
-        >
-          FR
-        </a>
-        <a
-          id="lang-de-btn"
-          href={getLocalizedPath(currentPath, 'de')}
-          onclick="localStorage.setItem('lang', 'de')"
-          class={`px-2 py-1 rounded-lg transition-all duration-200 ${lang === 'de' ? 'tab-active' : ''}`}
-          title="Deutsch"
-          aria-label="Deutsch"
-          data-i18n-title="lang_de"
-          data-i18n-aria-label="lang_de"
-        >
-          DE
-        </a>
+        {langOptions.map((opt) => (
+          <a
+            id={`lang-${opt.code}-btn`}
+            href={getLocalizedPath(currentPath, opt.code)}
+            onclick={`localStorage.setItem('lang', '${opt.code}')`}
+            class={`px-2 py-1 rounded-lg transition-all duration-200 ${
+              lang === opt.code ? 'tab-active' : ''
+            }`}
+            title={opt.title}
+            aria-label={opt.title}
+            data-i18n-title={opt.i18nKey}
+            data-i18n-aria-label={opt.i18nKey}
+          >
+            {opt.label}
+          </a>
+        ))}
       </div>
 
       <!-- Mobile Menu Toggle Button -->
@@ -562,113 +482,27 @@ const sub = dropdownSubtitles[lang];
     id="mobile-menu"
     class="lg:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-4 pb-8 space-y-6 max-h-[calc(100vh-5rem)] overflow-y-auto"
   >
-    <!-- Product Group -->
-    <div>
-      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        {t.common.nav.product}
+    {navGroups.map((group) => (
+      <div>
+        <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
+          {group.title}
+        </div>
+        <div class="space-y-1 pl-2">
+          {group.items.map((item) => (
+            <a
+              href={item.href}
+              class={`block py-1.5 text-sm font-medium ${
+                item.highlight
+                  ? 'text-teal-600 dark:text-teal-400 font-bold'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400'
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
       </div>
-      <div class="space-y-1 pl-2">
-        <a
-          href={getLocalizedPath('/perche/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.whyUs}
-        </a>
-        <a
-          href={getLocalizedPath('/funzionalita/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.featuresModules}
-        </a>
-        <a
-          href={getLocalizedPath('/versioni/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.offlineVsCloud}
-        </a>
-      </div>
-    </div>
-
-    <!-- Community & Social Group -->
-    <div>
-      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        {t.common.nav.communitySocial}
-      </div>
-      <div class="space-y-1 pl-2">
-        <a
-          href={getLocalizedPath('/community-richieste/', lang)}
-          class="block py-1.5 text-sm font-medium text-teal-600 dark:text-teal-400 font-bold"
-        >
-          {t.common.nav.requestModulesFree}
-        </a>
-        <a
-          href={`${getLocalizedPath('/community-richieste/', lang)}#collaborare`}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.contribute}
-        </a>
-        <a
-          href={getLocalizedPath('/scuole-e-sociale/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.schoolsSocial}
-        </a>
-        <a
-          href={getLocalizedPath('/sponsor/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.sponsors}
-        </a>
-      </div>
-    </div>
-
-    <!-- Network & Support Group -->
-    <div>
-      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        {t.common.nav.networkSupport}
-      </div>
-      <div class="space-y-1 pl-2">
-        <a
-          href={getLocalizedPath('/supporto-locale/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.localSupport}
-        </a>
-        <a
-          href={getLocalizedPath('/faq/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.faq}
-        </a>
-      </div>
-    </div>
-
-    <!-- About Group -->
-    <div>
-      <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-        {t.common.nav.about}
-      </div>
-      <div class="space-y-1 pl-2">
-        <a
-          href={getLocalizedPath('/storia/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.story}
-        </a>
-        <a
-          href={getLocalizedPath('/team/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.team}
-        </a>
-        <a
-          href={getLocalizedPath('/privacy/', lang)}
-          class="block py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400"
-        >
-          {t.common.nav.privacy}
-        </a>
-      </div>
-    </div>
+    ))}
 
     <!-- Direct CTA -->
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800">

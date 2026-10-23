@@ -1,172 +1,125 @@
-// Main Logic: Dark/Light Mode, Internationalization (i18n), Privacy Modal, FAQ Accordion
+// Client runtime: Dark/Light Theme, Language State, FAQ Accordion, Privacy Modal
+const SUPPORTED_LANGS = ['it', 'en', 'fr', 'de'];
+const SAFE_I18N_ATTRS = new Set(['title', 'aria-label', 'placeholder', 'alt', 'content']);
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLanguage();
   initYear();
 });
 
-/* ==========================================
-   DARK / LIGHT THEME MANAGEMENT
-   ========================================== */
 function initTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  try {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(savedTheme === 'dark' || (!savedTheme && prefersDark) ? 'dark' : 'light');
 
-  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    applyTheme('dark');
-  } else {
-    applyTheme('light');
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  } catch {
+    // Ignore storage access errors in restricted environments
   }
-
-  // Listen to OS preference changes if user hasn't explicitly overridden theme
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      applyTheme(e.matches ? 'dark' : 'light');
-    }
-  });
 }
 
 function applyTheme(theme) {
   const lightIcon = document.getElementById('theme-icon-light');
   const darkIcon = document.getElementById('theme-icon-dark');
-  const logoPath = document.querySelectorAll('.logo-stroke-adaptive');
+  const logoPaths = document.querySelectorAll('.logo-stroke-adaptive');
+  const isDark = theme === 'dark';
 
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-    if (lightIcon && darkIcon) {
-      lightIcon.classList.remove('hidden');
-      darkIcon.classList.add('hidden');
-    }
-    logoPath.forEach(el => el.setAttribute('stroke', '#f8fafc'));
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-    if (lightIcon && darkIcon) {
-      lightIcon.classList.add('hidden');
-      darkIcon.classList.remove('hidden');
-    }
-    logoPath.forEach(el => el.setAttribute('stroke', '#0f172a'));
-    localStorage.setItem('theme', 'light');
+  document.documentElement.classList.toggle('dark', isDark);
+  if (lightIcon) lightIcon.classList.toggle('hidden', !isDark);
+  if (darkIcon) darkIcon.classList.toggle('hidden', isDark);
+
+  const strokeColor = isDark ? '#f8fafc' : '#0f172a';
+  logoPaths.forEach((el) => el.setAttribute('stroke', strokeColor));
+
+  try {
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  } catch {
+    // Ignore storage errors
   }
 }
 
-function toggleTheme() {
+window.toggleTheme = function () {
   const isDark = document.documentElement.classList.contains('dark');
   applyTheme(isDark ? 'light' : 'dark');
-}
-
-/* ==========================================
-   INTERNATIONALIZATION (I18N)
-   ========================================== */
-const SUPPORTED_LANGS = ['it', 'en', 'fr', 'de'];
-let currentLanguage = 'en';
+};
 
 function initLanguage() {
-  const savedLang = localStorage.getItem('lang') || 'en';
-  setLanguage(savedLang);
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const urlLang = SUPPORTED_LANGS.includes(pathParts[0]) ? pathParts[0] : null;
+  const pageLang = document.documentElement.getAttribute('data-page-lang');
+  let storedLang = null;
+  try {
+    storedLang = localStorage.getItem('lang');
+  } catch {
+    storedLang = null;
+  }
+  const initialLang = urlLang || pageLang || storedLang || 'it';
+  window.setLanguage(initialLang);
 }
 
-function setLanguage(lang) {
-  if (typeof translations === 'undefined' || !translations[lang]) return;
-  currentLanguage = lang;
-  localStorage.setItem('lang', lang);
-
+window.setLanguage = function (lang) {
+  if (!SUPPORTED_LANGS.includes(lang)) return;
+  try {
+    localStorage.setItem('lang', lang);
+  } catch {
+    // Ignore storage errors
+  }
   document.documentElement.lang = lang;
 
-  // Update language switcher active states across all supported languages
   SUPPORTED_LANGS.forEach((l) => {
     const btn = document.getElementById(`lang-${l}-btn`);
     if (btn) {
-      if (l === lang) {
-        btn.classList.add('tab-active');
-        btn.setAttribute('aria-pressed', 'true');
-      } else {
-        btn.classList.remove('tab-active');
-        btn.setAttribute('aria-pressed', 'false');
-      }
+      const isActive = l === lang;
+      btn.classList.toggle('tab-active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     }
   });
 
-  const dict = translations[lang];
-
-  // Update page title & meta description if provided in translations
-  if (dict.page_title) {
-    document.title = dict.page_title;
-  }
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc && dict.page_description) {
-    metaDesc.setAttribute('content', dict.page_description);
-  }
-
-  // 1. Process data-i18n attributes (supports compound "[attr]key;text_key" or simple "text_key")
-  document.querySelectorAll('[data-i18n]').forEach((el) => {
-    const rawVal = el.getAttribute('data-i18n');
-    if (!rawVal) return;
-
-    if (rawVal.includes('[') || rawVal.includes(';')) {
-      const parts = rawVal.split(';');
-      parts.forEach((part) => {
-        part = part.trim();
-        if (!part) return;
-        const attrMatch = part.match(/^\[([a-zA-Z0-9_-]+)\](.*)$/);
-        if (attrMatch) {
-          const attr = attrMatch[1];
-          const key = attrMatch[2].trim();
-          if (dict[key] !== undefined) {
-            el.setAttribute(attr, dict[key]);
-          }
-        } else {
-          if (dict[part] !== undefined) {
-            el.innerHTML = dict[part];
+  const dict = window.translations && window.translations[lang];
+  if (dict) {
+    document.querySelectorAll('*').forEach((el) => {
+      for (let i = 0; i < el.attributes.length; i++) {
+        const attr = el.attributes[i];
+        if (attr.name.startsWith('data-i18n-')) {
+          const targetAttr = attr.name.substring(10);
+          const key = attr.value.trim();
+          if (SAFE_I18N_ATTRS.has(targetAttr) && typeof dict[key] === 'string') {
+            el.setAttribute(targetAttr, dict[key]);
           }
         }
-      });
-    } else {
-      if (dict[rawVal] !== undefined) {
-        el.innerHTML = dict[rawVal];
       }
-    }
-  });
+    });
+  }
 
-  // 2. Process data-i18n-* attribute directives (e.g. data-i18n-title, data-i18n-aria-label, data-i18n-content)
-  document.querySelectorAll('*').forEach((el) => {
-    for (let i = 0; i < el.attributes.length; i++) {
-      const attr = el.attributes[i];
-      if (attr.name.startsWith('data-i18n-')) {
-        const targetAttr = attr.name.substring(10);
-        const key = attr.value.trim();
-        if (dict[key] !== undefined) {
-          el.setAttribute(targetAttr, dict[key]);
-        }
-      }
-    }
-  });
-}
+  window.dispatchEvent(new CustomEvent('ff:language-change', { detail: { lang } }));
+};
 
-/* ==========================================
-   FAQ ACCORDION
-   ========================================== */
-function toggleFaq(button) {
+window.toggleFaq = function (button) {
+  if (!(button instanceof HTMLElement)) return;
   const content = button.nextElementSibling;
+  if (!(content instanceof HTMLElement)) return;
   const arrow = button.querySelector('svg');
   const isHidden = content.classList.contains('hidden');
 
-  document.querySelectorAll('#faq-container .faq-answer').forEach((el) => el.classList.add('hidden'));
-  document.querySelectorAll('#faq-container svg.faq-arrow').forEach((el) => el.classList.remove('rotate-180'));
+  document.querySelectorAll('.faq-answer').forEach((el) => el.classList.add('hidden'));
+  document.querySelectorAll('svg.faq-arrow').forEach((el) => el.classList.remove('rotate-180'));
 
   if (isHidden) {
     content.classList.remove('hidden');
-    arrow.classList.add('rotate-180');
+    if (arrow) arrow.classList.add('rotate-180');
     button.setAttribute('aria-expanded', 'true');
   } else {
     button.setAttribute('aria-expanded', 'false');
   }
-}
+};
 
-/* ==========================================
-   PRIVACY MODAL
-   ========================================== */
-function openPrivacyModal() {
+window.openPrivacyModal = function () {
   const modal = document.getElementById('privacy-modal');
   const dialog = document.getElementById('privacy-dialog');
   if (!modal || !dialog) return;
@@ -178,9 +131,9 @@ function openPrivacyModal() {
     dialog.classList.add('scale-100');
   }, 10);
   document.body.style.overflow = 'hidden';
-}
+};
 
-function closePrivacyModal() {
+window.closePrivacyModal = function () {
   const modal = document.getElementById('privacy-modal');
   const dialog = document.getElementById('privacy-dialog');
   if (!modal || !dialog) return;
@@ -192,29 +145,59 @@ function closePrivacyModal() {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
   }, 200);
-}
+};
 
-// Close when clicking outside dialog (on backdrop)
 document.addEventListener('click', (e) => {
   const modal = document.getElementById('privacy-modal');
   if (modal && e.target === modal) {
-    closePrivacyModal();
+    window.closePrivacyModal();
   }
 });
 
-// Close with Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closePrivacyModal();
+    window.closePrivacyModal();
   }
 });
 
-/* ==========================================
-   FOOTER YEAR
-   ========================================== */
 function initYear() {
   const yearSpan = document.getElementById('year-span');
   if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
+    yearSpan.textContent = String(new Date().getFullYear());
   }
 }
+
+window.initCountryFilter = function (btnSelector, cardSelector, btnAttr) {
+  const filterBtns = document.querySelectorAll(btnSelector);
+  const cards = document.querySelectorAll(cardSelector);
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const selected = btn.getAttribute(btnAttr);
+      filterBtns.forEach((b) => {
+        b.classList.remove(
+          'bg-white',
+          'dark:bg-teal-600',
+          'text-slate-900',
+          'dark:text-white',
+          'shadow-sm',
+        );
+        b.classList.add('text-slate-600', 'dark:text-slate-300');
+      });
+      btn.classList.remove('text-slate-600', 'dark:text-slate-300');
+      btn.classList.add(
+        'bg-white',
+        'dark:bg-teal-600',
+        'text-slate-900',
+        'dark:text-white',
+        'shadow-sm',
+      );
+
+      cards.forEach((card) => {
+        const cardCountry = card.getAttribute('data-country');
+        card.classList.toggle('hidden', selected !== 'ALL' && cardCountry !== selected);
+      });
+    });
+  });
+};

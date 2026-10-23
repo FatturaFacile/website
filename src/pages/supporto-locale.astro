@@ -266,43 +266,8 @@ const partnersSchema = {
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    const filterBtns = document.querySelectorAll('.partner-filter-btn');
-    const cards = document.querySelectorAll('.partner-card');
-
-    filterBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const country = btn.getAttribute('data-country');
-
-        // Reset active style on buttons
-        filterBtns.forEach((b) => {
-          b.classList.remove(
-            'bg-white',
-            'dark:bg-teal-600',
-            'text-slate-900',
-            'dark:text-white',
-            'shadow-sm',
-          );
-          b.classList.add('text-slate-600', 'dark:text-slate-300');
-        });
-        btn.classList.remove('text-slate-600', 'dark:text-slate-300');
-        btn.classList.add(
-          'bg-white',
-          'dark:bg-teal-600',
-          'text-slate-900',
-          'dark:text-white',
-          'shadow-sm',
-        );
-
-        // Filter cards
-        cards.forEach((card) => {
-          const cardCountry = card.getAttribute('data-country');
-          if (country === 'ALL' || cardCountry === country) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
+    if (typeof window.initCountryFilter === 'function') {
+      window.initCountryFilter('.partner-filter-btn', '.partner-card', 'data-country');
+    }
   });
 </script>

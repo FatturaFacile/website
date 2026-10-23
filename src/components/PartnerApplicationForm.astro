@@ -222,6 +222,14 @@ const serviceOptions: ServiceCapability[] = [
         </svg>
         Invia Candidatura Partner
       </button>
+      <a
+        id="partner-mailto-trigger"
+        href="mailto:info@fatturafacile.eu"
+        class="hidden"
+        aria-hidden="true"
+      >
+        Email
+      </a>
     </div>
   </form>
 </div>
@@ -229,66 +237,60 @@ const serviceOptions: ServiceCapability[] = [
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('partner-application-form');
-    if (!form) return;
+    const mailtoLink = document.getElementById('partner-mailto-trigger');
+    if (!(form instanceof HTMLFormElement) || !(mailtoLink instanceof HTMLAnchorElement)) return;
+
+    const cleanField = (val, maxLen) =>
+      String(val || '')
+        .replace(/[\p{Cc}<>]/gu, '')
+        .trim()
+        .slice(0, maxLen);
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!(form instanceof HTMLFormElement)) return;
 
       const formData = new FormData(form);
-      const company = String(formData.get('companyName') || '').trim();
-      const contact = String(formData.get('contactPerson') || '').trim();
-      const email = String(formData.get('email') || '').trim();
-      const phone = String(formData.get('phone') || '').trim();
+      const company = cleanField(formData.get('companyName'), 120);
+      const contact = cleanField(formData.get('contactPerson'), 120);
+      const email = cleanField(formData.get('email'), 254);
+      const phone = cleanField(formData.get('phone'), 40);
       const country = formData.get('country') === 'CH' ? 'Svizzera 🇨🇭' : 'Italia 🇮🇹';
-      const region = String(formData.get('region') || '').trim();
-      const role = String(formData.get('role') || '');
-      const notes = String(formData.get('notes') || '').trim();
+      const region = cleanField(formData.get('region'), 100);
+      const role = cleanField(formData.get('role'), 80);
+      const notes = cleanField(formData.get('notes'), 1000);
 
-      const checkedServices = formData.getAll('services').map((v) => String(v));
+      const checkedServices = formData
+        .getAll('services')
+        .map((v) => cleanField(v, 80))
+        .filter(Boolean);
 
-      if (checkedServices.length === 0) {
-        alert('Seleziona almeno una competenza o servizio offerto.');
+      if (!company || !contact || !email.includes('@') || checkedServices.length === 0) {
+        alert('Compila i campi obbligatori e seleziona almeno una competenza o servizio offerto.');
         return;
       }
 
       const subject = encodeURIComponent(
-        '[Nuova Candidatura Partner Locale] ' + company + ' (' + region + ')',
+        `[Nuova Candidatura Partner Locale] ${company} (${region})`,
       );
       const body = encodeURIComponent(
-        'Richiesta di accreditamento come Partner Locale:\n\n' +
-          'Ragione Sociale: ' +
-          company +
-          '\n' +
-          'Referente: ' +
-          contact +
-          '\n' +
-          'Email: ' +
-          email +
-          '\n' +
-          'Telefono: ' +
-          phone +
-          '\n' +
-          'Nazione: ' +
-          country +
-          '\n' +
-          'Regione/Cantone: ' +
-          region +
-          '\n' +
-          'Ruolo: ' +
-          role +
-          '\n' +
-          'Servizi Selezionati:\n - ' +
-          checkedServices.join('\n - ') +
-          '\n\n' +
-          'Note / Copertura:\n' +
-          (notes || 'Nessuna nota specificata.') +
-          '\n\n' +
-          '---\nInviato dal form partner su https://fatturafacile.eu/supporto-locale/',
+        `Richiesta di accreditamento come Partner Locale:\n\n` +
+          `Ragione Sociale: ${company}\n` +
+          `Referente: ${contact}\n` +
+          `Email: ${email}\n` +
+          `Telefono: ${phone}\n` +
+          `Nazione: ${country}\n` +
+          `Regione/Cantone: ${region}\n` +
+          `Ruolo: ${role}\n` +
+          `Servizi Selezionati:\n - ${checkedServices.join('\n - ')}\n\n` +
+          `Note / Copertura:\n${notes || 'Nessuna nota specificata.'}\n\n` +
+          `---\nInviato dal form partner su https://fatturafacile.eu/supporto-locale/`,
       );
 
-      // Trigger mailto client directly
-      window.location.href = 'mailto:info@fatturafacile.eu?subject=' + subject + '&body=' + body;
+      mailtoLink.setAttribute(
+        'href',
+        `mailto:info@fatturafacile.eu?subject=${subject}&body=${body}`,
+      );
+      mailtoLink.click();
     });
   });
 </script>

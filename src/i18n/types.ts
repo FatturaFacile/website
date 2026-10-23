@@ -142,7 +142,7 @@ export interface VersioniTranslations {
   };
   comparisonTable: {
     title: string;
-    headers: [string, string, string];
+    headers: string[];
     rows: {
       feature: string;
       desktop: string;
