@@ -28,6 +28,11 @@ const serviceOptions: ServiceCapability[] = [
   </div>
 
   <form id="partner-application-form" class="space-y-6">
+    <!-- Web3Forms Configurazione (Sostituisci il valore con la tua chiave ottenuta su https://web3forms.com/) -->
+    <input type="hidden" name="access_key" value="INSERISCI_QUI_LA_TUA_WEB3FORMS_ACCESS_KEY" />
+    <input type="hidden" name="subject" value="[Nuova Candidatura Partner Locale] - FatturaFacile" />
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <!-- Nome Azienda / Professionista -->
       <div>
@@ -176,7 +181,7 @@ const serviceOptions: ServiceCapability[] = [
             <input
               type="checkbox"
               name="services"
-              value={srv}
+              value={SERVICE_LABELS[srv].label}
               class="mt-0.5 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
             />
             <span>{SERVICE_LABELS[srv].label}</span>
@@ -202,6 +207,9 @@ const serviceOptions: ServiceCapability[] = [
       ></textarea>
     </div>
 
+    <!-- Box Esito / Risultato -->
+    <div id="form-result-container" class="hidden rounded-xl p-4 text-sm font-medium"></div>
+
     <!-- Submit CTA & Status -->
     <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="text-xs text-slate-500 dark:text-slate-400">
@@ -212,7 +220,7 @@ const serviceOptions: ServiceCapability[] = [
         id="partner-submit-btn"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
       >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="btn-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -220,16 +228,8 @@ const serviceOptions: ServiceCapability[] = [
             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
           ></path>
         </svg>
-        Invia Candidatura Partner
+        <span id="btn-text">Invia Candidatura Partner</span>
       </button>
-      <a
-        id="partner-mailto-trigger"
-        href="mailto:info@fatturafacile.eu"
-        class="hidden"
-        aria-hidden="true"
-      >
-        Email
-      </a>
     </div>
   </form>
 </div>
@@ -237,8 +237,12 @@ const serviceOptions: ServiceCapability[] = [
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('partner-application-form');
-    const mailtoLink = document.getElementById('partner-mailto-trigger');
-    if (!(form instanceof HTMLFormElement) || !(mailtoLink instanceof HTMLAnchorElement)) return;
+    const submitBtn = document.getElementById('partner-submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const resultContainer = document.getElementById('form-result-container');
+
+    if (!(form instanceof HTMLFormElement)) return;
 
     const cleanField = (val, maxLen) =>
       String(val || '')
@@ -246,51 +250,55 @@ const serviceOptions: ServiceCapability[] = [
         .trim()
         .slice(0, maxLen);
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const formData = new FormData(form);
+
       const company = cleanField(formData.get('companyName'), 120);
-      const contact = cleanField(formData.get('contactPerson'), 120);
       const email = cleanField(formData.get('email'), 254);
-      const phone = cleanField(formData.get('phone'), 40);
-      const country = formData.get('country') === 'CH' ? 'Svizzera 🇨🇭' : 'Italia 🇮🇹';
-      const region = cleanField(formData.get('region'), 100);
-      const role = cleanField(formData.get('role'), 80);
-      const notes = cleanField(formData.get('notes'), 1000);
+      const checkedServices = formData.getAll('services');
 
-      const checkedServices = formData
-        .getAll('services')
-        .map((v) => cleanField(v, 80))
-        .filter(Boolean);
-
-      if (!company || !contact || !email.includes('@') || checkedServices.length === 0) {
-        alert('Compila i campi obbligatori e seleziona almeno una competenza o servizio offerto.');
+      if (!company || !email.includes('@') || checkedServices.length === 0) {
+        resultContainer.className = "rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800";
+        resultContainer.textContent = 'Compila i campi obbligatori e seleziona almeno una competenza o servizio offerto.';
+        resultContainer.classList.remove('hidden');
         return;
       }
 
-      const subject = encodeURIComponent(
-        `[Nuova Candidatura Partner Locale] ${company} (${region})`,
-      );
-      const body = encodeURIComponent(
-        `Richiesta di accreditamento come Partner Locale:\n\n` +
-          `Ragione Sociale: ${company}\n` +
-          `Referente: ${contact}\n` +
-          `Email: ${email}\n` +
-          `Telefono: ${phone}\n` +
-          `Nazione: ${country}\n` +
-          `Regione/Cantone: ${region}\n` +
-          `Ruolo: ${role}\n` +
-          `Servizi Selezionati:\n - ${checkedServices.join('\n - ')}\n\n` +
-          `Note / Copertura:\n${notes || 'Nessuna nota specificata.'}\n\n` +
-          `---\nInviato dal form partner su https://fatturafacile.eu/supporto-locale/`,
-      );
+      // Disabilita il bottone e mostra lo spinner di caricamento
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+      btnText.textContent = 'Invio in corso...';
+      btnIcon.classList.add('animate-spin');
+      resultContainer.classList.add('hidden');
 
-      mailtoLink.setAttribute(
-        'href',
-        `mailto:info@fatturafacile.eu?subject=${subject}&body=${body}`,
-      );
-      mailtoLink.click();
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          resultContainer.className = "rounded-xl p-4 text-sm font-medium bg-teal-50 dark:bg-teal-950/50 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800";
+          resultContainer.textContent = 'Candidatura inviata con successo! Il team la esaminerà entro 48 ore lavorative.';
+          resultContainer.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Errore riscontrato durante l\'invio.');
+        }
+      } catch (error) {
+        resultContainer.className = "rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800";
+        resultContainer.textContent = 'Si è verificato un errore di connessione. Riprova più tardi o scrivi direttamente a info@fatturafacile.eu';
+        resultContainer.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+        btnText.textContent = 'Invia Candidatura Partner';
+        btnIcon.classList.remove('animate-spin');
+      }
     });
   });
 </script>
