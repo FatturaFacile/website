@@ -1,10 +1,7 @@
 export type CountryCode = 'IT' | 'CH';
 export type SchoolType = 'Technical' | 'Commercial' | 'Vocational' | 'University';
 export type CollaborationProgram =
-  | 'real_codebase_lab'
-  | 'enterprise_simulation'
-  | 'internship_pcto'
-  | 'thesis_project';
+  'real_codebase_lab' | 'enterprise_simulation' | 'internship_pcto' | 'thesis_project';
 
 export interface SchoolLocation {
   city: string;
@@ -21,12 +18,13 @@ export interface SchoolContact {
 export interface EducationalInstitution {
   id: string;
   name: string;
+  shortName: string;
   type: SchoolType;
   location: SchoolLocation;
   programs: CollaborationProgram[];
-  studentsInvolvedCount?: number;
   contact: SchoolContact;
   description: string;
+  invitedTarget?: boolean;
 }
 
 const DEFAULT_SCHOOL_CONTACT_EMAIL = 'scuole@fatturafacile.eu';
@@ -68,11 +66,11 @@ export const COLLABORATION_PROGRAM_LABELS: Record<
   },
   enterprise_simulation: {
     label: 'Simulazione Gestionale Gratuita',
-    summary: "Esercitazioni di emissione fatture, SDI e QR-Bill a costo zero per l'istituto.",
+    summary: "Esercitazioni di emissione fatture, SdI e QR-Bill a costo zero per l'istituto.",
   },
   internship_pcto: {
-    label: 'Percorsi PCTO / Stage',
-    summary: 'Esperienze formative curriculari nello sviluppo software open-source.',
+    label: 'Percorsi Stage & PCTO',
+    summary: 'Esperienze formative curriculari nello sviluppo software open source.',
   },
   thesis_project: {
     label: 'Progetti di Tesi & Diploma',
@@ -84,12 +82,12 @@ export const COLLABORATION_PROGRAM_LABELS: Record<
 type SchoolSeedTuple = readonly [
   id: string,
   name: string,
+  shortName: string,
   type: SchoolType,
   city: string,
   regionOrCanton: string,
   country: CountryCode,
   programs: CollaborationProgram[],
-  studentsInvolvedCount: number,
   department: string,
   website: string,
   description: string,
@@ -98,12 +96,12 @@ type SchoolSeedTuple = readonly [
 function createEducationalInstitution([
   id,
   name,
+  shortName,
   type,
   city,
   regionOrCanton,
   country,
   programs,
-  studentsInvolvedCount,
   department,
   website,
   description,
@@ -111,71 +109,76 @@ function createEducationalInstitution([
   return {
     id,
     name,
+    shortName,
     type,
     location: { city, regionOrCanton, country },
     programs,
-    studentsInvolvedCount,
     contact: {
       department,
       contactEmail: DEFAULT_SCHOOL_CONTACT_EMAIL,
       website,
     },
     description,
+    invitedTarget: true,
   };
 }
 
+/**
+ * Verified academic institutions invited for educational collaboration, internships,
+ * and diploma projects in Canton Ticino and cross-border regions.
+ */
 const SCHOOL_SEEDS: readonly SchoolSeedTuple[] = [
   [
-    'ch-school-01',
-    'XXX',
+    'ch-cpt',
+    'CPT – Centro Professionale Tecnico',
+    'CPT Trevano / Bellinzona',
     'Technical',
-    'XXX',
-    'XXX',
+    'Bellinzona / Canobbio',
+    'Canton Ticino',
     'CH',
     ['real_codebase_lab', 'internship_pcto'],
-    35,
-    'Sezione Informatica Applicata',
-    'https://XXX',
-    "Laboratori didattici per apprendisti informatici e sviluppatori di applicazioni focalizzati sull'adozione di Clean Architecture in C# e persistenza locale con SQLite.",
+    'Sezione Informatica Applicata & Elettronica',
+    'https://www.cpttrevano.ti.ch',
+    'Laboratori didattici per apprendisti informatici e sviluppatori di applicazioni: adozione di Clean Architecture in C#, SQLite embedded e test automatici.',
   ],
   [
-    'ch-school-02',
-    'XXX',
-    'Commercial',
-    'XXX',
-    'XXX',
+    'ch-sam',
+    'SAM – Scuola d’Arti e Mestieri',
+    'SAM Bellinzona',
+    'Vocational',
+    'Bellinzona',
+    'Canton Ticino',
     'CH',
-    ['enterprise_simulation'],
-    60,
-    'Dipartimento Economia Aziendale & Pratica Commerciale',
-    'https://XXX',
-    'Utilizzo del software nelle aule di simulazione contabile per addestrare gli studenti alla compilazione di preventivi, fatture e gestione delle polizze QR-Bill standard SIX.',
-  ],
-  [
-    'it-school-01',
-    'XXX',
-    'Technical',
-    'XXX',
-    'XXX',
-    'IT',
     ['real_codebase_lab', 'thesis_project'],
-    45,
-    'Dipartimento di Informatica & Sistemi',
-    'https://XXX',
-    "Studio dell'architettura a livelli, implementazione di parser XML FatturaPA per l'Agenzia delle Entrate e sviluppo di pipeline CI/CD con controlli di qualità del codice SonarQube.",
+    'Settore Tecnologico & Professioni Informatiche',
+    'https://www.sambellinzona.ti.ch',
+    'Progetti pratici e lavori di diploma sul ciclo di vita del software gestionale, usabilità per artigiani e persistenza locale dei dati.',
   ],
   [
-    'it-school-02',
-    'XXX',
-    'Commercial',
-    'XXX',
-    'XXX',
-    'IT',
-    ['enterprise_simulation', 'internship_pcto'],
-    50,
-    'Indirizzo Amministrazione, Finanza e Marketing (AFM)',
-    'https://XXX',
-    "Esercitazioni guidate di simulazione d'impresa per micro-aziende e artigiani, gestione dei regimi fiscali italiani (forfettario vs ordinario) e verifica scadenze.",
+    'ch-supsi',
+    'SUPSI – Scuola universitaria professionale della Svizzera italiana',
+    'SUPSI DTI',
+    'University',
+    'Lugano-Viganello',
+    'Canton Ticino',
+    'CH',
+    ['real_codebase_lab', 'thesis_project', 'internship_pcto'],
+    'Dipartimento tecnologie innovative (DTI)',
+    'https://www.supsi.ch/dti',
+    'Opportunità per tesi di bachelor e master, ingegneria del software desktop e architetture offline-first a supporto dell’economia locale.',
+  ],
+  [
+    'ch-usi',
+    'USI – Università della Svizzera italiana',
+    'USI Lugano',
+    'University',
+    'Lugano',
+    'Canton Ticino',
+    'CH',
+    ['real_codebase_lab', 'thesis_project'],
+    'Facoltà di scienze informatiche',
+    'https://www.usi.ch/it/facolta-scienze-informatiche',
+    'Ricerca applicata e contributi open source su privacy by design, integrità crittografica dei backup e conformità dei formati di fatturazione.',
   ],
 ];
 

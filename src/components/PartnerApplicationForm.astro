@@ -30,7 +30,11 @@ const serviceOptions: ServiceCapability[] = [
   <form id="partner-application-form" class="space-y-6">
     <!-- Web3Forms Configurazione (Sostituisci il valore con la tua chiave ottenuta su https://web3forms.com/) -->
     <input type="hidden" name="access_key" value="01c97c1c-13b0-4d74-987c-83f6c2b841aa" />
-    <input type="hidden" name="subject" value="[Nuova Candidatura Partner Locale] - FatturaFacile" />
+    <input
+      type="hidden"
+      name="subject"
+      value="[Nuova Candidatura Partner Locale] - FatturaFacile"
+    />
     <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -260,8 +264,10 @@ const serviceOptions: ServiceCapability[] = [
       const checkedServices = formData.getAll('services');
 
       if (!company || !email.includes('@') || checkedServices.length === 0) {
-        resultContainer.className = "rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800";
-        resultContainer.textContent = 'Compila i campi obbligatori e seleziona almeno una competenza o servizio offerto.';
+        resultContainer.className =
+          'rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800';
+        resultContainer.textContent =
+          'Compila i campi obbligatori e seleziona almeno una competenza o servizio offerto.';
         resultContainer.classList.remove('hidden');
         return;
       }
@@ -276,22 +282,26 @@ const serviceOptions: ServiceCapability[] = [
       try {
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: formData
+          body: formData,
         });
 
         const data = await response.json();
 
         if (data.success) {
-          resultContainer.className = "rounded-xl p-4 text-sm font-medium bg-teal-50 dark:bg-teal-950/50 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800";
-          resultContainer.textContent = 'Candidatura inviata con successo! Il team la esaminerà entro 48 ore lavorative.';
+          resultContainer.className =
+            'rounded-xl p-4 text-sm font-medium bg-teal-50 dark:bg-teal-950/50 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800';
+          resultContainer.textContent =
+            'Candidatura inviata con successo! Il team la esaminerà entro 48 ore lavorative.';
           resultContainer.classList.remove('hidden');
           form.reset();
         } else {
-          throw new Error(data.message || 'Errore riscontrato durante l\'invio.');
+          throw new Error(data.message || "Errore riscontrato durante l'invio.");
         }
       } catch (error) {
-        resultContainer.className = "rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800";
-        resultContainer.textContent = 'Si è verificato un errore di connessione. Riprova più tardi o scrivi direttamente a info@fatturafacile.eu';
+        resultContainer.className =
+          'rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800';
+        resultContainer.textContent =
+          'Si è verificato un errore di connessione. Riprova più tardi o scrivi direttamente a info@fatturafacile.eu';
         resultContainer.classList.remove('hidden');
       } finally {
         submitBtn.disabled = false;

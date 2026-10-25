@@ -80,11 +80,28 @@ const teamSchema = {
           <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
             <span>{section.title}</span>
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {section.members.map((member) => (
-              <TeamMemberCard member={member} coreMaintainerBadge={tm.coreMaintainerBadge} />
-            ))}
-          </div>
+          {section.members.length > 0 ? (
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {section.members.map((member) => (
+                <TeamMemberCard member={member} coreMaintainerBadge={tm.coreMaintainerBadge} />
+              ))}
+            </div>
+          ) : (
+            <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm">
+              <p>
+                Cerchiamo attivamente sviluppatori C#/.NET, esperti di fatturazione elettronica SdI
+                e consulenti fiscali per rafforzare i contributi in questa regione.
+              </p>
+              <a
+                href="https://github.com/FatturaFacile"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex mt-4 text-teal-600 dark:text-teal-400 font-bold hover:underline"
+              >
+                Contribuisci su GitHub &rarr;
+              </a>
+            </div>
+          )}
         </div>
       ))}
     </div>
