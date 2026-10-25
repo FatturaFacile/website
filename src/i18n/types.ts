@@ -355,12 +355,56 @@ export interface PrivacyTranslations {
   contactLabel: string;
 }
 
+export interface CommunityTranslations {
+  seo: SeoMetadata;
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  educationSection: {
+    badge: string;
+    title: string;
+    lead: string;
+    institutionsBadge: string;
+    institutions: {
+      name: string;
+      role: string;
+      desc: string;
+    }[];
+  };
+  participationSection: {
+    badge: string;
+    title: string;
+    lead: string;
+    profiles: {
+      title: string;
+      badge: string;
+      desc: string;
+      action: string;
+    }[];
+  };
+  transparencySection: {
+    badge: string;
+    title: string;
+    lead: string;
+    points: {
+      title: string;
+      desc: string;
+    }[];
+  };
+  actions: {
+    githubBtn: string;
+    telegramBtn: string;
+    requestBtn: string;
+  };
+}
+
 export interface SiteTranslations {
   common: CommonTranslations;
   home: HomeTranslations;
   perche: PercheTranslations;
   versioni: VersioniTranslations;
   moduli: ModuliTranslations;
+  community: CommunityTranslations;
   team: TeamTranslations;
   scuoleSociale: ScuoleSocialeTranslations;
   supportoLocale: SupportoLocaleTranslations;
