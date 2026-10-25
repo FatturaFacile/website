@@ -21,8 +21,8 @@
       "privacy": "Confidentialité & Conformité"
     },
     "actions": {
-      "downloadDesktop": "Télécharger l'Édition Desktop (Gratuit)",
-      "exploreCloud": "Explorer l'Édition Cloud",
+      "downloadDesktop": "Télécharger pour Windows (.exe)",
+      "exploreCloud": "Dépôt GitHub",
       "requestModule": "Proposer un Module Gratuit",
       "joinCommunity": "Rejoindre le Groupe Telegram",
       "becomePartner": "Devenir Partenaire Local",
@@ -45,58 +45,58 @@
       "githubRepo": "Dépôt GitHub"
     },
     "privacyModal": {
-      "title": "Politique de Confidentialité et Conformité Réglementaire",
-      "subtitle": "RGPD UE (Règlement 2016/679) & Nouvelle LPD Suisse (nLPA)",
-      "calloutTitle": "Principe Fondamental d'Ingénierie :",
-      "calloutDesc": "Chez Fattura Facile, la confidentialité n'est pas une contrainte juridique ajoutée après coup, mais la base même de la conception de notre logiciel.",
-      "section1Title": "1. Édition Desktop Autonome (SQLite Local)",
-      "section1Text": "Lorsque vous utilisez la version portable sur PC ou clé USB :",
+      "title": "Politique de Confidentialité et Protection des Données",
+      "subtitle": "RGPD UE (Règlement 2016/679) & Nouvelle LPD Suisse (nLPD)",
+      "calloutTitle": "Principe d'Ingénierie Fondamental :",
+      "calloutDesc": "Chez FatturaFacile, la confidentialité repose sur l'architecture locale : aucune donnée n'est envoyée à des serveurs tiers.",
+      "section1Title": "Section A : Application Desktop (SQLite Local)",
+      "section1Text": "Lors de l'utilisation de l'application Windows sur PC ou clé USB :",
       "section1Bullets": [
-        "Zéro Transmission de Données : Les registres de facturation, fichiers clients, identifiants fiscaux et coordonnées bancaires résident exclusivement dans le fichier SQLite local sur votre périphérique.",
-        "Aucun Serveur Intermédiaire : Nous ne collectons aucune télémétrie, aucune métrique d'utilisation et aucune donnée analytique sur vos factures émises.",
-        "Souveraineté Complète : L'entreprise agit en tant que seul Responsable du Traitement. Aucune donnée ne franchit de frontière et aucun accord externe de sous-traitance (DPA) n'est requis pour l'usage local."
+        "Traitement des Données Comptables : L'application desktop ne transmet aucune donnée saisie (fiches clients, montants, factures, comptes bancaires) à des serveurs externes ou des tiers.",
+        "Base de Données Locale : Tous les enregistrements sont stockés exclusivement en local sur l'ordinateur via SQLite. L'utilisateur demeure l'unique Responsable du Traitement.",
+        "Absence de Télémétrie : Aucune télémétrie invasive, analyse d'activité ou pistage en arrière-plan."
       ],
-      "section2Title": "2. Édition Cloud Auto-Hébergée (Hébergement géré par vos soins)",
-      "section2Text": "Même lors du déploiement de l'édition multi-utilisateurs en réseau :",
+      "section2Title": "Section B : Site Web (fatturafacile.eu)",
+      "section2Text": "Concernant la consultation du présent site web d'information :",
       "section2Bullets": [
-        "Infrastructure Propriétaire : Le système est installé sur votre propre serveur privé ou VPS (Docker / PostgreSQL). L'équipe de Fattura Facile n'a aucun accès à votre base de données.",
-        "Conformité Directe : Le respect du RGPD et de la LPD reste sous votre gouvernance interne totale, écartant tout risque de fuite de données chez des prestataires SaaS tiers.",
-        "Contact Direct : Pour toute question technique ou précision sur l'architecture, l'adresse de contact direct est info@fatturafacile.eu."
+        "Journaux de Connexion : Logs réseau standard (IP anonymisée, user-agent) gérés uniquement pour la sécurité et la prévention des abus.",
+        "Aucun Cookie de Profilage : Aucun ciblage publicitaire ni partage de données avec des régies marketing.",
+        "Canaux de Contact : L'adresse info@fatturafacile.eu est utilisée uniquement pour des échanges techniques et administratifs volontaires."
       ],
-      "section3Title": "3. Droits des Personnes Concernées",
-      "section3Text": "Conformément aux articles 15 à 22 du RGPD européen et aux articles 25 à 29 de la LPD suisse, les personnes physiques conservent l'ensemble de leurs droits d'accès, de rectification, de portabilité et d'effacement. Avec l'édition desktop, vous détenez déjà la garde physique directe du fichier de base de données brut.",
-      "closeBtn": "Fermer l'Information"
+      "section3Title": "Section C : Droits des Personnes & Législation",
+      "section3Text": "Conformément aux articles 15-22 du RGPD UE et 25-29 de la nLPD suisse, les personnes physiques conservent leurs droits complets d'accès, de rectification, de portabilité et d'effacement.",
+      "closeBtn": "Fermer la notice"
     }
   },
   "home": {
     "seo": {
-      "title": "Fattura Facile | Facturation Simple pour Artisans, PME et Indépendants",
-      "description": "Logiciel de facturation gratuit et hors ligne avec SQLite ou Cloud auto-hébergé. Conforme à FatturaPA SDI (Italie) et QR-facture SIX (Suisse). Sans abonnement.",
-      "keywords": "fattura facile, logiciel facturation artisans, factures hors ligne, facturation cle usb portable, sqlite factures, facture electronique sdi, qr-facture suisse, facturation tessin, rgpd, lpd suisse, facturation wpf, logiciel facturation gratuit"
+      "title": "FatturaFacile – Logiciel de facturation gratuit et open source (Suisse et Italie)",
+      "description": "Logiciel de facturation gratuit et open source pour artisans et PME en Suisse et Italie. QR-facture, FatturaPA, 100% hors ligne sur SQLite. Licence MIT.",
+      "keywords": "fattura facile, logiciel facturation gratuit, open source facturation, qr-facture suisse, fatturapa xml, sqlite hors ligne, tessin logiciel"
     },
     "hero": {
-      "badgeGeo": "Adapté pour l'Italie 🇮🇹 (FatturaPA / SDI) & la Suisse 🇨🇭 (QR-facture SIX)",
-      "badgePrivacy": "Conforme à la protection des données : RGPD UE & LPD Suisse",
-      "titlePart1": "La facturation simplifiée, rapide et",
-      "titlePart2": "sous votre contrôle absolu.",
-      "subtitle": "Fini les logiciels de gestion d'entreprise lourds et lents. Émettez devis et factures en 30 secondes depuis votre PC ou votre clé USB avec une base SQLite locale, 100 % gratuit et sans abonnement mensuel, ou hébergez votre propre cloud privé multi-utilisateurs.",
-      "ctaPrimary": "Télécharger l'Édition Desktop (Gratuit)",
-      "ctaSecondary": "Explorer l'Édition Cloud",
+      "badgeGeo": "Projet Open Source • Licence MIT • Aucun frais de licence",
+      "badgePrivacy": "Données 100% locales (SQLite hors ligne)",
+      "titlePart1": "Facturation simple, transparente et",
+      "titlePart2": "sous votre contrôle.",
+      "subtitle": "Logiciel de facturation open source gratuit né au Tessin pour artisans et PME en Suisse et Italie. Zéro abonnement, 100% hors ligne.",
+      "ctaPrimary": "Télécharger pour Windows (.exe)",
+      "ctaSecondary": "Dépôt GitHub",
       "badges": {
-        "zeroSubTitle": "Zéro Abonnement",
-        "zeroSubDesc": "Version desktop gratuite pour toujours",
-        "portableTitle": "Portable sur Clé USB",
-        "portableDesc": "Aucune installation système requise",
-        "offlineTitle": "100 % Hors Ligne",
-        "offlineDesc": "Fonctionne sans connexion Internet",
-        "dataOwnershipTitle": "Vos Données Vous Appartiennent",
-        "dataOwnershipDesc": "Aucun serveur intermédiaire"
+        "zeroSubTitle": "Licence MIT Libre",
+        "zeroSubDesc": "Aucun frais ni abonnement",
+        "portableTitle": "100% Vos Données",
+        "portableDesc": "Base SQLite locale sur disque",
+        "offlineTitle": "Double Conformité",
+        "offlineDesc": "QR-facture suisse & FatturaPA",
+        "dataOwnershipTitle": "Communauté Ouverte",
+        "dataOwnershipDesc": "Né au Tessin, code public"
       }
     },
     "quickSummary": {
-      "eyebrow": "Ingénierie Épurée",
-      "heading": "Un outil rapide pensé pour les professionnels sur le terrain",
-      "lead": "Électriciens, plombiers, installateurs, paysagistes et indépendants émettent en moyenne 10 à 20 factures par mois. Ils n'ont pas besoin de la lourdeur d'un ERP d'entreprise, mais d'un outil fiable pour être payés ponctuellement."
+      "eyebrow": "Projet Open Source",
+      "heading": "Facturation simple, transparente et sous votre contrôle",
+      "lead": "FatturaFacile est un logiciel de facturation gratuit et open source né au Tessin pour artisans, indépendants et petites entreprises en Suisse et Italie. Aucun abonnement mensuel, fonctionnement complet hors ligne et code source public."
     }
   },
   "perche": {
@@ -137,32 +137,32 @@
     "heading": "Deux moteurs d'exécution, 100 % gratuits pour tous",
     "lead": "Aucun droit de licence à verser à notre équipe. Travaillez en toute autonomie : en local sur votre bureau ou auto-hébergé sur votre propre infrastructure.",
     "desktopCard": {
-      "tag": "Autonome / Clé USB",
-      "badge": "100 % Gratuit",
-      "title": "Fattura Facile Desktop",
-      "subtitle": "Conçu en C#/.NET WPF natif avec base de données SQLite embarquée sans configuration requise.",
+      "tag": "Standalone / Desktop Windows",
+      "badge": "Disponible immédiatement • Version Stable",
+      "title": "FatturaFacile Desktop (WPF / .NET)",
+      "subtitle": "Conçu en C#/.NET natif (WPF) avec base de données SQLite embarquée sans configuration.",
       "features": [
-        "Zéro installation : dossier portable exécutable depuis une clé USB ou un disque externe.",
-        "Confidentialité absolue : aucune donnée financière ne quitte votre ordinateur (Privacy by Design).",
-        "Fonctionne partout : sur les chantiers, en camionnette ou à l'atelier sans Wi-Fi.",
-        "Démarrage instantané : temps de boot immédiat et enregistrement temps réel des écritures."
+        "Zéro installation : dossier portable sur disque ou clé USB sans dépendances cloud.",
+        "Base SQLite locale : tous vos documents comptables restent exclusivement sur votre ordinateur.",
+        "Fonctionnement hors ligne total : créez devis et factures partout sans connexion internet.",
+        "Double conformité : génération de QR-factures suisses selon les normes SIX et de fichiers XML FatturaPA."
       ],
-      "limitation": "Un seul utilisateur simultané par fichier (contrainte de verrouillage du fichier SQLite local).",
-      "cta": "Télécharger le Fichier ZIP (Windows 10/11)"
+      "limitation": "Utilisateur unique simultané par fichier (verrou de sécurité SQLite local).",
+      "cta": "Télécharger pour Windows (.exe)"
     },
     "cloudCard": {
-      "tag": "Multi-Utilisateurs & Auto-Hébergé",
-      "badge": "Logiciel Gratuit (Hébergement à votre charge)",
-      "title": "Fattura Facile Private Cloud",
-      "subtitle": "Déployez-le sur votre serveur VPS, NAS de bureau ou infrastructure locale via Docker.",
+      "tag": "Roadmap • En Développement Actif",
+      "badge": "Contributions Open Source Bienvenues",
+      "title": "FatturaFacile Web & Docker (Auto-Hébergé)",
+      "subtitle": "Édition multi-utilisateurs en cours de développement pour hébergement sur serveur privé ou VPS (Docker / PostgreSQL).",
       "features": [
-        "Accès multi-utilisateurs simultané : collaborateurs et cabinet fiduciaire connectés ensemble.",
-        "Zéro frais de licence par utilisateur : aucun abonnement indexé sur le volume de factures.",
-        "Souveraineté juridique : en maîtrisant les serveurs, vous éliminez la dépendance envers des tiers.",
-        "Migration aisée : exportez et importez votre fichier SQLite local directement sur l'instance cloud."
+        "Accès multi-utilisateurs simultané via navigateur pour collaborateurs et fiduciaires.",
+        "Auto-hébergé sur votre propre infrastructure : zéro abonnement auprès d'éditeurs SaaS tiers.",
+        "API ouvertes pour intégrations métier et synchronisation de bases de données.",
+        "Développement communautaire collaboratif sous licence ouverte MIT."
       ],
-      "migrationNote": "Nécessite des compétences d'administration système de base pour gérer les conteneurs Docker.",
-      "cta": "Consulter le Guide sur GitHub"
+      "migrationNote": "Statut : en développement actif sur GitHub. Invitation ouverte aux développeurs Docker et Web.",
+      "cta": "Participer au Développement sur GitHub"
     },
     "comparisonTable": {
       "title": "Tableau Comparatif Technique",
@@ -208,9 +208,9 @@
   },
   "moduli": {
     "seo": {
-      "title": "Catalogue des Modules & Feuille de Route Publique | Fattura Facile",
-      "description": "Découvrez les modules de Fattura Facile pour l'Italie et la Suisse. Consultez notre roadmap transparente et proposez de nouveaux modules gratuits.",
-      "keywords": "modules fattura facile, roadmap logiciel facturation, module fatturapa, module qr-facture, echeancier paiements gratuit"
+      "title": "Fonctionnalités de FatturaFacile – QR-facture, FatturaPA et devis",
+      "description": "Découvrez les fonctions de FatturaFacile : répertoire clients, catalogue d'articles, conversion devis-facture, QR-facture suisse et XML FatturaPA.",
+      "keywords": "fonctionnalites fattura facile, modules facturation, qr-facture suisse, fatturapa xml, devis factures, catalogue articles"
     },
     "eyebrow": "Écosystème Modulaire & Transparent",
     "heading": "Modules prêts à l'emploi et développement guidé par la communauté",
@@ -357,9 +357,9 @@
   },
   "faq": {
     "seo": {
-      "title": "Foire Aux Questions (FAQ) | Fattura Facile",
-      "description": "Réponses détaillées sur l'usage hors ligne, la sécurité SQLite, FatturaPA, la QR-facture suisse, notre modèle gratuit et le support.",
-      "keywords": "faq fattura facile, questions frequentes facturation, securite sqlite factures, support gratuit fatturapa"
+      "title": "FAQ – Foire aux questions sur la licence, les données et la sécurité | FatturaFacile",
+      "description": "Réponses transparentes sur la gratuité de FatturaFacile, le stockage SQLite local, les sauvegardes et les normes fiscales.",
+      "keywords": "faq fattura facile, questions facturation, securite sqlite, support gratuit fatturapa"
     },
     "eyebrow": "Éclaircissements & Réponses",
     "heading": "Foire Aux Questions sur Fattura Facile",
@@ -373,40 +373,40 @@
     },
     "items": [
       {
-        "id": "faq-usb",
-        "category": "technical",
-        "question": "Comment fonctionne la version sur clé USB ? Est-elle réellement utilisable sans installation ?",
-        "answer": "Oui ! Il vous suffit de télécharger le fichier d'archive (.ZIP), d'en extraire le contenu sur n'importe quelle clé USB ou disque externe et de double-cliquer sur le fichier exécutable. Le logiciel ne modifie pas le registre Windows et conserve l'ensemble des écritures dans la base SQLite locale située dans ce même dossier. Branchez-la sur un PC Windows 10 ou 11 et travaillez immédiatement."
-      },
-      {
-        "id": "faq-backup-loss",
-        "category": "technical",
-        "question": "Que se passe-t-il si je perds ma clé USB ou si mon ordinateur tombe en panne ?",
-        "answer": "Comme vos données restent strictement stockées en local pour préserver votre vie privée, les sauvegardes régulières sont primordiales. Fattura Facile intègre un outil de « Sauvegarde Chiffrée » en un clic qui génère une archive sécurisée à dupliquer sur un disque externe, un NAS de bureau ou un dossier cloud synchronisé."
-      },
-      {
-        "id": "faq-compliance-it-ch",
-        "category": "compliance",
-        "question": "Comment sont gérées la facturation électronique italienne et la QR-facture suisse ?",
-        "answer": "Pour l'Italie, le logiciel génère des fichiers XML officiels conformes au format FatturaPA pour le Système d'Échange (SDI), prêts pour l'envoi par PEC ou code destinataire. Pour la Suisse, il produit des QR-factures aux normes SIX avec QR code de paiement vérifié et application des taux légaux de TVA fédérale."
-      },
-      {
-        "id": "faq-free-model",
+        "id": "faq-free",
         "category": "general",
-        "question": "Comment le logiciel peut-il être gratuit ? Y a-t-il des frais cachés ou des limites de factures ?",
-        "answer": "Il n'y a aucun frais masqué, aucune période d'essai limitée et aucun plafond sur le volume de factures générées. Le projet est créé et maintenu par des spécialistes du logiciel dans un cadre bénévole et open source, avec la volonté d'offrir un outil professionnel sans barrière pécuniaire."
+        "question": "Est-ce vraiment gratuit ?",
+        "answer": "Oui, FatturaFacile est distribué sous licence open source MIT. Il n'existe aucun coût caché, aucune période d'essai limitée ni aucun abonnement payant. Le code source est public et accessible à tous."
       },
       {
-        "id": "faq-custom-requests",
-        "category": "partners",
-        "question": "Comment puis-je demander une fonctionnalité spécifique pour mon activité ?",
-        "answer": "Vous pouvez soumettre votre idée via le formulaire du site, nous contacter à info@fatturafacile.eu ou en parler dans le groupe Telegram. Si la fonctionnalité demandée répond à un besoin professionnel réel, nous la programmerons gratuitement pour l'intégrer aux futures versions publiques."
+        "id": "faq-data-location",
+        "category": "technical",
+        "question": "Où résident mes données ?",
+        "answer": "Avec l'application desktop, toutes vos données restent stockées localement dans une base SQLite située dans le dossier de l'application sur votre PC. Aucune donnée n'est envoyée vers des serveurs externes."
       },
       {
-        "id": "faq-support-types",
+        "id": "faq-backup",
+        "category": "technical",
+        "question": "Comment effectuer une copie de sauvegarde ?",
+        "answer": "Il suffit d'exporter le fichier .sqlite via le menu prévu à cet effet ou de le copier sur un support externe (clé USB, NAS ou dossier de sauvegarde chiffré)."
+      },
+      {
+        "id": "faq-sdi-it",
+        "category": "compliance",
+        "question": "Transmet-il directement la facture au SdI en Italie ?",
+        "answer": "FatturaFacile génère le fichier XML conforme aux spécifications techniques FatturaPA, prêt à être déposé gratuitement sur le portail de l'Agenzia delle Entrate ou transmis par votre comptable."
+      },
+      {
+        "id": "faq-qrbill-ch",
+        "category": "compliance",
+        "question": "Comment fonctionne la QR-facture suisse ?",
+        "answer": "Elle génère des sections de paiement conformes aux directives SIX avec code QR vérifié (QR-IBAN et Creditor Reference) ainsi que le calcul exact de la TVA fédérale en CHF et EUR."
+      },
+      {
+        "id": "faq-community",
         "category": "partners",
-        "question": "Quelle est la différence entre le support communautaire et le support local ?",
-        "answer": "Le support communautaire (via GitHub et Telegram) est toujours gratuit et couvre le fonctionnement de l'application ainsi que la correction des bugs. Le support local est assuré par des professionnels indépendants référencés (consultants IT, fiduciaires) pour des prestations personnalisées sur place telles que l'installation réseau, le paramétrage matériel ou la formation des équipes."
+        "question": "Comment participer ou demander une nouvelle fonction ?",
+        "answer": "Le projet accueille développeurs, comptables et traducteurs sur GitHub, et les suggestions sont partagées directement au sein du groupe communautaire Telegram."
       }
     ]
   },
@@ -498,66 +498,159 @@
   },
   "privacy": {
     "seo": {
-      "title": "Politique de Confidentialité & Conformité (RGPD & nLPD) | Fattura Facile",
-      "description": "Notice complète sur la protection des données personnelles : conformité RGPD UE 2016/679, nLPD suisse et architecture Privacy by Design avec SQLite local.",
-      "keywords": "confidentialite fattura facile, rgpd logiciel facturation, nlpd suisse factures, sqlite privacy by design, zero telemetrie facturation"
+      "title": "Politique de Confidentialité – Site Web et Application Desktop | FatturaFacile",
+      "description": "Politique transparente de protection des données : navigation web anonymisée et souveraineté locale totale des données comptables.",
+      "keywords": "confidentialite fattura facile, rgpd logiciel facturation, lpd suisse factures, sqlite privacy by design, zero telemetrie facturation"
     },
     "eyebrow": "Cadre Réglementaire & Protection des Données",
-    "headingPart1": "Politique de Confidentialité &",
-    "headingPart2": "Conformité Légale",
-    "subtitle": "Règlement Général sur la Protection des Données UE (RGPD 2016/679) et nouvelle Loi fédérale suisse sur la protection des données (nLPD).",
+    "headingPart1": "Politique de Confidentialité –",
+    "headingPart2": "Site Web et Application Desktop",
+    "subtitle": "Règlement Général sur la Protection des Données UE (RGPD 2016/679) & Nouvelle Loi Fédérale sur la Protection des Données Suisse (nLPD).",
     "calloutTitle": "Principe d'Ingénierie Fondamental :",
-    "calloutText": "Dans Fattura Facile, la confidentialité des données comptables n'est pas une formalité administrative, mais le pilier architectural sur lequel repose l'ensemble du logiciel.",
-    "section1Title": "1. Architecture Desktop Autonome (SQLite Local)",
-    "section1Intro": "Lors de l'utilisation de l'application portable Fattura Facile Desktop (distribuée sous forme d'exécutable autonome sans installateur système) :",
+    "calloutText": "Chez FatturaFacile, la confidentialité des données comptables n'est pas une formalité administrative mais le fondement architectural du logiciel.",
+    "section1Title": "Section A : Application Desktop (FatturaFacile Software)",
+    "section1Intro": "Lors de l'utilisation de l'application standalone pour Windows (WPF/.NET avec base locale SQLite) :",
     "section1Bullets": [
       {
-        "title": "Zéro Transmission vers l'Extérieur",
-        "desc": "Toutes les fiches clients, factures, montants, taux de TVA, coordonnées bancaires IBAN et numéros IDE/TVA résident exclusivement dans le fichier SQLite local enregistré dans le dossier de l'application ou sur la clé USB."
+        "title": "Traitement des Données Comptables",
+        "desc": "L'application desktop ne transmet aucune donnée saisie (fiches clients, montants, factures, comptes bancaires) à des serveurs externes ou à des tiers."
       },
       {
-        "title": "Absence de Télémétrie et de Pistage",
-        "desc": "Le logiciel ne comporte aucun traceur comportemental, outil d'analyse en arrière-plan ni appel API vers des serveurs de Fattura Facile."
+        "title": "Base de Données Locale",
+        "desc": "Tous les enregistrements sont conservés exclusivement en local sur l'ordinateur de l'utilisateur au format SQLite. L'utilisateur est le seul Responsable du Traitement."
       },
       {
-        "title": "Souveraineté du Responsable de Traitement",
-        "desc": "L'utilisateur agit en tant qu'unique Responsable du Traitement (Art. 4 RGPD). Aucun transfert transfrontalier n'a lieu et aucun contrat de sous-traitance (DPA) avec Fattura Facile n'est requis."
+        "title": "Télémétrie",
+        "desc": "Aucune télémétrie invasive, analyse d'activité ou pistage en arrière-plan au sein du logiciel."
       }
     ],
-    "section2Title": "2. Édition Cloud Auto-Hébergée (Infrastructure du Client)",
-    "section2Intro": "Lors du déploiement de la version multi-utilisateurs sur un serveur local ou un serveur privé virtuel (VPS) :",
+    "section2Title": "Section B : Site Web (fatturafacile.eu)",
+    "section2Intro": "Concernant la consultation du présent site web d'information :",
     "section2Bullets": [
       {
-        "title": "Propriété Directe de l'Infrastructure",
-        "desc": "Les conteneurs Docker et les bases de données relationnelles (PostgreSQL ou Microsoft SQL Server) sont installés sur le matériel ou l'hébergement cloud relevant directement du client."
+        "title": "Données de Navigation",
+        "desc": "Journaux réseau standard (adresse IP anonymisée, user-agent) exploités exclusivement pour la sécurité de l'infrastructure et la prévention des abus."
       },
       {
-        "title": "Zéro Accès aux Données",
-        "desc": "Les développeurs de Fattura Facile ne détiennent aucune clé d'accès, identifiant administrateur ou visibilité sur les bases de données du client."
+        "title": "Cookies",
+        "desc": "Aucun cookie de profilage publicitaire ni suivi commercial tiers."
       },
       {
-        "title": "Isolation Juridique",
-        "desc": "Le respect des mesures de sécurité techniques et organisationnelles (Art. 32 RGPD) et des dispositions de la nLPD suisse demeure intégralement sous le contrôle de l'entreprise utilisatrice."
+        "title": "Canaux de Contact",
+        "desc": "L'adresse email de contact (info@fatturafacile.eu) est strictement réservée aux échanges techniques et administratifs volontaires."
       }
     ],
-    "section3Title": "3. Droits des Personnes Concernées & Conservation Légale",
-    "section3Intro": "Conformément aux articles 15 à 22 du Règlement UE 2016/679 (RGPD) et aux articles 25 à 29 de la Loi fédérale sur la protection des données (nLPD) :",
+    "section3Title": "Section C : Droits des Personnes (RGPD & nLPD Suisse)",
+    "section3Intro": "Conformément aux articles 15-22 du Règlement UE 2016/679 (RGPD) et aux articles 25-29 de la loi fédérale suisse sur la protection des données (nLPD) :",
     "section3Bullets": [
       {
-        "title": "Droit d'Accès et de Portabilité",
-        "desc": "La base de données étant au format standard ouvert SQLite, le responsable peut extraire ou exporter l'intégralité de son archive sans dépendre d'outils propriétaires."
+        "title": "Droit d'Accès et Portabilité",
+        "desc": "Le format standard SQLite permet au titulaire d'extraire ou d'exporter l'intégralité de ses archives comptables à tout moment sans verrouillage propriétaire."
       },
       {
         "title": "Rectification et Effacement",
-        "desc": "Chaque fiche client ou brouillon de devis peut être rectifié ou supprimé directement depuis l'interface utilisateur en temps réel."
+        "desc": "Chaque fiche client ou projet de devis peut être modifié ou effacé directement depuis l'interface en temps réel."
       },
       {
-        "title": "Conservation Fiscale Réglementaire",
-        "desc": "L'archivage légal des factures électroniques XML transmises au SDI (Italie) ou des pièces comptables suisses (conservation décennale selon l'art. 958f CO) s'effectue selon les canaux officiels ou supports certifiés."
+        "title": "Conservation Fiscale Légale",
+        "desc": "La conservation décennale des factures électroniques XML transmises au SdI italien s'effectue via les canaux fiscaux légaux ou votre fiduciaire."
       }
     ],
-    "section4Title": "4. Contact et Responsabilité",
-    "section4Text": "Pour toute question relative à l'architecture de sécurité ou pour proposer des améliorations techniques en matière de protection des données :",
-    "contactLabel": "E-mail :"
+    "section4Title": "Section D : Responsable du Traitement et Contact",
+    "section4Text": "Pour toute question relative à l'architecture de sécurité ou pour suggérer des améliorations techniques de confidentialité :",
+    "contactLabel": "Email :"
+  },
+  "community": {
+    "seo": {
+      "title": "FatturaFacile Open Source – Contribuez au projet",
+      "description": "Participez au développement de FatturaFacile : code source ouvert, projets pédagogiques au Tessin, traductions et tests.",
+      "keywords": "communaute fattura facile, open source suisse italie, cpt trevano, supsi logiciel, usi informatique, developpement csharp wpf, licence mit"
+    },
+    "eyebrow": "Développement Ouvert & Formation",
+    "heading": "Une Communauté Ouverte pour Notre Territoire",
+    "lead": "FatturaFacile est une initiative open source sous licence MIT : code transparent, coopération avec les instituts de formation et engagement de professionnels.",
+    "educationSection": {
+      "badge": "Écoles & Universités au Tessin",
+      "title": "Une opportunité pédagogique concrète",
+      "lead": "Invitation ouverte aux centres professionnels, écoles techniques et universités pour des stages, projets de diplôme et travaux de recherche sur une codebase réelle.",
+      "institutionsBadge": "Instituts Éducatifs du Territoire",
+      "institutions": [
+        {
+          "name": "CPT (Centro Professionale Tecnico Trevano / Bellinzona)",
+          "role": "Laboratoire Logiciel & Stages",
+          "desc": "Enseignement appliqué de la Clean Architecture en C# .NET, persistance SQLite locale et intégration continue."
+        },
+        {
+          "name": "SAM (Scuola d'Arti e Mestieri Bellinzona)",
+          "role": "Projets Pratiques & Travaux de Diplôme",
+          "desc": "Étude approfondie du cycle de vie des logiciels de gestion, tests automatisés et ergonomie réelle pour les artisans."
+        },
+        {
+          "name": "SUPSI (Département des technologies novatrices)",
+          "role": "Thèses de Bachelor/Master & Recherche",
+          "desc": "Opportunités de recherche sur les architectures offline-first, le chiffrement local et l'interopérabilité fiscale transfrontalière."
+        },
+        {
+          "name": "USI (Faculté des sciences informatiques)",
+          "role": "Coopération Académique Open Source",
+          "desc": "Études approfondies sur le Privacy by Design, la souveraineté locale des données et les standards ouverts de facturation."
+        }
+      ]
+    },
+    "participationSection": {
+      "badge": "Comment Participer",
+      "title": "Compétences recherchées et profils de collaboration",
+      "lead": "Que vous soyez ingénieur logiciel, étudiant, spécialiste comptable ou traducteur, votre aide est la bienvenue.",
+      "profiles": [
+        {
+          "title": "Développeurs C# / .NET (WPF)",
+          "badge": "Client Desktop",
+          "desc": "Évolution de l'application Windows, optimisation des requêtes SQLite, génération de PDF vectoriels et ergonomie utilisateur.",
+          "action": "Voir les tickets sur GitHub"
+        },
+        {
+          "title": "Développeurs Web & Docker",
+          "badge": "Édition Cloud en Cours",
+          "desc": "Développement en cours du module multi-utilisateurs auto-hébergé : API Web ASP.NET Core, conteneurs Docker et PostgreSQL.",
+          "action": "Roadmap Cloud sur GitHub"
+        },
+        {
+          "title": "Fiduciaires & Experts Comptables",
+          "badge": "Tests Fiscaux IT / CH",
+          "desc": "Validation technique et réglementaire des fichiers XML SdI pour l'Italie et des QR-factures SIX pour la Suisse.",
+          "action": "Contacter l'Équipe"
+        },
+        {
+          "title": "Traducteurs & Localisateurs",
+          "badge": "i18n Multilingue",
+          "desc": "Relecture et enrichissement continu des versions officielles en italien, anglais, allemand et français.",
+          "action": "Proposer des Traductions"
+        }
+      ]
+    },
+    "transparencySection": {
+      "badge": "Transparence Totale",
+      "title": "Code source ouvert sous Licence MIT",
+      "lead": "Aucun verrouillage propriétaire : le code est consultable, vérifiable et compilable par tous.",
+      "points": [
+        {
+          "title": "Licence Permissive MIT",
+          "desc": "Liberté totale d'étudier, d'utiliser, de modifier et de redistribuer le logiciel sans redevance ni restriction commerciale."
+        },
+        {
+          "title": "Suivi des Tickets & Roadmap Publique",
+          "desc": "Toutes les discussions techniques, rapports d'anomalies et fonctionnalités prévues sont documentés publiquement sur GitHub."
+        },
+        {
+          "title": "Aucune Télémétrie ni Service Caché",
+          "desc": "L'absence totale de pistage peut être vérifiée directement par l'audit du code source de l'application."
+        }
+      ]
+    },
+    "actions": {
+      "githubBtn": "Dépôt GitHub",
+      "telegramBtn": "Rejoindre la Communauté Telegram",
+      "requestBtn": "Demander un Module Gratuit"
+    }
   }
 }

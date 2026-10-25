@@ -16,7 +16,7 @@ const isProductActive =
   currentPath.includes('/moduli') ||
   currentPath.includes('/versioni');
 const isCommunityActive =
-  currentPath.includes('/community-richieste') ||
+  currentPath.includes('/community') ||
   currentPath.includes('/scuole-e-sociale') ||
   currentPath.includes('/sponsor');
 const isNetworkActive = currentPath.includes('/supporto-locale') || currentPath.includes('/faq');
@@ -139,15 +139,15 @@ const navGroups: NavGroup[] = [
     wide: true,
     items: [
       {
-        label: t.common.nav.requestModulesFree,
-        href: getLocalizedPath('/community-richieste/', lang),
-        subtitle: sub.requestModules,
+        label: 'Community Open Source',
+        href: getLocalizedPath('/community/', lang),
+        subtitle: sub.contribute,
         highlight: true,
       },
       {
-        label: t.common.nav.contribute,
-        href: `${getLocalizedPath('/community-richieste/', lang)}#collaborare`,
-        subtitle: sub.contribute,
+        label: t.common.nav.requestModulesFree,
+        href: getLocalizedPath('/community-richieste/', lang),
+        subtitle: sub.requestModules,
       },
       {
         label: t.common.nav.schoolsSocial,

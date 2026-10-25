@@ -43,9 +43,7 @@ const softwareSchema = {
       <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span data-i18n="hero_badge_geo">
-            Pronto per Italia 🇮🇹 (FatturaPA / SDI) & Svizzera 🇨🇭 (QR-Bill)
-          </span>
+          <span data-i18n="badge_license">{t.home.hero.badgeGeo}</span>
         </span>
         <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
           <svg
@@ -59,39 +57,36 @@ const softwareSchema = {
               clip-rule="evenodd"
             ></path>
           </svg>
-          <span data-i18n="hero_badge_privacy">Privacy Compliant: GDPR UE & nLPD Svizzera</span>
+          <span data-i18n="pillar_offline_title">{t.home.hero.badgePrivacy}</span>
         </span>
       </div>
 
       <!-- Main Headline -->
       <div class="text-center max-w-4xl mx-auto">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-          <span data-i18n="hero_title_part1">Fatturazione semplice, veloce e</span>
+          <span data-i18n="hero_title_part1">{t.home.hero.titlePart1}</span>
           <br class="hidden sm:inline" />
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400"
             data-i18n="hero_title_part2"
           >
-            sotto il tuo totale controllo.
+            {t.home.hero.titlePart2}
           </span>
         </h1>
         <p
-          class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed"
+          class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed"
           data-i18n="hero_subtitle"
         >
-          Basta software contabili sovradimensionati e lenti. Emetti fatture in 30 secondi dal tuo
-          PC o chiavetta USB con SQLite, 100% gratuito e senza abbonamenti, oppure sfrutta la
-          versione Cloud ospitata sul tuo server.
+          {t.home.hero.subtitle}
         </p>
 
-        <!-- CTA Buttons -->
+        <!-- CTA Buttons (Triple positioning: Desktop download, GitHub repository, Community Telegram) -->
         <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#download"
-            title="Scarica Versione Desktop (Gratis)"
-            aria-label="Scarica Versione Desktop (Gratis)"
-            data-i18n-title="hero_cta_primary_title"
-            data-i18n-aria-label="hero_cta_primary_title"
+            title={t.home.hero.ctaPrimary}
+            aria-label={t.home.hero.ctaPrimary}
+            data-i18n="cta_download"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
           >
             <svg
@@ -107,30 +102,41 @@ const softwareSchema = {
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
               ></path>
             </svg>
-            <span data-i18n="hero_cta_primary">Scarica Versione Desktop (Gratis)</span>
+            <span>{t.home.hero.ctaPrimary}</span>
           </a>
+
           <a
-            href="/versioni/"
-            title="Scopri la Soluzione Cloud"
-            aria-label="Scopri la Soluzione Cloud"
-            data-i18n-title="hero_cta_secondary_title"
-            data-i18n-aria-label="hero_cta_secondary_title"
+            href="https://github.com/FatturaFacile"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={t.home.hero.ctaSecondary}
+            aria-label={t.home.hero.ctaSecondary}
+            data-i18n="cta_github"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow transition-all duration-200"
           >
-            <svg
-              class="w-5 h-5 text-teal-600 dark:text-teal-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
               ></path>
             </svg>
-            <span data-i18n="hero_cta_secondary">Scopri la Soluzione Cloud</span>
+            <span>{t.home.hero.ctaSecondary}</span>
+          </a>
+
+          <a
+            href="https://t.me/+sRauQINBDFQ5NjU0"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Community Telegram"
+            aria-label="Community Telegram"
+            data-i18n="cta_community"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 text-base font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/70 hover:bg-teal-100 dark:hover:bg-teal-900/80 border border-teal-200 dark:border-teal-800 rounded-2xl shadow-sm transition-all duration-200"
+          >
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+            </svg>
+            <span>Community Telegram</span>
           </a>
         </div>
 
@@ -326,8 +332,9 @@ const softwareSchema = {
             class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
             data-i18n="feat3_desc"
           >
-            Basta un tasto per creare un archivio ZIP crittografato su chiavetta secondaria, NAS
-            locale o cartella cloud. Zero rischio di perdere dati se cambi PC.
+            Crea con un solo clic una copia di sicurezza cifrata su chiavetta secondaria, NAS o
+            cartella protetta per preservare i tuoi dati storici in caso di sostituzione o guasto
+            del PC.
           </p>
         </div>
       </div>
@@ -350,31 +357,32 @@ const softwareSchema = {
         class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
         data-i18n="versions_badge"
       >
-        La Libertà di Scegliere
+        Architettura & Disponibilità
       </h2>
       <p
         class="mt-2 text-3xl font-extrabold text-slate-900 dark:text-white"
         data-i18n="versions_heading"
       >
-        Due motori, 100% gratuiti per tutti
+        Desktop Stabile (Disponibile) & Cloud Web (In Sviluppo)
       </p>
       <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto" data-i18n="versions_sub">
-        Nessun canone SaaS da versare a noi. Lavori in totale autonomia: in locale sulla tua
-        scrivania oppure sul tuo server privato.
+        L'applicazione desktop WPF per Windows con SQLite locale è la release ufficiale pronta
+        all'uso. L'edizione self-hosted Docker multi-utente è attualmente in sviluppo attivo con
+        contributi aperti su GitHub.
       </p>
 
       <div class="mt-10 flex flex-wrap justify-center gap-6">
         <a
           href="/versioni/"
-          class="px-6 py-3.5 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold rounded-2xl transition-all shadow-sm"
+          class="px-6 py-3.5 bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold rounded-2xl transition-all shadow-sm"
         >
-          Confronta Desktop vs Cloud Self-Hosted &rarr;
+          Confronta Architettura Desktop vs Cloud &rarr;
         </a>
         <a
           href="/funzionalita/"
           class="px-6 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold rounded-2xl transition-all"
         >
-          Esplora Dettaglio FatturaPA & QR-Bill &rarr;
+          Esplora Funzionalità & QR-Bill SIX &rarr;
         </a>
       </div>
     </div>
