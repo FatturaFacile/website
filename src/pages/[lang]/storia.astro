@@ -4,12 +4,12 @@ import type { Locale } from '../../i18n/types';
 import { STORIA_ALTERNATES } from '../../i18n/storia';
 
 export function getStaticPaths() {
-  const locales: Locale[] = ['it', 'en', 'fr', 'de'];
+  const locales: Locale[] = ['en', 'fr', 'de'];
   return locales.map((lang) => ({
     params: { lang },
     props: {
       lang,
-      canonicalUrl: lang === 'it' ? 'https://fatturafacile.eu/storia/' : STORIA_ALTERNATES[lang],
+      canonicalUrl: STORIA_ALTERNATES[lang],
     },
   }));
 }
