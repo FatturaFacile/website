@@ -117,13 +117,13 @@ const TEAM_MEMBER_SEEDS: readonly TeamMemberSeedTuple[] = [
   [
     'core-maintainer-01',
     'Davide Nava',
-    'Lead Software Architect & Founder',
+    'Lead Software Architect',
     true,
-    'Mendrisio',
+    'Caslano',
     'Canton Ticino',
     'CH',
     ['core_architecture', 'cloud_devops', 'swiss_compliance', 'italian_compliance'],
-    'Ingegnere del software con oltre 20 anni di esperienza in architetture .NET, Clean Architecture e CQRS. Ha ideato FatturaFacile per offrire ad artigiani e PMI uno strumento veloce, senza canoni e con piena sovranità locale sui dati.',
+    'Senior Software Engineer',
     {
       github: 'https://github.com/FatturaFacile',
       telegram: 'https://t.me/+sRauQINBDFQ5NjU0',
