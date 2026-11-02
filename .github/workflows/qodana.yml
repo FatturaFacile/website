@@ -17,6 +17,8 @@ concurrency:
 
 jobs:
   qodana:
+    # Dependabot pull requests get no repository secrets: skip what needs them
+    if: github.actor != 'dependabot[bot]'
     name: Qodana Code Quality Scan
     runs-on: ubuntu-latest
     permissions:
