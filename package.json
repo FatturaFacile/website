@@ -19,7 +19,7 @@
     "prebuild": "node --experimental-strip-types scripts/test-i18n-parity.ts"
   },
   "dependencies": {
-    "astro": "^7.4.2"
+    "astro": "^7.4.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
