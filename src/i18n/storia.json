@@ -56,7 +56,8 @@
       "badgeOpenSource": "100% Gratuito, Offline & Open Source",
       "ctaModules": "Esplora i Moduli",
       "ctaCommunity": "Unisciti alla Community",
-      "ctaDownload": "Prova la demo"
+      "ctaDownload": "Prova la demo",
+      "langSelectorLabel": "Selettore lingua pagina Storia"
     },
     "origin": {
       "badge": "1. La Genesi & Il Problema",
@@ -259,7 +260,8 @@
       "badgeOpenSource": "100% Free, Offline & Open Source",
       "ctaModules": "Explore Modules",
       "ctaCommunity": "Join the Community",
-      "ctaDownload": "Try the demo"
+      "ctaDownload": "Try the demo",
+      "langSelectorLabel": "Language selector for the Story page"
     },
     "origin": {
       "badge": "1. The Origin & Problem Statement",
@@ -462,7 +464,8 @@
       "badgeOpenSource": "100% Gratuit, Hors-Ligne & Open Source",
       "ctaModules": "Explorer les Modules",
       "ctaCommunity": "Rejoindre la Communauté",
-      "ctaDownload": "Essayer la démo"
+      "ctaDownload": "Essayer la démo",
+      "langSelectorLabel": "Sélecteur de langue de la page Notre histoire"
     },
     "origin": {
       "badge": "1. La Genèse & Le Constat",
@@ -665,7 +668,8 @@
       "badgeOpenSource": "100 % Kostenlos, Offline & Open Source",
       "ctaModules": "Module Entdecken",
       "ctaCommunity": "Community Beitreten",
-      "ctaDownload": "Demo testen"
+      "ctaDownload": "Demo testen",
+      "langSelectorLabel": "Sprachauswahl der Seite Geschichte"
     },
     "origin": {
       "badge": "1. Ursprung & Problemstellung",

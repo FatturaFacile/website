@@ -1,33 +1,36 @@
 ---
-import { SERVICE_LABELS, type ServiceCapability } from '../data/partners';
+import { SERVICE_CAPABILITIES } from '../data/partners';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { it } from '../i18n/locales/it';
 
-const serviceOptions: ServiceCapability[] = [
-  'on_site_setup',
-  'network_cloud_setup',
-  'backup_strategy',
-  'staff_training',
-  'tax_accounting_sync',
-  'custom_integration',
-];
+const t = useTranslations(getLangFromUrl(Astro.url)).supportoLocale;
+const f = t.form;
+// Submitted values stay in Italian so the team always receives the same wording.
+const submittedServices = it.supportoLocale.services;
 ---
 
 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
   <div class="max-w-2xl mb-8">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 mb-3">
       <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
-      Candidatura Aperta & Gratuita
+      {f.badge}
     </div>
     <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-      Diventa Partner Locale Riconosciuto
+      {f.title}
     </h3>
-    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-      Sei un tecnico informatico, un sistemista o una fiduciaria/commercialista in Italia o
-      Svizzera? Unisciti alla nostra rete territoriale: offri supporto sul campo e servizi a valore
-      aggiunto alle attività della tua zona.
-    </p>
+    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{f.lead}</p>
   </div>
 
-  <form id="partner-application-form" class="space-y-6">
+  <form
+    id="partner-application-form"
+    class="space-y-6"
+    data-msg-sending={f.sending}
+    data-msg-submit={f.submit}
+    data-msg-validation={f.validation}
+    data-msg-success={f.success}
+    data-msg-error={f.errorGeneric}
+    data-msg-connection={f.errorConnection}
+  >
     <!-- Web3Forms Configurazione (Sostituisci il valore con la tua chiave ottenuta su https://web3forms.com/) -->
     <input type="hidden" name="access_key" value="01c97c1c-13b0-4d74-987c-83f6c2b841aa" />
     <input
@@ -44,14 +47,14 @@ const serviceOptions: ServiceCapability[] = [
           for="companyName"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          Ragione Sociale o Ditta <span class="text-teal-600">*</span>
+          {f.companyLabel} <span class="text-teal-600">*</span>
         </label>
         <input
           type="text"
           id="companyName"
           name="companyName"
           required
-          placeholder="es. Studio Informatico Ticino Sagl"
+          placeholder={f.companyPlaceholder}
           class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
         />
       </div>
@@ -62,14 +65,14 @@ const serviceOptions: ServiceCapability[] = [
           for="contactPerson"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          Nome Referente <span class="text-teal-600">*</span>
+          {f.contactLabel} <span class="text-teal-600">*</span>
         </label>
         <input
           type="text"
           id="contactPerson"
           name="contactPerson"
           required
-          placeholder="es. Marco Rossi"
+          placeholder={f.contactPlaceholder}
           class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
         />
       </div>
@@ -80,14 +83,14 @@ const serviceOptions: ServiceCapability[] = [
           for="email"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          Email Aziendale / Contatto <span class="text-teal-600">*</span>
+          {f.emailLabel} <span class="text-teal-600">*</span>
         </label>
         <input
           type="email"
           id="email"
           name="email"
           required
-          placeholder="es. info@tuodominio.ch"
+          placeholder={f.emailPlaceholder}
           class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
         />
       </div>
@@ -98,14 +101,14 @@ const serviceOptions: ServiceCapability[] = [
           for="phone"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          Numero di Telefono <span class="text-teal-600">*</span>
+          {f.phoneLabel} <span class="text-teal-600">*</span>
         </label>
         <input
           type="tel"
           id="phone"
           name="phone"
           required
-          placeholder="es. +41 91 123 45 67 o +39 0332 123456"
+          placeholder={f.phonePlaceholder}
           class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
         />
       </div>
@@ -116,7 +119,7 @@ const serviceOptions: ServiceCapability[] = [
           for="country"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          Nazione di Copertura <span class="text-teal-600">*</span>
+          {f.countryLabel} <span class="text-teal-600">*</span>
         </label>
         <select
           id="country"
@@ -125,10 +128,10 @@ const serviceOptions: ServiceCapability[] = [
           class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
         >
           <option value="" disabled selected>
-            Seleziona nazione...
+            {f.countryPlaceholder}
           </option>
-          <option value="CH">Svizzera 🇨🇭</option>
-          <option value="IT">Italia 🇮🇹</option>
+          <option value="CH">{f.switzerland} 🇨🇭</option>
+          <option value="IT">{f.italy} 🇮🇹</option>
         </select>
       </div>
 
@@ -138,14 +141,14 @@ const serviceOptions: ServiceCapability[] = [
           for="region"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          Regione / Cantone Principale <span class="text-teal-600">*</span>
+          {f.regionLabel} <span class="text-teal-600">*</span>
         </label>
         <input
           type="text"
           id="region"
           name="region"
           required
-          placeholder="es. Canton Ticino, Grigioni, Lombardia, Piemonte..."
+          placeholder={f.regionPlaceholder}
           class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
         />
       </div>
@@ -157,7 +160,7 @@ const serviceOptions: ServiceCapability[] = [
         for="role"
         class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
       >
-        Tipologia di Attività <span class="text-teal-600">*</span>
+        {f.roleLabel} <span class="text-teal-600">*</span>
       </label>
       <select
         id="role"
@@ -165,30 +168,28 @@ const serviceOptions: ServiceCapability[] = [
         required
         class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
       >
-        <option value="IT Consultant">Consulente IT / Tecnico Hardware & Software</option>
-        <option value="System Integrator">System Integrator / Reti & NAS</option>
-        <option value="Fiduciaria / Commercialista">
-          Fiduciaria / Commercialista / Esperto Contabile
-        </option>
-        <option value="Software House">Software House / Sviluppatore Soluzioni Custom</option>
+        <option value="IT Consultant">{t.roles.itConsultant}</option>
+        <option value="System Integrator">{t.roles.systemIntegrator}</option>
+        <option value="Fiduciaria / Commercialista">{t.roles.fiduciaria}</option>
+        <option value="Software House">{t.roles.softwareHouse}</option>
       </select>
     </div>
 
     <!-- Servizi Offerti (Multi-Select Checkboxes) -->
     <div>
       <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
-        Competenze & Servizi Offerti per FatturaFacile <span class="text-teal-600">*</span>
+        {f.servicesLabel} <span class="text-teal-600">*</span>
       </label>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {serviceOptions.map((srv) => (
+        {SERVICE_CAPABILITIES.map((srv) => (
           <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-teal-500/50 cursor-pointer transition-colors text-xs text-slate-700 dark:text-slate-200">
             <input
               type="checkbox"
               name="services"
-              value={SERVICE_LABELS[srv].label}
+              value={submittedServices[srv]}
               class="mt-0.5 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
             />
-            <span>{SERVICE_LABELS[srv].label}</span>
+            <span>{t.services[srv]}</span>
           </label>
         ))}
       </div>
@@ -200,13 +201,13 @@ const serviceOptions: ServiceCapability[] = [
         for="notes"
         class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
       >
-        Note su Copertura Geografica ed Esperienza
+        {f.notesLabel}
       </label>
       <textarea
         id="notes"
         name="notes"
         rows="3"
-        placeholder="es. Assistenza a domicilio o da remoto nelle province di Varese e Como. Esperienza decennale con PMI artigiane..."
+        placeholder={f.notesPlaceholder}
         class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors resize-none"
       ></textarea>
     </div>
@@ -216,9 +217,7 @@ const serviceOptions: ServiceCapability[] = [
 
     <!-- Submit CTA & Status -->
     <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="text-xs text-slate-500 dark:text-slate-400">
-        La candidatura verrà esaminata dal team entro 48 ore lavorative. Zero costi di affiliazione.
-      </div>
+      <div class="text-xs text-slate-500 dark:text-slate-400">{f.note}</div>
       <button
         type="submit"
         id="partner-submit-btn"
@@ -232,7 +231,7 @@ const serviceOptions: ServiceCapability[] = [
             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
           ></path>
         </svg>
-        <span id="btn-text">Invia Candidatura Partner</span>
+        <span id="btn-text">{f.submit}</span>
       </button>
     </div>
   </form>
@@ -266,8 +265,7 @@ const serviceOptions: ServiceCapability[] = [
       if (!company || !email.includes('@') || checkedServices.length === 0) {
         resultContainer.className =
           'rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800';
-        resultContainer.textContent =
-          'Compila i campi obbligatori e seleziona almeno una competenza o servizio offerto.';
+        resultContainer.textContent = form.dataset.msgValidation || '';
         resultContainer.classList.remove('hidden');
         return;
       }
@@ -275,7 +273,7 @@ const serviceOptions: ServiceCapability[] = [
       // Disabilita il bottone e mostra lo spinner di caricamento
       submitBtn.disabled = true;
       submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
-      btnText.textContent = 'Invio in corso...';
+      btnText.textContent = form.dataset.msgSending || '';
       btnIcon.classList.add('animate-spin');
       resultContainer.classList.add('hidden');
 
@@ -290,23 +288,21 @@ const serviceOptions: ServiceCapability[] = [
         if (data.success) {
           resultContainer.className =
             'rounded-xl p-4 text-sm font-medium bg-teal-50 dark:bg-teal-950/50 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800';
-          resultContainer.textContent =
-            'Candidatura inviata con successo! Il team la esaminerà entro 48 ore lavorative.';
+          resultContainer.textContent = form.dataset.msgSuccess || '';
           resultContainer.classList.remove('hidden');
           form.reset();
         } else {
-          throw new Error(data.message || "Errore riscontrato durante l'invio.");
+          throw new Error(data.message || form.dataset.msgError);
         }
-      } catch (error) {
+      } catch {
         resultContainer.className =
           'rounded-xl p-4 text-sm font-medium bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800';
-        resultContainer.textContent =
-          'Si è verificato un errore di connessione. Riprova più tardi o scrivi direttamente a info@fatturafacile.eu';
+        resultContainer.textContent = form.dataset.msgConnection || '';
         resultContainer.classList.remove('hidden');
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-        btnText.textContent = 'Invia Candidatura Partner';
+        btnText.textContent = form.dataset.msgSubmit || '';
         btnIcon.classList.remove('animate-spin');
       }
     });

@@ -110,7 +110,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
 
       <!-- Direct Crawl-Friendly Language Links Bar -->
       <nav
-        aria-label="Selettore lingua pagina Storia"
+        aria-label={t.hero.langSelectorLabel}
         class="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 mb-8"
       >
         {localeLinks.map((loc) => (

@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PartnerApplicationForm from '../components/PartnerApplicationForm.astro';
-import { PARTNERS_DATA, SERVICE_LABELS } from '../data/partners';
+import { PARTNERS_DATA } from '../data/partners';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const sl = t.supportoLocale;
 
 // LocalBusiness / ProfessionalService schema for local support providers
 const partnersSchema = {
@@ -30,15 +31,15 @@ const partnersSchema = {
     email: partner.contact.email,
     ...(partner.contact.phone ? { telephone: partner.contact.phone } : {}),
     ...(partner.contact.website ? { url: partner.contact.website } : {}),
-    knowsAbout: partner.services.map((s) => SERVICE_LABELS[s].label),
+    knowsAbout: partner.services.map((s) => sl.services[s]),
   })),
 };
 ---
 
 <BaseLayout
-  title={t.supportoLocale.seo.title}
-  description={t.supportoLocale.seo.description}
-  keywords={t.supportoLocale.seo.keywords}
+  title={sl.seo.title}
+  description={sl.seo.description}
+  keywords={sl.seo.keywords}
   lang={lang}
   schema={partnersSchema}
 >
@@ -47,19 +48,18 @@ const partnersSchema = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 mb-6">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        Rete Territoriale Indipendente IT & CH
+        {sl.hero.badge}
       </div>
       <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-        Supporto Locale e sul Posto
+        {sl.hero.headingPre}
+
         <br />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400">
-          Vicino alla tua Attività
+          {sl.hero.headingHighlight}
         </span>
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-        FatturaFacile è un software libero e 100% gratuito. Se desideri assistenza di persona in
-        officina, configurazioni complesse su server aziendali o raccordo con la tua fiduciaria,
-        puoi affidarti alla nostra rete di partner locali certificati.
+        {sl.hero.lead}
       </p>
     </div>
   </section>
@@ -71,7 +71,7 @@ const partnersSchema = {
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 mb-10">
         <div class="flex items-center gap-2">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-            Filtra Nazione:
+            {sl.directory.filterLabel}
           </span>
           <div class="inline-flex rounded-xl bg-slate-200 dark:bg-slate-800 p-1">
             <button
@@ -79,21 +79,21 @@ const partnersSchema = {
               class="partner-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white dark:bg-teal-600 text-slate-900 dark:text-white shadow-sm"
               data-country="ALL"
             >
-              Tutti (IT & CH)
+              {sl.directory.all}
             </button>
             <button
               id="filter-ch"
               class="partner-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900"
               data-country="CH"
             >
-              🇨🇭 Svizzera
+              🇨🇭 {sl.directory.ch}
             </button>
             <button
               id="filter-it"
               class="partner-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900"
               data-country="IT"
             >
-              🇮🇹 Italia
+              🇮🇹 {sl.directory.it}
             </button>
           </div>
         </div>
@@ -106,7 +106,7 @@ const partnersSchema = {
               clip-rule="evenodd"
             ></path>
           </svg>
-          Partner verificati dalla community
+          {sl.directory.verified}
         </div>
       </div>
 
@@ -125,19 +125,17 @@ const partnersSchema = {
               </svg>
             </div>
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-              Rete territoriale in fase di accreditamento iniziale
+              {sl.directory.emptyTitle}
             </h3>
             <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              La directory dei partner territoriali per Svizzera (Ticino, Grigioni) e Italia
-              (Lombardia e altre regioni) è attualmente aperta alle prime candidature di
-              professionisti IT, system integrator e studi contabili indipendenti.
+              {sl.directory.emptyText}
             </p>
             <div class="mt-8">
               <a
                 href="#candidatura-partner"
                 class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-teal-600 hover:bg-teal-500 text-white shadow-md hover:shadow-lg transition-all"
               >
-                <span>Candidati come Partner o Fiduciaria</span>
+                <span>{sl.directory.emptyCta}</span>
                 <span aria-hidden="true">&darr;</span>
               </a>
             </div>
@@ -160,7 +158,7 @@ const partnersSchema = {
                       {partner.verified && (
                         <span
                           class="inline-flex items-center text-teal-600 dark:text-teal-400"
-                          title="Partner Verificato"
+                          title={sl.directory.verifiedTitle}
                         >
                           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path
@@ -173,7 +171,7 @@ const partnersSchema = {
                       )}
                     </div>
                     <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      Referente:{' '}
+                      {sl.directory.contactPerson}{' '}
                       <span class="font-semibold text-slate-700 dark:text-slate-300">
                         {partner.name}
                       </span>{' '}
@@ -223,13 +221,13 @@ const partnersSchema = {
                 <!-- Service Badges -->
                 <div class="mb-6">
                   <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-                    Servizi & Competenze:
+                    {sl.directory.servicesLabel}
                   </div>
                   <div class="flex flex-wrap gap-2">
                     {partner.services.map((srv) => (
                       <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/80">
                         <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
-                        {SERVICE_LABELS[srv].label}
+                        {sl.services[srv]}
                       </span>
                     ))}
                   </div>
@@ -280,7 +278,7 @@ const partnersSchema = {
                     rel="noopener noreferrer"
                     class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1"
                   >
-                    Sito Web &rarr;
+                    {sl.directory.website} &rarr;
                   </a>
                 )}
               </div>

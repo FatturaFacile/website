@@ -80,6 +80,76 @@ export interface TitleDesc {
   desc: string;
 }
 
+export type TeamDomainKey =
+  | 'core_architecture'
+  | 'cloud_devops'
+  | 'swiss_compliance'
+  | 'italian_compliance'
+  | 'web_frontend'
+  | 'docs_translation'
+  | 'community_advocacy';
+
+export type SchoolTypeKey = 'Technical' | 'Commercial' | 'Vocational' | 'University';
+
+export type SchoolProgramKey =
+  'real_codebase_lab' | 'enterprise_simulation' | 'internship_pcto' | 'thesis_project';
+
+export type SchoolIdKey = 'ch-cpt' | 'ch-sam' | 'ch-supsi' | 'ch-usi';
+
+export type ServiceKey =
+  | 'on_site_setup'
+  | 'network_cloud_setup'
+  | 'backup_strategy'
+  | 'staff_training'
+  | 'tax_accounting_sync'
+  | 'custom_integration';
+
+export type ModuleStatusKey = 'available' | 'in_development' | 'planned' | 'community_backlog';
+
+export type ModuleIdKey =
+  | 'mod-core-invoicing'
+  | 'mod-sdi-fatturapa'
+  | 'mod-six-qrbill'
+  | 'mod-encrypted-backup'
+  | 'mod-payments-schedule'
+  | 'mod-stock-simplified'
+  | 'mod-advanced-address-book'
+  | 'mod-cash-register';
+
+export interface CommunityRequestsTranslations {
+  hero: {
+    badge: string;
+    title: string;
+    descPre: string;
+    descPost: string;
+    descStrong: string;
+    descEnd: string;
+  };
+  steps: { badge: string; title: string; items: TitleDesc[] };
+  roles: {
+    badge: string;
+    title: string;
+    lead: string;
+    items: Array<{ title: string; badge: string; desc: string; action: string }>;
+  };
+  team: {
+    badge: string;
+    title: string;
+    lead: string;
+    items: Array<{ label: string; text: string }>;
+  };
+  join: {
+    title: string;
+    lead: string;
+    emailBtn: string;
+    emailBtnTitle: string;
+    telegramBtn: string;
+    telegramTitle: string;
+    githubBtn: string;
+    hint: string;
+  };
+}
+
 export interface HomeTranslations {
   seo: SeoMetadata;
   hero: {
@@ -153,16 +223,30 @@ export interface ContributeTranslations {
 export interface PercheTranslations {
   seo: SeoMetadata;
   eyebrow: string;
-  heading: string;
+  headingPre: string;
+  headingHighlight: string;
   lead: string;
-  pillars: {
+  points: TitleDesc[];
+  story: {
+    badge: string;
     title: string;
-    description: string;
-  }[];
-  antiErpHeading: string;
-  antiErpText: string;
-  quoteToInvoiceHeading: string;
-  quoteToInvoiceText: string;
+    p1Pre: string;
+    p1Post: string;
+    askPre: string;
+    quote: string;
+    p3: string;
+  };
+  team: {
+    title: string;
+    lead: string;
+    joinBtn: string;
+    githubBtn: string;
+  };
+  cta: {
+    title: string;
+    lead: string;
+    features: string;
+  };
 }
 
 export interface VersioniTranslations {
@@ -223,6 +307,11 @@ export interface ModuliTranslations {
     submitBtn: string;
     disclaimer: string;
   };
+  pillars: TitleDesc[];
+  status: Record<ModuleStatusKey, string>;
+  markets: Record<'ALL' | 'IT' | 'CH', string>;
+  milestoneTbd: string;
+  modules: Record<ModuleIdKey, { title: string; description: string; features: string[] }>;
 }
 
 export interface TeamTranslations {
@@ -241,70 +330,133 @@ export interface TeamTranslations {
     githubBtn: string;
     telegramBtn: string;
   };
+  emptyRegion: {
+    text: string;
+    cta: string;
+  };
+  domains: Record<TeamDomainKey, string>;
 }
 
 export interface ScuoleSocialeTranslations {
   seo: SeoMetadata;
+  schema: {
+    orgDescription: string;
+    offerDescription: string;
+    technicalName: string;
+    technicalDescription: string;
+    commercialName: string;
+    commercialDescription: string;
+  };
   hero: {
     badge: string;
-    heading: string;
+    headingPre: string;
+    headingHighlight: string;
     lead: string;
     ctaApply: string;
     ctaGithub: string;
   };
-  technicalTrack: {
+  tracks: {
     badge: string;
     title: string;
     lead: string;
-    bullets: {
+    items: Array<{
+      badge: string;
+      schools: string;
       title: string;
-      desc: string;
-    }[];
+      description: string;
+      linkText: string;
+      items: Array<{ title: string; body: string }>;
+    }>;
   };
-  commercialTrack: {
+  schools: {
     badge: string;
     title: string;
     lead: string;
-    bullets: {
-      title: string;
-      desc: string;
-    }[];
+    filterAll: string;
+    filterCH: string;
+    filterIT: string;
+    programsLabel: string;
+    website: string;
+    types: Record<SchoolTypeKey, string>;
+    programs: Record<SchoolProgramKey, { label: string; summary: string }>;
+    items: Record<SchoolIdKey, { department: string; description: string }>;
   };
-  socialMission: {
+  mission: {
     badge: string;
     title: string;
-    description: string;
-    points: string[];
+    lead: string;
+    pillars: Array<{ title: string; body: string }>;
   };
-  teacherContact: {
+  contact: {
+    badge: string;
     title: string;
     lead: string;
-    btnLabel: string;
+    emailBtn: string;
+    telegramBtn: string;
+    note: string;
+    mailtoBody: string[];
+    mailtoFooter: string;
   };
 }
 
 export interface SupportoLocaleTranslations {
   seo: SeoMetadata;
-  eyebrow: string;
-  heading: string;
-  lead: string;
-  regions: {
-    switzerland: string;
-    italy: string;
+  hero: {
+    badge: string;
+    headingPre: string;
+    headingHighlight: string;
+    lead: string;
   };
-  partnerForm: {
+  directory: {
+    filterLabel: string;
+    all: string;
+    ch: string;
+    it: string;
+    verified: string;
+    emptyTitle: string;
+    emptyText: string;
+    emptyCta: string;
+    contactPerson: string;
+    verifiedTitle: string;
+    servicesLabel: string;
+    website: string;
+  };
+  services: Record<ServiceKey, string>;
+  roles: {
+    itConsultant: string;
+    systemIntegrator: string;
+    fiduciaria: string;
+    softwareHouse: string;
+  };
+  form: {
     badge: string;
     title: string;
     lead: string;
     companyLabel: string;
+    companyPlaceholder: string;
     contactLabel: string;
+    contactPlaceholder: string;
     emailLabel: string;
+    emailPlaceholder: string;
     phoneLabel: string;
+    phonePlaceholder: string;
     countryLabel: string;
+    countryPlaceholder: string;
+    switzerland: string;
+    italy: string;
     regionLabel: string;
+    regionPlaceholder: string;
+    roleLabel: string;
     servicesLabel: string;
     notesLabel: string;
-    submitBtn: string;
+    notesPlaceholder: string;
+    note: string;
+    submit: string;
+    sending: string;
+    validation: string;
+    success: string;
+    errorGeneric: string;
+    errorConnection: string;
   };
 }
 
@@ -314,6 +466,10 @@ export interface FaqTranslations {
   heading: string;
   lead: string;
   searchPlaceholder: string;
+  noResults: {
+    text: string;
+    link: string;
+  };
   categories: {
     general: string;
     technical: string;
@@ -330,26 +486,30 @@ export interface FaqTranslations {
 
 export interface SponsorTranslations {
   seo: SeoMetadata;
-  eyebrow: string;
-  heading: string;
-  lead: string;
-  transparencyTitle: string;
-  transparencyText: string;
-  costsList: {
-    item: string;
-    description: string;
-  }[];
-  tiers: {
-    individualTitle: string;
-    individualDesc: string;
-    corporateTitle: string;
-    corporateDesc: string;
-    technicalTitle: string;
-    technicalDesc: string;
+  hero: {
+    badge: string;
+    headingPre: string;
+    headingHighlight: string;
+    lead: string;
   };
-  actions: {
-    kofiBtn: string;
-    githubSponsorsBtn: string;
+  costs: {
+    title: string;
+    lead: string;
+    items: Array<TitleDesc & { priority: string }>;
+  };
+  tiers: {
+    title: string;
+    lead: string;
+    recommended: string;
+    items: Array<{
+      audience: string;
+      name: string;
+      price: string;
+      priceNote: string;
+      desc: string;
+      perks: string[];
+      cta: string;
+    }>;
   };
 }
 
@@ -413,6 +573,9 @@ export interface CommunityTranslations {
     title: string;
     lead: string;
     institutionsBadge: string;
+    regionTag: string;
+    institutionFooter: string;
+
     institutions: {
       name: string;
       role: string;
@@ -453,6 +616,7 @@ export interface SiteTranslations {
   versioni: VersioniTranslations;
   moduli: ModuliTranslations;
   community: CommunityTranslations;
+  communityRequests: CommunityRequestsTranslations;
   contribute: ContributeTranslations;
   team: TeamTranslations;
   scuoleSociale: ScuoleSocialeTranslations;
