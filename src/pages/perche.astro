@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEMO_URL } from '../data/links';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -14,7 +15,7 @@ const pageSchema = {
   description: t.perche.seo.description,
   publisher: {
     '@type': 'Organization',
-    name: 'Fattura Facile Teams',
+    name: 'FatturaFacile Team',
   },
 };
 ---
@@ -40,7 +41,7 @@ const pageSchema = {
       </h1>
       <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
         Chi lavora sul campo non ha il tempo né la voglia di perdersi in menu contabili astrusi o
-        aspettare 15 secondi per caricare una pagina web lenta. Fattura Facile nasce per fare una
+        aspettare 15 secondi per caricare una pagina web lenta. FatturaFacile nasce per fare una
         sola cosa, in modo impeccabile: emettere documenti fiscali e farti incassare subito.
       </p>
     </div>
@@ -97,7 +98,7 @@ const pageSchema = {
           </h2>
           <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
             I servizi in abbonamento mensile bloccano l'accesso ai tuoi dati fiscali non appena
-            smetti di pagare la quota. In Fattura Facile i tuoi file sono salvati in un database
+            smetti di pagare la quota. In FatturaFacile i tuoi file sono salvati in un database
             aperto SQLite direttamente nella cartella del programma. Funziona in cantina, in
             furgone, in officina o senza connessione internet: sei sempre operativo al 100%.
           </p>
@@ -150,8 +151,8 @@ const pageSchema = {
 
       <div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
         <p>
-          Il progetto <strong>Fattura Facile</strong> è nato osservando la frustrazione quotidiana
-          di amici artigiani – idraulici, fabbri, elettricisti e piccoli professionisti tra la
+          Il progetto <strong>FatturaFacile</strong> è nato osservando la frustrazione quotidiana di
+          amici artigiani – idraulici, fabbri, elettricisti e piccoli professionisti tra la
           Lombardia e il Canton Ticino. Costretti ad abbonamenti mensili sempre più costosi per
           programmi complessi, lenti o dipendenti da una connessione internet spesso assente nei
           seminterrati o nei cantieri.
@@ -183,7 +184,7 @@ const pageSchema = {
         Team Aperto & Contributori
       </h2>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-        Fattura Facile è guidato da ingegneri del software, consulenti fiscali italo-svizzeri e da
+        FatturaFacile è guidato da ingegneri del software, consulenti fiscali italo-svizzeri e da
         una comunità attiva di artigiani che collaudano ogni nuova versione.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
@@ -212,15 +213,16 @@ const pageSchema = {
         Pronto a semplificare la tua fatturazione?
       </h2>
       <p class="mt-4 text-slate-300">
-        Nessuna installazione complessa. Scarica lo ZIP ed emetti la tua prima fattura in pochi
-        istanti.
+        Nessuna installazione: apri la demo online e crea il tuo primo preventivo in pochi istanti.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
-          href="/#download"
+          href={DEMO_URL}
+          target="_blank"
+          rel="noopener"
           class="px-8 py-3.5 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-2xl transition-all shadow-lg"
         >
-          Scarica Desktop Gratis
+          {t.common.actions.tryDemo}
         </a>
         <a
           href="/funzionalita/"

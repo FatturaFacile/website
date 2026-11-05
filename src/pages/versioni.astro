@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEMO_URL } from '../data/links';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -14,7 +15,7 @@ const pageSchema = {
   description: t.versioni.seo.description,
   publisher: {
     '@type': 'Organization',
-    name: 'Fattura Facile Teams',
+    name: 'FatturaFacile Team',
   },
 };
 ---
@@ -52,7 +53,7 @@ const pageSchema = {
               <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 uppercase">
                 {t.versioni.desktopCard.tag}
               </span>
-              <span class="text-emerald-600 dark:text-emerald-400 font-bold text-xs bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-800/40">
+              <span class="text-emerald-800 dark:text-emerald-400 font-bold text-xs bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 rounded-full border border-emerald-200 dark:border-emerald-800/40">
                 {t.versioni.desktopCard.badge}
               </span>
             </div>
@@ -105,12 +106,12 @@ const pageSchema = {
 
           <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
             <a
-              href="https://github.com/FatturaFacile/desktop/releases"
+              href="https://github.com/FatturaFacile/desktop"
               target="_blank"
               rel="noopener noreferrer"
               title={t.versioni.desktopCard.cta}
               aria-label={t.versioni.desktopCard.cta}
-              class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 shadow-md shadow-emerald-600/20 transition-colors"
+              class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-white bg-emerald-700 hover:bg-emerald-800 dark:bg-emerald-700 dark:hover:bg-emerald-600 shadow-md shadow-emerald-600/20 transition-colors"
             >
               {t.versioni.desktopCard.cta}
             </a>
@@ -172,7 +173,7 @@ const pageSchema = {
 
           <div class="mt-8 pt-6 border-t border-slate-700">
             <a
-              href="https://github.com/FatturaFacile"
+              href={DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               title={t.versioni.cloudCard.cta}
