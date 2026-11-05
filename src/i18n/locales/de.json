@@ -9,7 +9,7 @@
       "offlineVsCloud": "Offline vs. Cloud",
       "communitySocial": "Community & Soziales",
       "requestModulesFree": "Module Anfordern (Kostenlos)",
-      "contribute": "Mitwirken",
+      "contribute": "Mitmachen",
       "schoolsSocial": "Schulen & Bildung",
       "sponsors": "Sponsoren & Förderung",
       "networkSupport": "Netzwerk & Support",
@@ -30,7 +30,8 @@
       "learnMore": "Mehr Erfahren",
       "understood": "Verstanden",
       "filterAll": "Alle",
-      "backToHome": "Zurück zur Startseite"
+      "backToHome": "Zurück zur Startseite",
+      "tryDemo": "Demo testen"
     },
     "footer": {
       "description": "Das schlanke und unabhängige Fakturierungssystem, speziell entwickelt für Handwerker, Kleinbetriebe und Freiberufler in Italien und der Schweiz. Architektur mit lokaler SQLite-Datenbank und selbstgehosteter Cloud-Option.",
@@ -40,7 +41,7 @@
       "marketsColTitle": "Regionale Märkte",
       "italyMarketDesc": "Italien 🇮🇹: Kompatibel mit FatturaPA XML, Zahlungsnachverfolgung sowie Pauschal- und Standardsystemen.",
       "swissMarketDesc": "Schweiz 🇨🇭: Konform mit der QR-Rechnung (SIX-Standard) und den Eidgenössischen MWST-Sätzen (Normal-, Reduziert- und Sondersatz).",
-      "copyright": "Fattura Facile. Offenes Projekt ohne Abonnementgebühren.",
+      "copyright": "FatturaFacile. Offenes Projekt ohne Abonnementgebühren.",
       "telegramCommunity": "Telegram-Community",
       "githubRepo": "GitHub-Repository"
     },
@@ -70,42 +71,150 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Kostenlose Open-Source-Fakturierungssoftware (Schweiz & Italien)",
-      "description": "Kostenlose Open-Source-Fakturierungssoftware für Handwerker und KMU in der Schweiz und Italien. QR-Rechnung, FatturaPA, 100% Offline-SQLite. MIT-Lizenz.",
-      "keywords": "fattura facile, kostenlose rechnungssoftware, open source fakturierung, schweizer qr-rechnung, fatturapa xml, offline sqlite, tessin software"
+      "title": "FatturaFacile – Open-Source-Software für Rechnungen und Geschäftsverwaltung in der Schweiz und Italien",
+      "description": "Kostenlose Open-Source-Unternehmenssoftware für Handwerker, Selbstständige und KMU in der Schweiz und Italien: Offerten, FatturaPA, QR-Rechnung, Lager und Buchhaltung. Online-Demo testen. MIT-Lizenz.",
+      "keywords": "fatturafacile, open source erp, kostenlose rechnungssoftware, qr-rechnung schweiz, elektronische rechnung italien, fatturapa sdi, tessin, software für handwerker, kmu erp, mit lizenz"
     },
     "hero": {
-      "badgeGeo": "Open-Source-Projekt • MIT-Lizenz • Keine Lizenzkosten",
-      "badgePrivacy": "100% Lokale Daten (Offline-SQLite)",
-      "titlePart1": "Einfache, transparente Rechnungsstellung",
-      "titlePart2": "unter Ihrer Kontrolle.",
-      "subtitle": "Kostenlose Open-Source-Fakturierungssoftware aus dem Tessin für Handwerker und KMU in der Schweiz und Italien. Keine Abogebühren, offline-fähig.",
-      "ctaPrimary": "Für Windows herunterladen (.exe)",
-      "ctaSecondary": "GitHub-Repository",
-      "badges": {
-        "zeroSubTitle": "Freie MIT-Lizenz",
-        "zeroSubDesc": "Keine Gebühren oder Abos",
-        "portableTitle": "100% Ihre Daten",
-        "portableDesc": "Lokale SQLite-Datenbank auf Festplatte",
-        "offlineTitle": "Doppelte Konformität",
-        "offlineDesc": "Schweizer QR-Rechnung & FatturaPA",
-        "dataOwnershipTitle": "Offene Community",
-        "dataOwnershipDesc": "Im Tessin entstanden, offener Quellcode"
+      "badgeGeo": "Open Source • MIT-Lizenz • Kostenlos",
+      "badgePrivacy": "Web verfügbar • Desktop und Mobile folgen",
+      "titlePart1": "Rechnungen und Verwaltung,",
+      "titlePart2": "einfach und unter Ihrer Kontrolle.",
+      "subtitle": "FatturaFacile ist die im Tessin entstandene Open-Source-Unternehmenssoftware für Handwerker, Selbstständige und KMU in der Schweiz und Italien: Offerten, E-Rechnungen, Lager und Buchhaltung im Browser, ohne Abo.",
+      "ctaPrimary": "Demo testen",
+      "ctaSecondary": "Code auf GitHub",
+      "ctaCommunity": "Telegram-Community"
+    },
+    "pillars": [
+      {
+        "title": "Kostenlos und offen",
+        "desc": "MIT-Lizenz, kein Abo"
+      },
+      {
+        "title": "Italien und Schweiz",
+        "desc": "FatturaPA (SDI) und QR-Rechnung"
+      },
+      {
+        "title": "Komplette Lösung",
+        "desc": "Von der Offerte bis zum Lager"
+      },
+      {
+        "title": "Ihre Daten",
+        "desc": "Auf Ihrem Server, kein Lock-in"
+      }
+    ],
+    "philosophy": {
+      "badge": "Die Philosophie von FatturaFacile",
+      "heading": "Kein kompliziertes ERP mit 500 Knöpfen, sondern Ihr tägliches Werkzeug",
+      "lead": "Sanitärinstallateure, Elektriker, Monteure, Gärtner und Selbstständige stellen im Schnitt 10 bis 20 Dokumente pro Monat aus. Sie brauchen keine komplexe Lieferkette: Sie müssen pünktlich bezahlt werden.",
+      "features": [
+        {
+          "title": "Offerte in 1 Minute, Rechnung mit 1 Klick",
+          "desc": "Erstellen Sie die Offerte noch beim Kunden. Sobald sie angenommen ist, wandeln Sie sie mit einem Klick in eine Rechnung mit automatischer Nummerierung um."
+        },
+        {
+          "title": "Italien 🇮🇹 und Schweiz 🇨🇭",
+          "desc": "FatturaPA-E-Rechnungen für das italienische Austauschsystem (SDI) und Schweizer QR-Rechnungen nach SIX-Standard, mit den Mehrwertsteuersätzen beider Länder."
+        },
+        {
+          "title": "Module nach Bedarf",
+          "desc": "Starten Sie mit Offerten und Rechnungen und aktivieren Sie nur, was Sie brauchen: Lager, Baustellen, Serviceeinsätze, Kasse, Vermietung, Abos, Finanzen und Buchhaltung."
+        }
+      ],
+      "more": "Mehr über unsere Philosophie"
+    },
+    "platforms": {
+      "badge": "Plattformen",
+      "heading": "Eine Software, drei Arten sie zu nutzen",
+      "lead": "Die Web-Version ist bereits verfügbar und lässt sich in der Demo testen. Desktop und Mobile sind in Entwicklung, mit demselben offenen Code auf GitHub.",
+      "available": "Verfügbar",
+      "inDevelopment": "In Entwicklung",
+      "items": [
+        {
+          "name": "Web",
+          "stack": "Angular + Laravel-API",
+          "desc": "Die komplette Verwaltung im Browser, mehrbenutzerfähig. Nutzen Sie sie in der Demo oder installieren Sie sie mit Docker auf Ihrem eigenen Server."
+        },
+        {
+          "name": "Windows-Desktop",
+          "stack": ".NET (WPF) + SQLite",
+          "desc": "Eine native App, die auch offline funktioniert, mit Ihren Daten nur auf Ihrem Computer."
+        },
+        {
+          "name": "Mobile",
+          "stack": "Flutter (iOS und Android)",
+          "desc": "Ihre Verwaltung in der Hosentasche: schnelle Offerten, Fotos von Belegen und Zeiterfassung auf der Baustelle."
+        }
+      ],
+      "compareCta": "Versionen vergleichen",
+      "modulesCta": "Module entdecken"
+    },
+    "comingSoon": {
+      "badge": "Coming Soon",
+      "heading": "In den nächsten Releases",
+      "lead": "Daran arbeiten wir gerade: Zu jedem Punkt gibt es ein öffentliches Issue auf GitHub, wo Sie ihn verfolgen oder mithelfen können.",
+      "items": [
+        {
+          "title": "Registrierung mit E-Mail-Bestätigung",
+          "desc": "Erstellen Sie Ihr Konto selbst, mit Bestätigung der E-Mail-Adresse."
+        },
+        {
+          "title": "Passwort-Wiederherstellung",
+          "desc": "Setzen Sie Ihr Passwort selbst zurück, über einen sicheren Link per E-Mail."
+        },
+        {
+          "title": "Täglicher E-Mail-Bericht",
+          "desc": "Jeden Morgen eine Übersicht über Zahlungseingänge, Fälligkeiten und die Dokumente des Vortags."
+        },
+        {
+          "title": "Zugriffs- und Sicherheitsprotokoll",
+          "desc": "Wer hat was wann gemacht: Anmeldungen, Änderungen und fehlgeschlagene Versuche."
+        },
+        {
+          "title": "Windows-Desktop-App",
+          "desc": "Erstes Release der Offline-App, mit lokal gespeicherten Daten."
+        },
+        {
+          "title": "Mobile Zeiterfassung",
+          "desc": "Ein- und Ausstempeln per Handy, verknüpft mit Baustellen und Serviceeinsätzen."
+        }
+      ],
+      "cta": "Roadmap auf GitHub verfolgen"
+    },
+    "territory": {
+      "local": {
+        "badge": "Unterstützung vor Ort",
+        "title": "Lokaler Support im Tessin, in der Lombardei und im Piemont",
+        "desc": "Brauchen Sie Hilfe bei der Installation auf Ihrem Server, bei Backups oder bei der Zusammenarbeit mit Ihrem Buchhalter oder Treuhänder? Finden Sie Techniker und Treuhänder in Ihrer Nähe.",
+        "cta": "Partnerverzeichnis ansehen oder bewerben"
+      },
+      "schools": {
+        "badge": "Bildung und soziale Wirkung",
+        "title": "Freie Software für Schulen und neue Unternehmen",
+        "desc": "Echter Quellcode (Laravel, Angular, .NET und Flutter) für den Unterricht in Softwarearchitektur, kostenlose Buchhaltungslabore und weniger digitale Hürden für Gründerinnen und Gründer.",
+        "cta": "Programm für Schulen entdecken"
       }
     },
-    "quickSummary": {
-      "eyebrow": "Open-Source-Projekt",
-      "heading": "Einfache, transparente Rechnungsstellung unter Ihrer Kontrolle",
-      "lead": "FatturaFacile ist eine kostenlose Open-Source-Fakturierungssoftware aus dem Tessin für Handwerker, Selbstständige und Kleinbetriebe in der Schweiz und Italien. Keine monatlichen Gebühren, vollständiger Offline-Betrieb und öffentlicher Quellcode."
+    "demoCta": {
+      "badge": "Online-Demo",
+      "title": "Jetzt testen, ohne etwas zu installieren",
+      "lead": "Die Demo ist die echte Web-Anwendung mit einer bereits eingerichteten Beispielfirma. Die Zugangsdaten sind schon ausgefüllt.",
+      "primary": "Demo öffnen",
+      "secondary": "Zum Projekt beitragen",
+      "notes": [
+        "✓ Ohne Registrierung",
+        "✓ Beispieldaten, regelmässig zurückgesetzt",
+        "✓ Keine echten Daten eingeben"
+      ]
     }
   },
   "perche": {
     "seo": {
-      "title": "Warum Fattura Facile | Unsere Philosophie",
+      "title": "Warum FatturaFacile | Unsere Philosophie",
       "description": "Erfahren Sie mehr über unsere Philosophie gegen überladene ERPs: schlanke Software, Offerten in einer Minute, Rechnungen mit einem Klick und keine Abogebühren.",
       "keywords": "warum fattura facile, schlanke rechnungssoftware, erp alternative, schnelle offerte handwerker, rechnungsstellung ohne abo"
     },
-    "eyebrow": "Die Philosophie von Fattura Facile",
+    "eyebrow": "Die Philosophie von FatturaFacile",
     "heading": "Kein 500-Tasten-Monster, sondern Ihr schlanker Begleiter im Arbeitsalltag",
     "lead": "Wir haben den überflüssigen Ballast herkömmlicher Unternehmenssoftware entfernt, um uns auf das Wesentliche zu konzentrieren: Bedienkomfort, strikte steuerliche Konformität und sofortige Betriebsbereitschaft.",
     "pillars": [
@@ -123,13 +232,13 @@
       }
     ],
     "antiErpHeading": "Schluss mit monatlichen Pflichtgebühren für wenige Rechnungen",
-    "antiErpText": "Moderne SaaS-Abonnements verursachen stetig steigende Fixkosten und sperren bei Kündigung den Zugriff auf die eigenen historischen Rechnungsdaten. Bei Fattura Facile gehört das Desktop-Programm Ihnen – ohne vertragliche Bindungen und unabhängig von Serverausfällen.",
+    "antiErpText": "Moderne SaaS-Abonnements verursachen stetig steigende Fixkosten und sperren bei Kündigung den Zugriff auf die eigenen historischen Rechnungsdaten. Bei FatturaFacile gehört das Desktop-Programm Ihnen – ohne vertragliche Bindungen und unabhängig von Serverausfällen.",
     "quoteToInvoiceHeading": "Reibungsloser Ablauf zwischen Baustelle und Werkstatt",
     "quoteToInvoiceText": "Vergessen Sie doppelte Dateneingaben und unübersichtliche Tabellen. Dank des Adressstamms und gespeicherter Leistungspositionen erstellen Sie eine Rechnung in unter 60 Sekunden und können sich voll auf Ihr Handwerk konzentrieren."
   },
   "versioni": {
     "seo": {
-      "title": "Standalone Offline vs. Private Cloud | Fattura Facile",
+      "title": "Standalone Offline vs. Private Cloud | FatturaFacile",
       "description": "Detaillierter Vergleich zwischen unserer portablen C# WPF Desktop-Version mit SQLite und der selbstgehosteten Mehrbenutzer-Cloud-Edition in Docker.",
       "keywords": "versionen fattura facile, offline usb rechnungen sqlite, private cloud rechnung docker, wpf sqlite fakturierung"
     },
@@ -137,8 +246,8 @@
     "heading": "Zwei Varianten, 100 % kostenlos für alle",
     "lead": "Keine Lizenzgebühren an unser Team. Arbeiten Sie vollkommen autark: lokal auf Ihrem Schreibtisch oder selbstgehostet auf Ihrer eigenen IT-Infrastruktur.",
     "desktopCard": {
-      "tag": "Standalone / Windows Desktop",
-      "badge": "Jetzt verfügbar • Stabile Version",
+      "tag": "Windows-Desktop • Offline",
+      "badge": "In Entwicklung • Erstes Release folgt",
       "title": "FatturaFacile Desktop (WPF / .NET)",
       "subtitle": "Nativ in C#/.NET (WPF) entwickelt mit integrierter, konfigurationsfreier SQLite-Datenbank.",
       "features": [
@@ -148,25 +257,25 @@
         "Doppelte Konformität: Erstellt gültige Schweizer QR-Rechnungen nach SIX-Richtlinien und italienische FatturaPA-XML."
       ],
       "limitation": "Ein Benutzer gleichzeitig pro Datenbankdatei (SQLite-Transaktionssperre).",
-      "cta": "Für Windows herunterladen (.exe)"
+      "cta": "Entwicklung auf GitHub verfolgen"
     },
     "cloudCard": {
-      "tag": "Roadmap • In aktiver Entwicklung",
-      "badge": "Open-Source-Beiträge willkommen",
-      "title": "FatturaFacile Web & Docker (Self-Hosted)",
-      "subtitle": "Mehrbenutzer-Edition in aktiver Entwicklung für private Server oder VPS (Docker / PostgreSQL).",
+      "tag": "Web • Verfügbar",
+      "badge": "Release v0.1 • Online-Demo",
+      "title": "FatturaFacile Web (selbst gehostet mit Docker)",
+      "subtitle": "Die mehrbenutzerfähige Verwaltung im Browser, mit Laravel-API und PostgreSQL-Datenbank. Testen Sie sie in der Demo oder installieren Sie sie mit Docker auf Ihrem Server oder VPS.",
       "features": [
         "Gleichzeitiger Browserzugriff für Teammitglieder und Treuhänder.",
         "Auf eigener Infrastruktur selbstgehostet: keine laufenden Kosten für Drittanbieter-SaaS.",
         "Offene Schnittstellen für individuelle Systemintegrationen und Synchronisation.",
         "Gemeinschaftliche Entwicklung unter der freien MIT-Lizenz."
       ],
-      "migrationNote": "Status: In aktiver Entwicklung auf GitHub. Einladung an Docker- und Web-Entwickler.",
-      "cta": "Auf GitHub mitwirken"
+      "migrationNote": "Status: verfügbar (v0.1), mit neuen Funktionen in jedem Release. Offene Entwicklung auf GitHub.",
+      "cta": "Demo testen"
     },
     "comparisonTable": {
       "title": "Technische Vergleichstabelle",
-      "headers": ["Funktion", "Desktop Standalone", "Private Cloud"],
+      "headers": ["Funktion", "Desktop Standalone", "Web (selbst gehostet)"],
       "rows": [
         {
           "feature": "Softwarelizenz",
@@ -186,7 +295,7 @@
         {
           "feature": "Datenbank-Engine",
           "desktop": "Lokales SQLite (auf Datenträger/USB)",
-          "cloud": "PostgreSQL / SQL Server"
+          "cloud": "PostgreSQL"
         },
         {
           "feature": "Gleichzeitige Benutzer",
@@ -214,7 +323,7 @@
     },
     "eyebrow": "Modulares & Transparentes Ökosystem",
     "heading": "Einsatzbereite Module und communitygetriebene Weiterentwicklung",
-    "lead": "Fattura Facile beinhaltet die wesentlichen Funktionen für den sofortigen Start und wächst mit den praxisnahen Anforderungen der Community. Jedes freigegebene Modul wird kostenlos programmiert und in die offiziellen Releases übernommen.",
+    "lead": "FatturaFacile beinhaltet die wesentlichen Funktionen für den sofortigen Start und wächst mit den praxisnahen Anforderungen der Community. Jedes freigegebene Modul wird kostenlos programmiert und in die offiziellen Releases übernommen.",
     "availableSectionTitle": "Sofort Verfügbare Module",
     "roadmapSectionTitle": "Transparente Entwicklungs-Roadmap",
     "roadmapStages": {
@@ -237,12 +346,12 @@
   },
   "team": {
     "seo": {
-      "title": "Team & Mitwirkende | Fattura Facile",
-      "description": "Lernen Sie die Softwarearchitekten, Entwickler und Steuerexperten hinter Fattura Facile in der Schweiz und Italien kennen.",
+      "title": "Team & Mitwirkende | FatturaFacile",
+      "description": "Lernen Sie die Softwarearchitekten, Entwickler und Steuerexperten hinter FatturaFacile in der Schweiz und Italien kennen.",
       "keywords": "team fattura facile, davide nava, net open source entwickler, steuerberater schweiz italien, mitwirkende"
     },
     "eyebrow": "Offene & Gemeinnützige Initiative",
-    "heading": "Die Menschen hinter dem Projekt Fattura Facile",
+    "heading": "Die Menschen hinter dem Projekt FatturaFacile",
     "lead": "Ein Team aus IT-Ingenieuren, Steuerexperten und Dozenten, vereint durch die Überzeugung, dass alltägliche Arbeitswerkzeuge nicht hinter monatlichen Bezahlschranken eingesperrt werden dürfen.",
     "regions": {
       "switzerland": "Schweiz 🇨🇭 (Kanton Tessin & Graubünden)",
@@ -258,7 +367,7 @@
   },
   "scuoleSociale": {
     "seo": {
-      "title": "Schulen, Berufsbildung & Soziales Engagement | Fattura Facile",
+      "title": "Schulen, Berufsbildung & Soziales Engagement | FatturaFacile",
       "description": "Bildungsinitiativen für Informatik- und Wirtschaftsschulen. Echter Programmcode zum Erlernen von .NET und kostenlose Software für Übungsfirmen.",
       "keywords": "schulen fattura facile, net berufsausbildung, uebungsfirma software kostenlos, rechnungswesen schule, soziales projekt"
     },
@@ -329,7 +438,7 @@
   },
   "supportoLocale": {
     "seo": {
-      "title": "Partnernetzwerk & Regionaler Support (IT/CH) | Fattura Facile",
+      "title": "Partnernetzwerk & Regionaler Support (IT/CH) | FatturaFacile",
       "description": "Finden Sie akkreditierte IT-Berater, Treuhänder und Techniker vor Ort für Installation, Betreuung und Schulungen in Italien und der Schweiz.",
       "keywords": "regionaler support fattura facile, partner tessin fakturierung, rechnungssoftware hilfe lombardei, qr-rechnung sdi beratung"
     },
@@ -343,7 +452,7 @@
     "partnerForm": {
       "badge": "Offenes Fachnetzwerk",
       "title": "Als Regionaler Partner oder Berater Bewerben",
-      "lead": "Sind Sie IT-Dienstleister, Webagentur oder Treuhandbüro? Treten Sie dem Partnerverzeichnis von Fattura Facile kostenlos bei und bieten Sie den Nutzern Ihrer Region Ihre Dienstleistungen an.",
+      "lead": "Sind Sie IT-Dienstleister, Webagentur oder Treuhandbüro? Treten Sie dem Partnerverzeichnis von FatturaFacile kostenlos bei und bieten Sie den Nutzern Ihrer Region Ihre Dienstleistungen an.",
       "companyLabel": "Firmenname oder Kanzleibezeichnung",
       "contactLabel": "Ansprechperson",
       "emailLabel": "Geschäftliche E-Mail",
@@ -362,7 +471,7 @@
       "keywords": "faq fattura facile, fragen rechnungsstellung, sqlite sicherheit, kostenlose rechnungssoftware"
     },
     "eyebrow": "Antworten & Klarheit",
-    "heading": "Häufig Gestellte Fragen zu Fattura Facile",
+    "heading": "Häufig Gestellte Fragen zu FatturaFacile",
     "lead": "Alles Wissenswerte über die Technologie, die Steuerkonformität und das offene Entwicklungsmodell des Projekts.",
     "searchPlaceholder": "Antwort suchen (z. B. USB, Backup, SDI, QR-Rechnung)...",
     "categories": {
@@ -412,13 +521,13 @@
   },
   "sponsor": {
     "seo": {
-      "title": "Sponsoren & Projektförderung | Fattura Facile",
-      "description": "Unterstützen Sie die unabhängige Entwicklung von Fattura Facile. Erfahren Sie mehr über die transparente Verwendung der Mittel für Zertifikate und Infrastruktur.",
+      "title": "Sponsoren & Projektförderung | FatturaFacile",
+      "description": "Unterstützen Sie die unabhängige Entwicklung von FatturaFacile. Erfahren Sie mehr über die transparente Verwendung der Mittel für Zertifikate und Infrastruktur.",
       "keywords": "sponsor fattura facile, open source spende, windows code signing zertifikat, freie software foerdern"
     },
     "eyebrow": "Transparenz & Nachhaltigkeit",
     "heading": "Helfen Sie uns, die Software unabhängig, frei und sicher zu halten",
-    "lead": "Fattura Facile verkauft keine Daten und erhebt keine Nutzungsgebühren. Spenden und Sponsorengelder decken ausschliesslich die anfallenden technischen Betriebskosten, um die Sicherheit und Stabilität des Projekts zu gewährleisten.",
+    "lead": "FatturaFacile verkauft keine Daten und erhebt keine Nutzungsgebühren. Spenden und Sponsorengelder decken ausschliesslich die anfallenden technischen Betriebskosten, um die Sicherheit und Stabilität des Projekts zu gewährleisten.",
     "transparencyTitle": "Vollständige Transparenz bei den Technischen Kosten",
     "transparencyText": "Jeder über GitHub Sponsors oder Unterstützungsplattformen gesammelte Betrag fliesst direkt in dokumentierte Sachausgaben:",
     "costsList": [
@@ -450,13 +559,13 @@
   },
   "storia": {
     "seo": {
-      "title": "Unsere Geschichte & Projekthintergrund | Fattura Facile",
-      "description": "Die Entstehung von Fattura Facile: Vom Arbeitsalltag der Handwerker mit schwerfälliger Software hin zu einer freien, unabhängigen Lösung ohne Abozwang.",
+      "title": "Unsere Geschichte & Projekthintergrund | FatturaFacile",
+      "description": "Die Entstehung von FatturaFacile: Vom Arbeitsalltag der Handwerker mit schwerfälliger Software hin zu einer freien, unabhängigen Lösung ohne Abozwang.",
       "keywords": "geschichte fattura facile, ursprung rechnungssoftware, alternative softwareabo, ethische software tessin lombardei"
     },
     "eyebrow": "Wurzeln & Vision",
     "heading": "Aus der Praxis vor Ort zur Unabhängigkeit freier Software",
-    "lead": "Fattura Facile entstand nicht im Konferenzraum zur Generierung wiederkehrender Abo-Umsätze, sondern aus der direkten Beobachtung von Installateuren, Elektrikern und Handwerkern, die mit zu langsamer, überladener und teurer Software zu kämpfen hatten.",
+    "lead": "FatturaFacile entstand nicht im Konferenzraum zur Generierung wiederkehrender Abo-Umsätze, sondern aus der direkten Beobachtung von Installateuren, Elektrikern und Handwerkern, die mit zu langsamer, überladener und teurer Software zu kämpfen hatten.",
     "problemTitle": "Das Problem Schwerfälliger ERP-Systeme",
     "problemText": "In den vergangenen Jahren hat die Softwarebranche einen radikalen Wandel hin zu zwingenden SaaS-Abonnements vollzogen. Was für internationale Lieferketten sinnvoll sein mag, bedeutet für Kleinbetriebe und selbstständige Handwerker unverhältnismässige Kosten, unübersichtliche Menüs voller ungenutzter Buttons und die ständige Sorge, bei fehlender Internetverbindung oder Vertragsende den Zugriff auf die eigenen Rechnungen zu verlieren.",
     "philosophyTitle": "Unsere Vier Grundpfeiler",
@@ -609,10 +718,10 @@
           "action": "Issues auf GitHub ansehen"
         },
         {
-          "title": "Web- & Docker-Entwickler",
-          "badge": "Cloud-Edition in Entwicklung",
-          "desc": "Laufende Entwicklung der selbstgehosteten Mehrbenutzer-Version: ASP.NET Core Web-APIs, Docker-Container und PostgreSQL.",
-          "action": "Cloud-Roadmap auf GitHub"
+          "title": "Web-Entwickler (Laravel / Angular)",
+          "badge": "Web-Anwendung",
+          "desc": "Entwicklung der mehrbenutzerfähigen Web-Anwendung: Laravel-API (PHP), Angular-Frontend, Docker-Container und PostgreSQL-Datenbank.",
+          "action": "Issues auf GitHub"
         },
         {
           "title": "Treuhänder & Steuerexperten",
@@ -651,6 +760,106 @@
       "githubBtn": "GitHub-Repository",
       "telegramBtn": "Telegram-Community beitreten",
       "requestBtn": "Kostenloses Modul vorschlagen"
+    }
+  },
+  "contribute": {
+    "seo": {
+      "title": "Bei FatturaFacile mitmachen – So beteiligen Sie sich am Open-Source-Projekt",
+      "description": "So tragen Sie zu FatturaFacile bei: Code, Tests, Übersetzungen, Dokumentation und Design. Der Ablauf mit Issues, Branches und Pull Requests sowie die Repositories des Projekts.",
+      "keywords": "fatturafacile mitmachen, open source, pull request, laravel, angular, flutter, dotnet, übersetzungen, good first issue"
+    },
+    "eyebrow": "Open Source • MIT-Lizenz",
+    "heading": "Bei FatturaFacile mitmachen",
+    "lead": "FatturaFacile wächst dank Menschen, die in ihrer Freizeit daran arbeiten: Entwickler, Studierende, Buchhalter, Übersetzer und Tester. Jede Hilfe zählt, auch die kleinste.",
+    "ctaTelegram": "In der Telegram-Gruppe vorstellen",
+    "ctaIssues": "Issues für den Einstieg",
+    "ways": {
+      "badge": "Was Sie tun können",
+      "title": "Sechs Wege mitzuhelfen",
+      "items": [
+        {
+          "title": "Code",
+          "desc": "Neue Funktionen und Korrekturen für API (Laravel), Web (Angular), Desktop (.NET) und Mobile (Flutter)."
+        },
+        {
+          "title": "Tests und Fehlermeldungen",
+          "desc": "Testen Sie die Demo und eröffnen Sie ein Issue, wenn etwas nicht funktioniert oder unklar ist."
+        },
+        {
+          "title": "Übersetzungen",
+          "desc": "Prüfen Sie Italienisch, Englisch, Französisch und Deutsch der Anwendung und dieser Website."
+        },
+        {
+          "title": "Dokumentation",
+          "desc": "Anleitungen, READMEs und Wiki-Seiten für Neueinsteiger."
+        },
+        {
+          "title": "Design und UX",
+          "desc": "Logo, Icons, Screenshots und kleine Verbesserungen der Oberfläche."
+        },
+        {
+          "title": "Steuerrecht",
+          "desc": "Buchhalter und Treuhänder: Prüfung von FatturaPA, QR-Rechnung und Mehrwertsteuersätzen."
+        }
+      ]
+    },
+    "flow": {
+      "badge": "So arbeiten wir",
+      "title": "Vom Issue zum Release",
+      "lead": "Derselbe Ablauf für alle Repositories. Automatische Prüfungen (Lint, Tests und Build) laufen bei jedem Pull Request.",
+      "steps": [
+        {
+          "title": "Issue auswählen",
+          "desc": "Starten Sie mit einem offenen Issue (die mit „good first issue“ eignen sich für den Einstieg) oder eröffnen Sie ein neues, und schreiben Sie es in die Telegram-Gruppe."
+        },
+        {
+          "title": "Branch erstellen",
+          "desc": "Mitglieder der Organisation arbeiten auf einem Branch des Repositorys; alle anderen nutzen einen Fork."
+        },
+        {
+          "title": "Pull Request öffnen",
+          "desc": "Gegen den Branch dev (in Repositories, die ihn haben, sonst gegen main), mit einer klaren Beschreibung, was sich ändert und warum."
+        },
+        {
+          "title": "Review",
+          "desc": "Nötig sind mindestens eine Freigabe und grüne Prüfungen. Nach dem Merge sind die Änderungen in der Entwicklungsumgebung sichtbar."
+        },
+        {
+          "title": "Release",
+          "desc": "Wenn dev stabil ist, geht es nach main; Versionen erscheinen mit einem Tag (vX.Y.Z)."
+        }
+      ]
+    },
+    "repos": {
+      "badge": "Repositories",
+      "title": "Wo der Code liegt",
+      "items": [
+        {
+          "desc": "Business-API: Geschäftslogik, E-Rechnungen und REST-API."
+        },
+        {
+          "desc": "Die Web-Anwendung, die Sie in der Demo nutzen."
+        },
+        {
+          "desc": "Windows-App für die Offline-Arbeit mit lokaler Datenbank."
+        },
+        {
+          "desc": "App für iOS und Android."
+        },
+        {
+          "desc": "Diese Website, in 4 Sprachen."
+        },
+        {
+          "desc": "Zentrales Repository: Roadmap, Wiki und gemeinsame Workflows."
+        }
+      ]
+    },
+    "resources": {
+      "title": "Vor dem Start lesen",
+      "guide": "Leitfaden für Beiträge (Wiki)",
+      "codeOfConduct": "Verhaltenskodex",
+      "security": "Sicherheitsproblem melden",
+      "roadmap": "Roadmap und Meilensteine"
     }
   }
 }

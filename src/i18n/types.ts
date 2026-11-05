@@ -35,6 +35,7 @@ export interface CommonTranslations {
   };
   actions: {
     downloadDesktop: string;
+    tryDemo: string;
     exploreCloud: string;
     requestModule: string;
     joinCommunity: string;
@@ -74,6 +75,11 @@ export interface CommonTranslations {
   };
 }
 
+export interface TitleDesc {
+  title: string;
+  desc: string;
+}
+
 export interface HomeTranslations {
   seo: SeoMetadata;
   hero: {
@@ -84,21 +90,63 @@ export interface HomeTranslations {
     subtitle: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    badges: {
-      zeroSubTitle: string;
-      zeroSubDesc: string;
-      portableTitle: string;
-      portableDesc: string;
-      offlineTitle: string;
-      offlineDesc: string;
-      dataOwnershipTitle: string;
-      dataOwnershipDesc: string;
-    };
+    ctaCommunity: string;
   };
-  quickSummary: {
-    eyebrow: string;
+  pillars: TitleDesc[];
+  philosophy: {
+    badge: string;
     heading: string;
     lead: string;
+    features: TitleDesc[];
+    more: string;
+  };
+  platforms: {
+    badge: string;
+    heading: string;
+    lead: string;
+    available: string;
+    inDevelopment: string;
+    items: Array<{ name: string; stack: string; desc: string }>;
+    compareCta: string;
+    modulesCta: string;
+  };
+  comingSoon: {
+    badge: string;
+    heading: string;
+    lead: string;
+    items: TitleDesc[];
+    cta: string;
+  };
+  territory: {
+    local: { badge: string; title: string; desc: string; cta: string };
+    schools: { badge: string; title: string; desc: string; cta: string };
+  };
+  demoCta: {
+    badge: string;
+    title: string;
+    lead: string;
+    primary: string;
+    secondary: string;
+    notes: string[];
+  };
+}
+
+export interface ContributeTranslations {
+  seo: SeoMetadata;
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  ctaTelegram: string;
+  ctaIssues: string;
+  ways: { badge: string; title: string; items: TitleDesc[] };
+  flow: { badge: string; title: string; lead: string; steps: TitleDesc[] };
+  repos: { badge: string; title: string; items: Array<{ desc: string }> };
+  resources: {
+    title: string;
+    guide: string;
+    codeOfConduct: string;
+    security: string;
+    roadmap: string;
   };
 }
 
@@ -405,6 +453,7 @@ export interface SiteTranslations {
   versioni: VersioniTranslations;
   moduli: ModuliTranslations;
   community: CommunityTranslations;
+  contribute: ContributeTranslations;
   team: TeamTranslations;
   scuoleSociale: ScuoleSocialeTranslations;
   supportoLocale: SupportoLocaleTranslations;
