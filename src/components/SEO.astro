@@ -32,7 +32,7 @@ const {
   description = t.home.seo.description,
   keywords = t.home.seo.keywords,
   canonicalUrl = `${siteOrigin}${Astro.url.pathname}`,
-  ogImage = 'https://fatturafacile.eu/img/fattura_facile_logo.svg',
+  ogImage = 'https://fatturafacile.eu/img/og-image.png',
   alternates = defaultAlternates,
   schema,
 } = Astro.props;
@@ -55,7 +55,7 @@ const defaultSoftwareSchema = {
   name: t.common.siteName,
   alternateName: 'Fattura Facile',
   applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Windows 10, Windows 11, Linux, Docker',
+  operatingSystem: 'Web, Docker, Windows',
   inLanguage: lang,
   offers: {
     '@type': 'Offer',
@@ -66,7 +66,7 @@ const defaultSoftwareSchema = {
   url: `${siteOrigin}${getLocalizedPath('/', lang)}`,
   author: {
     '@type': 'Organization',
-    name: 'Fattura Facile Teams',
+    name: 'FatturaFacile Team',
   },
   featureList: [
     'Fatturazione portabile offline su chiavetta USB con SQLite',
@@ -87,7 +87,7 @@ const finalSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [def
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content="Fattura Facile Teams" />
+<meta name="author" content="FatturaFacile Team" />
 <meta
   name="robots"
   content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -114,11 +114,14 @@ const finalSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [def
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="FatturaFacile" />
 <meta property="og:locale" content={activeOgLocale} />
 {alternateOgLocales.map((altLoc) => (
   <meta property="og:locale:alternate" content={altLoc} />
 ))}
-<meta property="og:site_name" content="Fattura Facile" />
+<meta property="og:site_name" content="FatturaFacile" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
