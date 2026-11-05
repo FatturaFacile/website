@@ -34,6 +34,10 @@ updates:
       day: 'monday'
       time: '08:00'
       timezone: 'Europe/Rome'
+    ignore:
+      # typescript-eslint (used by eslint-plugin-astro) supports TypeScript < 6.1: no TypeScript 7 until it does
+      - dependency-name: 'typescript'
+        versions: ['>=6.1.0']
 
   # 4. Docker (for managing base images in Dockerfiles)
   - package-ecosystem: 'docker'

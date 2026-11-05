@@ -17,23 +17,12 @@ concurrency:
 
 jobs:
   qodana:
-    # Dependabot pull requests get no repository secrets: skip what needs them
+    # Dependabot runs get no repository secrets
     if: github.actor != 'dependabot[bot]'
-    name: Qodana Code Quality Scan
-    runs-on: ubuntu-latest
+    uses: FatturaFacile/FatturaFacile/.github/workflows/reusable-qodana.yml@main
     permissions:
       contents: read
       checks: write
       pull-requests: write
       security-events: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          fetch-depth: 0
-
-      - name: Run Qodana Scan
-        uses: JetBrains/qodana-action@3e8d76ff0e0241618abd808682f426afe84bab3f # v2026.2.2
-        env:
-          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+    secrets: inherit
