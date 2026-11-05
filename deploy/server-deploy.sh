@@ -13,5 +13,6 @@ tar xzf - -C website.new
 [ -f website.new/index.html ] || { echo "index.html missing in the upload"; rm -rf website.new; exit 1; }
 find website -mindepth 1 -delete
 cp -a website.new/. website/
+chmod -R a+rX website  # nginx in ffdev_web runs as another user
 rm -rf website.new
 echo "website deploy OK"
