@@ -72,5 +72,4 @@ If you find a broken link, layout glitch, translation error, or accessibility is
    - `docs(readme): ...`
    - `chore(assets): ...`
 4. Verify that all relative asset paths (`css/`, `js/`, `img/`, `img/favicon/`) load with zero `404` errors in your browser's Developer Tools Network tab.
-5. Push your branch and open a **Pull Request** against `dev`. After the merge, check the result on
-   [dev-www.fatturafacile.eu](https://dev-www.fatturafacile.eu); `dev` is then merged into `main` to publish it.
+5. Push your branch and open a **Pull Request** against `main`. After the merge the site is published automatically.

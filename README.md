@@ -96,8 +96,7 @@ flowchart TD
 website/
 ├── .github/
 │   └── workflows/
-│       ├── deploy.yml              # GitHub Pages deployment (main → fatturafacile.eu)
-│       └── deploy-dev.yml          # Preview deployment (dev → dev-www.fatturafacile.eu)
+│       └── deploy.yml              # GitHub Pages deployment (main → fatturafacile.eu)
 ├── src/                            # Web root directory deployed to production
 │   ├── index.html                  # Main application markup & SEO entry point
 │   ├── robots.txt                  # Search crawler directives
@@ -186,12 +185,8 @@ Navigate to [http://localhost:8080](http://localhost:8080).
 
 ## ☁️ Deployment Pipeline
 
-Changes go through the `dev` branch first and reach production only after review:
-
-1. Pull Request against `dev` → merge → **preview** at [dev-www.fatturafacile.eu](https://dev-www.fatturafacile.eu)
-   (`.github/workflows/deploy-dev.yml`: i18n parity, typecheck, build, upload to the dev server; not indexed).
-2. Once the preview is approved, merge `dev` into `main` → **production** on GitHub Pages
-   (`.github/workflows/deploy.yml`, also runnable via `workflow_dispatch`).
+Pull Request against `main` → review → merge → **production** on GitHub Pages
+(`.github/workflows/deploy.yml`, also runnable via `workflow_dispatch`).
 
 - **Artifact Path:** the Astro build in `./dist`.
 - **Custom Domain:** Configured for [fatturafacile.eu](https://fatturafacile.eu) with automatic SSL provisioning.
