@@ -151,7 +151,7 @@ const SCHOOL_SEEDS: readonly SchoolSeedTuple[] = [
     'CH',
     ['real_codebase_lab', 'thesis_project'],
     'Settore Tecnologico & Professioni Informatiche',
-    'https://www.sambellinzona.ti.ch',
+    'https://www.cptbellinzona.ti.ch',
     'Progetti pratici e lavori di diploma sul ciclo di vita del software gestionale, usabilità per artigiani e persistenza locale dei dati.',
   ],
   [
@@ -177,7 +177,7 @@ const SCHOOL_SEEDS: readonly SchoolSeedTuple[] = [
     'CH',
     ['real_codebase_lab', 'thesis_project'],
     'Facoltà di scienze informatiche',
-    'https://www.usi.ch/it/facolta-scienze-informatiche',
+    'https://www.inf.usi.ch',
     'Ricerca applicata e contributi open source su privacy by design, integrità crittografica dei backup e conformità dei formati di fatturazione.',
   ],
 ];

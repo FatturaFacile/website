@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/types';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
+import { DEMO_URL } from '../data/links';
 
 export interface Props {
   lang?: Locale;
@@ -17,6 +18,7 @@ const isProductActive =
   currentPath.includes('/versioni');
 const isCommunityActive =
   currentPath.includes('/community') ||
+  currentPath.includes('/contribuisci') ||
   currentPath.includes('/scuole-e-sociale') ||
   currentPath.includes('/sponsor');
 const isNetworkActive = currentPath.includes('/supporto-locale') || currentPath.includes('/faq');
@@ -34,6 +36,7 @@ const dropdownSubtitles: Record<
     | 'versions'
     | 'requestModules'
     | 'contribute'
+    | 'contributeGuide'
     | 'schools'
     | 'sponsors'
     | 'localSupport'
@@ -46,9 +49,10 @@ const dropdownSubtitles: Record<
   it: {
     whyUs: 'Filosofia anti-ERP per artigiani e PMI',
     features: 'FatturaPA, Swiss QR-Bill e roadmap',
-    versions: 'Desktop USB SQLite vs Docker Privato',
+    versions: 'Web disponibile, desktop e mobile in arrivo',
     requestModules: 'Sviluppo a costo zero rilasciato a tutti',
     contribute: 'Devs, commercialisti, traduttori e tester',
+    contributeGuide: 'Issue, branch e pull request: come iniziare',
     schools: 'Didattica per istituti e impatto sociale',
     sponsors: 'Sostieni certificati e server CI/CD',
     localSupport: 'Tecnici e fiduciarie sul territorio',
@@ -59,9 +63,10 @@ const dropdownSubtitles: Record<
   en: {
     whyUs: 'Anti-ERP philosophy for tradespeople & SMEs',
     features: 'FatturaPA, Swiss QR-Bill & public roadmap',
-    versions: 'USB SQLite Desktop vs Private Docker',
+    versions: 'Web available, desktop and mobile coming',
     requestModules: 'Zero-cost custom modules shared with all',
     contribute: 'Devs, accountants, translators & testers',
+    contributeGuide: 'Issues, branches and pull requests: how to start',
     schools: 'Vocational education & social impact',
     sponsors: 'Support certificates & CI/CD build servers',
     localSupport: 'IT technicians & fiduciaries near you',
@@ -72,9 +77,10 @@ const dropdownSubtitles: Record<
   fr: {
     whyUs: 'Philosophie anti-ERP pour artisans et PME',
     features: 'FatturaPA, QR-facture suisse et roadmap',
-    versions: 'Desktop USB SQLite vs Docker Privé',
+    versions: 'Web disponible, desktop et mobile bientôt',
     requestModules: 'Développement gratuit partagé avec tous',
     contribute: 'Devs, fiduciaires, traducteurs et testeurs',
+    contributeGuide: 'Issues, branches et pull requests : par où commencer',
     schools: 'Formation professionnelle et impact social',
     sponsors: 'Soutenir certificats et serveurs CI/CD',
     localSupport: 'Techniciens et fiduciaires de proximité',
@@ -85,9 +91,10 @@ const dropdownSubtitles: Record<
   de: {
     whyUs: 'Anti-ERP-Philosophie für Handwerk & KMU',
     features: 'FatturaPA, Schweizer QR-Rechnung & Roadmap',
-    versions: 'Desktop USB SQLite vs Privates Docker',
+    versions: 'Web verfügbar, Desktop und Mobile folgen',
     requestModules: 'Kostenlose Module für alle veröffentlicht',
     contribute: 'Entwickler, Treuhänder, Übersetzer & Tester',
+    contributeGuide: 'Issues, Branches und Pull Requests: so starten Sie',
     schools: 'Berufsbildung & gesellschaftlicher Beitrag',
     sponsors: 'Zertifikate & CI/CD-Server unterstützen',
     localSupport: 'IT-Techniker und Treuhänder vor Ort',
@@ -143,6 +150,11 @@ const navGroups: NavGroup[] = [
         href: getLocalizedPath('/community/', lang),
         subtitle: sub.contribute,
         highlight: true,
+      },
+      {
+        label: t.common.nav.contribute,
+        href: getLocalizedPath('/contribuisci/', lang),
+        subtitle: sub.contributeGuide,
       },
       {
         label: t.common.nav.requestModulesFree,
@@ -203,9 +215,7 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
     <a
       href={getLocalizedPath('/', lang)}
       class="flex items-center gap-3 group shrink-0"
-      aria-label={`${t.common.siteName} Home`}
       title={`${t.common.siteName} Home`}
-      data-i18n-aria-label="logo_aria"
       data-i18n-title="logo_aria"
     >
       <svg
@@ -428,9 +438,9 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
               lang === opt.code ? 'tab-active' : ''
             }`}
             title={opt.title}
-            aria-label={opt.title}
+            hreflang={opt.code}
+            aria-current={lang === opt.code ? 'page' : undefined}
             data-i18n-title={opt.i18nKey}
-            data-i18n-aria-label={opt.i18nKey}
           >
             {opt.label}
           </a>
@@ -507,10 +517,12 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
     <!-- Direct CTA -->
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
       <a
-        href={`${getLocalizedPath('/', lang)}#download`}
+        href={DEMO_URL}
+        target="_blank"
+        rel="noopener"
         class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 text-white font-bold rounded-xl text-sm shadow-md"
       >
-        {t.common.actions.downloadDesktop}
+        {t.common.actions.tryDemo}
       </a>
     </div>
   </div>

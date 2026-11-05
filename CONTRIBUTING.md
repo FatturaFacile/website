@@ -60,7 +60,7 @@ If you find a broken link, layout glitch, translation error, or accessibility is
 ## 🔄 Pull Request Workflow
 
 1. **Fork** the [`FatturaFacile/website`](https://github.com/FatturaFacile/website) repository.
-2. Create a descriptive branch from `main`:
+2. Create a descriptive branch from `dev`:
    ```bash
    git checkout -b feat/add-spanish-translation
    # or
@@ -72,4 +72,5 @@ If you find a broken link, layout glitch, translation error, or accessibility is
    - `docs(readme): ...`
    - `chore(assets): ...`
 4. Verify that all relative asset paths (`css/`, `js/`, `img/`, `img/favicon/`) load with zero `404` errors in your browser's Developer Tools Network tab.
-5. Push your branch and open a **Pull Request** against `main`.
+5. Push your branch and open a **Pull Request** against `dev`. After the merge, check the result on
+   [dev-www.fatturafacile.eu](https://dev-www.fatturafacile.eu); `dev` is then merged into `main` to publish it.

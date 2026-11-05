@@ -77,7 +77,8 @@ window.setLanguage = function (lang) {
     if (btn) {
       const isActive = l === lang;
       btn.classList.toggle('tab-active', isActive);
-      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      if (isActive) btn.setAttribute('aria-current', 'page');
+      else btn.removeAttribute('aria-current');
     }
   });
 

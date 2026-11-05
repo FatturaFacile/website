@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEMO_URL } from '../data/links';
 import type { Locale } from '../i18n/types';
 import { STORIA_ALTERNATES, STORIA_TRANSLATIONS } from '../i18n/storia';
 
@@ -25,7 +26,7 @@ const pageSchema = {
       isPartOf: {
         '@type': 'WebSite',
         '@id': 'https://fatturafacile.eu/#website',
-        name: 'Fattura Facile',
+        name: 'FatturaFacile',
         url: 'https://fatturafacile.eu/',
       },
     },
@@ -37,13 +38,13 @@ const pageSchema = {
       inLanguage: lang,
       author: {
         '@type': 'Organization',
-        name: 'Fattura Facile Teams',
+        name: 'FatturaFacile Team',
         url: 'https://fatturafacile.eu/',
       },
       publisher: {
         '@type': 'Organization',
         '@id': 'https://fatturafacile.eu/#organization',
-        name: 'Fattura Facile',
+        name: 'FatturaFacile',
         logo: {
           '@type': 'ImageObject',
           url: 'https://fatturafacile.eu/img/fattura_facile_logo.svg',
@@ -56,7 +57,7 @@ const pageSchema = {
     {
       '@type': 'Organization',
       '@id': 'https://fatturafacile.eu/#organization',
-      name: 'Fattura Facile',
+      name: 'FatturaFacile',
       url: 'https://fatturafacile.eu/',
       logo: 'https://fatturafacile.eu/img/fattura_facile_logo.svg',
       sameAs: ['https://github.com/FatturaFacile'],
@@ -150,7 +151,9 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <!-- Hero CTAs -->
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="/#download"
+          href={DEMO_URL}
+          target="_blank"
+          rel="noopener"
           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm sm:text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
         >
           <svg
@@ -163,7 +166,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2.5"
-              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             ></path>
           </svg>
           <span id="storia-hero-cta-dl">{t.hero.ctaDownload}</span>
@@ -287,7 +290,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
         </footer>
       </blockquote>
 
-      <!-- Side-by-Side Comparison: Bloated ERP vs Fattura Facile -->
+      <!-- Side-by-Side Comparison: Bloated ERP vs FatturaFacile -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- ERP Column -->
         <div class="p-6 sm:p-8 rounded-3xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200/80 dark:border-rose-900/50">
@@ -311,7 +314,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
           </ul>
         </div>
 
-        <!-- Fattura Facile Column -->
+        <!-- FatturaFacile Column -->
         <div class="p-6 sm:p-8 rounded-3xl bg-emerald-50/60 dark:bg-emerald-950/25 border border-emerald-200 dark:border-emerald-800/60">
           <h4
             id="storia-comp-ff-title"
@@ -520,7 +523,9 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
 
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
         <a
-          href="/#download"
+          href={DEMO_URL}
+          target="_blank"
+          rel="noopener"
           id="storia-cta-btn-dl"
           class="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold rounded-2xl shadow-lg transition-all"
         >
