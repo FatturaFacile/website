@@ -35,6 +35,7 @@ export interface DetailedStoriaTranslations extends StoriaTranslations {
     lead: string;
     badgeDualMarket: string;
     badgeOpenSource: string;
+    langSelectorLabel: string;
     ctaModules: string;
     ctaCommunity: string;
     ctaDownload: string;
