@@ -88,17 +88,14 @@ const teamSchema = {
             </div>
           ) : (
             <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm">
-              <p>
-                Cerchiamo attivamente sviluppatori C#/.NET, esperti di fatturazione elettronica SdI
-                e consulenti fiscali per rafforzare i contributi in questa regione.
-              </p>
+              <p>{tm.emptyRegion.text}</p>
               <a
                 href="https://github.com/FatturaFacile"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex mt-4 text-teal-600 dark:text-teal-400 font-bold hover:underline"
               >
-                Contribuisci su GitHub &rarr;
+                {tm.emptyRegion.cta} &rarr;
               </a>
             </div>
           )}

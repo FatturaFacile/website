@@ -1,6 +1,7 @@
 ---
-import { TEAM_DOMAIN_LABELS, type TeamMember } from '../data/team';
+import { TEAM_DOMAIN_STYLES, type TeamMember } from '../data/team';
 import { getInitials } from '../utils/i18n-helper';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 export interface Props {
   member: TeamMember;
@@ -8,6 +9,7 @@ export interface Props {
 }
 
 const { member, coreMaintainerBadge } = Astro.props;
+const domainLabels = useTranslations(getLangFromUrl(Astro.url)).team.domains;
 ---
 
 <article
@@ -40,10 +42,11 @@ const { member, coreMaintainerBadge } = Astro.props;
 
   <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800">
     {member.domains.map((domainKey) => {
-      const dom = TEAM_DOMAIN_LABELS[domainKey];
       return (
-        <span class={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border ${dom.badgeClass}`}>
-          {dom.label}
+        <span
+          class={`px-2.5 py-1 rounded-lg text-[11px] font-semibold border ${TEAM_DOMAIN_STYLES[domainKey]}`}
+        >
+          {domainLabels[domainKey]}
         </span>
       );
     })}

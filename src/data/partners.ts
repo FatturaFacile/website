@@ -37,21 +37,14 @@ export interface LocalPartner {
   description: string;
 }
 
-function createServiceMeta(label: string, icon: string): { label: string; icon: string } {
-  return { label, icon };
-}
-
-export const SERVICE_LABELS: Record<ServiceCapability, { label: string; icon: string }> = {
-  on_site_setup: createServiceMeta('Installazione & Setup Locale', 'desktop'),
-  network_cloud_setup: createServiceMeta('Server Privato & Rete Locale', 'server'),
-  backup_strategy: createServiceMeta('Backup Cifrato & Ripristino', 'shield-check'),
-  staff_training: createServiceMeta('Formazione Utenti', 'academic-cap'),
-  tax_accounting_sync: createServiceMeta(
-    'Consulenza Fiscale / FatturaPA / QR-Bill',
-    'document-text',
-  ),
-  custom_integration: createServiceMeta('Integrazioni su Misura', 'code-bracket'),
-};
+export const SERVICE_CAPABILITIES: readonly ServiceCapability[] = [
+  'on_site_setup',
+  'network_cloud_setup',
+  'backup_strategy',
+  'staff_training',
+  'tax_accounting_sync',
+  'custom_integration',
+];
 
 /**
  * The local partner directory is currently open for public applications.

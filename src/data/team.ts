@@ -35,42 +35,21 @@ export interface TeamMember {
   social: TeamSocialLinks;
 }
 
-function createDomainBadge(
-  label: string,
-  badgeClass: string,
-): { label: string; badgeClass: string } {
-  return { label, badgeClass };
-}
-
-export const TEAM_DOMAIN_LABELS: Record<TeamDomain, { label: string; badgeClass: string }> = {
-  core_architecture: createDomainBadge(
-    '.NET & Architettura Core',
+export const TEAM_DOMAIN_STYLES: Record<TeamDomain, string> = {
+  core_architecture:
     'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800',
-  ),
-  cloud_devops: createDomainBadge(
-    'Cloud & DevOps',
+  cloud_devops:
     'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800',
-  ),
-  swiss_compliance: createDomainBadge(
-    'Fisco Svizzero (QR-Bill)',
+  swiss_compliance:
     'bg-red-50 dark:bg-red-950/60 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800',
-  ),
-  italian_compliance: createDomainBadge(
-    'Fisco Italia (SdI / FatturaPA)',
+  italian_compliance:
     'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800',
-  ),
-  web_frontend: createDomainBadge(
-    'Web & Portale Astro',
+  web_frontend:
     'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800',
-  ),
-  docs_translation: createDomainBadge(
-    'Traduzioni & Localizzazione',
+  docs_translation:
     'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
-  ),
-  community_advocacy: createDomainBadge(
-    'Scuole & Community Sociale',
+  community_advocacy:
     'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800',
-  ),
 };
 
 type TeamMemberSeedTuple = readonly [
