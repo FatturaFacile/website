@@ -133,7 +133,7 @@ website/
 
 ## 🚀 Local Development & Testing
 
-Because the website requires zero build compilation, you can run and test it instantly using any static server.
+The site is an [Astro](https://astro.build) project (sources in `src/`, static output in `dist/`).
 
 ### 1. Clone the Repository
 
@@ -144,35 +144,25 @@ cd website
 
 ### 2. Run Local Development Server
 
-Choose any of the following lightweight static servers:
-
-#### Option A — Python (`http.server`)
+#### Option A — Node.js (22 or later)
 
 ```bash
-# Serve directly from the web root folder (src)
-python -m http.server 8080 --directory src
+npm ci
+npm run dev        # http://localhost:4321
 ```
 
-Navigate to [http://localhost:8080](http://localhost:8080).
+Other checks: `npm run lint`, `npm run format:check`, `npm run check` (types), `npm run test:i18n` (translation parity)
+and `npm run build` (writes `dist/`; `npm run preview` serves it).
 
-#### Option B — Node.js (`npx serve`)
+#### Option B — Docker (only Docker needed, no Node on your machine)
 
 ```bash
-npx serve src -l 8080
+docker run --rm -p 4321:4321 -v "$PWD":/app -w /app node:22-alpine \
+  sh -c "npm ci --no-audit --no-fund && npm run dev -- --host 0.0.0.0"
 ```
 
-#### Option C — VS Code Live Server
-
-1. Open the `website` workspace in Visual Studio Code.
-2. Expand the `src` folder, right-click `src/index.html`, and select **"Open with Live Server"**.
-
-#### Option D — Docker (Nginx)
-
-```bash
-docker run --rm -p 8080:80 -v "${PWD}/src:/usr/share/nginx/html:ro" nginx:alpine
-```
-
-Navigate to [http://localhost:8080](http://localhost:8080).
+Navigate to [http://localhost:4321](http://localhost:4321). The first start installs the dependencies into `node_modules/`
+(git-ignored), so it takes a minute.
 
 ### 3. Verification & Testing Checklist
 
