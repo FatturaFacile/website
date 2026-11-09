@@ -96,7 +96,7 @@ const TEAM_MEMBER_SEEDS: readonly TeamMemberSeedTuple[] = [
   [
     'core-maintainer-01',
     'Davide Nava',
-    'Lead Software Architect',
+    'Lead Software Architect & Founder',
     true,
     'Caslano',
     'Canton Ticino',
@@ -104,10 +104,12 @@ const TEAM_MEMBER_SEEDS: readonly TeamMemberSeedTuple[] = [
     ['core_architecture', 'cloud_devops', 'swiss_compliance', 'italian_compliance'],
     'Senior Software Engineer',
     {
-      github: 'https://github.com/FatturaFacile',
-      telegram: 'https://t.me/+sRauQINBDFQ5NjU0',
-      email: 'info@fatturafacile.eu',
+      linkedin: 'https://www.linkedin.com/in/davidenava85',
+      github: 'https://github.com/davide-nava',
+      email: 'davidenava85@gmail.com',
+      telegram: 'https://t.me/@davidenava85',
     },
+    '/img/team/davide-nava.jpg',
   ],
 ];
 

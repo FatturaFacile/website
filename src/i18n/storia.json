@@ -1,12 +1,12 @@
 {
   "it": {
     "seo": {
-      "title": "La Nostra Storia & Visione Architetturale | FatturaFacile",
-      "description": "Scopri come è nato FatturaFacile: dalla frustrazione verso gli ERP complessi e gli abbonamenti SaaS a un software di fatturazione libero, offline con SQLite per Italia e Svizzera.",
-      "keywords": "storia fattura facile, filosofia anti-erp, software fatturazione open source, sqlite locale, fatturapa sdi, qr-bill svizzera, clean architecture dotnet"
+      "title": "FatturaFacile Storia – ERP & Fatturazione Open Source (MIT) Svizzera QR-Bill e Italia SdI FatturaPA Offline-first",
+      "description": "Scopri come è nato FatturaFacile: la suite ERP e fatturazione Open Source (MIT) Offline-first per Svizzera (QR-Bill SIX) e Italia (SdI FatturaPA), nata contro gli abbonamenti SaaS.",
+      "keywords": "storia fatturafacile, erp open source mit, software fatturazione offline-first, sqlite locale, fatturapa sdi italia, qr-bill svizzera, clean architecture dotnet"
     },
     "eyebrow": "Le Nostre Radici & Visione",
-    "heading": "Dalla frustrazione sul cantiere al software libero per tutti",
+    "heading": "FatturaFacile: dalla frustrazione sul cantiere all'ERP Open Source Offline-first per Svizzera e Italia",
     "lead": "FatturaFacile nasce tra la Lombardia e il Canton Ticino con una missione chiara: restituire ad artigiani, micro-imprese e professionisti uno strumento di fatturazione veloce, gratuito e realmente di loro proprietà.",
     "problemTitle": "Il Problema: Perché un artigiano dovrebbe usare un ERP da 500 bottoni?",
     "problemText": "Idraulici, elettricisti, serramentisti, posatori e liberi professionisti emettono in media dalle 10 alle 20 fatture al mese. Eppure il mercato offre loro quasi solo gestionali pensati per grandi aziende manifatturiere: lenti, pieni di menu contabili indecifrabili e vincolati a canoni mensili perpetui.",
@@ -49,9 +49,9 @@
     ],
     "hero": {
       "eyebrow": "La Nostra Storia & Manifesto",
-      "headingPart1": "Dalla frustrazione sul cantiere al",
-      "headingHighlight": "software libero per tutti.",
-      "lead": "FatturaFacile nasce tra la Lombardia e il Canton Ticino con una missione chiara: liberare artigiani, micro-imprese e professionisti da gestionali sovradimensionati e abbonamenti SaaS perpetui.",
+      "headingPart1": "FatturaFacile: dalla frustrazione sul cantiere all'",
+      "headingHighlight": "ERP Open Source Offline-first per Svizzera (QR-Bill) e Italia (SdI).",
+      "lead": "FatturaFacile nasce tra la Lombardia e il Canton Ticino con una missione chiara: liberare artigiani, micro-imprese e professionisti da gestionali sovradimensionati e abbonamenti SaaS perpetui con una suite Open Source (MIT) per Svizzera QR-Bill e Italia SdI FatturaPA.",
       "badgeDualMarket": "Nato tra Italia 🇮🇹 e Svizzera 🇨🇭",
       "badgeOpenSource": "100% Gratuito, Offline & Open Source",
       "ctaModules": "Esplora i Moduli",
@@ -205,12 +205,12 @@
   },
   "en": {
     "seo": {
-      "title": "Our Story & Architectural Vision | FatturaFacile",
-      "description": "Discover the story behind FatturaFacile: born from frustration with bloated ERPs and recurring SaaS fees to deliver free, offline SQLite invoicing for Italy and Switzerland.",
-      "keywords": "fattura facile story, anti-erp philosophy, open source invoicing software, local sqlite billing, italian fatturapa sdi, swiss qr-bill six, clean architecture dotnet"
+      "title": "FatturaFacile Story – Open Source (MIT) ERP & Invoicing for Switzerland QR-Bill & Italy SdI FatturaPA Offline-first",
+      "description": "Discover the story behind FatturaFacile: the Offline-first Open Source (MIT) ERP and invoicing suite for Switzerland (SIX QR-Bill) and Italy (SdI FatturaPA) with local SQLite.",
+      "keywords": "fatturafacile story, open source erp mit, offline-first invoicing software, local sqlite billing, italian fatturapa sdi, swiss qr-bill six, clean architecture dotnet"
     },
     "eyebrow": "Our Roots & Vision",
-    "heading": "From job-site frustration to free software for everyone",
+    "heading": "FatturaFacile: from job-site frustration to Open Source Offline-first ERP for Switzerland & Italy",
     "lead": "Born across Northern Italy and Swiss Canton Ticino, FatturaFacile has a single mission: giving tradespeople, micro-businesses, and freelancers a fast, free invoicing tool they truly own.",
     "problemTitle": "The Problem: Why should a tradesperson use a 500-button enterprise ERP?",
     "problemText": "Plumbers, electricians, installers, and solo freelancers typically issue 10 to 20 invoices a month. Yet the software market pushes bloated enterprise ERPs designed for large corporations—slow, cluttered with obscure accounting menus, and locked behind perpetual monthly subscriptions.",
@@ -253,9 +253,9 @@
     ],
     "hero": {
       "eyebrow": "Our Story & Manifesto",
-      "headingPart1": "From job-site frustration to",
-      "headingHighlight": "free software for everyone.",
-      "lead": "FatturaFacile was born between Lombardy and Swiss Canton Ticino with a clear purpose: freeing tradespeople, micro-businesses, and solo professionals from bloated ERPs and unending SaaS subscriptions.",
+      "headingPart1": "FatturaFacile: from job-site frustration to",
+      "headingHighlight": "Open Source Offline-first ERP for Switzerland (QR-Bill) & Italy (SdI).",
+      "lead": "FatturaFacile was born between Lombardy and Swiss Canton Ticino with a clear purpose: freeing tradespeople, micro-businesses, and solo professionals from bloated ERPs and SaaS subscriptions with an Open Source (MIT) suite for Swiss QR-Bill and Italian SdI FatturaPA.",
       "badgeDualMarket": "Born across Italy 🇮🇹 & Switzerland 🇨🇭",
       "badgeOpenSource": "100% Free, Offline & Open Source",
       "ctaModules": "Explore Modules",
@@ -409,12 +409,12 @@
   },
   "fr": {
     "seo": {
-      "title": "Notre Histoire & Vision Architecturale | FatturaFacile",
-      "description": "Découvrez l’histoire de FatturaFacile : né de la frustration face aux ERP complexes et aux abonnements SaaS pour offrir une facturation libre, hors-ligne avec SQLite en Suisse et en Italie.",
-      "keywords": "histoire fattura facile, philosophie anti-erp, logiciel facturation open source, sqlite local, qr-bill suisse six, fatturapa sdi italie, clean architecture dotnet"
+      "title": "FatturaFacile Histoire – ERP & Facturation Open Source (MIT) Suisse QR-Bill & Italie SdI FatturaPA Offline-first",
+      "description": "Découvrez l’histoire de FatturaFacile : la suite ERP et facturation Open Source (MIT) Offline-first avec SQLite local pour la Suisse (QR-Bill SIX) et l’Italie (SdI FatturaPA).",
+      "keywords": "histoire fatturafacile, erp open source mit, logiciel facturation offline-first, sqlite local, qr-bill suisse six, fatturapa sdi italie, clean architecture dotnet"
     },
     "eyebrow": "Nos Racines & Notre Vision",
-    "heading": "De la frustration sur les chantiers au logiciel libre pour tous",
+    "heading": "FatturaFacile : de la frustration sur les chantiers à l'ERP Open Source Offline-first pour la Suisse et l'Italie",
     "lead": "Né entre la Suisse (Canton du Tessin) et l’Italie du Nord, FatturaFacile poursuit une mission claire : redonner aux artisans, TPE et indépendants un outil de facturation rapide, gratuit et dont ils sont réellement propriétaires.",
     "problemTitle": "Le Problème : Pourquoi un artisan devrait-il utiliser un ERP à 500 boutons ?",
     "problemText": "Les installateurs sanitaires, électriciens, menuisiers et indépendants émettent en moyenne 10 à 20 factures par mois. Pourtant, le marché leur impose des progiciels conçus pour des multinationales : lents, surchargés de menus comptables complexes et liés à des abonnements mensuels sans fin.",
@@ -457,9 +457,9 @@
     ],
     "hero": {
       "eyebrow": "Notre Histoire & Manifeste",
-      "headingPart1": "De la frustration sur les chantiers au",
-      "headingHighlight": "logiciel libre pour tous.",
-      "lead": "FatturaFacile est né entre le Tessin et la Lombardie avec un objectif précis : libérer les artisans, les TPE et les indépendants des ERP surdimensionnés et des abonnements SaaS perpétuels.",
+      "headingPart1": "FatturaFacile : de la frustration sur les chantiers à l'",
+      "headingHighlight": "ERP Open Source Offline-first pour Suisse (QR-Bill) & Italie (SdI).",
+      "lead": "FatturaFacile est né entre le Tessin et la Lombardie avec un objectif précis : libérer les artisans, les TPE et les indépendants des ERP surdimensionnés et des abonnements SaaS avec une suite Open Source (MIT) pour Suisse QR-Bill et Italie SdI FatturaPA.",
       "badgeDualMarket": "Né entre la Suisse 🇨🇭 et l’Italie 🇮🇹",
       "badgeOpenSource": "100% Gratuit, Hors-Ligne & Open Source",
       "ctaModules": "Explorer les Modules",
@@ -613,12 +613,12 @@
   },
   "de": {
     "seo": {
-      "title": "Unsere Geschichte & Architektur-Vision | FatturaFacile",
-      "description": "Erfahren Sie, wie FatturaFacile entstand: aus der Frustration über überladene ERP-Systeme und SaaS-Abos hin zu einer freien, lokalen SQLite-Rechnungssoftware für die Schweiz und Italien.",
-      "keywords": "fattura facile geschichte, anti-erp philosophie, open source rechnungssoftware, lokale sqlite datenbank, schweizer qr-rechnung six, fatturapa sdi italien, clean architecture dotnet"
+      "title": "FatturaFacile Geschichte – Open Source (MIT) ERP & Fakturierung Schweiz QR-Rechnung & Italien SdI FatturaPA Offline-first",
+      "description": "Erfahren Sie, wie FatturaFacile entstand: die Offline-first Open-Source (MIT) ERP- und Rechnungssoftware mit lokalem SQLite für die Schweiz (SIX QR-Bill) und Italien (SdI FatturaPA).",
+      "keywords": "fatturafacile geschichte, open source erp mit, offline-first rechnungssoftware, lokale sqlite datenbank, schweizer qr-rechnung six, fatturapa sdi italien, clean architecture dotnet"
     },
     "eyebrow": "Unsere Wurzeln & Vision",
-    "heading": "Vom Frust auf der Baustelle zur freien Software für alle",
+    "heading": "FatturaFacile: Vom Frust auf der Baustelle zum Open-Source Offline-first ERP für Schweiz & Italien",
     "lead": "Entstanden zwischen der Südschweiz (Tessin) und Norditalien verfolgt FatturaFacile eine klare Mission: Handwerkern, Kleinstunternehmen und Selbstständigen ein schnelles, kostenloses Fakturierungswerkzeug zu geben, das ihnen wirklich gehört.",
     "problemTitle": "Das Problem: Warum sollte ein Handwerker ein ERP mit 500 Schaltflächen nutzen?",
     "problemText": "Sanitärinstallateure, Elektriker, Schreiner und Freiberufler stellen im Schnitt 10 bis 20 Rechnungen pro Monat aus. Dennoch drängt ihnen der Markt überdimensionierte ERP-Pakete auf – langsam, voller unverständlicher Buchhaltungsmenüs und an endlose Monatsabonnements gekoppelt.",
@@ -661,9 +661,9 @@
     ],
     "hero": {
       "eyebrow": "Unsere Geschichte & Manifest",
-      "headingPart1": "Vom Frust auf der Baustelle zur",
-      "headingHighlight": "freien Software für alle.",
-      "lead": "FatturaFacile entstand zwischen dem Kanton Tessin und der Lombardei mit einem klaren Ziel: Handwerker, Kleinstbetriebe und Selbstständige von aufgeblähten ERP-Systemen und endlosen SaaS-Abogebühren zu befreien.",
+      "headingPart1": "FatturaFacile: Vom Frust auf der Baustelle zum",
+      "headingHighlight": "Open-Source Offline-first ERP für Schweiz (QR-Bill) & Italien (SdI).",
+      "lead": "FatturaFacile entstand zwischen dem Kanton Tessin und der Lombardei mit einem klaren Ziel: Handwerker, Kleinstbetriebe und Selbstständige von aufgeblähten ERP-Systemen und SaaS-Abos zu befreien – mit einer Open-Source (MIT) Suite für Schweizer QR-Rechnung und Italien SdI FatturaPA.",
       "badgeDualMarket": "Entstanden zwischen der Schweiz 🇨🇭 und Italien 🇮🇹",
       "badgeOpenSource": "100 % Kostenlos, Offline & Open Source",
       "ctaModules": "Module Entdecken",

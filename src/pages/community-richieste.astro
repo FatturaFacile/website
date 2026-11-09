@@ -5,20 +5,19 @@ import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const cr = t.communityRequests;
+
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: t.team.seo.title,
+  name: cr.seo.title,
   url: `https://fatturafacile.eu${getLocalizedPath('/community-richieste/', lang)}`,
   inLanguage: lang,
-  description: t.team.seo.description,
+  description: cr.seo.description,
   publisher: {
-    '@type': 'Organization',
-    name: 'FatturaFacile Team',
+    '@id': 'https://fatturafacile.eu/#organization',
   },
 };
-
-const cr = t.communityRequests;
 
 // Style and link of each role, in the same order as t.communityRequests.roles.items.
 const roleMeta = [
@@ -42,9 +41,9 @@ const roleMeta = [
 ---
 
 <BaseLayout
-  title={t.team.seo.title}
-  description={t.team.seo.description}
-  keywords={t.team.seo.keywords}
+  title={cr.seo.title}
+  description={cr.seo.description}
+  keywords={cr.seo.keywords}
   lang={lang}
   schema={pageSchema}
 >

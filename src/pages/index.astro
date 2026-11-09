@@ -7,23 +7,17 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const h = t.home;
 
-const softwareSchema = {
+const webSiteSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
+  '@type': 'WebSite',
+  '@id': 'https://fatturafacile.eu/#website',
   name: t.common.siteName,
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Web, Docker, Windows',
+  alternateName: 'FatturaFacile Open Source ERP & Fatturazione (Svizzera QR-Bill & Italia SdI)',
   inLanguage: lang,
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'EUR',
-  },
   description: h.seo.description,
   url: `https://fatturafacile.eu${getLocalizedPath('/', lang)}`,
-  author: {
-    '@type': 'Organization',
-    name: 'FatturaFacile Team',
+  publisher: {
+    '@id': 'https://fatturafacile.eu/#organization',
   },
 };
 
@@ -62,7 +56,7 @@ const platformAvailable = [true, false, false];
   description={h.seo.description}
   keywords={h.seo.keywords}
   lang={lang}
-  schema={softwareSchema}
+  schema={webSiteSchema}
 >
   <!-- Hero Section -->
   <section

@@ -16,16 +16,17 @@ const m = t.moduli;
 const availableModules: ModuleItem[] = MODULES_DATA.filter((item) => item.status === 'available');
 const roadmapModules: ModuleItem[] = MODULES_DATA.filter((item) => item.status !== 'available');
 
+const pageUrl = `https://fatturafacile.eu${getLocalizedPath(canonicalPath, lang)}`;
+
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: m.seo.title,
-  url: `https://fatturafacile.eu${getLocalizedPath(canonicalPath, lang)}`,
+  url: pageUrl,
   inLanguage: lang,
   description: m.seo.description,
   publisher: {
-    '@type': 'Organization',
-    name: 'FatturaFacile Team',
+    '@id': 'https://fatturafacile.eu/#organization',
   },
 };
 ---
@@ -34,6 +35,7 @@ const pageSchema = {
   title={m.seo.title}
   description={m.seo.description}
   keywords={m.seo.keywords}
+  canonicalUrl={pageUrl}
   lang={lang}
   schema={pageSchema}
 >
@@ -54,6 +56,7 @@ const pageSchema = {
   <!-- 3 Functional Pillars -->
   <section class="py-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="sr-only">{m.eyebrow}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700">
           <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center mb-6 shadow-md shadow-teal-600/20">
