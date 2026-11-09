@@ -97,9 +97,9 @@ function createTeamMember([
 
 const TEAM_MEMBER_SEEDS: readonly TeamMemberSeedTuple[] = [
   [
-    'core-maintainer-01',
+    '',
     'Davide Nava',
-    'Lead Software Architect & Founder',
+    'Senior Software Engineer & Co-Founder',
     true,
     'Caslano',
     'Canton Ticino',

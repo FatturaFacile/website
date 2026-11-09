@@ -79,7 +79,7 @@ function createEducationalInstitution([
 
 /**
  * Verified academic institutions invited for educational collaboration, internships,
- * and diploma projects in Canton Ticino and cross-border regions.
+ * and diploma projects across Switzerland and Italy.
  */
 const SCHOOL_SEEDS: readonly SchoolSeedTuple[] = [
   [
