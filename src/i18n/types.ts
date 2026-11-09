@@ -117,6 +117,7 @@ export type ModuleIdKey =
   | 'mod-cash-register';
 
 export interface CommunityRequestsTranslations {
+  seo: SeoMetadata;
   hero: {
     badge: string;
     title: string;

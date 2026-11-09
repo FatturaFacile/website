@@ -79,13 +79,13 @@ flowchart TD
 
 ## 🛠 Tech Stack
 
-| Layer                   | Technology                    | Description                                                                                                     |
-| :---------------------- | :---------------------------- | :-------------------------------------------------------------------------------------------------------------- |
-| **Markup**              | **HTML5 Semantic**            | Accessible (`ARIA`), SEO-optimized single-page layout (`src/index.html`).                                       |
-| **Styling**             | **Tailwind CSS (CDN) + CSS3** | Utility-first responsive design, dark mode class switching, custom scrollbars (`src/css/style.css`).            |
-| **Client Scripting**    | **Vanilla JavaScript (ES6+)** | Lightweight state management for theme, i18n, FAQ accordions, and modals (`src/js/main.js`).                    |
-| **Localization**        | **JavaScript Dictionary**     | Typed client dictionary for English, Italian, French, and German (`src/js/translations.js`).                    |
-| **Assets & Media**      | **SVG & WebManifest**         | Responsive vector graphics (`src/img/`) and multi-platform progressive app favicons (`src/img/favicon/`).       |
+| Layer                   | Technology                    | Description                                                                                               |
+| :---------------------- | :---------------------------- | :-------------------------------------------------------------------------------------------------------- |
+| **Markup**              | **HTML5 Semantic**            | Accessible (`ARIA`), SEO-optimized single-page layout (`src/index.html`).                                 |
+| **Styling**             | **Tailwind CSS (CDN) + CSS3** | Utility-first responsive design, dark mode class switching, custom scrollbars (`src/css/style.css`).      |
+| **Client Scripting**    | **Vanilla JavaScript (ES6+)** | Lightweight state management for theme, i18n, FAQ accordions, and modals (`src/js/main.js`).              |
+| **Localization**        | **JavaScript Dictionary**     | Typed client dictionary for English, Italian, French, and German (`src/js/translations.js`).              |
+| **Assets & Media**      | **SVG & WebManifest**         | Responsive vector graphics (`src/img/`) and multi-platform progressive app favicons (`src/img/favicon/`). |
 | **Continuous Delivery** | **GitHub Actions**            | Automated validation and deployment pipeline targeting **GitHub Pages** (`.github/workflows/deploy.yml`). |
 
 ---

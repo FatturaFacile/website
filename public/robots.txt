@@ -3,6 +3,9 @@
 User-agent: *
 Allow: /
 
-# Percorso Sitemap
+# Host canonico
+Host: https://fatturafacile.eu
+
+# Percorso Sitemap XML generata da @astrojs/sitemap
 Sitemap: https://fatturafacile.eu/sitemap-index.xml
 Sitemap: https://fatturafacile.eu/sitemap-0.xml

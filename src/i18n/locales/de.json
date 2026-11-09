@@ -1,7 +1,7 @@
 {
   "common": {
     "siteName": "FatturaFacile",
-    "tagline": "Einfache Rechnungen, offline und in der Cloud",
+    "tagline": "Open Source (MIT) ERP & Fakturierung • Schweiz QR-Bill & Italien SdI • Offline-first",
     "nav": {
       "product": "Produkt",
       "whyUs": "Warum Wir",
@@ -71,16 +71,16 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Open-Source-Software für Rechnungen und Geschäftsverwaltung in der Schweiz und Italien",
-      "description": "Kostenlose Open-Source-Unternehmenssoftware für Handwerker, Selbstständige und KMU in der Schweiz und Italien: Offerten, FatturaPA, QR-Rechnung, Lager und Buchhaltung. Online-Demo testen. MIT-Lizenz.",
-      "keywords": "fatturafacile, open source erp, kostenlose rechnungssoftware, qr-rechnung schweiz, elektronische rechnung italien, fatturapa sdi, tessin, software für handwerker, kmu erp, mit lizenz"
+      "title": "FatturaFacile – Open Source (MIT) ERP & Rechnungssoftware für die Schweiz (QR-Bill) und Italien (SdI FatturaPA) Offline-first",
+      "description": "FatturaFacile ist die kostenlose Open-Source (MIT) ERP- und Fakturierungssuite für die Schweiz (SIX QR-Rechnung) und Italien (SdI FatturaPA). Offline-first mit lokalem SQLite oder selbstgehostetem Web-Docker.",
+      "keywords": "fatturafacile, open source erp mit, offline-first rechnungssoftware, qr-rechnung schweiz six, elektronische rechnung italien fatturapa sdi, tessin, software handwerker, kmu erp"
     },
     "hero": {
-      "badgeGeo": "Open Source • MIT-Lizenz • Kostenlos",
-      "badgePrivacy": "Web verfügbar • Desktop und Mobile folgen",
-      "titlePart1": "Rechnungen und Verwaltung,",
-      "titlePart2": "einfach und unter Ihrer Kontrolle.",
-      "subtitle": "FatturaFacile ist die im Tessin entstandene Open-Source-Unternehmenssoftware für Handwerker, Selbstständige und KMU in der Schweiz und Italien: Offerten, E-Rechnungen, Lager und Buchhaltung im Browser, ohne Abo.",
+      "badgeGeo": "Open Source (MIT) • Schweiz QR-Bill & Italien SdI",
+      "badgePrivacy": "Offline-first (SQLite) & Self-Hosted Web",
+      "titlePart1": "FatturaFacile: die Open-Source ERP- & Fakturierungssuite",
+      "titlePart2": "für die Schweiz (QR-Bill) und Italien (SdI), Offline-first.",
+      "subtitle": "FatturaFacile ist die im Tessin entstandene Open-Source (MIT) ERP- und Rechnungssoftware für Handwerker, Selbstständige und KMU in der Schweiz (SIX QR-Bill) und Italien (SdI FatturaPA): Offline-first auf dem Desktop oder selbstgehostet im Web, ohne Abo.",
       "ctaPrimary": "Demo testen",
       "ctaSecondary": "Code auf GitHub",
       "ctaCommunity": "Telegram-Community"
@@ -210,13 +210,13 @@
   },
   "perche": {
     "seo": {
-      "title": "Warum FatturaFacile | Unsere Philosophie",
-      "description": "Erfahren Sie mehr über unsere Philosophie gegen überladene ERPs: schlanke Software, Offerten in einer Minute, Rechnungen mit einem Klick und keine Abogebühren.",
-      "keywords": "warum fattura facile, schlanke rechnungssoftware, erp alternative, schnelle offerte handwerker, rechnungsstellung ohne abo"
+      "title": "Warum FatturaFacile – Open Source Offline-first ERP für Schweiz QR-Bill & Italien SdI FatturaPA",
+      "description": "Erfahren Sie, warum FatturaFacile die Open-Source (MIT) Offline-first Alternative zu überladenen SaaS-ERPs ist: Offerten in 1 Minute, Schweizer QR-Rechnung, Italien SdI FatturaPA und lokales SQLite.",
+      "keywords": "warum fatturafacile, open source offline-first erp, qr-rechnung schweiz, fatturapa sdi italien, rechnungsstellung ohne abo"
     },
     "eyebrow": "Unsere Design-Philosophie",
-    "headingPre": "Kein ERP mit 500 Schaltflächen, sondern Ihr",
-    "headingHighlight": "täglicher Begleiter",
+    "headingPre": "FatturaFacile: kein ERP mit 500 Schaltflächen, sondern Ihre",
+    "headingHighlight": "Open-Source Offline-first Suite für Schweiz & Italien",
     "lead": "Wer im Aussendienst arbeitet, hat weder Zeit noch Lust, sich in verwirrenden Buchhaltungsmenüs zu verlieren oder 15 Sekunden auf eine langsame Webseite zu warten. FatturaFacile hat nur ein Ziel, und das erfüllt es einwandfrei: Steuerdokumente erstellen und dafür sorgen, dass Sie sofort bezahlt werden.",
     "points": [
       {
@@ -255,12 +255,12 @@
   },
   "versioni": {
     "seo": {
-      "title": "Standalone Offline vs. Private Cloud | FatturaFacile",
-      "description": "Detaillierter Vergleich zwischen unserer portablen C# WPF Desktop-Version mit SQLite und der selbstgehosteten Mehrbenutzer-Cloud-Edition in Docker.",
-      "keywords": "versionen fattura facile, offline usb rechnungen sqlite, private cloud rechnung docker, wpf sqlite fakturierung"
+      "title": "FatturaFacile Versionen – Offline-first Desktop (SQLite) vs. Self-Hosted Web Docker | Open Source CH QR-Bill & IT SdI",
+      "description": "Vergleich der FatturaFacile-Editionen: Offline-first C# WPF Desktop mit lokalem SQLite und selbstgehostete Mehrbenutzer-Web-Edition in Docker. Open Source (MIT) für Schweiz QR-Bill und Italien SdI FatturaPA.",
+      "keywords": "versionen fatturafacile, offline-first usb rechnungen sqlite, self-hosted docker erp, open source qr-rechnung schweiz sdi italien"
     },
     "eyebrow": "Architektonische Freiheit",
-    "heading": "Zwei Varianten, 100 % kostenlos für alle",
+    "heading": "FatturaFacile Open Source: Offline-first Desktop & Self-Hosted Web",
     "lead": "Keine Lizenzgebühren an unser Team. Arbeiten Sie vollkommen autark: lokal auf Ihrem Schreibtisch oder selbstgehostet auf Ihrer eigenen IT-Infrastruktur.",
     "desktopCard": {
       "tag": "Windows-Desktop • Offline",
@@ -334,12 +334,12 @@
   },
   "moduli": {
     "seo": {
-      "title": "FatturaFacile Funktionen – QR-Rechnung, FatturaPA und Offerten",
-      "description": "Entdecken Sie die Funktionen von FatturaFacile: Kundenkartei, Preislisten, sofortige Offertenumwandlung, Schweizer QR-Rechnung und FatturaPA-XML.",
-      "keywords": "fattura facile funktionen, rechnungsmodule, qr-rechnung schweiz, fatturapa xml, offerten rechnungen, artikelkatalog"
+      "title": "FatturaFacile Funktionen & Module – Open Source ERP für Schweiz QR-Bill & Italien SdI FatturaPA Offline-first",
+      "description": "Entdecken Sie die Open-Source (MIT) ERP-Module von FatturaFacile: 1-Klick-Offerten, Schweizer SIX QR-Rechnung, italienisches SdI FatturaPA-XML, Lager und verschlüsselte Offline-first SQLite-Backups.",
+      "keywords": "fatturafacile module, open source erp funktionen, qr-rechnung schweiz six, fatturapa xml sdi italien, offline-first fakturierung"
     },
     "eyebrow": "Modulares & Transparentes Ökosystem",
-    "heading": "Einsatzbereite Module und communitygetriebene Weiterentwicklung",
+    "heading": "FatturaFacile Open-Source-Module: Schweizer QR-Bill, Italien SdI FatturaPA & Offline-first ERP",
     "lead": "FatturaFacile beinhaltet die wesentlichen Funktionen für den sofortigen Start und wächst mit den praxisnahen Anforderungen der Community. Jedes freigegebene Modul wird kostenlos programmiert und in die offiziellen Releases übernommen.",
     "availableSectionTitle": "Sofort Verfügbare Module",
     "roadmapSectionTitle": "Transparente Entwicklungs-Roadmap",
@@ -467,9 +467,9 @@
   },
   "team": {
     "seo": {
-      "title": "Team & Mitwirkende | FatturaFacile",
-      "description": "Lernen Sie die Softwarearchitekten, Entwickler und Steuerexperten hinter FatturaFacile in der Schweiz und Italien kennen.",
-      "keywords": "team fattura facile, davide nava, net open source entwickler, steuerberater schweiz italien, mitwirkende"
+      "title": "FatturaFacile Team & Mitwirkende – Open Source (MIT) ERP für Schweiz QR-Bill & Italien SdI FatturaPA",
+      "description": "Lernen Sie die Softwarearchitekten, Entwickler und Steuerexperten hinter FatturaFacile kennen – dem Offline-first Open-Source (MIT) ERP für die Schweiz (QR-Bill) und Italien (SdI FatturaPA).",
+      "keywords": "team fatturafacile, davide nava, open source erp entwickler, steuerberater schweiz qr-bill italien sdi"
     },
     "eyebrow": "Offene & Gemeinnützige Initiative",
     "heading": "Die Menschen hinter dem Projekt FatturaFacile",
@@ -501,9 +501,9 @@
   },
   "scuoleSociale": {
     "seo": {
-      "title": "Schulen, Berufsbildung & Soziales Engagement | FatturaFacile",
-      "description": "Bildungsinitiativen für Informatik- und Wirtschaftsschulen. Echter Programmcode zum Erlernen von .NET und kostenlose Software für Übungsfirmen.",
-      "keywords": "schulen fattura facile, net berufsausbildung, uebungsfirma software kostenlos, rechnungswesen schule, soziales projekt"
+      "title": "FatturaFacile für Schulen & Berufsbildung – Open Source (MIT) Offline-first ERP Schweiz QR-Bill & Italien SdI",
+      "description": "Bildungsinitiativen für Informatik- und Wirtschaftsschulen mit FatturaFacile: echte Open-Source (MIT) .NET/Web-Codebasis und Offline-first Übungsfirma für Schweizer QR-Rechnung und Italien SdI FatturaPA.",
+      "keywords": "schulen fatturafacile, open source erp berufsbildung, uebungsfirma qr-rechnung schweiz sdi italien, offline-first software labor"
     },
     "schema": {
       "orgDescription": "Offene Initiative, die echte, quelloffene und kostenlose Unternehmenssoftware an technische und kaufmännische Schulen in Italien und der Schweiz bringt.",
@@ -673,9 +673,9 @@
   },
   "supportoLocale": {
     "seo": {
-      "title": "Partnernetzwerk & Regionaler Support (IT/CH) | FatturaFacile",
-      "description": "Finden Sie akkreditierte IT-Berater, Treuhänder und Techniker vor Ort für Installation, Betreuung und Schulungen in Italien und der Schweiz.",
-      "keywords": "regionaler support fattura facile, partner tessin fakturierung, rechnungssoftware hilfe lombardei, qr-rechnung sdi beratung"
+      "title": "FatturaFacile Partnernetzwerk & Lokaler Support – Schweiz (QR-Bill) & Italien (SdI FatturaPA) Open Source ERP",
+      "description": "Finden Sie zertifizierte IT-Berater, Treuhänder und Techniker in der Schweiz und Italien für das Offline-first Open-Source (MIT) ERP FatturaFacile, QR-Rechnung und SdI FatturaPA.",
+      "keywords": "regionaler support fatturafacile, partner tessin lombardei, qr-rechnung schweiz sdi italien beratung, open source erp support"
     },
     "hero": {
       "badge": "Unabhängiges regionales Netzwerk IT & CH",
@@ -744,9 +744,9 @@
   },
   "faq": {
     "seo": {
-      "title": "FAQ – Häufig gestellte Fragen zu Lizenz, Daten und Sicherheit | FatturaFacile",
-      "description": "Transparente Antworten zu Kosten von FatturaFacile, lokaler SQLite-Datenspeicherung, Backups und Steuerstandards.",
-      "keywords": "faq fattura facile, fragen rechnungsstellung, sqlite sicherheit, kostenlose rechnungssoftware"
+      "title": "FatturaFacile FAQ – Open Source (MIT) Lizenz, Offline-first SQLite, Schweiz QR-Bill & Italien SdI FatturaPA",
+      "description": "Häufig gestellte Fragen zum Open-Source (MIT) ERP FatturaFacile: lokale Offline-first SQLite-Datenbank, verschlüsselte Backups, Schweizer SIX QR-Rechnung und italienische SdI FatturaPA.",
+      "keywords": "faq fatturafacile, open source mit fakturierung, sqlite sicherheit offline-first, qr-rechnung schweiz fatturapa sdi italien"
     },
     "eyebrow": "Antworten & Klarheit",
     "heading": "Häufig Gestellte Fragen zu FatturaFacile",
@@ -803,9 +803,9 @@
   },
   "sponsor": {
     "seo": {
-      "title": "Sponsoren & Projektförderung | FatturaFacile",
-      "description": "Unterstützen Sie die unabhängige Entwicklung von FatturaFacile. Erfahren Sie mehr über die transparente Verwendung der Mittel für Zertifikate und Infrastruktur.",
-      "keywords": "sponsor fattura facile, open source spende, windows code signing zertifikat, freie software foerdern"
+      "title": "FatturaFacile Sponsoren – Open Source (MIT) Offline-first ERP für Schweiz QR-Bill & Italien SdI unterstützen",
+      "description": "Unterstützen Sie die unabhängige Entwicklung von FatturaFacile, der Open-Source (MIT) Offline-first ERP- und Fakturierungssuite für die Schweiz (QR-Bill) und Italien (SdI FatturaPA).",
+      "keywords": "sponsor fatturafacile, open source erp spende, qr-rechnung schweiz sdi italien open source"
     },
     "hero": {
       "badge": "Nachhaltigkeit & Unabhängigkeit",
@@ -883,9 +883,9 @@
   },
   "storia": {
     "seo": {
-      "title": "Unsere Geschichte & Projekthintergrund | FatturaFacile",
-      "description": "Die Entstehung von FatturaFacile: Vom Arbeitsalltag der Handwerker mit schwerfälliger Software hin zu einer freien, unabhängigen Lösung ohne Abozwang.",
-      "keywords": "geschichte fattura facile, ursprung rechnungssoftware, alternative softwareabo, ethische software tessin lombardei"
+      "title": "FatturaFacile Geschichte – Open Source (MIT) Offline-first ERP für Schweiz QR-Bill & Italien SdI FatturaPA",
+      "description": "Die Entstehung von FatturaFacile: eine unabhängige Open-Source (MIT) Offline-first ERP- und Rechnungsplattform für die Schweiz (QR-Bill) und Italien (SdI FatturaPA).",
+      "keywords": "geschichte fatturafacile, open source offline-first erp, qr-rechnung schweiz sdi fatturapa italien, tessin lombardei"
     },
     "eyebrow": "Wurzeln & Vision",
     "heading": "Aus der Praxis vor Ort zur Unabhängigkeit freier Software",
@@ -931,9 +931,9 @@
   },
   "privacy": {
     "seo": {
-      "title": "Datenschutzerklärung – Website und Desktop-Anwendung | FatturaFacile",
-      "description": "Transparente Datenschutzinformationen: anonymisierte Web-Nutzung und vollständige lokale Datensouveränität der Desktop-Software.",
-      "keywords": "datenschutz fattura facile, dsgvo rechnungssoftware, dsg schweiz rechnungen, sqlite privacy by design, zero telemetrie fakturierung"
+      "title": "FatturaFacile Datenschutz DSGVO & nDSG – Offline-first Open Source ERP (Schweiz QR-Bill & Italien SdI)",
+      "description": "Transparente Datenschutzerklärung für das Open-Source (MIT) ERP FatturaFacile: null Telemetrie, EU-DSGVO & Schweizer nDSG (nLPD) Konformität und 100 % lokale Offline-first SQLite-Datensouveränität.",
+      "keywords": "datenschutz fatturafacile, dsgvo ndsg schweiz, sqlite offline-first privacy, zero telemetrie open source erp"
     },
     "eyebrow": "Rechtlicher Rahmen & Datenschutz",
     "headingPart1": "Datenschutzerklärung –",
@@ -995,9 +995,9 @@
   },
   "community": {
     "seo": {
-      "title": "FatturaFacile Open Source – Am Projekt mitwirken",
-      "description": "Beteiligen Sie sich an der Entwicklung von FatturaFacile: offener Quellcode, didaktische Projekte im Tessin, Übersetzungen und Tests.",
-      "keywords": "fattura facile community, open source schweiz italien, cpt trevano, supsi software, usi informatik, csharp wpf entwicklung, mit lizenz"
+      "title": "FatturaFacile Open Source (MIT) Community – Schweiz QR-Bill & Italien SdI FatturaPA Offline-first ERP",
+      "description": "Beteiligen Sie sich an der Open-Source (MIT) Community von FatturaFacile: Entwicklung des Offline-first ERP für die Schweiz (QR-Bill) und Italien (SdI FatturaPA), Schulprojekte im Tessin und Übersetzungen.",
+      "keywords": "fatturafacile community, open source mit erp, qr-rechnung schweiz sdi fatturapa italien, cpt trevano supsi usi"
     },
     "eyebrow": "Offene Entwicklung & Bildung",
     "heading": "Eine offene Community für unsere Region",
@@ -1090,9 +1090,9 @@
   },
   "contribute": {
     "seo": {
-      "title": "Bei FatturaFacile mitmachen – So beteiligen Sie sich am Open-Source-Projekt",
-      "description": "So tragen Sie zu FatturaFacile bei: Code, Tests, Übersetzungen, Dokumentation und Design. Der Ablauf mit Issues, Branches und Pull Requests sowie die Repositories des Projekts.",
-      "keywords": "fatturafacile mitmachen, open source, pull request, laravel, angular, flutter, dotnet, übersetzungen, good first issue"
+      "title": "Bei FatturaFacile mitmachen – Open Source (MIT) ERP für Schweiz QR-Bill & Italien SdI FatturaPA Offline-first",
+      "description": "So tragen Sie zum Open-Source (MIT) ERP FatturaFacile bei: Code (Laravel, Angular, .NET, Flutter), Tests für Schweizer QR-Rechnung und Italien SdI FatturaPA, Übersetzungen und Dokumentation.",
+      "keywords": "fatturafacile mitmachen, open source mit erp, qr-rechnung schweiz, sdi fatturapa italien, laravel angular dotnet flutter"
     },
     "eyebrow": "Open Source • MIT-Lizenz",
     "heading": "Bei FatturaFacile mitmachen",
@@ -1189,6 +1189,11 @@
     }
   },
   "communityRequests": {
+    "seo": {
+      "title": "Kostenlose Module anfordern – FatturaFacile Open Source (MIT) ERP Schweiz QR-Bill & Italien SdI Offline-first",
+      "description": "Fordern Sie massgeschneiderte Funktionen und Module kostenlos für FatturaFacile an – die Open-Source (MIT) Offline-first ERP- und Fakturierungssuite für die Schweiz (QR-Bill) und Italien (SdI FatturaPA).",
+      "keywords": "wunschmodule fatturafacile, kostenlose entwicklung open source erp, qr-rechnung schweiz, sdi fatturapa italien, offline-first fakturierung"
+    },
     "hero": {
       "badge": "Offene & kostenlose Entwicklung",
       "title": "Brauchen Sie eine bestimmte Funktion oder ein individuelles Modul?",

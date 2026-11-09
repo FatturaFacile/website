@@ -33,6 +33,19 @@ export default defineConfig({
           de: 'de-CH',
         },
       },
+      serialize(item) {
+        const url = item.url;
+        if (
+          url === 'https://fatturafacile.eu/' ||
+          /^https:\/\/fatturafacile\.eu\/(en|fr|de)\/$/.test(url)
+        ) {
+          return { ...item, changefreq: 'daily', priority: 1.0 };
+        }
+        if (/\/(funzionalita|moduli|versioni|perche)\/$/.test(url)) {
+          return { ...item, changefreq: 'weekly', priority: 0.9 };
+        }
+        return item;
+      },
     }),
   ],
   vite: {
