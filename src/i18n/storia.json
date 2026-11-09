@@ -7,7 +7,7 @@
     },
     "eyebrow": "Le Nostre Radici & Visione",
     "heading": "FatturaFacile: dalla frustrazione sul cantiere all'ERP Open Source Offline-first per Svizzera e Italia",
-    "lead": "FatturaFacile nasce tra la Lombardia e il Canton Ticino con una missione chiara: restituire ad artigiani, micro-imprese e professionisti uno strumento di fatturazione veloce, gratuito e realmente di loro proprietà.",
+    "lead": "FatturaFacile nasce con una missione chiara a copertura nazionale per Svizzera e Italia: restituire ad artigiani, micro-imprese e professionisti uno strumento di fatturazione veloce, conforme, gratuito e realmente di loro proprietà.",
     "problemTitle": "Il Problema: Perché un artigiano dovrebbe usare un ERP da 500 bottoni?",
     "problemText": "Idraulici, elettricisti, serramentisti, posatori e liberi professionisti emettono in media dalle 10 alle 20 fatture al mese. Eppure il mercato offre loro quasi solo gestionali pensati per grandi aziende manifatturiere: lenti, pieni di menu contabili indecifrabili e vincolati a canoni mensili perpetui.",
     "philosophyTitle": "I Tre Pilastri della Nostra Architettura",
@@ -28,7 +28,7 @@
     "timeline": [
       {
         "year": "Fase 1 • Genesi",
-        "title": "L’Ascolto sul Campo tra Italia e Ticino",
+        "title": "L’Ascolto sul Campo tra Italia e Svizzera",
         "desc": "Raccogliamo lo sfogo di artigiani e piccoli professionisti stanchi di pagare abbonamenti annuali per emettere poche decine di fatture e di restare bloccati nei cantieri senza internet."
       },
       {
@@ -43,7 +43,7 @@
       },
       {
         "year": "Fase 4 • Ecosistema Aperto",
-        "title": "Lancio Open-Source, Scuole & Rete Partner Locale",
+        "title": "Lancio Open-Source, Scuole & Rete Partner Nazionale",
         "desc": "Apertura totale del codice sorgente, avvio del modello di sviluppo gratuito dei moduli su richiesta e creazione dei programmi didattici per istituti tecnici e commerciali."
       }
     ],
@@ -51,8 +51,8 @@
       "eyebrow": "La Nostra Storia & Manifesto",
       "headingPart1": "FatturaFacile: dalla frustrazione sul cantiere all'",
       "headingHighlight": "ERP Open Source Offline-first per Svizzera (QR-Bill) e Italia (SdI).",
-      "lead": "FatturaFacile nasce tra la Lombardia e il Canton Ticino con una missione chiara: liberare artigiani, micro-imprese e professionisti da gestionali sovradimensionati e abbonamenti SaaS perpetui con una suite Open Source (MIT) per Svizzera QR-Bill e Italia SdI FatturaPA.",
-      "badgeDualMarket": "Nato tra Italia 🇮🇹 e Svizzera 🇨🇭",
+      "lead": "FatturaFacile nasce con una missione chiara e copertura completa per tutta la Svizzera e tutta l'Italia: liberare artigiani, micro-imprese e professionisti da gestionali sovradimensionati e abbonamenti SaaS perpetui con una suite Open Source (MIT) nativa per Svizzera QR-Bill e Italia SdI FatturaPA.",
+      "badgeDualMarket": "Copertura Nazionale Svizzera 🇨🇭 e Italia 🇮🇹",
       "badgeOpenSource": "100% Gratuito, Offline & Open Source",
       "ctaModules": "Esplora i Moduli",
       "ctaCommunity": "Unisciti alla Community",
@@ -107,12 +107,12 @@
         },
         {
           "id": "dual_market",
-          "tag": "Nativo Transfrontaliero",
+          "tag": "Copertura Nazionale Svizzera & Italia",
           "title": "Fondazione Dual-Market: Italia & Svizzera",
-          "desc": "A differenza dei software adattati in seguito con traduzioni approssimative, FatturaFacile è stato ingegnerizzato fin dal primo giorno per soddisfare i requisiti normativi di entrambi i lati del confine italo-svizzero.",
+          "desc": "A differenza dei software adattati a posteriori con localizzazioni parziali, FatturaFacile è stato ingegnerizzato fin dal primo giorno per garantire la piena conformità fiscale e normativa per tutta la Svizzera (QR-Bill SIX, aliquote IVA ESTV, revLPD in tutti i 26 cantoni) e per tutta l'Italia (FatturaPA XML, SdI B2B/B2C, AgID, split payment e ritenute d'acconto in tutte le regioni).",
           "highlights": [
-            "Italia 🇮🇹: Generatore XML FatturaPA v1.2 certificato per SDI, PEC e bollo virtuale",
-            "Svizzera 🇨🇭: Polizze QR-Bill standard SIX con croce elvetica, QR-IBAN e IVA federale (8.1%, 2.6%, 3.8%)",
+            "Italia 🇮🇹: Generatore XML FatturaPA v1.2 certificato per SDI, PEC, split payment e ritenute",
+            "Svizzera 🇨🇭: Polizze QR-Bill standard SIX con croce elvetica, QR-IBAN e IVA federale ESTV (8.1%, 2.6%, 3.8%)",
             "Supporto multivaluta nativo EUR e CHF"
           ]
         },
@@ -131,7 +131,7 @@
     },
     "ethics": {
       "badge": "3. Etica Open-Source & Impatto Sociale",
-      "heading": "Un Bene Comune per Artigiani, Studenti e Territorio",
+      "heading": "Un Bene Comune per Artigiani, Studenti e Imprese",
       "lead": "FatturaFacile non è una startup a caccia di venture capital, ma un progetto civico e tecnologico costruito insieme a chi lavora e insegna.",
       "cards": [
         {
@@ -163,12 +163,12 @@
     "chronicle": {
       "badge": "4. Cronistoria & Tappe",
       "heading": "Il Nostro Percorso Evolutivo",
-      "lead": "Dalla prima riga di codice scritta per aiutare gli artigiani locali fino alla creazione di un ecosistema aperto tra Italia e Svizzera.",
+      "lead": "Dalla prima riga di codice scritta per aiutare gli artigiani fino alla creazione di un ecosistema aperto a copertura nazionale per tutta l'Italia e tutta la Svizzera.",
       "milestones": [
         {
           "year": "Tappa 01",
           "phase": "L’Idea Originaria",
-          "title": "L’Ascolto sul Campo tra Lombardia e Ticino",
+          "title": "L’Ascolto sul Campo tra Italia e Svizzera",
           "desc": "Nasce l’idea osservando idraulici, elettricisti e piccoli professionisti penalizzati da software in abbonamento troppo complessi e inutilizzabili offline nei cantieri.",
           "badge": "Visione Anti-ERP"
         },
@@ -189,8 +189,8 @@
         {
           "year": "Tappa 04",
           "phase": "Comunità & Istruzione",
-          "title": "Apertura Open-Source, Scuole & Partner Territoriali",
-          "desc": "Pubblicazione del progetto aperto, lancio dei laboratori didattici per gli istituti tecnici/commerciali e nascita della rete di tecnici e fiduciarie locali per il supporto sul posto.",
+          "title": "Apertura Open-Source, Scuole & Rete Partner Nazionale",
+          "desc": "Pubblicazione del progetto aperto, lancio dei laboratori didattici per gli istituti tecnici/commerciali e nascita della rete nazionale di tecnici e fiduciarie per il supporto sul campo.",
           "badge": "Ecosistema Aperto"
         }
       ]
@@ -211,7 +211,7 @@
     },
     "eyebrow": "Our Roots & Vision",
     "heading": "FatturaFacile: from job-site frustration to Open Source Offline-first ERP for Switzerland & Italy",
-    "lead": "Born across Northern Italy and Swiss Canton Ticino, FatturaFacile has a single mission: giving tradespeople, micro-businesses, and freelancers a fast, free invoicing tool they truly own.",
+    "lead": "Designed for professionals and businesses across Italy and Switzerland, FatturaFacile has a single mission: giving tradespeople, micro-businesses, and freelancers a fast, free invoicing tool they truly own.",
     "problemTitle": "The Problem: Why should a tradesperson use a 500-button enterprise ERP?",
     "problemText": "Plumbers, electricians, installers, and solo freelancers typically issue 10 to 20 invoices a month. Yet the software market pushes bloated enterprise ERPs designed for large corporations—slow, cluttered with obscure accounting menus, and locked behind perpetual monthly subscriptions.",
     "philosophyTitle": "The Three Pillars of Our Architecture",
@@ -247,7 +247,7 @@
       },
       {
         "year": "Phase 4 • Open Ecosystem",
-        "title": "Open-Source Launch, Schools & Regional Partners",
+        "title": "Open-Source Launch, Schools & National Partner Network",
         "desc": "Opening the codebase to the public, launching the zero-cost community module workflow, and establishing partnerships with technical and commercial schools."
       }
     ],
@@ -255,8 +255,8 @@
       "eyebrow": "Our Story & Manifesto",
       "headingPart1": "FatturaFacile: from job-site frustration to",
       "headingHighlight": "Open Source Offline-first ERP for Switzerland (QR-Bill) & Italy (SdI).",
-      "lead": "FatturaFacile was born between Lombardy and Swiss Canton Ticino with a clear purpose: freeing tradespeople, micro-businesses, and solo professionals from bloated ERPs and SaaS subscriptions with an Open Source (MIT) suite for Swiss QR-Bill and Italian SdI FatturaPA.",
-      "badgeDualMarket": "Born across Italy 🇮🇹 & Switzerland 🇨🇭",
+      "lead": "FatturaFacile was created with a clear purpose and full nationwide coverage for Switzerland and Italy: freeing tradespeople, micro-businesses, and solo professionals from bloated ERPs and SaaS subscriptions with an Open Source (MIT) suite native to Swiss QR-Bill and Italian SdI FatturaPA.",
+      "badgeDualMarket": "Nationwide Coverage Italy 🇮🇹 & Switzerland 🇨🇭",
       "badgeOpenSource": "100% Free, Offline & Open Source",
       "ctaModules": "Explore Modules",
       "ctaCommunity": "Join the Community",
@@ -311,12 +311,12 @@
         },
         {
           "id": "dual_market",
-          "tag": "Cross-Border Native",
+          "tag": "Full Swiss & Italian Compliance",
           "title": "Dual-Market Foundation: Italy & Switzerland",
-          "desc": "Unlike generic billing tools retrofitted with rough translations, FatturaFacile was engineered from day one to comply natively with the strict tax standards on both sides of the Italian-Swiss border.",
+          "desc": "Unlike software retrofitted as an afterthought with rough translations, FatturaFacile was engineered from day one to deliver complete fiscal and regulatory compliance for all of Switzerland (SIX QR-Bill, ESTV VAT, revLPD across all 26 cantons) and all of Italy (FatturaPA XML, SdI B2B/B2C, AgID, split payment, and withholding tax across all regions).",
           "highlights": [
-            "Italy 🇮🇹: Certified FatturaPA v1.2 XML for SDI, PEC/Recipient Code, and virtual duty stamp",
-            "Switzerland 🇨🇭: Official SIX standard QR-Bill slips with Swiss cross, QR-IBAN, and federal VAT rates",
+            "Italy 🇮🇹: Certified FatturaPA v1.2 XML for SDI, PEC/Recipient Code, split payment, and withholding tax",
+            "Switzerland 🇨🇭: Official SIX standard QR-Bill slips with Swiss cross, QR-IBAN, and federal ESTV VAT rates",
             "Native multi-currency support for EUR and CHF"
           ]
         },
@@ -335,7 +335,7 @@
     },
     "ethics": {
       "badge": "3. Open-Source & Social Ethics",
-      "heading": "A Digital Commons for Tradespeople, Students & Local Communities",
+      "heading": "A Digital Commons for Tradespeople, Students & Businesses",
       "lead": "FatturaFacile is not a VC-backed startup chasing recurring revenue—it is an open civic and technological initiative built alongside practitioners and educators.",
       "cards": [
         {
@@ -367,12 +367,12 @@
     "chronicle": {
       "badge": "4. Timeline & Milestone Chronicle",
       "heading": "Our Journey & Key Milestones",
-      "lead": "From the first line of code written for local tradespeople to an open cross-border ecosystem spanning Italy and Switzerland.",
+      "lead": "From the first line of code written for tradespeople to a comprehensive open ecosystem providing full nationwide coverage across Italy and Switzerland.",
       "milestones": [
         {
           "year": "Milestone 01",
           "phase": "The Genesis Idea",
-          "title": "Field Research Across Lombardy & Canton Ticino",
+          "title": "Field Research Across Italy and Switzerland",
           "desc": "Born from direct conversations with electricians, plumbers, and solo freelancers frustrated by costly subscription ERPs that fail offline on job sites.",
           "badge": "Anti-ERP Vision"
         },
@@ -393,8 +393,8 @@
         {
           "year": "Milestone 04",
           "phase": "Community & Education",
-          "title": "Open-Source Launch, Schools & Regional Support Network",
-          "desc": "Public release of the open-source ecosystem, launch of free educational tracks for technical and commercial schools, and creation of the verified local partner directory.",
+          "title": "Open-Source Launch, Schools & National Partner Network",
+          "desc": "Public release of the open-source ecosystem, launch of free educational tracks for technical and commercial schools, and establishment of the nationwide qualified partner network.",
           "badge": "Open Ecosystem"
         }
       ]
@@ -415,7 +415,7 @@
     },
     "eyebrow": "Nos Racines & Notre Vision",
     "heading": "FatturaFacile : de la frustration sur les chantiers à l'ERP Open Source Offline-first pour la Suisse et l'Italie",
-    "lead": "Né entre la Suisse (Canton du Tessin) et l’Italie du Nord, FatturaFacile poursuit une mission claire : redonner aux artisans, TPE et indépendants un outil de facturation rapide, gratuit et dont ils sont réellement propriétaires.",
+    "lead": "Conçu avec une pleine couverture nationale pour toute la Suisse et toute l’Italie, FatturaFacile poursuit une mission claire : redonner aux artisans, TPE et indépendants un outil de facturation rapide, conforme, gratuit et dont ils sont réellement propriétaires.",
     "problemTitle": "Le Problème : Pourquoi un artisan devrait-il utiliser un ERP à 500 boutons ?",
     "problemText": "Les installateurs sanitaires, électriciens, menuisiers et indépendants émettent en moyenne 10 à 20 factures par mois. Pourtant, le marché leur impose des progiciels conçus pour des multinationales : lents, surchargés de menus comptables complexes et liés à des abonnements mensuels sans fin.",
     "philosophyTitle": "Les Trois Piliers de Notre Architecture",
@@ -451,7 +451,7 @@
       },
       {
         "year": "Étape 4 • Écosystème Ouvert",
-        "title": "Lancement Open-Source, Écoles & Réseau de Partenaires",
+        "title": "Lancement Open-Source, Écoles & Réseau National de Partenaires",
         "desc": "Ouverture du code source, développement gratuit de modules sur demande pour la communauté et partenariats pédagogiques avec les écoles techniques et de commerce."
       }
     ],
@@ -459,8 +459,8 @@
       "eyebrow": "Notre Histoire & Manifeste",
       "headingPart1": "FatturaFacile : de la frustration sur les chantiers à l'",
       "headingHighlight": "ERP Open Source Offline-first pour Suisse (QR-Bill) & Italie (SdI).",
-      "lead": "FatturaFacile est né entre le Tessin et la Lombardie avec un objectif précis : libérer les artisans, les TPE et les indépendants des ERP surdimensionnés et des abonnements SaaS avec une suite Open Source (MIT) pour Suisse QR-Bill et Italie SdI FatturaPA.",
-      "badgeDualMarket": "Né entre la Suisse 🇨🇭 et l’Italie 🇮🇹",
+      "lead": "FatturaFacile a été conçu avec un objectif précis et une portée nationale exhaustive pour la Suisse et l'Italie : libérer les artisans, les TPE et les indépendants des ERP surdimensionnés et des abonnements SaaS avec une suite Open Source (MIT) native pour Suisse QR-Bill et Italie SdI FatturaPA.",
+      "badgeDualMarket": "Couverture Nationale Suisse 🇨🇭 & Italie 🇮🇹",
       "badgeOpenSource": "100% Gratuit, Hors-Ligne & Open Source",
       "ctaModules": "Explorer les Modules",
       "ctaCommunity": "Rejoindre la Communauté",
@@ -515,12 +515,12 @@
         },
         {
           "id": "dual_market",
-          "tag": "Natif Transfrontalier",
+          "tag": "Pleine Conformité Suisse & Italie",
           "title": "Fondation Double Marché : Suisse & Italie",
-          "desc": "Contrairement aux logiciels traduits à la hâte, FatturaFacile a été conçu dès l’origine pour répondre avec précision aux exigences fiscales suisses et italiennes.",
+          "desc": "Contrairement aux logiciels adaptés à la hâte, FatturaFacile a été conçu dès l’origine pour assurer une conformité fiscale et réglementaire complète pour toute la Suisse (QR-Facture SIX, TVA AFC, revLPD dans tous les 26 cantons) et toute l'Italie (FatturaPA XML, SdI B2B/B2C, AgID, split payment et retenues à la source dans toutes les régions).",
           "highlights": [
             "Suisse 🇨🇭 : QR-Facture officielle (norme SIX) avec croix suisse, QR-IBAN et taux TVA fédéraux (8.1%, 2.6%, 3.8%)",
-            "Italie 🇮🇹 : Génération XML FatturaPA v1.2 certifiée pour le SDI, code destinataire et timbre virtuel",
+            "Italie 🇮🇹 : Génération XML FatturaPA v1.2 certifiée pour le SDI, code destinataire, split payment et timbre virtuel",
             "Gestion native multi-devises CHF et EUR"
           ]
         },
@@ -539,7 +539,7 @@
     },
     "ethics": {
       "badge": "3. Éthique Open-Source & Impact Social",
-      "heading": "Un Bien Commun pour les Artisans, les Étudiants et les Régions",
+      "heading": "Un Bien Commun pour les Artisans, les Étudiants et les Entreprises",
       "lead": "FatturaFacile n’est pas une start-up spéculative, mais une initiative technologique et citoyenne développée avec les professionnels de terrain et les enseignants.",
       "cards": [
         {
@@ -571,12 +571,12 @@
     "chronicle": {
       "badge": "4. Chronologie & Étapes Clés",
       "heading": "Notre Parcours et Nos Jalons",
-      "lead": "De la première ligne de code écrite pour des artisans locaux jusqu’à un écosystème ouvert entre la Suisse et l’Italie.",
+      "lead": "De la première ligne de code écrite pour les artisans jusqu’à un écosystème ouvert à pleine couverture nationale en Suisse et en Italie.",
       "milestones": [
         {
           "year": "Jalon 01",
           "phase": "L’Idée Initiale",
-          "title": "Observation sur le Terrain au Tessin et en Lombardie",
+          "title": "Observation sur le Terrain en Suisse et en Italie",
           "desc": "Naissance du projet au contact d’électriciens, installateurs et indépendants pénalisés par des ERP par abonnement trop lourds et inutilisables hors-ligne.",
           "badge": "Vision Anti-ERP"
         },
@@ -597,8 +597,8 @@
         {
           "year": "Jalon 04",
           "phase": "Communauté & Éducation",
-          "title": "Ouverture Open-Source, Écoles & Partenaires Locaux",
-          "desc": "Publication en open source, lancement des parcours pédagogiques gratuits pour les écoles professionnelles et création du réseau d’informaticiens et fiduciaires locaux.",
+          "title": "Ouverture Open-Source, Écoles & Réseau National de Partenaires",
+          "desc": "Publication en open source, déploiement des parcours pédagogiques pour les écoles professionnelles et création du réseau national d’informaticiens, fiduciaires et experts-comptables.",
           "badge": "Écosystème Ouvert"
         }
       ]
@@ -619,7 +619,7 @@
     },
     "eyebrow": "Unsere Wurzeln & Vision",
     "heading": "FatturaFacile: Vom Frust auf der Baustelle zum Open-Source Offline-first ERP für Schweiz & Italien",
-    "lead": "Entstanden zwischen der Südschweiz (Tessin) und Norditalien verfolgt FatturaFacile eine klare Mission: Handwerkern, Kleinstunternehmen und Selbstständigen ein schnelles, kostenloses Fakturierungswerkzeug zu geben, das ihnen wirklich gehört.",
+    "lead": "Entwickelt mit vollständiger nationaler Abdeckung für die gesamte Schweiz und ganz Italien verfolgt FatturaFacile eine klare Mission: Handwerkern, Kleinstunternehmen und Selbstständigen ein schnelles, rechtskonformes und kostenloses Fakturierungswerkzeug zu geben, das ihnen wirklich gehört.",
     "problemTitle": "Das Problem: Warum sollte ein Handwerker ein ERP mit 500 Schaltflächen nutzen?",
     "problemText": "Sanitärinstallateure, Elektriker, Schreiner und Freiberufler stellen im Schnitt 10 bis 20 Rechnungen pro Monat aus. Dennoch drängt ihnen der Markt überdimensionierte ERP-Pakete auf – langsam, voller unverständlicher Buchhaltungsmenüs und an endlose Monatsabonnements gekoppelt.",
     "philosophyTitle": "Die Drei Säulen Unserer Architektur",
@@ -655,7 +655,7 @@
       },
       {
         "year": "Phase 4 • Offenes Ökosystem",
-        "title": "Open-Source-Start, Schulen & Lokales Partnernetzwerk",
+        "title": "Open-Source-Start, Schulen & Nationales Partnernetzwerk",
         "desc": "Veröffentlichung des Quellcodes, Start der kostenlosen Modulentwicklung auf Zuruf der Community sowie Bildungspartnerschaften mit Berufsfachschulen und Handelsmittelschulen."
       }
     ],
@@ -663,8 +663,8 @@
       "eyebrow": "Unsere Geschichte & Manifest",
       "headingPart1": "FatturaFacile: Vom Frust auf der Baustelle zum",
       "headingHighlight": "Open-Source Offline-first ERP für Schweiz (QR-Bill) & Italien (SdI).",
-      "lead": "FatturaFacile entstand zwischen dem Kanton Tessin und der Lombardei mit einem klaren Ziel: Handwerker, Kleinstbetriebe und Selbstständige von aufgeblähten ERP-Systemen und SaaS-Abos zu befreien – mit einer Open-Source (MIT) Suite für Schweizer QR-Rechnung und Italien SdI FatturaPA.",
-      "badgeDualMarket": "Entstanden zwischen der Schweiz 🇨🇭 und Italien 🇮🇹",
+      "lead": "FatturaFacile entstand mit einem klaren Ziel und voller nationaler Reichweite für die Schweiz und Italien: Handwerker, Kleinstbetriebe und Selbstständige von aufgeblähten ERP-Systemen und SaaS-Abos zu befreien – mit einer nativen Open-Source (MIT) Suite für Schweizer QR-Rechnung und Italien SdI FatturaPA.",
+      "badgeDualMarket": "Nationale Abdeckung Schweiz 🇨🇭 & Italien 🇮🇹",
       "badgeOpenSource": "100 % Kostenlos, Offline & Open Source",
       "ctaModules": "Module Entdecken",
       "ctaCommunity": "Community Beitreten",
@@ -719,12 +719,12 @@
         },
         {
           "id": "dual_market",
-          "tag": "Grenzüberschreitend Nativ",
+          "tag": "Vollständige Konformität Schweiz & Italien",
           "title": "Dual-Market-Fundament: Schweiz & Italien",
-          "desc": "Anders als nachträglich übersetzte Programme wurde FatturaFacile von Grund auf für die gesetzlichen Vorgaben beiderseits der schweizerisch-italienischen Grenze konzipiert.",
+          "desc": "Anders als nachträglich angepasste Programme wurde FatturaFacile von Grund auf für die vollständige gesetzliche und steuerliche Konformität in der gesamten Schweiz (SIX QR-Rechnung, ESTV-MWST, revDSG in allen 26 Kantonen) und ganz Italien (FatturaPA XML, SdI B2B/B2C, AgID, Split Payment und Quellensteuer in allen Regionen) konzipiert.",
           "highlights": [
-            "Schweiz 🇨🇭: Offizielle QR-Rechnung (SIX-Standard) mit Schweizerkreuz, QR-IBAN und MWST-Sätzen (8.1 %, 2.6 %, 3.8 %)",
-            "Italien 🇮🇹: Zertifizierter FatturaPA v1.2 XML-Export für SDI, Empfängercode und virtuelle Stempelsteuer",
+            "Schweiz 🇨🇭: Offizielle QR-Rechnung (SIX-Standard) mit Schweizerkreuz, QR-IBAN und ESTV-MWST-Sätzen (8.1 %, 2.6 %, 3.8 %)",
+            "Italien 🇮🇹: Zertifizierter FatturaPA v1.2 XML-Export für SDI, Empfängercode, Split Payment und Quellensteuer",
             "Native Mehrwährungsfähigkeit für CHF und EUR"
           ]
         },
@@ -743,7 +743,7 @@
     },
     "ethics": {
       "badge": "3. Open-Source-Ethik & Gesellschaftlicher Beitrag",
-      "heading": "Ein Digitales Gemeingut für Handwerk, Bildung und Regionen",
+      "heading": "Ein Digitales Gemeingut für Handwerk, Bildung und Unternehmen",
       "lead": "FatturaFacile ist kein renditegetriebenes Start-up, sondern ein offenes Technologie- und Bildungsprojekt, das gemeinsam mit Praktikern und Lehrkräften wächst.",
       "cards": [
         {
@@ -775,12 +775,12 @@
     "chronicle": {
       "badge": "4. Chronik & Meilensteine",
       "heading": "Unser Entwicklungsweg",
-      "lead": "Von der ersten Codezeile für lokale Handwerksbetriebe bis zum offenen Ökosystem zwischen der Schweiz und Italien.",
+      "lead": "Von der ersten Codezeile für Handwerksbetriebe bis zum offenen Ökosystem mit voller nationaler Abdeckung in der Schweiz und in Italien.",
       "milestones": [
         {
           "year": "Meilenstein 01",
           "phase": "Die Grundidee",
-          "title": "Praxisanalyse im Tessin und in der Lombardei",
+          "title": "Praxisanalyse in der Schweiz und in Italien",
           "desc": "Entstehung der Idee im direkten Gespräch mit Elektrikern, Installateuren und Selbstständigen, die unter teuren und offline unbrauchbaren Abo-ERPs litten.",
           "badge": "Anti-ERP-Vision"
         },
@@ -801,8 +801,8 @@
         {
           "year": "Meilenstein 04",
           "phase": "Community & Bildung",
-          "title": "Open-Source-Freigabe, Schulpartnerschaften & Regionales Netzwerk",
-          "desc": "Öffnung des gesamten Projekts, Einführung kostenloser Lehrpakete für Berufs- und Handelsschulen sowie Aufbau des Verzeichnisses lokaler IT-Partner und Treuhänder.",
+          "title": "Open-Source-Freigabe, Schulpartnerschaften & Nationales Netzwerk",
+          "desc": "Öffnung des gesamten Projekts, Einführung kostenloser Lehrpakete für Berufs- und Handelsschulen sowie Aufbau des landesweiten Verzeichnisses qualifizierter IT-Partner, Treuhänder und Steuerberater.",
           "badge": "Offenes Ökosystem"
         }
       ]

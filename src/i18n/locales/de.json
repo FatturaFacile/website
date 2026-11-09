@@ -38,9 +38,9 @@
       "emailLabel": "E-Mail-Kontakt:",
       "productColTitle": "Produkt",
       "legalColTitle": "Datenschutz & Rechtliches",
-      "marketsColTitle": "Regionale Märkte",
-      "italyMarketDesc": "Italien 🇮🇹: Kompatibel mit FatturaPA XML, Zahlungsnachverfolgung sowie Pauschal- und Standardsystemen.",
-      "swissMarketDesc": "Schweiz 🇨🇭: Konform mit der QR-Rechnung (SIX-Standard) und den Eidgenössischen MWST-Sätzen (Normal-, Reduziert- und Sondersatz).",
+      "marketsColTitle": "Nationale Märkte",
+      "italyMarketDesc": "Italien 🇮🇹: Elektronische Rechnung SdI (FatturaPA, B2B, B2C), AgID-Konformität, Split Payment, Quellensteuer sowie Pauschal- und ordentliche Steuersysteme im gesamten Staatsgebiet.",
+      "swissMarketDesc": "Schweiz 🇨🇭: Offizieller SIX QR-Bill Standard, revDSG-Datenschutzkonformität, Viersprachigkeit (IT/DE/FR/EN) und ESTV-Mehrwertsteuersätze für alle 26 Kantone.",
       "copyright": "FatturaFacile. Offenes Projekt ohne Abonnementgebühren.",
       "telegramCommunity": "Telegram-Community",
       "githubRepo": "GitHub-Repository"
@@ -73,14 +73,14 @@
     "seo": {
       "title": "FatturaFacile – Open Source (MIT) ERP & Rechnungssoftware für die Schweiz (QR-Bill) und Italien (SdI FatturaPA) Offline-first",
       "description": "FatturaFacile ist die kostenlose Open-Source (MIT) ERP- und Fakturierungssuite für die Schweiz (SIX QR-Rechnung) und Italien (SdI FatturaPA). Offline-first mit lokalem SQLite oder selbstgehostetem Web-Docker.",
-      "keywords": "fatturafacile, open source erp mit, offline-first rechnungssoftware, qr-rechnung schweiz six, elektronische rechnung italien fatturapa sdi, tessin, software handwerker, kmu erp"
+      "keywords": "fatturafacile, open source erp mit, offline-first rechnungssoftware, qr-rechnung schweiz six, elektronische rechnung italien fatturapa sdi, schweiz italien, software handwerker, kmu erp"
     },
     "hero": {
       "badgeGeo": "Open Source (MIT) • Schweiz QR-Bill & Italien SdI",
       "badgePrivacy": "Offline-first (SQLite) & Self-Hosted Web",
       "titlePart1": "FatturaFacile: die Open-Source ERP- & Fakturierungssuite",
       "titlePart2": "für die Schweiz (QR-Bill) und Italien (SdI), Offline-first.",
-      "subtitle": "FatturaFacile ist die im Tessin entstandene Open-Source (MIT) ERP- und Rechnungssoftware für Handwerker, Selbstständige und KMU in der Schweiz (SIX QR-Bill) und Italien (SdI FatturaPA): Offline-first auf dem Desktop oder selbstgehostet im Web, ohne Abo.",
+      "subtitle": "FatturaFacile ist die Open-Source (MIT) ERP- und Rechnungssoftware mit vollständiger nationaler Abdeckung für Handwerker, Selbstständige und KMU in der gesamten Schweiz (SIX QR-Bill) und ganz Italien (SdI FatturaPA): Offline-first auf dem Desktop oder selbstgehostet im Web, ohne Abo.",
       "ctaPrimary": "Demo testen",
       "ctaSecondary": "Code auf GitHub",
       "ctaCommunity": "Telegram-Community"
@@ -184,7 +184,7 @@
     "territory": {
       "local": {
         "badge": "Unterstützung vor Ort",
-        "title": "Lokaler Support im Tessin, in der Lombardei und im Piemont",
+        "title": "Landesweiter Support und Beratung in der gesamten Schweiz und in Italien",
         "desc": "Brauchen Sie Hilfe bei der Installation auf Ihrem Server, bei Backups oder bei der Zusammenarbeit mit Ihrem Buchhalter oder Treuhänder? Finden Sie Techniker und Treuhänder in Ihrer Nähe.",
         "cta": "Partnerverzeichnis ansehen oder bewerben"
       },
@@ -236,7 +236,7 @@
       "badge": "Unsere Wurzeln",
       "title": "Unsere Geschichte: Vom echten Bedarf zur freien Software",
       "p1Pre": "Das Projekt",
-      "p1Post": "entstand aus der täglichen Frustration befreundeter Handwerker – Sanitärinstallateure, Schlosser, Elektriker und Kleinunternehmer zwischen der Lombardei und dem Tessin. Sie waren zu immer teureren Monatsabos für komplizierte, langsame Programme gezwungen, die auf eine Internetverbindung angewiesen sind, die in Kellern und auf Baustellen oft fehlt.",
+      "p1Post": "entstand aus der täglichen Frustration von Handwerkern, Freiberuflern und Kleinbetrieben in der gesamten Schweiz und Italien. Sie waren zu immer teureren Monatsabos für komplizierte, langsame Programme gezwungen, die auf eine Internetverbindung angewiesen sind, die in Werkstätten und auf Baustellen oft fehlt.",
       "askPre": "Wir haben uns gefragt:",
       "quote": "\"Warum sollte ein Selbständiger, der 15 Rechnungen im Monat schreibt, Hunderte von Euro pro Jahr bezahlen und das Eigentum an seinen Daten an fremde Cloud-Plattformen abgeben?\"",
       "p3": "So entwickelten wir eine erste schlanke Version auf einem USB-Stick, basierend auf einer robusten SQLite-Datenbankdatei und der nativen C#/.NET-Infrastruktur. Der Erfolg per Mundpropaganda unter Kollegen überzeugte das Team, das Projekt vollständig offen, kostenlos und für die gesamte Community in Italien und der Schweiz zugänglich zu machen."
@@ -475,8 +475,8 @@
     "heading": "Die Menschen hinter dem Projekt FatturaFacile",
     "lead": "Ein Team aus IT-Ingenieuren, Steuerexperten und Dozenten, vereint durch die Überzeugung, dass alltägliche Arbeitswerkzeuge nicht hinter monatlichen Bezahlschranken eingesperrt werden dürfen.",
     "regions": {
-      "switzerland": "Schweiz 🇨🇭 (Kanton Tessin & Graubünden)",
-      "italy": "Italien 🇮🇹 (Lombardei & Weitere Regionen)"
+      "switzerland": "Schweiz 🇨🇭",
+      "italy": "Italien 🇮🇹"
     },
     "coreMaintainerBadge": "Core Maintainer",
     "joinCta": {
@@ -486,7 +486,7 @@
       "telegramBtn": "Mit Uns auf Telegram Sprechen"
     },
     "emptyRegion": {
-      "text": "Wir suchen aktiv C#/.NET-Entwickler, Experten für die elektronische Rechnungsstellung (SdI) und Steuerberater, um die Mitarbeit in dieser Region zu stärken.",
+      "text": "Wir suchen aktiv C#/.NET-Entwickler, Experten für Rechnungsstellung und Steuerberater, um die Mitarbeit in diesem Land zu stärken.",
       "cta": "Auf GitHub mitwirken"
     },
     "domains": {
@@ -579,9 +579,9 @@
       ]
     },
     "schools": {
-      "badge": "Akademisches & regionales Netzwerk",
+      "badge": "Nationales Bildungs- & Hochschulnetzwerk",
       "title": "Aktive Schulen & Pilotprojekte",
-      "lead": "Die Schulen, die zwischen dem Kanton Tessin und Norditalien mit FatturaFacile zusammenarbeiten.",
+      "lead": "Die Schulen, Berufsbildungszentren und Universitäten, die in der gesamten Schweiz und Italien mit FatturaFacile kooperieren.",
       "filterAll": "Alle Schulen",
       "filterCH": "Schweiz",
       "filterIT": "Italien",
@@ -675,13 +675,13 @@
     "seo": {
       "title": "FatturaFacile Partnernetzwerk & Lokaler Support – Schweiz (QR-Bill) & Italien (SdI FatturaPA) Open Source ERP",
       "description": "Finden Sie zertifizierte IT-Berater, Treuhänder und Techniker in der Schweiz und Italien für das Offline-first Open-Source (MIT) ERP FatturaFacile, QR-Rechnung und SdI FatturaPA.",
-      "keywords": "regionaler support fatturafacile, partner tessin lombardei, qr-rechnung schweiz sdi italien beratung, open source erp support"
+      "keywords": "regionaler support fatturafacile, partner schweiz italien, qr-rechnung schweiz sdi italien beratung, open source erp support"
     },
     "hero": {
-      "badge": "Unabhängiges regionales Netzwerk IT & CH",
+      "badge": "Unabhängiges nationales Netzwerk Schweiz & Italien",
       "headingPre": "Lokaler Support vor Ort",
       "headingHighlight": "Nah an Ihrem Betrieb",
-      "lead": "FatturaFacile ist freie und zu 100 % kostenlose Software. Wenn Sie persönliche Unterstützung in der Werkstatt, komplexe Konfigurationen auf Firmenservern oder die Abstimmung mit Ihrem Treuhandbüro wünschen, können Sie sich auf unser Netzwerk zertifizierter lokaler Partner verlassen."
+      "lead": "FatturaFacile ist freie und zu 100 % kostenlose Software. Wenn Sie direkte Unterstützung vor Ort, komplexe Server-Konfigurationen oder die Abstimmung mit Ihrem Treuhand- oder Steuerberatungsbüro wünschen, können Sie sich auf unser Netzwerk qualifizierter Partner in der gesamten Schweiz und Italien verlassen."
     },
     "directory": {
       "filterLabel": "Nach Land filtern:",
@@ -689,8 +689,8 @@
       "ch": "Schweiz",
       "it": "Italien",
       "verified": "Von der Community verifizierte Partner",
-      "emptyTitle": "Regionales Netzwerk in der Anfangsphase der Akkreditierung",
-      "emptyText": "Das Verzeichnis der regionalen Partner für die Schweiz (Tessin, Graubünden) und Italien (Lombardei und weitere Regionen) ist derzeit für erste Bewerbungen von IT-Fachleuten, Systemintegratoren und unabhängigen Buchhaltungsbüros offen.",
+      "emptyTitle": "Nationales Partnernetzwerk in der Anfangsphase der Akkreditierung",
+      "emptyText": "Das Verzeichnis qualifizierter Partner für die gesamte Schweiz und ganz Italien steht derzeit für Bewerbungen von IT-Fachleuten, Systemintegratoren, Treuhändern und unabhängigen Steuerberatern in beiden Ländern offen.",
       "emptyCta": "Als Partner oder Treuhandbüro bewerben",
       "contactPerson": "Ansprechperson:",
       "verifiedTitle": "Verifizierter Partner",
@@ -714,9 +714,9 @@
     "form": {
       "badge": "Offene & kostenlose Bewerbung",
       "title": "Werden Sie anerkannter lokaler Partner",
-      "lead": "Sind Sie IT-Techniker, Systemadministrator oder Treuhänder/Steuerberater in Italien oder der Schweiz? Werden Sie Teil unseres regionalen Netzwerks: Bieten Sie Support vor Ort und Mehrwertdienste für Betriebe in Ihrer Region an.",
+      "lead": "Sind Sie IT-Experte, Systemadministrator oder Treuhänder/Steuerberater in der Schweiz oder Italien? Werden Sie Teil unseres landesweiten Netzwerks: Bieten Sie technischen Support vor Ort und Mehrwertdienste für Unternehmen in Ihrem Gebiet an.",
       "companyLabel": "Firmenname oder Unternehmen",
-      "companyPlaceholder": "z. B. Studio Informatico Ticino Sagl",
+      "companyPlaceholder": "z. B. IT-Services & Consulting GmbH / Sagl",
       "contactLabel": "Name der Ansprechperson",
       "contactPlaceholder": "z. B. Marco Rossi",
       "emailLabel": "Geschäftliche / Kontakt-E-Mail",
@@ -728,11 +728,11 @@
       "switzerland": "Schweiz",
       "italy": "Italien",
       "regionLabel": "Hauptregion / Kanton",
-      "regionPlaceholder": "z. B. Tessin, Graubünden, Lombardei, Piemont...",
+      "regionPlaceholder": "z. B. Alle Kantone (ZH, BE, TI, VD...) oder Regionen (Lombardei, Latium, Venetien...)",
       "roleLabel": "Art der Tätigkeit",
       "servicesLabel": "Angebotene Kompetenzen & Leistungen für FatturaFacile",
       "notesLabel": "Hinweise zu Einsatzgebiet und Erfahrung",
-      "notesPlaceholder": "z. B. Support vor Ort oder per Fernzugriff in den Provinzen Varese und Como. Zehn Jahre Erfahrung mit kleinen Handwerksbetrieben...",
+      "notesPlaceholder": "z. B. Vor-Ort- und Remote-Support, Server-Einrichtung und Steuerkonformität im gesamten Einsatzgebiet...",
       "note": "Ihre Bewerbung wird vom Team innerhalb von 48 Arbeitsstunden geprüft. Keine Mitgliedsgebühren.",
       "submit": "Partner-Bewerbung senden",
       "sending": "Wird gesendet...",
@@ -885,7 +885,7 @@
     "seo": {
       "title": "FatturaFacile Geschichte – Open Source (MIT) Offline-first ERP für Schweiz QR-Bill & Italien SdI FatturaPA",
       "description": "Die Entstehung von FatturaFacile: eine unabhängige Open-Source (MIT) Offline-first ERP- und Rechnungsplattform für die Schweiz (QR-Bill) und Italien (SdI FatturaPA).",
-      "keywords": "geschichte fatturafacile, open source offline-first erp, qr-rechnung schweiz sdi fatturapa italien, tessin lombardei"
+      "keywords": "geschichte fatturafacile, open source offline-first erp, qr-rechnung schweiz sdi fatturapa italien, schweiz italien"
     },
     "eyebrow": "Wurzeln & Vision",
     "heading": "Aus der Praxis vor Ort zur Unabhängigkeit freier Software",
@@ -903,8 +903,8 @@
         "desc": "Die Datenbank ist eine einzelne Datei in Ihrer Hand. Keine Werbeprofile, null Telemetrie und keine Speicherung auf unüberprüften Drittservern."
       },
       {
-        "title": "Grenzüberschreitende Ausrichtung",
-        "desc": "Von der ersten Codezeile an für den Grenzraum Italien-Schweiz konzipiert, mit nativer Unterstützung für italienisches SDI und Schweizer QR-Rechnungen."
+        "title": "Vollständige Schweizer & Italienische Konformität",
+        "desc": "Von den ersten Codezeilen an auf landesweite Gesetzeskonformität ausgelegt: Schweizer QR-Rechnung nach SIX-Standard, ESTV-MWST und revDSG für alle Kantone sowie elektronische SdI-Rechnung (FatturaPA B2B/B2C, AgID) mit Split Payment und Quellensteuer für alle italienischen Regionen."
       },
       {
         "title": "Beitrag zur Allgemeinheit",
@@ -925,7 +925,7 @@
       {
         "year": "2026",
         "title": "Open-Source-Release, Astro-Portal und Schulkooperationen",
-        "desc": "Veröffentlichung des GitHub-Repositorys, Start von Ausbildungsprojekten an Berufsschulen und Aufbau des regionalen Partnernetzwerks vor Ort."
+        "desc": "Veröffentlichung des GitHub-Repositorys, Start von Ausbildungsprojekten an Berufsschulen und Aufbau des landesweiten Partnernetzwerks."
       }
     ]
   },
@@ -996,17 +996,17 @@
   "community": {
     "seo": {
       "title": "FatturaFacile Open Source (MIT) Community – Schweiz QR-Bill & Italien SdI FatturaPA Offline-first ERP",
-      "description": "Beteiligen Sie sich an der Open-Source (MIT) Community von FatturaFacile: Entwicklung des Offline-first ERP für die Schweiz (QR-Bill) und Italien (SdI FatturaPA), Schulprojekte im Tessin und Übersetzungen.",
-      "keywords": "fatturafacile community, open source mit erp, qr-rechnung schweiz sdi fatturapa italien, cpt trevano supsi usi"
+      "description": "Beteiligen Sie sich an der Open-Source (MIT) Community von FatturaFacile: Entwicklung des Offline-first ERP für die Schweiz (QR-Bill) und Italien (SdI FatturaPA), akademische Kooperationen und Übersetzungen.",
+      "keywords": "fatturafacile community, open source mit erp, qr-rechnung schweiz sdi fatturapa italien, schweiz italien universitaeten open source"
     },
     "eyebrow": "Offene Entwicklung & Bildung",
-    "heading": "Eine offene Community für unsere Region",
+    "heading": "Eine offene Community für die Schweiz und Italien",
     "lead": "FatturaFacile ist ein Open-Source-Projekt unter der MIT-Lizenz: transparenter Quellcode, Kooperation mit Bildungsinstituten und aktiver Beitrag von Fachleuten.",
     "educationSection": {
-      "badge": "Schulen & Universitäten im Tessin",
+      "badge": "Partnerhochschulen & Bildungsinstitute",
       "title": "Eine konkrete Bildungschance",
       "lead": "Offene Einladung an Fachmittelschulen, Berufsschulen und Hochschulen für Praktika, Diplomarbeiten und Forschungsprojekte an einer echten Codebasis.",
-      "institutionsBadge": "Bildungsinstitute der Region",
+      "institutionsBadge": "Akademische & Bildungspartner",
       "institutions": [
         {
           "name": "CPT (Centro Professionale Tecnico Trevano / Bellinzona)",
@@ -1021,7 +1021,7 @@
         {
           "name": "SUPSI (Departement innovative Technologien)",
           "role": "Bachelor-/Masterarbeiten & Angewandte Forschung",
-          "desc": "Forschungsmöglichkeiten zu Offline-First-Architekturen, lokaler Verschlüsselung und grenzüberschreitenden Abrechnungsstandards."
+          "desc": "Forschungsmöglichkeiten zu Offline-First-Architekturen, lokaler Verschlüsselung und vollständiger Konformität mit Schweizer und europäischen Abrechnungsstandards."
         },
         {
           "name": "USI (Fakultät für Informatik)",
@@ -1029,7 +1029,7 @@
           "desc": "Untersuchungen zu Privacy by Design, lokaler Datensouveränität und offenen Rechnungslegungsstandards."
         }
       ],
-      "regionTag": "Kanton Tessin",
+      "regionTag": "Schweiz",
       "institutionFooter": "Abschlussarbeiten, curriculare Praktika und begleitetes Experimentieren"
     },
     "participationSection": {

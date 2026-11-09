@@ -38,9 +38,9 @@
       "emailLabel": "Contatto Email:",
       "productColTitle": "Prodotto",
       "legalColTitle": "Privacy & Normativa",
-      "marketsColTitle": "Mercati Territoriali",
-      "italyMarketDesc": "Italia 🇮🇹: Compatibile con FatturaPA XML, tracciamento pagamenti e regimi forfettario e ordinario.",
-      "swissMarketDesc": "Svizzera 🇨🇭: Conforme a QR-Bill (standard SIX) e aliquote IVA federali (normale, ridotta, speciale).",
+      "marketsColTitle": "Copertura Nazionale",
+      "italyMarketDesc": "Italia 🇮🇹: Fatturazione elettronica SdI (FatturaPA, B2B, B2C), conformità AgID, split payment, ritenute d'acconto, regimi forfettario e ordinario su tutto il territorio nazionale.",
+      "swissMarketDesc": "Svizzera 🇨🇭: Standard QR-Bill SIX, piena conformità revLPD, gestione plurilingue (IT/DE/FR/EN) e rendicontazione aliquote IVA ESTV per tutti i 26 cantoni.",
       "copyright": "FatturaFacile. Progetto aperto e senza costi di abbonamento.",
       "telegramCommunity": "Gruppo Telegram",
       "githubRepo": "Repository GitHub"
@@ -73,14 +73,14 @@
     "seo": {
       "title": "FatturaFacile – Suite ERP e Fatturazione Open Source (MIT) per Svizzera QR-Bill e Italia SdI FatturaPA | Offline-first",
       "description": "FatturaFacile è la suite ERP e software di fatturazione Open Source (licenza MIT) e Offline-first per Svizzera QR-Bill (SIX) e Italia SdI FatturaPA (XML). Preventivi, contabilità e magazzino su SQLite locale o Docker self-hosted.",
-      "keywords": "fatturafacile, erp open source, fatturazione open source mit, svizzera qr-bill six, italia sdi fatturapa xml, gestionale offline-first sqlite, software fatturazione ticino, self-hosted docker erp"
+      "keywords": "fatturafacile, erp open source, fatturazione open source mit, svizzera qr-bill six, italia sdi fatturapa xml, gestionale offline-first sqlite, software fatturazione svizzera italia, self-hosted docker erp"
     },
     "hero": {
       "badgeGeo": "Open Source • Licenza MIT • Offline-first & Self-Hosted",
       "badgePrivacy": "Svizzera QR-Bill (SIX) • Italia SdI (FatturaPA)",
       "titlePart1": "Suite ERP e Fatturazione Open Source",
       "titlePart2": "per Svizzera (QR-Bill) e Italia (SdI FatturaPA).",
-      "subtitle": "FatturaFacile è la suite ERP e gestionale di fatturazione Open Source (MIT) e Offline-first nata in Ticino per artigiani, professionisti e PMI in Svizzera (QR-Bill SIX) e Italia (SdI FatturaPA XML): preventivi, magazzino e contabilità su SQLite locale o server Docker, senza abbonamenti.",
+      "subtitle": "FatturaFacile è la suite ERP e gestionale di fatturazione Open Source (MIT) e Offline-first con copertura nazionale per artigiani, professionisti e PMI in tutta la Svizzera (QR-Bill SIX) e in tutta l'Italia (SdI FatturaPA XML): preventivi, magazzino e contabilità su SQLite locale o server Docker, senza abbonamenti.",
       "ctaPrimary": "Prova la demo",
       "ctaSecondary": "Codice su GitHub",
       "ctaCommunity": "Community Telegram"
@@ -184,7 +184,7 @@
     "territory": {
       "local": {
         "badge": "Assistenza sul territorio",
-        "title": "Supporto locale in Canton Ticino, Lombardia e Piemonte",
+        "title": "Rete di supporto e consulenza in tutta la Svizzera e in tutta l'Italia",
         "desc": "Ti serve aiuto per installarlo sul tuo server, impostare i backup o lavorare con il tuo commercialista o fiduciario? Trova tecnici e fiduciarie vicino a te.",
         "cta": "Consulta la directory partner o candidati"
       },
@@ -236,7 +236,7 @@
       "badge": "Le Nostre Radici",
       "title": "La Nostra Storia: Dall'Esigenza Reale al Software Libero",
       "p1Pre": "Il progetto",
-      "p1Post": "è nato osservando la frustrazione quotidiana di amici artigiani – idraulici, fabbri, elettricisti e piccoli professionisti tra la Lombardia e il Canton Ticino. Costretti ad abbonamenti mensili sempre più costosi per programmi complessi, lenti o dipendenti da una connessione internet spesso assente nei seminterrati o nei cantieri.",
+      "p1Post": "è nato osservando la frustrazione quotidiana di artigiani, professionisti e piccole imprese su tutto il territorio svizzero e italiano. Costretti ad abbonamenti mensili sempre più costosi per programmi complessi, lenti o dipendenti da una connessione internet spesso assente nei cantieri o nei locali tecnici.",
       "askPre": "Ci siamo chiesti:",
       "quote": "\"Perché un professionista che emette 15 fatture al mese deve pagare centinaia di euro all'anno e cedere la proprietà dei propri archivi a piattaforme cloud terze?\"",
       "p3": "Abbiamo così sviluppato una prima versione snella su una chiavetta USB, basata su un robusto file database SQLite e sull'infrastruttura nativa C#/.NET. Il successo passaparola tra colleghi ha convinto il team a rendere il progetto completamente aperto, gratuito e a disposizione di tutta la comunità di Italia e Svizzera."
@@ -475,8 +475,8 @@
     "heading": "Il Team dietro FatturaFacile: ERP Open Source per Svizzera e Italia",
     "lead": "Un gruppo di professionisti dell'ingegneria del software, della fiscalità e della formazione uniti dalla convinzione che gli strumenti di base per il lavoro non debbano essere ostaggio di costi ricorrenti.",
     "regions": {
-      "switzerland": "Svizzera 🇨🇭 (Canton Ticino & Grigioni)",
-      "italy": "Italia 🇮🇹 (Lombardia & Altre Regioni)"
+      "switzerland": "Svizzera 🇨🇭",
+      "italy": "Italia 🇮🇹"
     },
     "coreMaintainerBadge": "Core Maintainer",
     "joinCta": {
@@ -579,9 +579,9 @@
       ]
     },
     "schools": {
-      "badge": "Rete Accademica & Territoriale",
+      "badge": "Rete Accademica & Formativa Nazionale",
       "title": "Istituti & Progetti Pilota Attivi",
-      "lead": "Gli istituti che collaborano con FatturaFacile tra il Canton Ticino e il Nord Italia.",
+      "lead": "Gli istituti, i centri professionali e gli atenei universitari che collaborano con FatturaFacile in tutta la Svizzera e in tutta l'Italia.",
       "filterAll": "Tutti gli Istituti",
       "filterCH": "Svizzera",
       "filterIT": "Italia",
@@ -675,13 +675,13 @@
     "seo": {
       "title": "Supporto Locale e Partner IT/Fiduciarie | FatturaFacile Open Source Svizzera QR-Bill e Italia SdI FatturaPA",
       "description": "Trova consulenti IT, system integrator e fiduciarie per FatturaFacile Open Source: installazione Offline-first su SQLite, server Docker e assistenza Svizzera QR-Bill e Italia SdI FatturaPA.",
-      "keywords": "supporto locale fatturafacile, partner erp open source ticino, consulenza svizzera qr-bill, assistenza italia sdi fatturapa, setup offline-first sqlite"
+      "keywords": "supporto locale fatturafacile, partner erp open source svizzera italia, consulenza svizzera qr-bill, assistenza italia sdi fatturapa, setup offline-first sqlite"
     },
     "hero": {
-      "badge": "Rete Territoriale Indipendente IT & CH",
+      "badge": "Rete Nazionale Indipendente Svizzera & Italia",
       "headingPre": "Supporto Locale e sul Posto",
       "headingHighlight": "Vicino alla tua Attività",
-      "lead": "FatturaFacile è un software libero e 100% gratuito. Se desideri assistenza di persona in officina, configurazioni complesse su server aziendali o raccordo con la tua fiduciaria, puoi affidarti alla nostra rete di partner locali certificati."
+      "lead": "FatturaFacile è un software libero e 100% gratuito. Se desideri assistenza diretta presso la tua sede, configurazioni avanzate su server aziendali o coordinamento con il tuo commercialista o fiduciario, puoi fare affidamento sulla nostra rete di partner qualificati attiva su tutto il territorio svizzero e italiano."
     },
     "directory": {
       "filterLabel": "Filtra Nazione:",
@@ -689,8 +689,8 @@
       "ch": "Svizzera",
       "it": "Italia",
       "verified": "Partner verificati dalla community",
-      "emptyTitle": "Rete territoriale in fase di accreditamento iniziale",
-      "emptyText": "La directory dei partner territoriali per Svizzera (Ticino, Grigioni) e Italia (Lombardia e altre regioni) è attualmente aperta alle prime candidature di professionisti IT, system integrator e studi contabili indipendenti.",
+      "emptyTitle": "Rete partner nazionale in fase di accreditamento iniziale",
+      "emptyText": "La directory dei partner qualificati per tutta la Svizzera e tutta l'Italia è aperta alle candidature di professionisti IT, system integrator, commercialisti e studi fiduciari indipendenti su entrambi i territori nazionali.",
       "emptyCta": "Candidati come Partner o Fiduciaria",
       "contactPerson": "Referente:",
       "verifiedTitle": "Partner Verificato",
@@ -714,9 +714,9 @@
     "form": {
       "badge": "Candidatura Aperta & Gratuita",
       "title": "Diventa Partner Locale Riconosciuto",
-      "lead": "Sei un tecnico informatico, un sistemista o una fiduciaria/commercialista in Italia o Svizzera? Unisciti alla nostra rete territoriale: offri supporto sul campo e servizi a valore aggiunto alle attività della tua zona.",
+      "lead": "Sei un professionista IT, un sistemista o uno studio fiduciario/commercialista in Svizzera o in Italia? Entra nella nostra rete nazionale: offri assistenza tecnica, formazione e servizi a valore aggiunto alle aziende del tuo territorio.",
       "companyLabel": "Ragione Sociale o Ditta",
-      "companyPlaceholder": "es. Studio Informatico Ticino Sagl",
+      "companyPlaceholder": "es. Servizi IT & Consulenza Aziendale Sagl / S.r.l.",
       "contactLabel": "Nome Referente",
       "contactPlaceholder": "es. Marco Rossi",
       "emailLabel": "Email Aziendale / Contatto",
@@ -728,11 +728,11 @@
       "switzerland": "Svizzera",
       "italy": "Italia",
       "regionLabel": "Regione / Cantone Principale",
-      "regionPlaceholder": "es. Canton Ticino, Grigioni, Lombardia, Piemonte...",
+      "regionPlaceholder": "es. Tutti i cantoni (ZH, BE, TI, VD...) o regioni (Lombardia, Lazio, Veneto...)",
       "roleLabel": "Tipologia di Attività",
       "servicesLabel": "Competenze & Servizi Offerti per FatturaFacile",
       "notesLabel": "Note su Copertura Geografica ed Esperienza",
-      "notesPlaceholder": "es. Assistenza a domicilio o da remoto nelle province di Varese e Como. Esperienza decennale con PMI artigiane...",
+      "notesPlaceholder": "es. Assistenza in sede e da remoto, configurazione server e supporto per la conformità fiscale su tutto il territorio di competenza...",
       "note": "La candidatura verrà esaminata dal team entro 48 ore lavorative. Zero costi di affiliazione.",
       "submit": "Invia Candidatura Partner",
       "sending": "Invio in corso...",
@@ -903,8 +903,8 @@
         "desc": "Il database è un singolo file sul tuo supporto. Nessuna profilazione commerciale, zero telemetria e nessun dato archiviato su server terzi non verificati."
       },
       {
-        "title": "Adattamento Transfrontaliero",
-        "desc": "Progettato fin dalle prime linee di codice tenendo conto della realtà di confine tra Italia e Svizzera, con pieno supporto per SDI e QR-Bill."
+        "title": "Piena Conformità Svizzera & Italia",
+        "desc": "Progettato fin dalle prime linee di codice per garantire la completa conformità normativa su scala nazionale: QR-Bill svizzera con standard SIX, IVA ESTV e revLPD per tutti i cantoni, e fatturazione elettronica SdI (FatturaPA B2B/B2C, AgID) con split payment e ritenute per tutte le regioni italiane."
       },
       {
         "title": "Restituzione alla Comunità",
@@ -919,13 +919,13 @@
       },
       {
         "year": "2026",
-        "title": "Integrazione Transfrontaliera Completa",
-        "desc": "Adozione dei moduli ufficiali per la FatturaPA elettronica italiana e lo standard di pagamento svizzero QR-Bill SIX con aliquote IVA dedicate."
+        "title": "Copertura Nazionale Bivalente Completa",
+        "desc": "Integrazione completa dei motori normativi per tutta l'Italia (FatturaPA XML, SdI B2B/B2C, AgID) e per tutta la Svizzera (QR-Bill SIX, IVA federale ESTV, conformità revLPD)."
       },
       {
         "year": "2026",
         "title": "Rilascio Aperto, Portale Astro e Progetto Scuole",
-        "desc": "Apertura pubblica del repository su GitHub, avvio della collaborazione didattica con gli istituti professionali e lancio della rete di partner locali sul territorio."
+        "desc": "Apertura pubblica del repository su GitHub, avvio delle collaborazioni didattiche con gli istituti professionali e lancio della rete nazionale di partner qualificati."
       }
     ]
   },
@@ -997,16 +997,16 @@
     "seo": {
       "title": "Community Open Source (MIT) | FatturaFacile ERP Offline-first per Svizzera QR-Bill e Italia SdI FatturaPA",
       "description": "Partecipa alla community di FatturaFacile: contribuisci alla suite ERP e fatturazione Open Source (MIT) e Offline-first per Svizzera QR-Bill e Italia SdI FatturaPA con scuole, sviluppatori e fiduciarie.",
-      "keywords": "community fatturafacile, erp open source mit, svizzera qr-bill, italia sdi fatturapa, sviluppo offline-first sqlite, ticino supsi usi"
+      "keywords": "community fatturafacile, erp open source mit, svizzera qr-bill, italia sdi fatturapa, sviluppo offline-first sqlite, svizzera italia universita open source"
     },
     "eyebrow": "Sviluppo Open Source (MIT) & Formazione",
     "heading": "Community Open Source FatturaFacile tra Svizzera e Italia",
     "lead": "FatturaFacile è un progetto open source sotto licenza MIT: codice trasparente, cooperazione con istituti formativi e contributo attivo di professionisti tra Svizzera e Italia.",
     "educationSection": {
-      "badge": "Scuole & Università in Ticino",
+      "badge": "Istituti & Università Partner",
       "title": "Un'opportunità didattica concreta",
       "lead": "Invito aperto a istituti tecnici, professionali e universitari per stage curriculari, lavori di diploma e progetti di ricerca su una codebase reale.",
-      "institutionsBadge": "Istituti Didattici del Territorio",
+      "institutionsBadge": "Istituti Didattici e Accademici",
       "institutions": [
         {
           "name": "CPT (Centro Professionale Tecnico Trevano / Bellinzona)",
@@ -1021,7 +1021,7 @@
         {
           "name": "SUPSI (Dipartimento tecnologie innovative)",
           "role": "Tesi di Laurea & Ricerca Applicata",
-          "desc": "Opportunità per progetti di bachelor/master su architetture offline-first, crittografia locale e integrazione cross-border."
+          "desc": "Opportunità per progetti di bachelor e master su architetture offline-first, crittografia locale e piena integrazione con gli standard normativi svizzeri ed europei."
         },
         {
           "name": "USI (Facoltà di scienze informatiche)",
@@ -1029,7 +1029,7 @@
           "desc": "Studio su Privacy by Design, sovranità locale del dato e standard aperti di fatturazione elettronica europea e svizzera."
         }
       ],
-      "regionTag": "Canton Ticino",
+      "regionTag": "Svizzera",
       "institutionFooter": "Progetti di tesi, stage curriculari e sperimentazione guidata"
     },
     "participationSection": {
