@@ -35,15 +35,24 @@ export default defineConfig({
       },
       serialize(item) {
         const url = item.url;
+
         if (
           url === 'https://fatturafacile.eu/' ||
           /^https:\/\/fatturafacile\.eu\/(en|fr|de)\/$/.test(url)
         ) {
-          return { ...item, changefreq: 'daily', priority: 1.0 };
+          return {
+            ...item,
+            priority: 1.0,
+          };
         }
+
         if (/\/(funzionalita|moduli|versioni|perche)\/$/.test(url)) {
-          return { ...item, changefreq: 'weekly', priority: 0.9 };
+          return {
+            ...item,
+            priority: 0.9,
+          };
         }
+
         return item;
       },
     }),
