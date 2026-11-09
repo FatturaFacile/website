@@ -7,7 +7,8 @@ export type TeamDomain =
   | 'italian_compliance'
   | 'web_frontend'
   | 'docs_translation'
-  | 'community_advocacy';
+  | 'community_advocacy'
+  | 'mobile';
 
 export interface TeamMemberLocation {
   city: string;
@@ -50,6 +51,8 @@ export const TEAM_DOMAIN_STYLES: Record<TeamDomain, string> = {
     'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800',
   community_advocacy:
     'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800',
+  mobile:
+    'bg-orange-50 dark:bg-orange-950/60 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800',
 };
 
 type TeamMemberSeedTuple = readonly [
@@ -110,6 +113,24 @@ const TEAM_MEMBER_SEEDS: readonly TeamMemberSeedTuple[] = [
       telegram: 'https://t.me/@davidenava85',
     },
     '/img/team/davide-nava.jpg',
+  ],
+  [
+    '',
+    'Omar Jarid',
+    'Mobile Developer',
+    false,
+    'Cento (Ferrara)',
+    'Emilia-Romagna',
+    'IT',
+    ['mobile'],
+    'Mobile Developer',
+    {
+      linkedin: 'https://www.linkedin.com/in/omarjarid',
+      github: 'https://github.com/omar-jarid',
+      email: 'omarjarid@proton.me',
+      telegram: 'https://t.me/@Jerid616',
+    },
+    '/img/team/omar-jarid.jpg',
   ],
 ];
 
