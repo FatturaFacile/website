@@ -1,0 +1,42 @@
+---
+export interface Props {
+  /**
+   * GA4 Measurement ID (defaults to PUBLIC_GA_ID env variable, falling back to 'G-JNQJZBL6PJ').
+   */
+  id?: string;
+  /**
+   * Enable GA4 debug_mode for debugging in Google Analytics DebugView.
+   */
+  debug?: boolean;
+}
+
+const { id = import.meta.env.PUBLIC_GA_ID || 'G-JNQJZBL6PJ', debug = import.meta.env.DEV } =
+  Astro.props;
+
+const measurementId = id?.trim();
+---
+
+{measurementId && (
+  <>
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} />
+    <script is:inline define:vars={{ measurementId, debug }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        // eslint-disable-next-line prefer-rest-params
+        window.dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', measurementId, {
+        debug_mode: debug,
+      });
+    </script>
+    <script>
+      import { setupAnalyticsListeners } from '../utils/analytics';
+      setupAnalyticsListeners();
+    </script>
+  </>
+)}

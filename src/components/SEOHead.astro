@@ -11,6 +11,7 @@ import {
   TELEGRAM_URL,
 } from '../data/links';
 import { serializeJsonLd } from '../utils/security';
+import GoogleAnalytics from './GoogleAnalytics.astro';
 
 export interface Props {
   title?: string;
@@ -216,19 +217,8 @@ const finalSchemas: Array<Record<string, unknown>> = [
 <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
 <link rel="manifest" href="/img/favicon/site.webmanifest" />
 
-<!-- DNS Prefetch for Analytics -->
-<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-<!-- Google Tag Manager (G-JNQJZBL6PJ) with zero layout shift -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JNQJZBL6PJ"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(...args) {
-    dataLayer.push(args);
-  }
-  gtag('js', new Date());
-  gtag('config', 'G-JNQJZBL6PJ');
-</script>
+<!-- Google Analytics 4 (GA4) -->
+<GoogleAnalytics />
 
 <!-- Structured Data (JSON-LD) -->
 {finalSchemas.map((s) => (
