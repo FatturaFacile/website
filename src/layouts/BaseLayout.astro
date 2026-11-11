@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import PrivacyModal from '../components/PrivacyModal.astro';
 import type { Locale } from '../i18n/types';
 import { getLangFromUrl } from '../i18n/utils';
+import { a11yLabels } from '../i18n/a11y';
 import '../styles/global.css';
 
 export interface Props {
@@ -59,8 +60,14 @@ const {
     </script>
   </head>
   <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased font-sans selection:bg-teal-500 selection:text-white transition-colors duration-200 min-h-screen flex flex-col">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-700 focus:text-white focus:font-bold focus:rounded-md focus:shadow-lg"
+    >
+      {a11yLabels[lang].skipToContent}
+    </a>
     <Header lang={lang} />
-    <main class="flex-grow">
+    <main id="main-content" tabindex="-1" class="flex-grow">
       <slot />
     </main>
     <Footer lang={lang} />

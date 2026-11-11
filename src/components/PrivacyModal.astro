@@ -13,17 +13,23 @@ const pm = t.common.privacyModal;
 
 <div
   id="privacy-modal"
+  aria-hidden="true"
   class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200"
 >
   <div
     class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transform scale-95 transition-transform duration-200"
     id="privacy-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="privacy-modal-title"
+    aria-describedby="privacy-modal-subtitle"
+    tabindex="-1"
   >
     <!-- Modal Header -->
     <div class="px-6 py-5 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
       <div class="flex items-center gap-3">
         <div class="p-2 bg-teal-500/20 text-teal-400 rounded-xl">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path
               fill-rule="evenodd"
               d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 002 0V7z"
@@ -32,23 +38,31 @@ const pm = t.common.privacyModal;
           </svg>
         </div>
         <div>
-          <h3 class="text-lg font-bold" data-i18n="mod_title">
+          <h2 id="privacy-modal-title" class="text-lg font-bold" data-i18n="mod_title">
             {pm.title}
-          </h3>
-          <p class="text-xs text-slate-300" data-i18n="mod_sub">
+          </h2>
+          <p id="privacy-modal-subtitle" class="text-xs text-slate-300" data-i18n="mod_sub">
             {pm.subtitle}
           </p>
         </div>
       </div>
       <button
+        type="button"
+        id="privacy-modal-close"
         onclick="window.closePrivacyModal()"
-        class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-colors"
+        class="text-slate-300 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-colors"
         aria-label={pm.closeBtn}
         title={pm.closeBtn}
         data-i18n-aria-label="mod_close_aria"
         data-i18n-title="mod_close_aria"
       >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -67,10 +81,10 @@ const pm = t.common.privacyModal;
       </div>
 
       <div>
-        <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-700 dark:bg-teal-400" aria-hidden="true"></span>
           <span data-i18n="mod_sec1_title">{pm.section1Title}</span>
-        </h4>
+        </h3>
         <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="mod_sec1_text">
           {pm.section1Text}
         </p>
@@ -82,10 +96,10 @@ const pm = t.common.privacyModal;
       </div>
 
       <div>
-        <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-700 dark:bg-teal-400" aria-hidden="true"></span>
           <span data-i18n="mod_sec2_title">{pm.section2Title}</span>
-        </h4>
+        </h3>
         <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="mod_sec2_text">
           {pm.section2Text}
         </p>
@@ -97,10 +111,10 @@ const pm = t.common.privacyModal;
       </div>
 
       <div>
-        <h4 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-700 dark:bg-teal-400" aria-hidden="true"></span>
           <span data-i18n="mod_sec3_title">{pm.section3Title}</span>
-        </h4>
+        </h3>
         <p class="mt-2 text-slate-600 dark:text-slate-300" data-i18n="mod_sec3_text">
           {pm.section3Text}
         </p>
@@ -109,7 +123,7 @@ const pm = t.common.privacyModal;
       <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
         <a
           href={getLocalizedPath('/privacy/', lang)}
-          class="text-xs text-teal-600 dark:text-teal-400 font-bold hover:underline flex items-center gap-1"
+          class="text-xs text-teal-700 dark:text-teal-400 font-bold hover:underline flex items-center gap-1"
         >
           {t.common.nav.privacy} &rarr;
         </a>
@@ -120,7 +134,7 @@ const pm = t.common.privacyModal;
     <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/80 border-t border-slate-200 dark:border-slate-800 flex justify-end">
       <button
         onclick="window.closePrivacyModal()"
-        class="px-6 py-2.5 bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold rounded-xl text-sm transition-colors"
+        class="px-6 py-2.5 bg-slate-900 dark:bg-teal-700 hover:bg-slate-800 dark:hover:bg-teal-800 text-white font-bold rounded-xl text-sm transition-colors"
         data-i18n="mod_close_btn"
       >
         {t.common.actions.understood}

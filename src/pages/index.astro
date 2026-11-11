@@ -25,15 +25,15 @@ const webSiteSchema = {
 const pillarIcons = [
   {
     path: 'M5 13l4 4L19 7',
-    box: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400',
+    box: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400',
   },
   {
     path: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-    box: 'bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400',
+    box: 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-400',
   },
   {
     path: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z',
-    box: 'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400',
+    box: 'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400',
   },
   {
     path: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
@@ -66,7 +66,7 @@ const platformAvailable = [true, false, false];
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
           <span>{h.hero.badgeGeo}</span>
         </span>
         <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
@@ -92,7 +92,7 @@ const platformAvailable = [true, false, false];
             href={DEMO_URL}
             target="_blank"
             rel="noopener"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-slate-900 dark:bg-teal-700 hover:bg-slate-800 dark:hover:bg-teal-800 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
           >
             <svg
               class="w-5 h-5 text-teal-400 dark:text-slate-950"
@@ -265,7 +265,7 @@ const platformAvailable = [true, false, false];
       <div class="mt-10 flex flex-wrap justify-center gap-4">
         <a
           href={getLocalizedPath('/versioni/', lang)}
-          class="px-6 py-3.5 bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 text-white font-bold rounded-2xl transition-all shadow-sm"
+          class="px-6 py-3.5 bg-slate-900 dark:bg-teal-700 hover:bg-slate-800 dark:hover:bg-teal-800 text-white font-bold rounded-2xl transition-all shadow-sm"
         >
           {h.platforms.compareCta} &rarr;
         </a>

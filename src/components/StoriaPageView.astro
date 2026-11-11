@@ -89,7 +89,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <!-- Top Badges & Localized Route Switcher -->
       <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
         <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
-          <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse" aria-hidden="true"></span>
           <span id="storia-hero-eyebrow">{t.hero.eyebrow}</span>
         </span>
 
@@ -120,7 +120,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
             onclick={`window.setLanguage('${loc.code}')`}
             class={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               loc.code === lang
-                ? 'bg-white dark:bg-teal-600 text-slate-900 dark:text-white shadow-sm'
+                ? 'bg-white dark:bg-teal-700 text-slate-900 dark:text-white shadow-sm'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
@@ -154,7 +154,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
           href={DEMO_URL}
           target="_blank"
           rel="noopener"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm sm:text-base font-bold text-white bg-slate-900 dark:bg-teal-600 hover:bg-slate-800 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm sm:text-base font-bold text-white bg-slate-900 dark:bg-teal-700 hover:bg-slate-800 dark:hover:bg-teal-800 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
         >
           <svg
             class="w-5 h-5 text-teal-400 dark:text-slate-950"
@@ -196,7 +196,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <div class="max-w-3xl mx-auto text-center mb-16">
         <span
           id="storia-origin-badge"
-          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+          class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400"
         >
           {t.origin.badge}
         </span>
@@ -218,7 +218,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
         <!-- Card A: Anti-ERP -->
         <div class="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center mb-6 shadow-md shadow-teal-600/20">
+          <div class="w-12 h-12 rounded-2xl bg-teal-700 text-white flex items-center justify-center mb-6 shadow-md shadow-teal-600/20">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -298,7 +298,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
             id="storia-comp-erp-title"
             class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2"
           >
-            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500" aria-hidden="true"></span>
             <span>{t.origin.comparison.erpTitle}</span>
           </h4>
           <ul
@@ -307,7 +307,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
           >
             {t.origin.comparison.erpPoints.map((pt) => (
               <li class="flex items-start gap-2.5">
-                <span class="text-rose-500 font-bold shrink-0">✕</span>
+                <span class="text-rose-700 dark:text-rose-400 font-bold shrink-0">✕</span>
                 <span>{pt}</span>
               </li>
             ))}
@@ -320,13 +320,13 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
             id="storia-comp-ff-title"
             class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2"
           >
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
             <span>{t.origin.comparison.ffTitle}</span>
           </h4>
           <ul id="storia-comp-ff-list" class="space-y-3 text-sm text-slate-700 dark:text-slate-200">
             {t.origin.comparison.ffPoints.map((pt) => (
               <li class="flex items-start gap-2.5">
-                <span class="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">✓</span>
+                <span class="text-emerald-700 dark:text-emerald-400 font-bold shrink-0">✓</span>
                 <span>{pt}</span>
               </li>
             ))}
@@ -342,7 +342,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <div class="max-w-3xl mx-auto text-center mb-16">
         <span
           id="storia-arch-badge"
-          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+          class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400"
         >
           {t.architecture.badge}
         </span>
@@ -371,7 +371,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
                 <span class="arch-tag px-3 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
                   {pillar.tag}
                 </span>
-                <span class="text-xs font-mono text-slate-400">0{idx + 1}</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">0{idx + 1}</span>
               </div>
 
               <h3 class="arch-title text-xl font-bold text-slate-900 dark:text-white mb-3">
@@ -385,7 +385,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
             <ul class="arch-highlights space-y-2.5 pt-5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
               {pillar.highlights.map((hl) => (
                 <li class="flex items-start gap-2">
-                  <span class="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span class="text-teal-700 dark:text-teal-400 font-bold">✓</span>
                   <span>{hl}</span>
                 </li>
               ))}
@@ -402,7 +402,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <div class="max-w-3xl mx-auto text-center mb-16">
         <span
           id="storia-ethics-badge"
-          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+          class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400"
         >
           {t.ethics.badge}
         </span>
@@ -440,7 +440,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
             <div class="pt-4 border-t border-slate-200/70 dark:border-slate-800">
               <a
                 href={card.linkHref}
-                class="ethics-link text-sm font-bold text-teal-600 dark:text-teal-400 hover:underline"
+                class="ethics-link text-sm font-bold text-teal-700 dark:text-teal-400 hover:underline"
               >
                 {card.linkLabel}
               </a>
@@ -457,7 +457,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span
           id="storia-chronicle-badge"
-          class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400"
+          class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400"
         >
           {t.chronicle.badge}
         </span>
@@ -484,10 +484,10 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
           >
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
               <div class="flex items-center gap-3">
-                <span class="ms-year inline-flex items-center justify-center px-3 py-1 rounded-xl text-xs font-black bg-slate-900 dark:bg-teal-600 text-white">
+                <span class="ms-year inline-flex items-center justify-center px-3 py-1 rounded-xl text-xs font-black bg-slate-900 dark:bg-teal-700 text-white">
                   {ms.year}
                 </span>
-                <span class="ms-phase text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+                <span class="ms-phase text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">
                   {ms.phase}
                 </span>
               </div>

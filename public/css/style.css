@@ -1,9 +1,10 @@
 /* Custom Styles & Utilities for Fattura Facile */
 
 .tab-active {
-  background-color: #0d9488 !important;
+  /* teal-700: 5.4:1 contrast with white text (WCAG AA) */
+  background-color: #00786f !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px 0 rgba(13, 148, 136, 0.39);
+  box-shadow: 0 4px 14px 0 rgba(0, 120, 111, 0.39);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -32,4 +33,15 @@ body, header, section, footer, div, a, button {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

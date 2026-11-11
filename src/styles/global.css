@@ -36,6 +36,62 @@
 }
 
 .dark .tab-active {
-  background-color: #0d9488;
+  /* teal-700: 5.4:1 contrast with white text (WCAG AA) */
+  background-color: #00786f;
   color: #ffffff !important;
+}
+
+/* ------------------------------------------------------------------
+   Accessibility (WCAG 2.2 AA)
+   ------------------------------------------------------------------ */
+
+/* 2.4.7 Focus Visible: clear, consistent keyboard focus indicator */
+:focus-visible {
+  outline: 2px solid var(--color-teal-700, #00786f);
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline-color: var(--color-teal-400, #2dd4bf);
+}
+
+/* Programmatic focus target (skip link destination) needs no ring */
+#main-content:focus {
+  outline: none;
+}
+
+/* Desktop dropdown dismissed with Escape: hide even while hovered/focused */
+.nav-dropdown[data-dismissed] > .nav-dropdown-panel {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  translate: 0 0.5rem !important;
+}
+
+/* 2.3.3 Animation from Interactions: honour reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Windows High Contrast / forced colors: keep controls outlined */
+@media (forced-colors: active) {
+  a[class*='bg-'],
+  button[class*='bg-'],
+  .tab-active {
+    border: 1px solid ButtonText;
+  }
+
+  :focus-visible {
+    outline-color: Highlight;
+  }
 }
