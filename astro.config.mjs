@@ -60,7 +60,11 @@ export default defineConfig({
           };
         }
 
-        if (/\/(funzionalita|moduli|versioni|perche|features|modules|versions|why-us|fonctionnalites|pourquoi-nous|funktionen|module|versionen|warum-wir)\/$/.test(url)) {
+        if (
+          /\/(funzionalita|moduli|versioni|perche|features|modules|versions|why-us|fonctionnalites|pourquoi-nous|funktionen|module|versionen|warum-wir)\/$/.test(
+            url,
+          )
+        ) {
           return {
             ...item,
             priority: 0.9,
