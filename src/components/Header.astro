@@ -2,6 +2,7 @@
 import type { Locale } from '../i18n/types';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 import { DEMO_URL } from '../data/links';
+import { getRouteKeyFromPath } from '../i18n/routes';
 import { a11yLabels } from '../i18n/a11y';
 
 export interface Props {
@@ -12,20 +13,17 @@ const currentPath = Astro.url.pathname;
 const lang: Locale = Astro.props.lang ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const routeKey = getRouteKeyFromPath(currentPath);
 const isProductActive =
-  currentPath.includes('/perche') ||
-  currentPath.includes('/funzionalita') ||
-  currentPath.includes('/moduli') ||
-  currentPath.includes('/versioni');
+  routeKey !== undefined && ['perche', 'funzionalita', 'moduli', 'versioni'].includes(routeKey);
 const isCommunityActive =
-  currentPath.includes('/community') ||
-  currentPath.includes('/contribuisci') ||
-  currentPath.includes('/scuole-e-sociale') ||
-  currentPath.includes('/sponsor');
-const isNetworkActive = currentPath.includes('/supporto-locale') || currentPath.includes('/faq');
+  routeKey !== undefined &&
+  ['community', 'community-richieste', 'contribuisci', 'scuole-e-sociale', 'sponsor'].includes(
+    routeKey,
+  );
+const isNetworkActive = routeKey !== undefined && ['supporto-locale', 'faq'].includes(routeKey);
 const isAboutActive =
-  currentPath.includes('/storia') ||
-  currentPath.includes('/team') ||
+  (routeKey !== undefined && ['storia', 'team'].includes(routeKey)) ||
   currentPath.includes('#storia') ||
   currentPath.includes('#team');
 

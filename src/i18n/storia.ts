@@ -1,4 +1,5 @@
 import type { Locale, SeoMetadata, StoriaTranslations } from './types.ts';
+import { ROUTE_SLUGS } from './routes.ts';
 import storiaJson from './storia.json' with { type: 'json' };
 
 export interface StoriaArchitecturePillar {
@@ -89,9 +90,9 @@ export interface DetailedStoriaTranslations extends StoriaTranslations {
 
 export const STORIA_ALTERNATES: Record<Locale | 'x-default', string> = {
   it: 'https://fatturafacile.eu/storia/',
-  en: 'https://fatturafacile.eu/en/storia/',
-  fr: 'https://fatturafacile.eu/fr/storia/',
-  de: 'https://fatturafacile.eu/de/storia/',
+  en: `https://fatturafacile.eu/en/${ROUTE_SLUGS.storia.en}/`,
+  fr: `https://fatturafacile.eu/fr/${ROUTE_SLUGS.storia.fr}/`,
+  de: `https://fatturafacile.eu/de/${ROUTE_SLUGS.storia.de}/`,
   'x-default': 'https://fatturafacile.eu/storia/',
 };
 

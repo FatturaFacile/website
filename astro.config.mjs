@@ -2,12 +2,26 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import { ROUTE_SLUGS } from './src/i18n/routes.ts';
+
+// Vecchi URL en/fr/de con slug italiano -> nuovo URL tradotto (meta refresh + canonical)
+const legacyRedirects = Object.fromEntries(
+  Object.entries(ROUTE_SLUGS).flatMap(([italian, slugs]) =>
+    ['en', 'fr', 'de']
+      .filter((lang) => /** @type {Record<string,string>} */ (slugs)[lang] !== italian)
+      .map((lang) => [
+        `/${lang}/${italian}/`,
+        `/${lang}/${/** @type {Record<string,string>} */ (slugs)[lang]}/`,
+      ]),
+  ),
+);
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://fatturafacile.eu',
   output: 'static',
   trailingSlash: 'always',
+  redirects: legacyRedirects,
   build: {
     format: 'directory',
   },
@@ -46,7 +60,7 @@ export default defineConfig({
           };
         }
 
-        if (/\/(funzionalita|moduli|versioni|perche)\/$/.test(url)) {
+        if (/\/(funzionalita|moduli|versioni|perche|features|modules|versions|why-us|fonctionnalites|pourquoi-nous|funktionen|module|versionen|warum-wir)\/$/.test(url)) {
           return {
             ...item,
             priority: 0.9,

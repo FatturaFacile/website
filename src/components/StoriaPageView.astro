@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { DEMO_URL } from '../data/links';
 import type { Locale } from '../i18n/types';
+import { getLocalizedPath } from '../i18n/utils';
 import { STORIA_ALTERNATES, STORIA_TRANSLATIONS } from '../i18n/storia';
 
 export interface Props {
@@ -67,10 +68,10 @@ const pageSchema = {
 };
 
 const localeLinks: { code: Locale; label: string; flag: string; href: string }[] = [
-  { code: 'it', label: 'Italiano', flag: '🇮🇹', href: '/storia/' },
-  { code: 'en', label: 'English', flag: '🇬🇧', href: '/en/storia/' },
-  { code: 'fr', label: 'Français', flag: '🇨🇭', href: '/fr/storia/' },
-  { code: 'de', label: 'Deutsch', flag: '🇨🇭', href: '/de/storia/' },
+  { code: 'it', label: 'Italiano', flag: '🇮🇹', href: getLocalizedPath('/storia/', 'it') },
+  { code: 'en', label: 'English', flag: '🇬🇧', href: getLocalizedPath('/storia/', 'en') },
+  { code: 'fr', label: 'Français', flag: '🇨🇭', href: getLocalizedPath('/storia/', 'fr') },
+  { code: 'de', label: 'Deutsch', flag: '🇨🇭', href: getLocalizedPath('/storia/', 'de') },
 ];
 ---
 
@@ -173,7 +174,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
         </a>
 
         <a
-          href="/moduli/"
+          href={getLocalizedPath('/moduli/', lang)}
           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-2xl shadow-sm transition-all duration-200"
         >
           <span id="storia-hero-cta-mod">{t.hero.ctaModules}</span>
@@ -181,7 +182,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
         </a>
 
         <a
-          href="/community-richieste/"
+          href={getLocalizedPath('/community-richieste/', lang)}
           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-semibold text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 hover:bg-teal-100 dark:hover:bg-teal-900/60 border border-teal-200 dark:border-teal-800 rounded-2xl transition-all duration-200"
         >
           <span id="storia-hero-cta-comm">{t.hero.ctaCommunity}</span>
@@ -439,7 +440,7 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
             </div>
             <div class="pt-4 border-t border-slate-200/70 dark:border-slate-800">
               <a
-                href={card.linkHref}
+                href={getLocalizedPath(card.linkHref, lang)}
                 class="ethics-link text-sm font-bold text-teal-700 dark:text-teal-400 hover:underline"
               >
                 {card.linkLabel}
@@ -532,14 +533,14 @@ const localeLinks: { code: Locale; label: string; flag: string; href: string }[]
           {t.ctaBanner.btnDownload}
         </a>
         <a
-          href="/moduli/"
+          href={getLocalizedPath('/moduli/', lang)}
           id="storia-cta-btn-mod"
           class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold rounded-2xl transition-all"
         >
           {t.ctaBanner.btnModules}
         </a>
         <a
-          href="/community-richieste/"
+          href={getLocalizedPath('/community-richieste/', lang)}
           id="storia-cta-btn-comm"
           class="px-8 py-4 bg-slate-800/60 hover:bg-slate-800 text-teal-300 border border-teal-500/40 font-bold rounded-2xl transition-all"
         >

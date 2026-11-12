@@ -1,0 +1,60 @@
+---
+import type { Locale } from '../../i18n/types';
+import { NON_DEFAULT_LOCALES } from '../../utils/i18n-helper';
+import { ROUTE_SLUGS, type RouteKey } from '../../i18n/routes';
+import { STORIA_ALTERNATES } from '../../i18n/storia';
+import FunzionalitaPage from '../funzionalita.astro';
+import ModuliPage from '../moduli.astro';
+import VersioniPage from '../versioni.astro';
+import PerchePage from '../perche.astro';
+import StoriaPageView from '../../components/StoriaPageView.astro';
+import TeamPage from '../team.astro';
+import ContribuisciPage from '../contribuisci.astro';
+import SponsorPage from '../sponsor.astro';
+import PrivacyPage from '../privacy.astro';
+import SupportoLocalePage from '../supporto-locale.astro';
+import ScuoleESocialePage from '../scuole-e-sociale.astro';
+import CommunityPage from '../community.astro';
+import CommunityRichiestePage from '../community-richieste.astro';
+import FaqPage from '../faq.astro';
+
+const pages: Record<RouteKey, typeof FaqPage> = {
+  funzionalita: FunzionalitaPage,
+  moduli: ModuliPage,
+  versioni: VersioniPage,
+  perche: PerchePage,
+  storia: StoriaPageView as unknown as typeof FaqPage,
+  team: TeamPage,
+  contribuisci: ContribuisciPage,
+  sponsor: SponsorPage,
+  privacy: PrivacyPage,
+  'supporto-locale': SupportoLocalePage,
+  'scuole-e-sociale': ScuoleESocialePage,
+  community: CommunityPage,
+  'community-richieste': CommunityRichiestePage,
+  faq: FaqPage,
+};
+
+export function getStaticPaths() {
+  return NON_DEFAULT_LOCALES.flatMap((lang) =>
+    (Object.keys(ROUTE_SLUGS) as RouteKey[]).map((key) => ({
+      params: { lang, slug: ROUTE_SLUGS[key][lang] },
+      props: { key, lang },
+    })),
+  );
+}
+
+interface Props {
+  key: RouteKey;
+  lang: Locale;
+}
+
+const { key, lang } = Astro.props;
+const Page = pages[key];
+---
+
+{key === 'storia' ? (
+  <StoriaPageView lang={lang} canonicalUrl={STORIA_ALTERNATES[lang]} />
+) : (
+  <Page />
+)}
