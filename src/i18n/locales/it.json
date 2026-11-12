@@ -43,13 +43,23 @@
       "swissMarketDesc": "Svizzera 🇨🇭: crea la fattura con la polizza di versamento QR (QR-Bill) e usa le aliquote IVA svizzere.",
       "copyright": "FatturaFacile. Progetto aperto, senza abbonamenti.",
       "telegramCommunity": "Gruppo Telegram",
-      "githubRepo": "Repository GitHub"
+      "githubRepo": "Repository GitHub",
+      "cookiePreferences": "Preferenze cookie"
+    },
+    "cookieBanner": {
+      "title": "Cookie e statistiche",
+      "text": "Usiamo Google Analytics per capire come viene usato il sito. Parte solo se accetti. Se rifiuti, il sito funziona uguale e non viene caricato nulla di Google.",
+      "privacyLink": "Leggi l'informativa",
+      "accept": "Accetta",
+      "reject": "Rifiuta",
+      "stateGranted": "Scelta attuale: accettato.",
+      "stateDenied": "Scelta attuale: rifiutato."
     },
     "privacyModal": {
       "title": "Informativa sulla privacy",
       "subtitle": "Regolamento generale UE (GDPR 2016/679) e nuova legge svizzera sulla protezione dei dati (nLPD)",
       "calloutTitle": "Il nostro principio:",
-      "calloutDesc": "Per FatturaFacile la riservatezza è garantita dal salvataggio locale: l'applicazione non invia nessun dato a server esterni o a terzi.",
+      "calloutDesc": "I dati che inserisci nel programma non vanno a terzi. Il sito usa Google Analytics solo se accetti i cookie.",
       "section1Title": "Sezione A: applicazione per Windows (database locale SQLite)",
       "section1Text": "Quando usi l'applicazione per Windows sul computer o su una chiavetta USB:",
       "section1Bullets": [
@@ -61,7 +71,7 @@
       "section2Text": "Quando visiti questo sito:",
       "section2Bullets": [
         "Dati di navigazione: il sito registra i normali dati di connessione (indirizzo IP anonimizzato, tipo di browser), usati solo per la sicurezza e per prevenire abusi.",
-        "Cookie: nessun cookie di profilazione, nessuna pubblicità e nessuna cessione di dati a reti esterne.",
+        "Cookie: nessun cookie di profilazione né di pubblicità. Google Analytics (statistiche) si attiva solo se accetti; puoi cambiare scelta da «Preferenze cookie» in fondo alla pagina. Dettagli nell'informativa completa.",
         "Contatti: l'indirizzo info@fatturafacile.eu si usa solo per rispondere a richieste tecniche e amministrative inviate volontariamente."
       ],
       "section3Title": "Sezione C: i tuoi diritti e la normativa",
@@ -239,7 +249,7 @@
       "Svizzera: fattura con polizza di versamento QR-Bill e IVA svizzera",
       "Copia di sicurezza automatica ogni notte (ultime 7), manuale con un clic e ripristino guidato",
       "Versione web per più persone, installabile sul proprio server; app per Windows e per telefono in sviluppo",
-      "Gratuito e open source (licenza MIT), senza pubblicità e senza strumenti di tracciamento"
+      "Gratuito e open source (licenza MIT), senza pubblicità e con le statistiche del sito solo se accetti i cookie"
     ]
   },
   "perche": {
@@ -674,7 +684,7 @@
         },
         {
           "title": "I tuoi dati restano tuoi",
-          "body": "Non raccogliamo dati con strumenti di tracciamento e non vendiamo niente a nessuno. I dati restano sul server dove il programma è installato."
+          "body": "Non vendiamo niente a nessuno e i dati restano sul server dove il programma è installato. Le statistiche del sito (Google Analytics) partono solo se le accetti."
         }
       ]
     },
@@ -810,7 +820,7 @@
         "id": "faq-sdi-it",
         "category": "compliance",
         "question": "Manda la fattura direttamente al Sistema di Interscambio?",
-        "answer": "FatturaFacile crea il file della fattura elettronica (FatturaPA, formato XML). Per l'invio puoi caricarlo sul portale Fatture e Corrispettivi dell'Agenzia delle Entrate, che è gratuito, oppure darlo al tuo commercialista."
+        "answer": "Per ora no. FatturaFacile crea il file della fattura elettronica (FatturaPA, formato XML): lo scarichi e lo carichi sul portale Fatture e Corrispettivi dell'Agenzia delle Entrate, oppure lo dai al tuo commercialista. L'invio diretto è in sviluppo."
       },
       {
         "id": "faq-qrbill-ch",
@@ -941,7 +951,7 @@
       },
       {
         "title": "I dati sono tuoi",
-        "desc": "Non usiamo strumenti di tracciamento e non cediamo dati. Li puoi esportare e salvare quando vuoi."
+        "desc": "Non cediamo dati. Il sito usa le statistiche solo con il tuo consenso. Li puoi esportare e salvare quando vuoi."
       },
       {
         "title": "Italia e Svizzera",
@@ -978,12 +988,12 @@
     },
     "eyebrow": "Protezione dei dati",
     "headingPart1": "Informativa sulla privacy –",
-    "headingPart2": "sito web e applicazione per Windows",
+    "headingPart2": "sito web, versione web e applicazione per Windows",
     "subtitle": "Secondo il Regolamento generale UE sulla protezione dei dati (GDPR 2016/679) e la nuova legge federale svizzera sulla protezione dei dati (nLPD).",
     "calloutTitle": "Il nostro principio:",
     "calloutText": "Per FatturaFacile la riservatezza dei dati contabili non è un obbligo burocratico. È la base su cui è costruito il programma.",
-    "section1Title": "Sezione A: applicazione per Windows (FatturaFacile)",
-    "section1Intro": "Quando si usa l'applicazione per Windows, con il database locale SQLite:",
+    "section1Title": "Sezione A: applicazione per Windows (in sviluppo)",
+    "section1Intro": "L'applicazione per Windows è in sviluppo. Quando sarà disponibile, usandola con il database locale SQLite:",
     "section1Bullets": [
       {
         "title": "Dati contabili",
@@ -1007,14 +1017,62 @@
       },
       {
         "title": "Cookie",
-        "desc": "Nessun cookie di profilazione o di pubblicità di terzi."
+        "desc": "Il sito non usa cookie di profilazione né di pubblicità. Usa Google Analytics per le statistiche, ma solo se accetti (vedi la sezione D). Nel tuo browser salviamo anche la tua scelta sui cookie e il tema chiaro o scuro: non servono a tracciarti."
       },
       {
         "title": "Contatti",
         "desc": "L'indirizzo email di contatto (info@fatturafacile.eu) si usa solo per rispondere a richieste tecniche e amministrative inviate volontariamente."
       }
     ],
-    "section3Title": "Sezione C: i tuoi diritti (GDPR e nLPD)",
+    "section2bTitle": "Sezione C: versione web e demo",
+    "section2bIntro": "Quando usi la versione web di FatturaFacile o la demo online:",
+    "section2bBullets": [
+      {
+        "title": "Dati inseriti",
+        "desc": "Clienti, importi e fatture stanno sul server dove il programma è installato. Se lo installi tu, sono sul tuo server e ne sei titolare. Non li vendiamo e non li cediamo a terzi."
+      },
+      {
+        "title": "Demo",
+        "desc": "Nella demo usa solo dati di esempio: non inserire dati reali di clienti o della tua attività."
+      },
+      {
+        "title": "Copie di sicurezza",
+        "desc": "La versione web fa ogni notte una copia automatica e tiene le ultime 7. Puoi anche farne una a mano, scaricarla e ripristinarla."
+      },
+      {
+        "title": "Statistiche",
+        "desc": "Google Analytics è presente solo su questo sito informativo (fatturafacile.eu), non dentro il programma."
+      }
+    ],
+    "sectionGaTitle": "Sezione D: Google Analytics e cookie",
+    "sectionGaIntro": "Questo sito usa Google Analytics 4 per capire come viene usato. Parte solo se accetti il banner sui cookie. Se rifiuti, o non scegli, Google Analytics non viene caricato e non viene salvato nessun cookie di Google.",
+    "sectionGaBullets": [
+      {
+        "title": "Fornitore",
+        "desc": "Google Ireland Limited (per chi è nello Spazio economico europeo e in Svizzera) e Google LLC (Stati Uniti)."
+      },
+      {
+        "title": "Finalità",
+        "desc": "Solo statistiche: pagine viste, provenienza, tipo di dispositivo, clic su link esterni e download. Non usiamo i dati per la pubblicità né per profilarti. Google Analytics 4 non memorizza gli indirizzi IP."
+      },
+      {
+        "title": "Base giuridica",
+        "desc": "Il tuo consenso (art. 6, par. 1, lett. a GDPR; art. 31 nLPD). La scelta è libera: il sito funziona nello stesso modo anche se rifiuti."
+      },
+      {
+        "title": "Trasferimento fuori da UE e Svizzera",
+        "desc": "I dati possono essere trasferiti negli Stati Uniti, a Google LLC. Google aderisce al Data Privacy Framework UE-USA e Svizzera-USA; in alternativa valgono le clausole contrattuali standard."
+      },
+      {
+        "title": "Conservazione",
+        "desc": "I cookie di Google Analytics (_ga e _ga_…) durano al massimo 2 anni. I dati statistici nell'account Google Analytics si conservano al massimo 14 mesi."
+      },
+      {
+        "title": "Come revocare il consenso",
+        "desc": "Clicca su «Preferenze cookie» in fondo a ogni pagina e scegli «Rifiuta»: Google Analytics si ferma e i cookie _ga vengono cancellati. Puoi anche cancellarli dal browser. La tua scelta è salvata solo nel tuo browser. La revoca non toglie validità a quanto raccolto prima."
+      }
+    ],
+    "section3Title": "Sezione E: i tuoi diritti (GDPR e nLPD)",
     "section3Intro": "Secondo gli articoli 15-22 del Regolamento UE 2016/679 (GDPR) e gli articoli 25-29 della legge federale sulla protezione dei dati (nLPD):",
     "section3Bullets": [
       {
@@ -1026,11 +1084,15 @@
         "desc": "Ogni cliente o bozza di preventivo si può correggere o cancellare subito dall'interfaccia del programma."
       },
       {
+        "title": "Revoca del consenso",
+        "desc": "Puoi revocare in ogni momento il consenso a Google Analytics da «Preferenze cookie», in fondo a ogni pagina."
+      },
+      {
         "title": "Conservazione delle fatture",
         "desc": "La conservazione a norma delle fatture elettroniche XML trasmesse al Sistema di Interscambio (Italia) avviene attraverso i canali ufficiali dell'Agenzia delle Entrate o tramite il proprio commercialista."
       }
     ],
-    "section4Title": "Sezione D: titolare del trattamento e contatti",
+    "section4Title": "Sezione F: titolare del trattamento e contatti",
     "section4Text": "Per domande sulla sicurezza o per proporre miglioramenti alla protezione dei dati:",
     "contactLabel": "Email:"
   },
@@ -1119,7 +1181,7 @@
         },
         {
           "title": "Nessun servizio nascosto",
-          "desc": "Che non ci siano strumenti di tracciamento si può verificare leggendo il codice."
+          "desc": "Il codice è pubblico: puoi controllare tu cosa fa il programma. Sul sito le statistiche partono solo se le accetti."
         }
       ]
     },

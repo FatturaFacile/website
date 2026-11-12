@@ -18,21 +18,99 @@ const measurementId = id?.trim();
 
 {measurementId && (
   <>
-    <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} />
+    {/*
+      Google Analytics 4 con consenso (Consent Mode v2).
+      Di default tutto è "denied" e lo script di Google NON viene scaricato.
+      Viene caricato solo se l'utente ha accettato (scelta salvata in localStorage,
+      chiave "ff_cookie_consent"). Rifiutando o revocando, i cookie _ga* vengono cancellati.
+    */}
     <script is:inline define:vars={{ measurementId, debug }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        // eslint-disable-next-line prefer-rest-params
-        window.dataLayer.push(arguments);
-      }
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', measurementId, {
-        debug_mode: debug,
-      });
+      (function () {
+        const KEY = 'ff_cookie_consent';
+        window.dataLayer = window.dataLayer || [];
+        function push() {
+          // gtag.js richiede un oggetto "arguments", non un array.
+          // eslint-disable-next-line prefer-rest-params
+          window.dataLayer.push(arguments);
+        }
+        let granted = false;
+        let loaded = false;
+
+        // Gli eventi passano solo con il consenso; i comandi "consent" passano sempre.
+        window.gtag = function (command, ...args) {
+          if (command === 'consent' || granted) push(command, ...args);
+        };
+
+        push('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+          wait_for_update: 500,
+        });
+
+        function loadScript() {
+          if (loaded) return;
+          loaded = true;
+          const s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+          document.head.appendChild(s);
+          push('js', new Date());
+          push('config', measurementId, { debug_mode: debug, anonymize_ip: true });
+        }
+
+        function deleteGaCookies() {
+          const names = document.cookie.split(';').map((c) => c.split('=')[0].trim());
+          const host = location.hostname.split('.');
+          const domains = ['', location.hostname];
+          for (let i = 1; i < host.length - 1; i++) domains.push('.' + host.slice(i).join('.'));
+          names.forEach((n) => {
+            if (n === '_ga' || n.startsWith('_ga_') || n === '_gid' || n.startsWith('_gat')) {
+              domains.forEach((d) => {
+                document.cookie =
+                  n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
+              });
+            }
+          });
+        }
+
+        function apply(choice) {
+          if (choice === 'granted') {
+            granted = true;
+            window['ga-disable-' + measurementId] = false;
+            push('consent', 'update', { analytics_storage: 'granted' });
+            loadScript();
+          } else {
+            granted = false;
+            window['ga-disable-' + measurementId] = true;
+            push('consent', 'update', { analytics_storage: 'denied' });
+            deleteGaCookies();
+          }
+        }
+
+        window.ffConsent = {
+          get() {
+            try {
+              const v = localStorage.getItem(KEY);
+              return v === 'granted' || v === 'denied' ? v : null;
+            } catch {
+              return null;
+            }
+          },
+          set(choice) {
+            try {
+              localStorage.setItem(KEY, choice);
+            } catch {
+              // storage non disponibile: la scelta vale solo per questa pagina
+            }
+            apply(choice);
+          },
+        };
+
+        const saved = window.ffConsent.get();
+        if (saved) apply(saved);
+      })();
     </script>
     <script>
       import { setupAnalyticsListeners } from '../utils/analytics';

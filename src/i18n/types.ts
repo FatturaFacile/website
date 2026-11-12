@@ -57,6 +57,16 @@ export interface CommonTranslations {
     copyright: string;
     telegramCommunity: string;
     githubRepo: string;
+    cookiePreferences: string;
+  };
+  cookieBanner: {
+    title: string;
+    text: string;
+    privacyLink: string;
+    accept: string;
+    reject: string;
+    stateGranted: string;
+    stateDenied: string;
   };
   privacyModal: {
     title: string;
@@ -560,6 +570,18 @@ export interface PrivacyTranslations {
   section2Title: string;
   section2Intro: string;
   section2Bullets: {
+    title: string;
+    desc: string;
+  }[];
+  section2bTitle: string;
+  section2bIntro: string;
+  section2bBullets: {
+    title: string;
+    desc: string;
+  }[];
+  sectionGaTitle: string;
+  sectionGaIntro: string;
+  sectionGaBullets: {
     title: string;
     desc: string;
   }[];

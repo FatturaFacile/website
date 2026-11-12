@@ -43,13 +43,23 @@
       "swissMarketDesc": "Schweiz 🇨🇭: erstellt die Rechnung mit dem QR-Einzahlungsschein (QR-Rechnung) und nutzt die Schweizer MWST-Sätze.",
       "copyright": "FatturaFacile. Ein offenes Projekt, ohne Abonnement.",
       "telegramCommunity": "Telegram-Community",
-      "githubRepo": "GitHub-Repository"
+      "githubRepo": "GitHub-Repository",
+      "cookiePreferences": "Cookie-Einstellungen"
+    },
+    "cookieBanner": {
+      "title": "Cookies und Statistik",
+      "text": "Wir nutzen Google Analytics, um zu verstehen, wie die Website verwendet wird. Es startet nur, wenn Sie zustimmen. Wenn Sie ablehnen, funktioniert die Website genauso und es wird nichts von Google geladen.",
+      "privacyLink": "Datenschutzerklärung lesen",
+      "accept": "Zustimmen",
+      "reject": "Ablehnen",
+      "stateGranted": "Aktuelle Wahl: zugestimmt.",
+      "stateDenied": "Aktuelle Wahl: abgelehnt."
     },
     "privacyModal": {
       "title": "Datenschutzerklärung",
       "subtitle": "EU-Datenschutz-Grundverordnung (DSGVO 2016/679) und neues Schweizer Datenschutzgesetz (nDSG)",
       "calloutTitle": "Unser Grundsatz:",
-      "calloutDesc": "Bei FatturaFacile wird die Vertraulichkeit durch die lokale Speicherung gewährleistet: Die Anwendung sendet keine Daten an externe Server oder Dritte.",
+      "calloutDesc": "Die Daten, die Sie im Programm eingeben, gehen nicht an Dritte. Die Website nutzt Google Analytics nur, wenn Sie Cookies zustimmen.",
       "section1Title": "Abschnitt A: Anwendung für Windows (lokale SQLite-Datenbank)",
       "section1Text": "Bei Nutzung der Anwendung für Windows auf Ihrem Computer oder einem USB-Stick:",
       "section1Bullets": [
@@ -61,7 +71,7 @@
       "section2Text": "Beim Besuch dieser Website:",
       "section2Bullets": [
         "Browsing-Daten: Die Website erfasst die üblichen Verbindungsdaten (anonymisierte IP-Adresse, Browsertyp), die nur für die Sicherheit und zur Missbrauchsverhinderung verwendet werden.",
-        "Cookies: keine Profiling-Cookies, keine Werbung und keine Weitergabe von Daten an externe Netzwerke.",
+        "Cookies: keine Profiling- oder Werbe-Cookies. Google Analytics (Statistik) startet nur, wenn Sie zustimmen; Ihre Wahl können Sie über «Cookie-Einstellungen» unten auf der Seite ändern. Details in der vollständigen Datenschutzerklärung.",
         "Kontakt: Die Adresse info@fatturafacile.eu wird nur verwendet, um auf freiwillig gesendete technische und administrative Anfragen zu antworten."
       ],
       "section3Title": "Abschnitt C: Ihre Rechte und das Gesetz",
@@ -239,7 +249,7 @@
       "Schweiz: Rechnung mit QR-Einzahlungsschein und Schweizer MWST",
       "Automatische Sicherung jede Nacht (die letzten 7), manuelle Sicherung mit einem Klick und geführte Wiederherstellung",
       "Webversion für mehrere Personen, auf dem eigenen Server installierbar; Windows- und Handy-App in Entwicklung",
-      "Kostenlos und Open Source (MIT-Lizenz), ohne Werbung und ohne Tracking-Werkzeuge"
+      "Kostenlos und Open Source (MIT-Lizenz), ohne Werbung und mit Website-Statistik nur, wenn Sie Cookies zustimmen"
     ]
   },
   "perche": {
@@ -674,7 +684,7 @@
         },
         {
           "title": "Ihre Daten bleiben Ihre",
-          "body": "Wir sammeln keine Daten mit Tracking-Werkzeugen und verkaufen nichts an niemanden. Die Daten bleiben auf dem Server, auf dem das Programm installiert ist."
+          "body": "Wir verkaufen nichts an niemanden und die Daten bleiben auf dem Server, auf dem das Programm installiert ist. Die Statistik der Website (Google Analytics) startet nur, wenn Sie zustimmen."
         }
       ]
     },
@@ -810,7 +820,7 @@
         "id": "faq-sdi-it",
         "category": "compliance",
         "question": "Sendet es die Rechnung direkt an das italienische Steuersystem (SdI)?",
-        "answer": "FatturaFacile erstellt die Datei der E-Rechnung (FatturaPA, XML-Format). Zum Versenden können Sie sie auf dem kostenlosen Portal Fatture e Corrispettivi der italienischen Steuerbehörde hochladen oder Ihrem Treuhänder geben."
+        "answer": "Noch nicht. FatturaFacile erstellt die Datei der E-Rechnung (FatturaPA, XML-Format): Sie laden sie herunter und auf dem Portal Fatture e Corrispettivi der italienischen Steuerbehörde hoch oder geben sie Ihrem Treuhänder. Der direkte Versand ist in Entwicklung."
       },
       {
         "id": "faq-qrbill-ch",
@@ -941,7 +951,7 @@
       },
       {
         "title": "Ihre Daten gehören Ihnen",
-        "desc": "Wir nutzen keine Tracking-Werkzeuge und geben keine Daten weiter. Sie können sie jederzeit exportieren und sichern."
+        "desc": "Wir geben keine Daten weiter. Die Website nutzt Statistik nur mit Ihrer Einwilligung. Sie können Ihre Daten jederzeit exportieren und sichern."
       },
       {
         "title": "Italien und Schweiz",
@@ -978,12 +988,12 @@
     },
     "eyebrow": "Datenschutz",
     "headingPart1": "Datenschutzerklärung –",
-    "headingPart2": "Website und Anwendung für Windows",
+    "headingPart2": "Website, Webversion und Anwendung für Windows",
     "subtitle": "Nach der EU-Datenschutz-Grundverordnung (DSGVO 2016/679) und dem neuen Schweizer Bundesgesetz über den Datenschutz (nDSG).",
     "calloutTitle": "Unser Grundsatz:",
     "calloutText": "Für FatturaFacile ist die Vertraulichkeit der Buchhaltungsdaten keine bürokratische Pflicht. Sie ist die Grundlage, auf der das Programm gebaut ist.",
-    "section1Title": "Abschnitt A: Anwendung für Windows (FatturaFacile)",
-    "section1Intro": "Bei Nutzung der Anwendung für Windows mit der lokalen SQLite-Datenbank:",
+    "section1Title": "Abschnitt A: Anwendung für Windows (in Entwicklung)",
+    "section1Intro": "Die Anwendung für Windows ist in Entwicklung. Sobald sie verfügbar ist, gilt bei Nutzung mit der lokalen SQLite-Datenbank:",
     "section1Bullets": [
       {
         "title": "Buchhaltungsdaten",
@@ -1007,14 +1017,62 @@
       },
       {
         "title": "Cookies",
-        "desc": "Keine Profiling-Cookies und keine Werbe-Cookies von Dritten."
+        "desc": "Die Website verwendet keine Profiling- oder Werbe-Cookies. Für Statistiken nutzt sie Google Analytics, aber nur, wenn Sie zustimmen (siehe Abschnitt D). In Ihrem Browser speichern wir außerdem Ihre Cookie-Wahl und das helle oder dunkle Design: Sie dienen nicht dazu, Sie zu verfolgen."
       },
       {
         "title": "Kontakt",
         "desc": "Die Kontakt-E-Mail-Adresse (info@fatturafacile.eu) wird nur verwendet, um auf freiwillig gesendete technische und administrative Anfragen zu antworten."
       }
     ],
-    "section3Title": "Abschnitt C: Ihre Rechte (DSGVO und nDSG)",
+    "section2bTitle": "Abschnitt C: Webversion und Demo",
+    "section2bIntro": "Wenn Sie die Webversion von FatturaFacile oder die Online-Demo nutzen:",
+    "section2bBullets": [
+      {
+        "title": "Eingegebene Daten",
+        "desc": "Kunden, Beträge und Rechnungen liegen auf dem Server, auf dem das Programm installiert ist. Wenn Sie es selbst installieren, liegen sie auf Ihrem Server und Sie sind verantwortlich. Wir verkaufen sie nicht und geben sie nicht an Dritte weiter."
+      },
+      {
+        "title": "Demo",
+        "desc": "Verwenden Sie in der Demo nur Beispieldaten: Geben Sie keine echten Kunden- oder Geschäftsdaten ein."
+      },
+      {
+        "title": "Sicherungen",
+        "desc": "Die Webversion erstellt jede Nacht automatisch eine Kopie und behält die letzten 7. Sie können auch von Hand eine erstellen, herunterladen und wiederherstellen."
+      },
+      {
+        "title": "Statistik",
+        "desc": "Google Analytics ist nur auf dieser Informationswebsite (fatturafacile.eu) eingebunden, nicht im Programm."
+      }
+    ],
+    "sectionGaTitle": "Abschnitt D: Google Analytics und Cookies",
+    "sectionGaIntro": "Diese Website nutzt Google Analytics 4, um zu verstehen, wie sie verwendet wird. Es startet nur, wenn Sie dem Cookie-Banner zustimmen. Wenn Sie ablehnen oder nichts wählen, wird Google Analytics nicht geladen und es wird kein Google-Cookie gespeichert.",
+    "sectionGaBullets": [
+      {
+        "title": "Anbieter",
+        "desc": "Google Ireland Limited (für Personen im Europäischen Wirtschaftsraum und in der Schweiz) und Google LLC (USA)."
+      },
+      {
+        "title": "Zweck",
+        "desc": "Nur Statistik: aufgerufene Seiten, Herkunft, Gerätetyp, Klicks auf externe Links und Downloads. Wir verwenden die Daten weder für Werbung noch für Profiling. Google Analytics 4 speichert keine IP-Adressen."
+      },
+      {
+        "title": "Rechtsgrundlage",
+        "desc": "Ihre Einwilligung (Art. 6 Abs. 1 Bst. a DSGVO; Art. 31 nDSG). Die Wahl ist frei: Die Website funktioniert genauso, wenn Sie ablehnen."
+      },
+      {
+        "title": "Übermittlung ausserhalb der EU und der Schweiz",
+        "desc": "Die Daten können in die USA an Google LLC übermittelt werden. Google nimmt am Data Privacy Framework EU-USA und Schweiz-USA teil; ersatzweise gelten die Standardvertragsklauseln."
+      },
+      {
+        "title": "Aufbewahrung",
+        "desc": "Die Cookies von Google Analytics (_ga und _ga_…) gelten höchstens 2 Jahre. Statistikdaten im Google-Analytics-Konto werden höchstens 14 Monate aufbewahrt."
+      },
+      {
+        "title": "So widerrufen Sie die Einwilligung",
+        "desc": "Klicken Sie unten auf jeder Seite auf «Cookie-Einstellungen» und wählen Sie «Ablehnen»: Google Analytics stoppt und die _ga-Cookies werden gelöscht. Sie können sie auch im Browser löschen. Ihre Wahl wird nur in Ihrem Browser gespeichert. Der Widerruf berührt nicht, was vorher erhoben wurde."
+      }
+    ],
+    "section3Title": "Abschnitt E: Ihre Rechte (DSGVO und nDSG)",
     "section3Intro": "Nach den Artikeln 15-22 der Verordnung (EU) 2016/679 (DSGVO) und den Artikeln 25-29 des Bundesgesetzes über den Datenschutz (nDSG):",
     "section3Bullets": [
       {
@@ -1026,11 +1084,15 @@
         "desc": "Jeder Kunde und jeder Offertentwurf kann sofort über die Oberfläche des Programms berichtigt oder gelöscht werden."
       },
       {
+        "title": "Widerruf der Einwilligung",
+        "desc": "Sie können Ihre Einwilligung zu Google Analytics jederzeit über «Cookie-Einstellungen» unten auf jeder Seite widerrufen."
+      },
+      {
         "title": "Aufbewahrung der Rechnungen",
         "desc": "Die ordnungsgemässe Aufbewahrung der an das Sistema di Interscambio (Italien) übermittelten XML-E-Rechnungen erfolgt über die offiziellen Kanäle der Agenzia delle Entrate oder über Ihren eigenen Buchhalter."
       }
     ],
-    "section4Title": "Abschnitt D: Verantwortlicher und Kontakt",
+    "section4Title": "Abschnitt F: Verantwortlicher und Kontakt",
     "section4Text": "Bei Fragen zur Sicherheit oder für Vorschläge zur Verbesserung des Datenschutzes:",
     "contactLabel": "E-Mail:"
   },
@@ -1119,7 +1181,7 @@
         },
         {
           "title": "Kein versteckter Dienst",
-          "desc": "Dass es keine Tracking-Werkzeuge gibt, lässt sich durch Lesen des Codes überprüfen."
+          "desc": "Der Code ist öffentlich: Sie können selbst prüfen, was das Programm tut. Auf der Website startet die Statistik nur, wenn Sie zustimmen."
         }
       ]
     },

@@ -43,13 +43,23 @@
       "swissMarketDesc": "Switzerland 🇨🇭: creates the invoice with the QR payment slip (QR-bill) and uses Swiss VAT rates.",
       "copyright": "FatturaFacile. An open project, no subscriptions.",
       "telegramCommunity": "Telegram Community",
-      "githubRepo": "GitHub Repository"
+      "githubRepo": "GitHub Repository",
+      "cookiePreferences": "Cookie preferences"
+    },
+    "cookieBanner": {
+      "title": "Cookies and statistics",
+      "text": "We use Google Analytics to understand how the site is used. It starts only if you accept. If you refuse, the site works the same and nothing from Google is loaded.",
+      "privacyLink": "Read the privacy notice",
+      "accept": "Accept",
+      "reject": "Reject",
+      "stateGranted": "Current choice: accepted.",
+      "stateDenied": "Current choice: rejected."
     },
     "privacyModal": {
       "title": "Privacy notice",
       "subtitle": "EU General Data Protection Regulation (GDPR 2016/679) and new Swiss Federal Act on Data Protection (nFADP)",
       "calloutTitle": "Our principle:",
-      "calloutDesc": "For FatturaFacile, confidentiality is ensured by local storage: the application sends no data to external servers or to third parties.",
+      "calloutDesc": "The data you enter in the program does not go to third parties. The site uses Google Analytics only if you accept cookies.",
       "section1Title": "Section A: Windows application (local SQLite database)",
       "section1Text": "When you use the Windows application on your computer or a USB drive:",
       "section1Bullets": [
@@ -61,7 +71,7 @@
       "section2Text": "When you visit this website:",
       "section2Bullets": [
         "Browsing data: the site records normal connection data (anonymised IP address, browser type), used only for security and to prevent abuse.",
-        "Cookies: no profiling cookies, no advertising and no data passed to external networks.",
+        "Cookies: no profiling or advertising cookies. Google Analytics (statistics) starts only if you accept; you can change your choice from “Cookie preferences” at the bottom of the page. Details in the full privacy notice.",
         "Contact: the address info@fatturafacile.eu is used only to reply to technical and administrative requests sent voluntarily."
       ],
       "section3Title": "Section C: your rights and the law",
@@ -239,7 +249,7 @@
       "Switzerland: invoice with QR-bill payment slip and Swiss VAT",
       "Automatic backup every night (last 7), manual backup with one click and guided restore",
       "Web version for several people, installable on your own server; Windows and phone apps in development",
-      "Free and open source (MIT licence), no ads and no tracking tools"
+      "Free and open source (MIT licence), no ads, and site statistics only if you accept cookies"
     ]
   },
   "perche": {
@@ -674,7 +684,7 @@
         },
         {
           "title": "Your data stays yours",
-          "body": "We do not collect data with tracking tools and we sell nothing to anyone. Data stays on the server where the program is installed."
+          "body": "We sell nothing to anyone and data stays on the server where the program is installed. Site statistics (Google Analytics) start only if you accept them."
         }
       ]
     },
@@ -810,7 +820,7 @@
         "id": "faq-sdi-it",
         "category": "compliance",
         "question": "Does it send the invoice straight to the Italian tax system (SdI)?",
-        "answer": "FatturaFacile creates the electronic invoice file (FatturaPA, XML format). To send it you can upload it to the free Fatture e Corrispettivi portal of the Italian Revenue Agency, or give it to your accountant."
+        "answer": "Not yet. FatturaFacile creates the electronic invoice file (FatturaPA, XML format): you download it and upload it to the Fatture e Corrispettivi portal of the Italian Revenue Agency, or give it to your accountant. Direct sending is in development."
       },
       {
         "id": "faq-qrbill-ch",
@@ -941,7 +951,7 @@
       },
       {
         "title": "Your data is yours",
-        "desc": "We use no tracking tools and give no data away. You can export and save it whenever you want."
+        "desc": "We give no data away. The site uses statistics only with your consent. You can export and save your data whenever you want."
       },
       {
         "title": "Italy and Switzerland",
@@ -978,12 +988,12 @@
     },
     "eyebrow": "Data protection",
     "headingPart1": "Privacy notice –",
-    "headingPart2": "website and Windows application",
+    "headingPart2": "website, web version and Windows application",
     "subtitle": "Under the EU General Data Protection Regulation (GDPR 2016/679) and the new Swiss Federal Act on Data Protection (nFADP).",
     "calloutTitle": "Our principle:",
     "calloutText": "For FatturaFacile, the confidentiality of accounting data is not a bureaucratic duty. It is the foundation the program is built on.",
-    "section1Title": "Section A: Windows application (FatturaFacile)",
-    "section1Intro": "When using the Windows application, with the local SQLite database:",
+    "section1Title": "Section A: Windows application (in development)",
+    "section1Intro": "The Windows application is in development. When it is available, if you use it with the local SQLite database:",
     "section1Bullets": [
       {
         "title": "Accounting data",
@@ -1007,14 +1017,62 @@
       },
       {
         "title": "Cookies",
-        "desc": "No profiling cookies and no third-party advertising cookies."
+        "desc": "The site uses no profiling or advertising cookies. It uses Google Analytics for statistics, but only if you accept (see section D). We also save your cookie choice and the light or dark theme in your browser: they are not used to track you."
       },
       {
         "title": "Contact",
         "desc": "The contact email address (info@fatturafacile.eu) is used only to reply to technical and administrative requests sent voluntarily."
       }
     ],
-    "section3Title": "Section C: your rights (GDPR and nFADP)",
+    "section2bTitle": "Section C: web version and demo",
+    "section2bIntro": "When you use the web version of FatturaFacile or the online demo:",
+    "section2bBullets": [
+      {
+        "title": "Data you enter",
+        "desc": "Customers, amounts and invoices are on the server where the program is installed. If you install it yourself, they are on your server and you are the controller. We do not sell them or give them to third parties."
+      },
+      {
+        "title": "Demo",
+        "desc": "In the demo, use sample data only: do not enter real customer or business data."
+      },
+      {
+        "title": "Backups",
+        "desc": "The web version makes an automatic copy every night and keeps the last 7. You can also make one by hand, download it and restore it."
+      },
+      {
+        "title": "Statistics",
+        "desc": "Google Analytics is present only on this information site (fatturafacile.eu), not inside the program."
+      }
+    ],
+    "sectionGaTitle": "Section D: Google Analytics and cookies",
+    "sectionGaIntro": "This site uses Google Analytics 4 to understand how it is used. It starts only if you accept the cookie banner. If you refuse, or make no choice, Google Analytics is not loaded and no Google cookie is saved.",
+    "sectionGaBullets": [
+      {
+        "title": "Provider",
+        "desc": "Google Ireland Limited (for people in the European Economic Area and Switzerland) and Google LLC (United States)."
+      },
+      {
+        "title": "Purpose",
+        "desc": "Statistics only: pages viewed, where visitors come from, device type, clicks on external links and downloads. We do not use the data for advertising or to profile you. Google Analytics 4 does not store IP addresses."
+      },
+      {
+        "title": "Legal basis",
+        "desc": "Your consent (art. 6(1)(a) GDPR; art. 31 nFADP). The choice is free: the site works the same if you refuse."
+      },
+      {
+        "title": "Transfer outside the EU and Switzerland",
+        "desc": "Data may be transferred to the United States, to Google LLC. Google takes part in the EU-US and Swiss-US Data Privacy Framework; otherwise the standard contractual clauses apply."
+      },
+      {
+        "title": "Retention",
+        "desc": "Google Analytics cookies (_ga and _ga_…) last at most 2 years. Statistical data in the Google Analytics account is kept for at most 14 months."
+      },
+      {
+        "title": "How to withdraw consent",
+        "desc": "Click “Cookie preferences” at the bottom of every page and choose “Reject”: Google Analytics stops and the _ga cookies are deleted. You can also delete them from your browser. Your choice is saved only in your browser. Withdrawing does not affect what was collected before."
+      }
+    ],
+    "section3Title": "Section E: your rights (GDPR and nFADP)",
     "section3Intro": "Under articles 15-22 of Regulation (EU) 2016/679 (GDPR) and articles 25-29 of the Federal Act on Data Protection (nFADP):",
     "section3Bullets": [
       {
@@ -1026,11 +1084,15 @@
         "desc": "Every customer or draft quote can be corrected or deleted immediately from the program's interface."
       },
       {
+        "title": "Withdrawing consent",
+        "desc": "You can withdraw your consent to Google Analytics at any time from “Cookie preferences” at the bottom of every page."
+      },
+      {
         "title": "Storing invoices",
         "desc": "The legally compliant storage of XML e-invoices sent to the Sistema di Interscambio (Italy) is done through the official channels of the Agenzia delle Entrate or through your own accountant."
       }
     ],
-    "section4Title": "Section D: data controller and contact",
+    "section4Title": "Section F: data controller and contact",
     "section4Text": "For questions about security or to suggest improvements to data protection:",
     "contactLabel": "Email:"
   },
@@ -1119,7 +1181,7 @@
         },
         {
           "title": "No hidden service",
-          "desc": "That there are no tracking tools can be checked by reading the code."
+          "desc": "The code is public: you can check what the program does. On the site, statistics start only if you accept them."
         }
       ]
     },

@@ -43,13 +43,23 @@
       "swissMarketDesc": "Suisse 🇨🇭 : crée la facture avec le bulletin de versement QR (QR-facture) et utilise les taux de TVA suisses.",
       "copyright": "FatturaFacile. Un projet ouvert, sans abonnement.",
       "telegramCommunity": "Communauté Telegram",
-      "githubRepo": "Dépôt GitHub"
+      "githubRepo": "Dépôt GitHub",
+      "cookiePreferences": "Préférences cookies"
+    },
+    "cookieBanner": {
+      "title": "Cookies et statistiques",
+      "text": "Nous utilisons Google Analytics pour comprendre comment le site est utilisé. Il ne démarre que si vous acceptez. Si vous refusez, le site fonctionne de la même façon et rien de Google n'est chargé.",
+      "privacyLink": "Lire l'information sur la vie privée",
+      "accept": "Accepter",
+      "reject": "Refuser",
+      "stateGranted": "Choix actuel : accepté.",
+      "stateDenied": "Choix actuel : refusé."
     },
     "privacyModal": {
       "title": "Notice de confidentialité",
       "subtitle": "Règlement général de l'UE sur la protection des données (RGPD 2016/679) et nouvelle loi suisse sur la protection des données (nLPD)",
       "calloutTitle": "Notre principe :",
-      "calloutDesc": "Pour FatturaFacile, la confidentialité est assurée par l'enregistrement local : l'application n'envoie aucune donnée à des serveurs externes ni à des tiers.",
+      "calloutDesc": "Les données que vous saisissez dans le logiciel ne vont pas à des tiers. Le site utilise Google Analytics seulement si vous acceptez les cookies.",
       "section1Title": "Section A : application pour Windows (base de données locale SQLite)",
       "section1Text": "Lorsque vous utilisez l'application pour Windows sur votre ordinateur ou sur une clé USB :",
       "section1Bullets": [
@@ -61,7 +71,7 @@
       "section2Text": "Lorsque vous visitez ce site :",
       "section2Bullets": [
         "Données de navigation : le site enregistre les données de connexion habituelles (adresse IP anonymisée, type de navigateur), utilisées uniquement pour la sécurité et pour prévenir les abus.",
-        "Cookies : aucun cookie de profilage, aucune publicité et aucune cession de données à des réseaux externes.",
+        "Cookies : aucun cookie de profilage ni de publicité. Google Analytics (statistiques) ne démarre que si vous acceptez ; vous pouvez changer votre choix depuis « Préférences cookies » en bas de page. Détails dans l'information complète.",
         "Contact : l'adresse info@fatturafacile.eu sert uniquement à répondre aux demandes techniques et administratives envoyées volontairement."
       ],
       "section3Title": "Section C : vos droits et la loi",
@@ -239,7 +249,7 @@
       "Suisse : facture avec bulletin de versement QR-facture et TVA suisse",
       "Sauvegarde automatique chaque nuit (7 dernières), sauvegarde manuelle d'un clic et restauration guidée",
       "Version web pour plusieurs personnes, installable sur votre propre serveur ; applications Windows et téléphone en développement",
-      "Gratuit et open source (licence MIT), sans publicité et sans outils de suivi"
+      "Gratuit et open source (licence MIT), sans publicité, avec des statistiques du site seulement si vous acceptez les cookies"
     ]
   },
   "perche": {
@@ -674,7 +684,7 @@
         },
         {
           "title": "Vos données restent à vous",
-          "body": "Nous ne collectons pas de données avec des outils de suivi et nous ne vendons rien à personne. Les données restent sur le serveur où le logiciel est installé."
+          "body": "Nous ne vendons rien à personne et les données restent sur le serveur où le logiciel est installé. Les statistiques du site (Google Analytics) ne démarrent que si vous les acceptez."
         }
       ]
     },
@@ -810,7 +820,7 @@
         "id": "faq-sdi-it",
         "category": "compliance",
         "question": "Envoie-t-il la facture directement au système fiscal italien (SdI) ?",
-        "answer": "FatturaFacile crée le fichier de la facture électronique (FatturaPA, format XML). Pour l'envoyer, vous pouvez le déposer sur le portail gratuit Fatture e Corrispettivi de l'Agenzia delle Entrate, ou le remettre à votre comptable."
+        "answer": "Pas pour l'instant. FatturaFacile crée le fichier de la facture électronique (FatturaPA, format XML) : vous le téléchargez et le déposez sur le portail Fatture e Corrispettivi de l'Agenzia delle Entrate, ou vous le remettez à votre comptable. L'envoi direct est en développement."
       },
       {
         "id": "faq-qrbill-ch",
@@ -941,7 +951,7 @@
       },
       {
         "title": "Vos données sont à vous",
-        "desc": "Nous n'utilisons pas d'outils de suivi et ne cédons aucune donnée. Vous pouvez les exporter et les sauvegarder quand vous voulez."
+        "desc": "Nous ne cédons aucune donnée. Le site n'utilise les statistiques qu'avec votre consentement. Vous pouvez les exporter et les sauvegarder quand vous voulez."
       },
       {
         "title": "Italie et Suisse",
@@ -978,12 +988,12 @@
     },
     "eyebrow": "Protection des données",
     "headingPart1": "Notice de confidentialité –",
-    "headingPart2": "site web et application pour Windows",
+    "headingPart2": "site web, version web et application pour Windows",
     "subtitle": "Selon le Règlement général de l'UE sur la protection des données (RGPD 2016/679) et la nouvelle loi fédérale suisse sur la protection des données (nLPD).",
     "calloutTitle": "Notre principe :",
     "calloutText": "Pour FatturaFacile, la confidentialité des données comptables n'est pas une obligation bureaucratique. C'est la base sur laquelle le logiciel est construit.",
-    "section1Title": "Section A : application pour Windows (FatturaFacile)",
-    "section1Intro": "Lorsque l'on utilise l'application pour Windows, avec la base de données locale SQLite :",
+    "section1Title": "Section A : application pour Windows (en développement)",
+    "section1Intro": "L'application pour Windows est en développement. Lorsqu'elle sera disponible, si vous l'utilisez avec la base de données locale SQLite :",
     "section1Bullets": [
       {
         "title": "Données comptables",
@@ -1007,14 +1017,62 @@
       },
       {
         "title": "Cookies",
-        "desc": "Aucun cookie de profilage et aucun cookie publicitaire de tiers."
+        "desc": "Le site n'utilise aucun cookie de profilage ni de publicité. Il utilise Google Analytics pour les statistiques, mais seulement si vous acceptez (voir la section D). Nous enregistrons aussi dans votre navigateur votre choix sur les cookies et le thème clair ou sombre : ils ne servent pas à vous suivre."
       },
       {
         "title": "Contact",
         "desc": "L'adresse e-mail de contact (info@fatturafacile.eu) sert uniquement à répondre aux demandes techniques et administratives envoyées volontairement."
       }
     ],
-    "section3Title": "Section C : vos droits (RGPD et nLPD)",
+    "section2bTitle": "Section C : version web et démo",
+    "section2bIntro": "Lorsque vous utilisez la version web de FatturaFacile ou la démo en ligne :",
+    "section2bBullets": [
+      {
+        "title": "Données saisies",
+        "desc": "Les clients, les montants et les factures se trouvent sur le serveur où le logiciel est installé. Si vous l'installez vous-même, ils sont sur votre serveur et vous en êtes le responsable. Nous ne les vendons pas et ne les cédons pas à des tiers."
+      },
+      {
+        "title": "Démo",
+        "desc": "Dans la démo, utilisez seulement des données d'exemple : ne saisissez pas de données réelles de clients ou de votre activité."
+      },
+      {
+        "title": "Sauvegardes",
+        "desc": "La version web fait chaque nuit une copie automatique et garde les 7 dernières. Vous pouvez aussi en faire une à la main, la télécharger et la restaurer."
+      },
+      {
+        "title": "Statistiques",
+        "desc": "Google Analytics est présent uniquement sur ce site d'information (fatturafacile.eu), pas dans le logiciel."
+      }
+    ],
+    "sectionGaTitle": "Section D : Google Analytics et cookies",
+    "sectionGaIntro": "Ce site utilise Google Analytics 4 pour comprendre comment il est utilisé. Il ne démarre que si vous acceptez le bandeau cookies. Si vous refusez, ou ne choisissez pas, Google Analytics n'est pas chargé et aucun cookie Google n'est enregistré.",
+    "sectionGaBullets": [
+      {
+        "title": "Fournisseur",
+        "desc": "Google Ireland Limited (pour les personnes dans l'Espace économique européen et en Suisse) et Google LLC (États-Unis)."
+      },
+      {
+        "title": "Finalité",
+        "desc": "Statistiques uniquement : pages vues, provenance, type d'appareil, clics sur des liens externes et téléchargements. Nous n'utilisons pas les données pour la publicité ni pour vous profiler. Google Analytics 4 ne stocke pas les adresses IP."
+      },
+      {
+        "title": "Base juridique",
+        "desc": "Votre consentement (art. 6, par. 1, point a RGPD ; art. 31 nLPD). Le choix est libre : le site fonctionne de la même façon si vous refusez."
+      },
+      {
+        "title": "Transfert hors UE et Suisse",
+        "desc": "Les données peuvent être transférées aux États-Unis, à Google LLC. Google adhère au Data Privacy Framework UE-États-Unis et Suisse-États-Unis ; à défaut, les clauses contractuelles types s'appliquent."
+      },
+      {
+        "title": "Conservation",
+        "desc": "Les cookies de Google Analytics (_ga et _ga_…) durent au maximum 2 ans. Les données statistiques du compte Google Analytics sont conservées au maximum 14 mois."
+      },
+      {
+        "title": "Comment retirer son consentement",
+        "desc": "Cliquez sur « Préférences cookies » en bas de chaque page et choisissez « Refuser » : Google Analytics s'arrête et les cookies _ga sont supprimés. Vous pouvez aussi les supprimer depuis votre navigateur. Votre choix est enregistré uniquement dans votre navigateur. Le retrait ne remet pas en cause ce qui a été collecté avant."
+      }
+    ],
+    "section3Title": "Section E : vos droits (RGPD et nLPD)",
     "section3Intro": "Selon les articles 15 à 22 du Règlement UE 2016/679 (RGPD) et les articles 25 à 29 de la loi fédérale sur la protection des données (nLPD) :",
     "section3Bullets": [
       {
@@ -1026,11 +1084,15 @@
         "desc": "Chaque client ou brouillon de devis peut être corrigé ou supprimé immédiatement depuis l'interface du logiciel."
       },
       {
+        "title": "Retrait du consentement",
+        "desc": "Vous pouvez retirer à tout moment votre consentement à Google Analytics depuis « Préférences cookies », en bas de chaque page."
+      },
+      {
         "title": "Conservation des factures",
         "desc": "La conservation conforme des factures électroniques XML transmises au Sistema di Interscambio (Italie) se fait par les canaux officiels de l'Agenzia delle Entrate ou par votre comptable."
       }
     ],
-    "section4Title": "Section D : responsable du traitement et contact",
+    "section4Title": "Section F : responsable du traitement et contact",
     "section4Text": "Pour toute question sur la sécurité ou pour proposer des améliorations de la protection des données :",
     "contactLabel": "E-mail :"
   },
@@ -1119,7 +1181,7 @@
         },
         {
           "title": "Aucun service caché",
-          "desc": "L'absence d'outils de suivi peut se vérifier en lisant le code."
+          "desc": "Le code est public : vous pouvez vérifier ce que fait le logiciel. Sur le site, les statistiques ne démarrent que si vous les acceptez."
         }
       ]
     },
