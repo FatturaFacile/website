@@ -591,6 +591,8 @@ export interface PrivacyTranslations {
     title: string;
     desc: string;
   }[];
+  controllerTitle: string;
+  controllerText: string;
   section4Title: string;
   section4Text: string;
   contactLabel: string;

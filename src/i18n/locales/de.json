@@ -992,6 +992,8 @@
     "subtitle": "Nach der EU-Datenschutz-Grundverordnung (DSGVO 2016/679) und dem neuen Schweizer Bundesgesetz über den Datenschutz (nDSG).",
     "calloutTitle": "Unser Grundsatz:",
     "calloutText": "Für FatturaFacile ist die Vertraulichkeit der Buchhaltungsdaten keine bürokratische Pflicht. Sie ist die Grundlage, auf der das Programm gebaut ist.",
+    "controllerTitle": "Verantwortlicher",
+    "controllerText": "Verantwortlicher für die über diese Website erhobenen personenbezogenen Daten ist Davide Nava.",
     "section1Title": "Abschnitt A: Anwendung für Windows (in Entwicklung)",
     "section1Intro": "Die Anwendung für Windows ist in Entwicklung. Sobald sie verfügbar ist, gilt bei Nutzung mit der lokalen SQLite-Datenbank:",
     "section1Bullets": [
@@ -1092,8 +1094,8 @@
         "desc": "Die ordnungsgemässe Aufbewahrung der an das Sistema di Interscambio (Italien) übermittelten XML-E-Rechnungen erfolgt über die offiziellen Kanäle der Agenzia delle Entrate oder über Ihren eigenen Buchhalter."
       }
     ],
-    "section4Title": "Abschnitt F: Verantwortlicher und Kontakt",
-    "section4Text": "Bei Fragen zur Sicherheit oder für Vorschläge zur Verbesserung des Datenschutzes:",
+    "section4Title": "Abschnitt F: Kontakt und Ausübung Ihrer Rechte",
+    "section4Text": "Um Ihre Rechte auszuüben (Abschnitt E) oder bei Fragen zu Datenschutz und Sicherheit, schreiben Sie an den Verantwortlichen, Davide Nava:",
     "contactLabel": "E-Mail:"
   },
   "community": {

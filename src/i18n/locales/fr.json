@@ -992,6 +992,8 @@
     "subtitle": "Selon le Règlement général de l'UE sur la protection des données (RGPD 2016/679) et la nouvelle loi fédérale suisse sur la protection des données (nLPD).",
     "calloutTitle": "Notre principe :",
     "calloutText": "Pour FatturaFacile, la confidentialité des données comptables n'est pas une obligation bureaucratique. C'est la base sur laquelle le logiciel est construit.",
+    "controllerTitle": "Responsable du traitement",
+    "controllerText": "Le responsable du traitement des données personnelles collectées par ce site est Davide Nava.",
     "section1Title": "Section A : application pour Windows (en développement)",
     "section1Intro": "L'application pour Windows est en développement. Lorsqu'elle sera disponible, si vous l'utilisez avec la base de données locale SQLite :",
     "section1Bullets": [
@@ -1092,8 +1094,8 @@
         "desc": "La conservation conforme des factures électroniques XML transmises au Sistema di Interscambio (Italie) se fait par les canaux officiels de l'Agenzia delle Entrate ou par votre comptable."
       }
     ],
-    "section4Title": "Section F : responsable du traitement et contact",
-    "section4Text": "Pour toute question sur la sécurité ou pour proposer des améliorations de la protection des données :",
+    "section4Title": "Section F : contact et exercice de vos droits",
+    "section4Text": "Pour exercer vos droits (section E), ou pour toute question sur la confidentialité ou la sécurité, écrivez au responsable du traitement, Davide Nava :",
     "contactLabel": "E-mail :"
   },
   "community": {

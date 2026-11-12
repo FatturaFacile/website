@@ -992,6 +992,8 @@
     "subtitle": "Secondo il Regolamento generale UE sulla protezione dei dati (GDPR 2016/679) e la nuova legge federale svizzera sulla protezione dei dati (nLPD).",
     "calloutTitle": "Il nostro principio:",
     "calloutText": "Per FatturaFacile la riservatezza dei dati contabili non è un obbligo burocratico. È la base su cui è costruito il programma.",
+    "controllerTitle": "Titolare del trattamento",
+    "controllerText": "Il titolare del trattamento dei dati personali raccolti da questo sito è Davide Nava.",
     "section1Title": "Sezione A: applicazione per Windows (in sviluppo)",
     "section1Intro": "L'applicazione per Windows è in sviluppo. Quando sarà disponibile, usandola con il database locale SQLite:",
     "section1Bullets": [
@@ -1092,8 +1094,8 @@
         "desc": "La conservazione a norma delle fatture elettroniche XML trasmesse al Sistema di Interscambio (Italia) avviene attraverso i canali ufficiali dell'Agenzia delle Entrate o tramite il proprio commercialista."
       }
     ],
-    "section4Title": "Sezione F: titolare del trattamento e contatti",
-    "section4Text": "Per domande sulla sicurezza o per proporre miglioramenti alla protezione dei dati:",
+    "section4Title": "Sezione F: contatti e come esercitare i tuoi diritti",
+    "section4Text": "Per esercitare i tuoi diritti (sezione E), per domande sulla privacy o sulla sicurezza, scrivi al titolare del trattamento, Davide Nava:",
     "contactLabel": "Email:"
   },
   "community": {

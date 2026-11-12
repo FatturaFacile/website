@@ -992,6 +992,8 @@
     "subtitle": "Under the EU General Data Protection Regulation (GDPR 2016/679) and the new Swiss Federal Act on Data Protection (nFADP).",
     "calloutTitle": "Our principle:",
     "calloutText": "For FatturaFacile, the confidentiality of accounting data is not a bureaucratic duty. It is the foundation the program is built on.",
+    "controllerTitle": "Data controller",
+    "controllerText": "The data controller for the personal data collected by this site is Davide Nava.",
     "section1Title": "Section A: Windows application (in development)",
     "section1Intro": "The Windows application is in development. When it is available, if you use it with the local SQLite database:",
     "section1Bullets": [
@@ -1092,8 +1094,8 @@
         "desc": "The legally compliant storage of XML e-invoices sent to the Sistema di Interscambio (Italy) is done through the official channels of the Agenzia delle Entrate or through your own accountant."
       }
     ],
-    "section4Title": "Section F: data controller and contact",
-    "section4Text": "For questions about security or to suggest improvements to data protection:",
+    "section4Title": "Section F: contact and how to exercise your rights",
+    "section4Text": "To exercise your rights (section E), or for questions about privacy or security, write to the data controller, Davide Nava:",
     "contactLabel": "Email:"
   },
   "community": {
