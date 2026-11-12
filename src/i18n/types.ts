@@ -87,7 +87,8 @@ export type TeamDomainKey =
   | 'italian_compliance'
   | 'web_frontend'
   | 'docs_translation'
-  | 'community_advocacy';
+  | 'community_advocacy'
+  | 'mobile';
 
 export type SchoolTypeKey = 'Technical' | 'Commercial' | 'Vocational' | 'University';
 
@@ -181,6 +182,7 @@ export interface HomeTranslations {
     compareCta: string;
     modulesCta: string;
   };
+  schemaFeatures: string[];
   comingSoon: {
     badge: string;
     heading: string;
