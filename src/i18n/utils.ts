@@ -3,6 +3,7 @@ import { en } from './locales/en';
 import { fr } from './locales/fr';
 import { de } from './locales/de';
 import type { Locale, SiteTranslations } from './types';
+import { findRouteKey, ROUTE_SLUGS } from './routes';
 
 export const locales: Record<Locale, SiteTranslations> = { it, en, fr, de };
 export const defaultLocale: Locale = 'it';
@@ -22,6 +23,10 @@ export function getLocalizedPath(pathname: string, targetLang: Locale | string):
   const segments = pathname.split('/').filter(Boolean);
   if (segments.length > 0 && segments[0] in locales) {
     segments.shift();
+  }
+  if (segments.length > 0) {
+    const key = findRouteKey(segments[0]);
+    if (key) segments[0] = ROUTE_SLUGS[key][validLang];
   }
   const cleanPath = segments.join('/');
   if (validLang === defaultLocale) {
