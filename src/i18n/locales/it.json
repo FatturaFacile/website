@@ -1,20 +1,20 @@
 {
   "common": {
     "siteName": "FatturaFacile",
-    "tagline": "ERP & Fatturazione Open Source • Svizzera QR-Bill & Italia SdI • Offline-first",
+    "tagline": "Preventivi e fatture per artigiani e piccole imprese • Italia e Svizzera • Gratuito e open source",
     "nav": {
       "product": "Prodotto",
-      "whyUs": "Perché Noi",
-      "featuresModules": "Funzionalità & Moduli",
-      "offlineVsCloud": "Offline vs Cloud",
-      "communitySocial": "Community & Sociale",
-      "requestModulesFree": "Richiedi Moduli (Gratis)",
-      "contribute": "Contribuisci",
+      "whyUs": "Perché sceglierlo",
+      "featuresModules": "Funzioni",
+      "offlineVsCloud": "Web e desktop",
+      "communitySocial": "Community",
+      "requestModulesFree": "Chiedi una funzione",
+      "contribute": "Collabora",
       "schoolsSocial": "Scuole & Sociale",
       "sponsors": "Sponsor & Sostegno",
-      "networkSupport": "Rete & Assistenza",
-      "localSupport": "Supporto Locale (IT/CH)",
-      "faq": "Domande Frequenti",
+      "networkSupport": "Assistenza",
+      "localSupport": "Chi ti può aiutare (Italia e Svizzera)",
+      "faq": "Domande frequenti",
       "about": "Chi Siamo",
       "story": "La Nostra Storia",
       "team": "Team & Contributori",
@@ -34,14 +34,14 @@
       "tryDemo": "Prova la demo"
     },
     "footer": {
-      "description": "Il sistema di fatturazione leggero e indipendente, progettato specificamente per artigiani, micro-imprese e liberi professionisti in Italia e Svizzera. Architettura con database SQLite locale e opzione cloud auto-ospitata.",
+      "description": "Programma gratuito e open source per fare preventivi e fatture. Pensato per artigiani, piccole imprese e liberi professionisti in Italia e Svizzera.",
       "emailLabel": "Contatto Email:",
       "productColTitle": "Prodotto",
       "legalColTitle": "Privacy & Normativa",
       "marketsColTitle": "Copertura Nazionale",
-      "italyMarketDesc": "Italia 🇮🇹: Fatturazione elettronica SdI (FatturaPA, B2B, B2C), conformità AgID, split payment, ritenute d'acconto, regimi forfettario e ordinario su tutto il territorio nazionale.",
-      "swissMarketDesc": "Svizzera 🇨🇭: Standard QR-Bill SIX, piena conformità revLPD, gestione plurilingue (IT/DE/FR/EN) e rendicontazione aliquote IVA ESTV per tutti i 26 cantoni.",
-      "copyright": "FatturaFacile. Progetto aperto e senza costi di abbonamento.",
+      "italyMarketDesc": "Italia 🇮🇹: crea la fattura elettronica (FatturaPA) da mandare al Sistema di Interscambio.",
+      "swissMarketDesc": "Svizzera 🇨🇭: crea la fattura con la polizza di versamento QR (QR-Bill) e usa le aliquote IVA svizzere.",
+      "copyright": "FatturaFacile. Progetto aperto, senza abbonamenti.",
       "telegramCommunity": "Gruppo Telegram",
       "githubRepo": "Repository GitHub"
     },
@@ -71,294 +71,314 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Suite ERP e Fatturazione Open Source (MIT) per Svizzera QR-Bill e Italia SdI FatturaPA | Offline-first",
-      "description": "FatturaFacile è la suite ERP e software di fatturazione Open Source (licenza MIT) e Offline-first per Svizzera QR-Bill (SIX) e Italia SdI FatturaPA (XML). Preventivi, contabilità e magazzino su SQLite locale o Docker self-hosted.",
-      "keywords": "fatturafacile, erp open source, fatturazione open source mit, svizzera qr-bill six, italia sdi fatturapa xml, gestionale offline-first sqlite, software fatturazione svizzera italia, self-hosted docker erp"
+      "title": "FatturaFacile – Preventivi e fatture gratis per artigiani e PMI (Italia e Svizzera)",
+      "description": "Programma gratuito e open source per fare preventivi e fatture. Fattura elettronica per l'Italia, QR-Bill per la Svizzera. Provalo online, senza registrazione.",
+      "keywords": "programma fatturazione gratuito, fattura elettronica, preventivi e fatture, qr-bill svizzera, software fatture artigiani, gestionale open source"
     },
     "hero": {
-      "badgeGeo": "Open Source • Licenza MIT • Offline-first & Self-Hosted",
-      "badgePrivacy": "Svizzera QR-Bill (SIX) • Italia SdI (FatturaPA)",
-      "titlePart1": "Suite ERP e Fatturazione Open Source",
-      "titlePart2": "per Svizzera (QR-Bill) e Italia (SdI FatturaPA).",
-      "subtitle": "FatturaFacile è la suite ERP e gestionale di fatturazione Open Source (MIT) e Offline-first con copertura nazionale per artigiani, professionisti e PMI in tutta la Svizzera (QR-Bill SIX) e in tutta l'Italia (SdI FatturaPA XML): preventivi, magazzino e contabilità su SQLite locale o server Docker, senza abbonamenti.",
+      "badgeGeo": "Gratuito • Open source • Senza abbonamento",
+      "badgePrivacy": "Fattura elettronica (Italia) • QR-Bill (Svizzera)",
+      "titlePart1": "Preventivi e fatture",
+      "titlePart2": "per artigiani e piccole imprese.",
+      "subtitle": "Fai il preventivo dal cliente e trasformalo in fattura con un clic. In Italia ottieni la fattura elettronica, in Svizzera la fattura con QR-Bill. È gratuito: lo provi online o lo installi sul tuo server.",
       "ctaPrimary": "Prova la demo",
-      "ctaSecondary": "Codice su GitHub",
-      "ctaCommunity": "Community Telegram"
+      "ctaSecondary": "Vedi il codice su GitHub",
+      "ctaCommunity": "Chiedi nel gruppo Telegram"
     },
     "pillars": [
       {
-        "title": "Gratuito e aperto",
-        "desc": "Licenza MIT, nessun abbonamento"
+        "title": "Gratis, per sempre",
+        "desc": "Nessun abbonamento né costi nascosti"
       },
       {
         "title": "Italia e Svizzera",
-        "desc": "FatturaPA (SDI) e QR-Bill"
+        "desc": "Fattura elettronica e QR-Bill"
       },
       {
-        "title": "Gestionale completo",
-        "desc": "Dal preventivo al magazzino"
+        "title": "Dal preventivo al magazzino",
+        "desc": "Parti dalle fatture, aggiungi il resto quando serve"
       },
       {
-        "title": "I tuoi dati",
-        "desc": "Sul tuo server, nessun lock-in"
+        "title": "I dati sono tuoi",
+        "desc": "Li tieni sul tuo server e li puoi salvare quando vuoi"
       }
     ],
     "philosophy": {
-      "badge": "La filosofia di FatturaFacile",
-      "heading": "Non un ERP complicato da 500 bottoni, ma il tuo strumento quotidiano",
-      "lead": "Idraulici, elettricisti, installatori, giardinieri e liberi professionisti emettono in media 10-20 documenti al mese. Non hanno bisogno di gestire una supply chain complessa: hanno bisogno di farsi pagare puntuali.",
+      "badge": "Come funziona",
+      "heading": "Pochi passi, niente di complicato",
+      "lead": "Chi lavora sul campo emette poche fatture al mese e vuole farsi pagare in fretta. FatturaFacile fa questo, senza cento menu da imparare.",
       "features": [
         {
-          "title": "Preventivo in 1 minuto, fattura in 1 clic",
-          "desc": "Compila il preventivo mentre sei ancora dal cliente. Quando viene approvato, lo converti in fattura con un clic e la numerazione è automatica."
+          "title": "Dal preventivo alla fattura",
+          "desc": "Scrivi il preventivo con manodopera e materiali. Quando il cliente accetta, lo trasformi in fattura con un clic. Il numero della fattura è automatico."
         },
         {
           "title": "Italia 🇮🇹 e Svizzera 🇨🇭",
-          "desc": "Fattura elettronica FatturaPA per il Sistema di Interscambio (SDI) italiano e QR-Bill svizzera conforme allo standard SIX, con le aliquote IVA dei due paesi."
+          "desc": "In Italia crea il file della fattura elettronica (FatturaPA). In Svizzera mette il codice QR sulla fattura, come richiede la banca. Ogni paese ha la sua IVA."
         },
         {
-          "title": "Moduli quando servono",
-          "desc": "Parti da preventivi e fatture e attiva solo quello che ti serve: magazzino, cantieri, interventi, cassa, noleggi, abbonamenti, tesoreria e contabilità."
+          "title": "Il resto, solo se ti serve",
+          "desc": "Puoi aggiungere magazzino, interventi, cassa, abbonamenti e contabilità. Se non ti servono, non li vedi."
         }
       ],
-      "more": "Approfondisci la nostra filosofia"
+      "more": "Perché sceglierlo"
     },
     "platforms": {
-      "badge": "Piattaforme",
-      "heading": "Un gestionale, tre modi di usarlo",
-      "lead": "La versione web è già disponibile e la puoi provare nella demo. Desktop e mobile sono in sviluppo, con lo stesso codice aperto su GitHub.",
+      "badge": "Dove lo usi",
+      "heading": "Oggi sul web, presto anche sul computer e sul telefono",
+      "lead": "La versione web è pronta: la provi subito nella demo. Le app per Windows e per telefono sono in lavorazione.",
       "available": "Disponibile",
       "inDevelopment": "In sviluppo",
       "items": [
         {
           "name": "Web",
-          "stack": "Angular + API Laravel",
-          "desc": "Il gestionale completo nel browser, multi-utente. Lo usi nella demo o lo installi sul tuo server con Docker."
+          "stack": "Dal browser",
+          "desc": "Il programma completo, per più persone insieme. Lo provi nella demo o lo installi sul tuo server."
         },
         {
-          "name": "Desktop Windows",
-          "stack": ".NET (WPF) + SQLite",
-          "desc": "App nativa per lavorare anche offline, con i dati salvati solo sul tuo computer."
+          "name": "Windows",
+          "stack": "App per il computer",
+          "desc": "Per lavorare anche senza internet, con i dati salvati solo sul tuo computer."
         },
         {
-          "name": "Mobile",
-          "stack": "Flutter (iOS e Android)",
-          "desc": "Il gestionale in tasca: preventivi rapidi, foto delle ricevute e timbrature dal cantiere."
+          "name": "Telefono",
+          "stack": "iPhone e Android",
+          "desc": "Preventivi veloci, foto delle ricevute e orari di lavoro dal cantiere."
         }
       ],
-      "compareCta": "Confronta le versioni",
-      "modulesCta": "Esplora i moduli"
+      "compareCta": "Confronta web e desktop",
+      "modulesCta": "Guarda le funzioni"
     },
     "comingSoon": {
       "badge": "Coming Soon",
-      "heading": "In arrivo nelle prossime release",
-      "lead": "Ci stiamo lavorando adesso: ogni voce ha una issue pubblica su GitHub, dove puoi seguirla o dare una mano.",
+      "heading": "Cosa arriva presto",
+      "lead": "Ci stiamo lavorando. Ogni voce ha una pagina pubblica su GitHub dove puoi seguirla.",
       "items": [
         {
-          "title": "Registrazione con verifica email",
-          "desc": "Crea il tuo account in autonomia, con conferma dell'indirizzo email."
+          "title": "Registrazione con conferma email",
+          "desc": "Crei il tuo account da solo e confermi l'indirizzo email."
         },
         {
-          "title": "Recupero password",
-          "desc": "Reimposta la password da solo, con un link sicuro via email."
+          "title": "Password dimenticata",
+          "desc": "Ne scegli una nuova con un link che ricevi per email."
         },
         {
-          "title": "Report giornaliero via email",
-          "desc": "Ogni mattina il riepilogo di incassi, scadenze e documenti del giorno prima."
+          "title": "Riepilogo giornaliero via email",
+          "desc": "Ogni mattina ricevi incassi, scadenze e documenti del giorno prima."
         },
         {
-          "title": "Registro accessi e sicurezza",
-          "desc": "Chi ha fatto cosa e quando: accessi, modifiche e tentativi falliti."
+          "title": "Registro degli accessi",
+          "desc": "Vedi chi ha fatto cosa e quando, e i tentativi di accesso falliti."
         },
         {
-          "title": "App desktop per Windows",
-          "desc": "Prima release dell'app offline, con i dati in locale."
+          "title": "App per Windows",
+          "desc": "La prima versione, che funziona anche senza internet."
         },
         {
-          "title": "Timbrature da mobile",
-          "desc": "Entrata e uscita dal telefono, collegate a cantieri e interventi."
+          "title": "Orari di lavoro dal telefono",
+          "desc": "Segni entrata e uscita e li colleghi a cantieri e interventi."
         }
       ],
-      "cta": "Segui la roadmap su GitHub"
+      "cta": "Segui i lavori su GitHub"
     },
     "territory": {
       "local": {
-        "badge": "Assistenza sul territorio",
-        "title": "Rete di supporto e consulenza in tutta la Svizzera e in tutta l'Italia",
-        "desc": "Ti serve aiuto per installarlo sul tuo server, impostare i backup o lavorare con il tuo commercialista o fiduciario? Trova tecnici e fiduciarie vicino a te.",
-        "cta": "Consulta la directory partner o candidati"
+        "badge": "Assistenza",
+        "title": "Qualcuno vicino a te che ti aiuta",
+        "desc": "Ti serve una mano per installarlo, fare i backup o parlare col commercialista? Trova tecnici e fiduciarie in Italia e in Svizzera.",
+        "cta": "Vedi chi può aiutarti"
       },
       "schools": {
-        "badge": "Didattica e impatto sociale",
-        "title": "Software libero per scuole e nuove partite IVA",
-        "desc": "Un codice sorgente reale (Laravel, Angular, .NET e Flutter) per insegnare architettura del software, laboratori di ragioneria a costo zero e meno barriere digitali per chi apre una nuova attività.",
+        "badge": "Scuole e nuove attività",
+        "title": "Gratis per le scuole e per chi inizia",
+        "desc": "Le scuole possono usarlo per insegnare come si fanno i programmi e la contabilità. Chi apre la partita IVA parte senza spese di software.",
         "cta": "Scopri il programma per le scuole"
       }
     },
     "demoCta": {
       "badge": "Demo online",
       "title": "Provalo subito, senza installare niente",
-      "lead": "La demo è il gestionale web vero, con un'azienda di esempio già configurata. Le credenziali di accesso sono già compilate.",
+      "lead": "La demo è il programma vero, con un'azienda di esempio già pronta. Le credenziali sono già inserite: basta aprirla.",
       "primary": "Apri la demo",
-      "secondary": "Contribuisci al progetto",
+      "secondary": "Come collaborare",
       "notes": [
         "✓ Nessuna registrazione",
-        "✓ Dati di esempio, azzerati periodicamente",
-        "✓ Non inserire dati reali"
+        "✓ Dati di esempio, cancellati ogni tanto",
+        "✓ Non inserire dati veri"
       ]
+    },
+    "collabora": {
+      "badge": "Collabora",
+      "title": "Aiutaci a farlo crescere",
+      "lead": "FatturaFacile è un progetto open source: il codice è pubblico su GitHub e chiunque può darci una mano.",
+      "items": [
+        {
+          "title": "Provalo e segnala",
+          "desc": "Usa la demo e scrivici cosa non funziona o non è chiaro."
+        },
+        {
+          "title": "Traduci o correggi i testi",
+          "desc": "Italiano, inglese, francese e tedesco: ogni correzione è utile."
+        },
+        {
+          "title": "Scrivi codice",
+          "desc": "Scegli una segnalazione su GitHub e proponi la tua modifica."
+        },
+        {
+          "title": "Controlla le regole fiscali",
+          "desc": "Sei commercialista o fiduciario? Verifica fatture elettroniche, QR-Bill e IVA."
+        }
+      ],
+      "cta": "Come collaborare",
+      "secondary": "Vai su GitHub"
     }
   },
   "perche": {
     "seo": {
-      "title": "Perché FatturaFacile | ERP Open Source e Offline-first per Svizzera QR-Bill e Italia SdI FatturaPA",
-      "description": "Scopri perché scegliere FatturaFacile: la suite ERP e fatturazione Open Source (MIT) e Offline-first su SQLite per Svizzera QR-Bill e Italia SdI FatturaPA, alternativa ai gestionali SaaS in abbonamento.",
-      "keywords": "perche fatturafacile, erp open source offline-first, svizzera qr-bill, italia sdi fatturapa, alternativa gestionale saas, fatturazione sqlite locale"
+      "title": "Perché scegliere FatturaFacile | Fatture gratis, senza abbonamento",
+      "description": "Perché FatturaFacile: gratuito e open source, preventivo e fattura in pochi clic, fattura elettronica per l'Italia e QR-Bill per la Svizzera, dati sempre tuoi.",
+      "keywords": "perché fatturafacile, alternativa gestionale in abbonamento, fatture gratis artigiani, fattura elettronica, qr-bill"
     },
-    "eyebrow": "Architettura Open Source & Anti-Lock-in",
-    "headingPre": "L'alternativa ERP Open Source e Offline-first",
-    "headingHighlight": "per Svizzera QR-Bill e Italia SdI",
-    "lead": "Chi lavora sul campo non ha il tempo né la voglia di perdersi in menu contabili astrusi o aspettare 15 secondi per caricare una pagina web lenta. FatturaFacile nasce per fare una sola cosa, in modo impeccabile: emettere documenti fiscali e farti incassare subito.",
+    "eyebrow": "Perché sceglierlo",
+    "headingPre": "Un programma di fatturazione semplice,",
+    "headingHighlight": "gratis e tuo",
+    "lead": "Chi lavora sul campo non ha tempo per menu complicati. FatturaFacile fa una cosa bene: preparare preventivi e fatture e aiutarti a farti pagare.",
     "points": [
       {
-        "title": "Preventivo in 1 minuto, Fattura in 1 click",
-        "desc": "Sei ancora sul cantiere o a casa del cliente? Apri il portatile, componi il preventivo con le voci di manodopera e materiali in meno di 60 secondi e consegnalo al volo. Quando il cliente dà il via libera, basta premere un pulsante: il preventivo viene convertito istantaneamente in fattura ufficiale con numerazione progressiva sequenziale senza dover reinserire una sola riga."
+        "title": "Dal preventivo alla fattura in pochi clic",
+        "desc": "Prepari il preventivo con manodopera e materiali mentre sei dal cliente. Se lo accetta, lo trasformi in fattura con un clic: non riscrivi niente e il numero è automatico."
       },
       {
-        "title": "Zero Lock-In Cloud e Totale Indipendenza dalla Rete",
-        "desc": "I servizi in abbonamento mensile bloccano l'accesso ai tuoi dati fiscali non appena smetti di pagare la quota. In FatturaFacile i tuoi file sono salvati in un database aperto SQLite direttamente nella cartella del programma. Funziona in cantina, in furgone, in officina o senza connessione internet: sei sempre operativo al 100%."
+        "title": "Nessun abbonamento, nessun vincolo",
+        "desc": "Il programma è gratuito. I tuoi dati restano sul tuo server (o sul tuo computer, con la futura app) e li puoi esportare e salvare quando vuoi. Se smetti di usarlo, non perdi niente."
       },
       {
-        "title": "Costruito con e per la Community degli Artigiani",
-        "desc": "Non siamo una multinazionale che vende licenze enterprise. Quando un elettricista o un idraulico ci segnala una necessità pratica – come un campo specifico per la ritenuta d'acconto, la cassa previdenziale o un template di stampa su misura – sviluppiamo il modulo gratuitamente e lo rilasciamo a tutti."
+        "title": "Nato con chi fa questo lavoro",
+        "desc": "Se un elettricista o un idraulico ci chiede una funzione utile (per esempio la ritenuta d'acconto), la valutiamo e, se serve a tutti, la aggiungiamo gratis."
       }
     ],
     "story": {
-      "badge": "Le Nostre Radici",
-      "title": "La Nostra Storia: Dall'Esigenza Reale al Software Libero",
+      "badge": "Da dove nasce",
+      "title": "Nato da un problema vero",
       "p1Pre": "Il progetto",
-      "p1Post": "è nato osservando la frustrazione quotidiana di artigiani, professionisti e piccole imprese su tutto il territorio svizzero e italiano. Costretti ad abbonamenti mensili sempre più costosi per programmi complessi, lenti o dipendenti da una connessione internet spesso assente nei cantieri o nei locali tecnici.",
+      "p1Post": "è nato vedendo quanto costano e quanto sono complicati i programmi di fatturazione per artigiani e piccole imprese in Italia e in Svizzera, spesso in abbonamento e inutilizzabili senza internet.",
       "askPre": "Ci siamo chiesti:",
-      "quote": "\"Perché un professionista che emette 15 fatture al mese deve pagare centinaia di euro all'anno e cedere la proprietà dei propri archivi a piattaforme cloud terze?\"",
-      "p3": "Abbiamo così sviluppato una prima versione snella su una chiavetta USB, basata su un robusto file database SQLite e sull'infrastruttura nativa C#/.NET. Il successo passaparola tra colleghi ha convinto il team a rendere il progetto completamente aperto, gratuito e a disposizione di tutta la comunità di Italia e Svizzera."
+      "quote": "\"Perché chi fa 15 fatture al mese deve pagare ogni anno e lasciare i propri dati a un servizio di altri?\"",
+      "p3": "Così abbiamo costruito un programma semplice, e dopo i primi riscontri dei colleghi lo abbiamo reso aperto e gratuito per tutti, in Italia e in Svizzera."
     },
     "team": {
       "title": "Team Aperto & Contributori",
-      "lead": "FatturaFacile è guidato da ingegneri del software, consulenti fiscali italo-svizzeri e da una comunità attiva di artigiani che collaudano ogni nuova versione.",
-      "joinBtn": "Unisciti ai Contributori",
-      "githubBtn": "GitHub Repository"
+      "lead": "FatturaFacile è sviluppato da programmatori, consulenti fiscali italo-svizzeri e artigiani che provano ogni novità.",
+      "joinBtn": "Collabora",
+      "githubBtn": "Codice su GitHub"
     },
     "cta": {
-      "title": "Pronto a semplificare la tua fatturazione?",
-      "lead": "Nessuna installazione: apri la demo online e crea il tuo primo preventivo in pochi istanti.",
-      "features": "Vedi Tutte le Funzionalità"
+      "title": "Vuoi provarlo?",
+      "lead": "Apri la demo online e fai il tuo primo preventivo in pochi minuti, senza installare niente.",
+      "features": "Vedi le funzioni"
     }
   },
   "versioni": {
     "seo": {
-      "title": "FatturaFacile Offline-first (SQLite) vs Cloud Docker | ERP Open Source Svizzera QR-Bill e Italia SdI FatturaPA",
-      "description": "Confronto tecnico delle versioni di FatturaFacile Open Source (MIT): client Desktop Offline-first su SQLite locale e suite Web ERP self-hosted Docker per Svizzera QR-Bill e Italia SdI FatturaPA.",
-      "keywords": "versioni fatturafacile, erp open source offline-first sqlite, cloud self-hosted docker, svizzera qr-bill, italia sdi fatturapa, wpf dotnet"
+      "title": "Web o desktop? Le versioni di FatturaFacile a confronto",
+      "description": "FatturaFacile si usa dal browser (disponibile, anche sul tuo server) o come app per Windows (in sviluppo, funziona senza internet). Ecco le differenze.",
+      "keywords": "fatturafacile versioni, gestionale web, app windows fatture, installare sul proprio server, docker"
     },
-    "eyebrow": "Libertà di Architettura Open Source (MIT)",
-    "heading": "Architettura ERP Offline-first su SQLite o Cloud Self-Hosted Docker",
-    "lead": "Nessun canone software da pagare al nostro team. Lavora in piena autonomia: in locale sulla tua scrivania oppure auto-ospitato sulla tua infrastruttura aziendale.",
+    "eyebrow": "Le versioni",
+    "heading": "Web o desktop: come vuoi usarlo?",
+    "lead": "Il programma è gratuito in entrambe le versioni. Oggi puoi usare quella web. L'app per Windows è in arrivo.",
     "desktopCard": {
-      "tag": "Desktop Windows • Offline",
-      "badge": "In sviluppo • Prima release in arrivo",
-      "title": "FatturaFacile Desktop (WPF / .NET)",
-      "subtitle": "Ingegnerizzato in C#/.NET nativo (WPF) con database embedded SQLite a configurazione zero.",
+      "tag": "Windows • Senza internet",
+      "badge": "In sviluppo • Prima versione in arrivo",
+      "title": "App per Windows",
+      "subtitle": "Un programma da installare sul computer, con i dati salvati solo lì.",
       "features": [
-        "Zero installazione: cartella portabile su disco o chiavetta USB senza dipendenze esterne.",
-        "Database SQLite locale: tutti i documenti risiedono unicamente sul tuo computer per la massima privacy.",
-        "Piena operatività offline: emetti fatture e preventivi ovunque senza connessione internet.",
-        "Doppia conformità: generazione di QR-Bill standard SIX svizzere e file XML conformi per FatturaPA."
+        "Non serve internet per fare preventivi e fatture.",
+        "I dati restano sul tuo computer: non vanno su altri server.",
+        "Si può portare su una chiavetta USB.",
+        "Prevista la fattura elettronica italiana e il QR-Bill svizzero."
       ],
-      "limitation": "Singolo operatore simultaneo per singolo archivio (vincolo di lock del file SQLite locale).",
-      "cta": "Segui lo sviluppo su GitHub"
+      "limitation": "Può usarlo una persona alla volta per ogni archivio.",
+      "cta": "Segui i lavori su GitHub"
     },
     "cloudCard": {
       "tag": "Web • Disponibile",
-      "badge": "Release v0.1 • Demo online",
-      "title": "FatturaFacile Web (self-hosted con Docker)",
-      "subtitle": "Il gestionale multi-utente nel browser, con API Laravel e database PostgreSQL. Lo provi nella demo o lo installi sul tuo server o VPS con Docker.",
+      "badge": "Versione 0.1 • Demo online",
+      "title": "Versione web",
+      "subtitle": "Si usa dal browser, anche in più persone insieme. La provi nella demo o la installi sul tuo server.",
       "features": [
-        "Accesso multi-utente simultaneo da browser per collaboratori e studio contabile.",
-        "Auto-ospitato sulla tua infrastruttura: zero canoni a fornitori SaaS di terze parti.",
-        "API aperte per integrazioni gestionali e sincronizzazione degli archivi.",
-        "Sviluppo collaborativo guidato dalla community con licenza aperta MIT."
+        "Più persone lavorano insieme, anche il tuo commercialista.",
+        "La installi sul tuo server: non paghi nessun fornitore.",
+        "Ha un'interfaccia aperta (API) per collegarla ad altri programmi.",
+        "Il codice è aperto e lo migliora la community."
       ],
-      "migrationNote": "Stato: disponibile (v0.1), con nuove funzioni a ogni release. Sviluppo aperto su GitHub.",
+      "migrationNote": "Disponibile (versione 0.1). Ad ogni aggiornamento arrivano nuove funzioni.",
       "cta": "Prova la demo"
     },
     "comparisonTable": {
-      "title": "Matrice di Confronto Tecnico",
-      "headers": ["Caratteristica", "Desktop Standalone", "Web (self-hosted)"],
+      "title": "Le differenze in breve",
+      "headers": ["", "App Windows (in sviluppo)", "Versione web (disponibile)"],
       "rows": [
         {
-          "feature": "Licenza Software",
-          "desktop": "Gratuita per sempre",
-          "cloud": "Gratuita per sempre"
+          "feature": "Prezzo",
+          "desktop": "Gratis",
+          "cloud": "Gratis"
         },
         {
-          "feature": "Costi di Abbonamento",
-          "desktop": "Nessuno (€0 / CHF 0)",
-          "cloud": "Nessuno (€0 / CHF 0)"
+          "feature": "Serve internet?",
+          "desktop": "No",
+          "cloud": "Sì, per collegarti"
         },
         {
-          "feature": "Connessione Internet",
-          "desktop": "Non necessaria (100% offline)",
-          "cloud": "Richiesta per accesso remoto"
+          "feature": "Dove sono i dati",
+          "desktop": "Sul tuo computer",
+          "cloud": "Sul tuo server"
         },
         {
-          "feature": "Storage del Database",
-          "desktop": "SQLite Locale (su disco o USB)",
-          "cloud": "PostgreSQL"
+          "feature": "Quante persone insieme",
+          "desktop": "Una",
+          "cloud": "Più persone"
         },
         {
-          "feature": "Operatori Simultanei",
-          "desktop": "1 operatore per file",
-          "cloud": "Multi-utente concorrente"
+          "feature": "Fattura elettronica e QR-Bill",
+          "desktop": "Sì (Italia e Svizzera)",
+          "cloud": "Sì (Italia e Svizzera)"
         },
         {
-          "feature": "Compatibilità Fiscale",
-          "desktop": "Italia (SDI) & Svizzera (QR-Bill)",
-          "cloud": "Italia (SDI) & Svizzera (QR-Bill)"
-        },
-        {
-          "feature": "Installazione di Sistema",
-          "desktop": "Nessuna (eseguibile portatile)",
-          "cloud": "Container Docker / VPS"
+          "feature": "Come si installa",
+          "desktop": "Si scarica e si avvia",
+          "cloud": "Si usa dal browser; per averla tua serve un server (Docker)"
         }
       ]
     }
   },
   "moduli": {
     "seo": {
-      "title": "Moduli e Funzionalità FatturaFacile | ERP Open Source Svizzera QR-Bill, Italia SdI FatturaPA, Offline-first",
-      "description": "Esplora i moduli di FatturaFacile Open Source (MIT) e Offline-first: fatturazione Svizzera QR-Bill SIX, Italia SdI FatturaPA XML, preventivi 1-click, magazzino, scadenziario e backup SQLite.",
-      "keywords": "moduli fatturafacile, funzionalita erp open source, svizzera qr-bill six, italia sdi fatturapa xml, gestionale offline-first sqlite, preventivi fatture"
+      "title": "Funzioni di FatturaFacile | Preventivi, fatture, magazzino, backup",
+      "description": "Cosa puoi fare con FatturaFacile: preventivi, fatture, fattura elettronica italiana, QR-Bill svizzero, backup. E cosa stiamo aggiungendo.",
+      "keywords": "funzioni fatturafacile, preventivi e fatture, fattura elettronica, qr-bill, magazzino, backup"
     },
-    "eyebrow": "Ecosistema ERP Modulare & Open Source",
-    "heading": "Moduli ERP Open Source per Svizzera (QR-Bill) e Italia (SdI FatturaPA)",
-    "lead": "FatturaFacile include le funzioni essenziali per fatturare subito e cresce con le richieste reali della comunità. Qualsiasi nuovo modulo approvato viene sviluppato senza costi e distribuito a tutti nelle release ufficiali.",
-    "availableSectionTitle": "Moduli Disponibili Subito",
-    "roadmapSectionTitle": "Roadmap Trasparente di Sviluppo",
+    "eyebrow": "Funzioni",
+    "heading": "Cosa puoi fare con FatturaFacile",
+    "lead": "Parti da preventivi e fatture. Il resto cresce in base alle richieste di chi lo usa: se una funzione serve a tanti, la aggiungiamo gratis.",
+    "availableSectionTitle": "Già disponibili",
+    "roadmapSectionTitle": "Cosa stiamo preparando",
     "roadmapStages": {
-      "inDevelopment": "In Lavorazione Attiva",
-      "planned": "Pianificati a Breve",
-      "backlog": "Proposte della Community"
+      "inDevelopment": "Ci stiamo lavorando",
+      "planned": "Prossime",
+      "backlog": "Proposte della community"
     },
     "requestForm": {
       "badge": "Community-Driven & 100% Gratuito",
-      "title": "Hai bisogno di un modulo mancante o di una funzione specifica?",
-      "description": "Raccontaci il flusso di lavoro della tua attività o le normative specifiche del tuo settore. Se la funzionalità è utile alla comunità, la programmeremo senza alcun costo e la integreremo nel gestionale pubblico.",
-      "nameLabel": "Nome e Cognome / Ragione Sociale",
-      "emailLabel": "Indirizzo Email di Contatto",
-      "marketLabel": "Mercato di Riferimento",
-      "tradeLabel": "Settore o Professione (es. Idraulico, Elettricista, Edilizia, Studio)",
-      "detailsLabel": "Descrizione del Modulo Richiesto e Problema Operativo",
-      "submitBtn": "Invia Proposta di Modulo Gratuito",
-      "disclaimer": "Rispondiamo direttamente con il team di sviluppo per definire le specifiche aperte."
+      "title": "Ti manca una funzione?",
+      "description": "Raccontaci come lavori e cosa ti servirebbe. Se è utile anche ad altri, la aggiungiamo gratis.",
+      "nameLabel": "Nome e cognome o ragione sociale",
+      "emailLabel": "La tua email",
+      "marketLabel": "Paese",
+      "tradeLabel": "Il tuo lavoro (es. idraulico, elettricista, studio)",
+      "detailsLabel": "Cosa ti serve e quale problema risolverebbe",
+      "submitBtn": "Invia la richiesta",
+      "disclaimer": "Ti risponde una persona del team per capire meglio cosa serve."
     },
     "pillars": [
       {
@@ -388,43 +408,42 @@
     "milestoneTbd": "Da definire",
     "modules": {
       "mod-core-invoicing": {
-        "title": "Fatturazione Rapida & Preventivi 1-Click",
-        "description": "Creazione ed emissione istantanea di preventivi e fatture con numerazione sequenziale automatica e generazione PDF pulita.",
+        "title": "Preventivi e fatture",
+        "description": "Prepari un preventivo e lo trasformi in fattura con un clic. Il numero è automatico e il PDF è pronto da stampare o mandare.",
         "features": [
-          "Conversione istantanea da preventivo a fattura in 1 click",
-          "Numerazione sequenziale automatica e gestione note di credito",
-          "Layout PDF vettoriale pronto per stampa o invio email",
-          "Funzionamento 100% offline con database SQLite embedded"
+          "Dal preventivo alla fattura con un clic",
+          "Numerazione automatica e note di credito",
+          "PDF pronto da stampare o inviare per email",
+          "Pagamenti anche a rate e solleciti"
         ]
       },
       "mod-sdi-fatturapa": {
-        "title": "FatturaPA XML & Interscambio SDI",
-        "description": "Supporto nativo per il formato XML conforme all'Agenzia delle Entrate per regimi forfettari e ordinari.",
+        "title": "Fattura elettronica italiana",
+        "description": "Crea il file della fattura elettronica (FatturaPA) per il Sistema di Interscambio.",
         "features": [
-          "Generazione file XML standard FatturaPA senza errori di validazione",
-          "Gestione Codice Destinatario o PEC del cliente",
-          "Supporto regimi fiscali italiani (RF19 forfettario, RF01 ordinario)",
-          "Verifica immediata schema XSD prima della trasmissione"
+          "File XML FatturaPA pronto da inviare",
+          "Codice destinatario o PEC del cliente",
+          "Regime forfettario e regime ordinario",
+          "Controllo del file prima dell'invio"
         ]
       },
       "mod-six-qrbill": {
-        "title": "Polizze QR-Bill SIX & IVA Svizzera",
-        "description": "Generazione conforme dello Swiss QR-Bill con codice di pagamento standard SIX e calcolo delle aliquote IVA federali.",
+        "title": "Fattura svizzera con QR-Bill",
+        "description": "Mette sulla fattura la polizza di versamento con codice QR, come richiedono le banche svizzere.",
         "features": [
-          "Generazione automatica QR-Code di pagamento certificato SIX",
-          "Supporto QR-IBAN con Riferimento QR e IBAN standard con SCOR/NON",
-          "Aliquote IVA svizzere (normale, ridotta, speciale alloggio)",
-          "Doppia valuta supportata nativamente (CHF / EUR)"
+          "Codice QR di pagamento nel formato ufficiale (SIX)",
+          "Funziona con QR-IBAN e con IBAN normale",
+          "Aliquote IVA svizzere",
+          "Franchi svizzeri ed euro"
         ]
       },
       "mod-encrypted-backup": {
-        "title": "Backup Cifrato 1-Click & Restore",
-        "description": "Snapshot crittografato del database locale SQLite su memoria secondaria, unità di rete o cartella cloud sincronizzata.",
+        "title": "Copie di sicurezza",
+        "description": "Salva i tuoi dati in un file e ripristinali quando serve.",
         "features": [
-          "Archivio ZIP cifrato pronto con un solo clic",
-          "Nessuna dipendenza da server esterni di backup proprietari",
-          "Ripristino immediato su qualsiasi altra macchina Windows 10/11",
-          "Integrità del database verificata pre e post backup"
+          "Copia automatica ogni notte, ultime 7 conservate",
+          "Copia manuale con un clic e download del file",
+          "Ripristino guidato, con copia di sicurezza prima di sovrascrivere"
         ]
       },
       "mod-payments-schedule": {
@@ -744,61 +763,73 @@
   },
   "faq": {
     "seo": {
-      "title": "FAQ FatturaFacile | Domande su ERP Open Source, Offline-first SQLite, Svizzera QR-Bill e Italia SdI FatturaPA",
-      "description": "Risposte tecniche e fiscali su FatturaFacile: licenza Open Source MIT, architettura Offline-first su database SQLite locale, invio XML Italia SdI FatturaPA e standard Svizzera QR-Bill SIX.",
-      "keywords": "faq fatturafacile, domande erp open source, sicurezza sqlite offline-first, fatturazione svizzera qr-bill, italia sdi fatturapa xml"
+      "title": "Domande frequenti | FatturaFacile",
+      "description": "Risposte semplici su FatturaFacile: è gratis? dove sono i miei dati? funziona con la fattura elettronica italiana e il QR-Bill svizzero? come lo provo?",
+      "keywords": "domande fatturafacile, fatture gratis, fattura elettronica, qr-bill, backup"
     },
-    "eyebrow": "Risposte Tecniche & Fiscali",
-    "heading": "Domande Frequenti su FatturaFacile: ERP Open Source, QR-Bill e SdI",
-    "lead": "Tutto quello che c'è da sapere sulla tecnologia, sulla conformità fiscale e sul modello di sviluppo aperto del progetto.",
-    "searchPlaceholder": "Cerca una risposta (es. USB, backup, SDI, QR-Bill)...",
+    "eyebrow": "Domande frequenti",
+    "heading": "Le risposte alle domande più comuni",
+    "lead": "Quanto costa, dove sono i dati, come funziona con il fisco e come si prova.",
+    "searchPlaceholder": "Cerca una risposta (es. backup, QR-Bill, prezzo)...",
     "categories": {
-      "general": "Generali & Filosofia",
-      "technical": "Architettura & Dati",
-      "compliance": "Normativa & Fisco",
-      "partners": "Supporto & Community"
+      "general": "In generale",
+      "technical": "Dati e sicurezza",
+      "compliance": "Fisco",
+      "partners": "Aiuto e community"
     },
     "items": [
       {
         "id": "faq-free",
         "category": "general",
         "question": "È davvero gratuito?",
-        "answer": "Sì, FatturaFacile è distribuito con licenza open source MIT. Non esistono costi di licenza nascosti, periodi di prova o abbonamenti a pagamento. Il codice sorgente è pubblico e accessibile a tutti."
+        "answer": "Sì. FatturaFacile è un programma open source con licenza MIT: lo usi gratis, senza abbonamenti e senza costi nascosti. Il codice è pubblico."
       },
       {
         "id": "faq-data-location",
         "category": "technical",
-        "question": "Dove risiedono i miei dati?",
-        "answer": "Con l'applicazione desktop, tutti i dati risiedono in locale in un database SQLite all'interno della cartella dell'applicazione sul tuo PC. Nessun dato viene trasmesso a server esterni o cloud terzi."
+        "question": "Dove sono i miei dati?",
+        "answer": "Nella versione web stanno sul server dove è installato il programma: se lo installi tu, sono sul tuo server. Nella futura app per Windows stanno solo sul tuo computer. Nella demo ci sono solo dati di esempio."
       },
       {
         "id": "faq-backup",
         "category": "technical",
-        "question": "Come eseguo una copia di sicurezza?",
-        "answer": "È sufficiente esportare il file .sqlite tramite l'apposita voce di menu o copiarlo su un supporto di memoria esterno (disco USB, NAS o cartella di backup crittografata)."
+        "question": "Come faccio una copia di sicurezza?",
+        "answer": "La versione web fa ogni notte una copia automatica e tiene le ultime 7. Puoi anche farne una a mano, scaricarla e ripristinarla quando vuoi."
       },
       {
         "id": "faq-sdi-it",
         "category": "compliance",
-        "question": "Invia direttamente la fattura allo SdI in Italia?",
-        "answer": "FatturaFacile genera il file XML conforme alle specifiche tecniche FatturaPA pronto per essere caricato gratuitamente sul portale Fatture e Corrispettivi dell'Agenzia delle Entrate o tramite il canale del proprio commercialista."
+        "question": "Manda la fattura direttamente al Sistema di Interscambio?",
+        "answer": "FatturaFacile crea il file della fattura elettronica (FatturaPA, formato XML). Per l'invio puoi caricarlo sul portale Fatture e Corrispettivi dell'Agenzia delle Entrate, che è gratuito, oppure darlo al tuo commercialista."
       },
       {
         "id": "faq-qrbill-ch",
         "category": "compliance",
-        "question": "Come funziona la QR-Bill per la Svizzera?",
-        "answer": "Genera ricevute e polizze conformi alle direttive SIX con codice grafico QR di pagamento verificato (QR-IBAN e Creditor Reference) e calcolo accurato delle aliquote IVA federali in CHF ed EUR."
+        "question": "Come funziona per la Svizzera?",
+        "answer": "La fattura include la polizza di versamento con codice QR (QR-Bill), nel formato richiesto dalle banche svizzere. Funziona con QR-IBAN e con IBAN normale, in franchi svizzeri o in euro, con le aliquote IVA svizzere."
       },
       {
         "id": "faq-community",
         "category": "partners",
-        "question": "Come posso contribuire o richiedere una funzione?",
-        "answer": "Il progetto è aperto a programmatori, commercialisti e traduttori su GitHub, oltre a raccogliere idee e riscontri pratici direttamente nel gruppo Telegram della community."
+        "question": "Posso chiedere una funzione o dare una mano?",
+        "answer": "Sì. Puoi scriverci nel gruppo Telegram o aprire una segnalazione su GitHub. Cerchiamo anche chi vuole tradurre, provare il programma o controllare le regole fiscali."
+      },
+      {
+        "id": "faq-try",
+        "category": "general",
+        "question": "Come lo provo?",
+        "answer": "Apri la demo online: è il programma vero con dati di esempio, senza registrazione. Non inserire dati reali, perché vengono cancellati ogni tanto."
+      },
+      {
+        "id": "faq-who",
+        "category": "general",
+        "question": "Per chi è?",
+        "answer": "Per artigiani, piccole imprese e liberi professionisti in Italia e Svizzera, che fanno preventivi e fatture e non vogliono pagare un abbonamento."
       }
     ],
     "noResults": {
-      "text": "Nessuna risposta corrispondente alla ricerca. Prova con parole chiave diverse oppure",
-      "link": "scrivici direttamente"
+      "text": "Nessuna risposta trovata. Prova con altre parole oppure",
+      "link": "scrivici"
     }
   },
   "sponsor": {
@@ -1090,15 +1121,15 @@
   },
   "contribute": {
     "seo": {
-      "title": "Contribuisci su GitHub | FatturaFacile ERP Open Source (MIT) Svizzera QR-Bill, Italia SdI FatturaPA, Offline-first",
-      "description": "Come contribuire a FatturaFacile Open Source (MIT): sviluppo .NET WPF Offline-first SQLite, Laravel, Angular e Flutter per la fatturazione Svizzera QR-Bill e Italia SdI FatturaPA.",
-      "keywords": "contribuire fatturafacile, github erp open source mit, svizzera qr-bill, italia sdi fatturapa, offline-first sqlite, laravel angular dotnet"
+      "title": "Collabora a FatturaFacile | Progetto open source su GitHub",
+      "description": "Come dare una mano a FatturaFacile: provare il programma, segnalare problemi, tradurre, scrivere codice o controllare le regole fiscali.",
+      "keywords": "collaborare fatturafacile, contribuire open source, github, traduzioni, good first issue"
     },
-    "eyebrow": "Open Source • Licenza MIT",
-    "heading": "Contribuisci a FatturaFacile: ERP Open Source per Svizzera e Italia",
-    "lead": "FatturaFacile cresce grazie a chi ci lavora nel tempo libero: sviluppatori, studenti, commercialisti, traduttori e tester. Ogni aiuto conta, anche piccolo.",
-    "ctaTelegram": "Presentati nel gruppo Telegram",
-    "ctaIssues": "Issue per iniziare",
+    "eyebrow": "Open source • Licenza MIT",
+    "heading": "Collabora a FatturaFacile",
+    "lead": "FatturaFacile cresce grazie a chi ci dedica un po' di tempo: programmatori, studenti, commercialisti, traduttori e chi lo prova. Anche un piccolo aiuto conta.",
+    "ctaTelegram": "Presentati su Telegram",
+    "ctaIssues": "Segnalazioni da cui iniziare",
     "ways": {
       "badge": "Cosa puoi fare",
       "title": "Sei modi per dare una mano",

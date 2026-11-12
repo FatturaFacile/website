@@ -1,19 +1,19 @@
 {
   "common": {
     "siteName": "FatturaFacile",
-    "tagline": "Open Source (MIT) ERP & Invoicing • Switzerland QR-Bill & Italy SdI • Offline-first",
+    "tagline": "Quotes and invoices for tradespeople and small businesses • Italy and Switzerland • Free and open source",
     "nav": {
       "product": "Product",
-      "whyUs": "Why Us",
-      "featuresModules": "Features & Modules",
-      "offlineVsCloud": "Offline vs Cloud",
-      "communitySocial": "Community & Social",
-      "requestModulesFree": "Request Modules (Free)",
-      "contribute": "Contribute",
+      "whyUs": "Why choose it",
+      "featuresModules": "Features",
+      "offlineVsCloud": "Web and desktop",
+      "communitySocial": "Community",
+      "requestModulesFree": "Ask for a feature",
+      "contribute": "Get involved",
       "schoolsSocial": "Schools & Education",
       "sponsors": "Sponsors & Support",
-      "networkSupport": "Network & Support",
-      "localSupport": "Local Support (IT/CH)",
+      "networkSupport": "Help",
+      "localSupport": "Who can help you (Italy and Switzerland)",
       "faq": "FAQ",
       "about": "About Us",
       "story": "Our Story",
@@ -34,14 +34,14 @@
       "tryDemo": "Try the demo"
     },
     "footer": {
-      "description": "The lightweight and independent invoicing system created specifically for tradespeople, micro-businesses, and freelancers in Italy and Switzerland. Built with local SQLite architecture and self-hosted cloud option.",
+      "description": "Free, open source software for quotes and invoices. Made for tradespeople, small businesses and freelancers in Italy and Switzerland.",
       "emailLabel": "Email Contact:",
       "productColTitle": "Product",
       "legalColTitle": "Privacy & Legal",
       "marketsColTitle": "National Coverage",
-      "italyMarketDesc": "Italy 🇮🇹: SdI electronic invoicing (FatturaPA, B2B, B2C), AgID compliance, split payment, withholding tax, flat-rate and ordinary regimes nationwide.",
-      "swissMarketDesc": "Switzerland 🇨🇭: Official SIX QR-Bill standard, revLPD data protection compliance, multilingual support (IT/DE/FR/EN), and FTA (ESTV) VAT rates across all 26 cantons.",
-      "copyright": "FatturaFacile. Open initiative with zero subscription fees.",
+      "italyMarketDesc": "Italy 🇮🇹: creates the electronic invoice (FatturaPA) to send to the Italian tax system (SdI).",
+      "swissMarketDesc": "Switzerland 🇨🇭: creates the invoice with the QR payment slip (QR-bill) and uses Swiss VAT rates.",
+      "copyright": "FatturaFacile. An open project, no subscriptions.",
       "telegramCommunity": "Telegram Community",
       "githubRepo": "GitHub Repository"
     },
@@ -71,290 +71,314 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Open Source (MIT) ERP & Invoicing for Switzerland (QR-Bill) and Italy (SdI FatturaPA) Offline-first",
-      "description": "FatturaFacile is the free Open Source (MIT) ERP and invoicing suite for Switzerland (SIX QR-Bill) and Italy (SdI FatturaPA). Offline-first with local SQLite or self-hosted Web Docker. Try the online demo.",
-      "keywords": "fatturafacile, open source erp mit, offline-first invoicing software, swiss qr-bill six, italian e-invoicing sdi fatturapa, switzerland italy, software for tradespeople, sme erp"
+      "title": "FatturaFacile – Free quotes and invoices for small businesses (Italy and Switzerland)",
+      "description": "Free, open source software for quotes and invoices. Electronic invoices for Italy, QR-bill for Switzerland. Try it online, no sign-up.",
+      "keywords": "free invoicing software, electronic invoice Italy, quotes and invoices, swiss qr-bill, invoicing for tradespeople, open source"
     },
     "hero": {
-      "badgeGeo": "Open Source (MIT) • Switzerland QR-Bill & Italy SdI",
-      "badgePrivacy": "Offline-first (SQLite) & Self-Hosted Web",
-      "titlePart1": "FatturaFacile: the Open Source ERP & Invoicing Suite",
-      "titlePart2": "for Switzerland (QR-Bill) and Italy (SdI), Offline-first.",
-      "subtitle": "FatturaFacile is the Open Source (MIT) ERP and invoicing suite providing full nationwide coverage for tradespeople, freelancers and SMEs across all of Switzerland (SIX QR-Bill) and Italy (SdI FatturaPA): Offline-first on Desktop or self-hosted Web, with zero subscriptions.",
+      "badgeGeo": "Free • Open source • No subscription",
+      "badgePrivacy": "Electronic invoice (Italy) • QR-bill (Switzerland)",
+      "titlePart1": "Quotes and invoices",
+      "titlePart2": "for tradespeople and small businesses.",
+      "subtitle": "Make the quote at the customer's, then turn it into an invoice with one click. In Italy you get the electronic invoice, in Switzerland the invoice with QR-bill. It is free: try it online or install it on your own server.",
       "ctaPrimary": "Try the demo",
-      "ctaSecondary": "Code on GitHub",
-      "ctaCommunity": "Telegram community"
+      "ctaSecondary": "See the code on GitHub",
+      "ctaCommunity": "Ask in the Telegram group"
     },
     "pillars": [
       {
-        "title": "Free and open",
-        "desc": "MIT licence, no subscription"
+        "title": "Free, for good",
+        "desc": "No subscription, no hidden costs"
       },
       {
         "title": "Italy and Switzerland",
-        "desc": "FatturaPA (SDI) and QR-bill"
+        "desc": "Electronic invoice and QR-bill"
       },
       {
-        "title": "Complete suite",
-        "desc": "From quote to inventory"
+        "title": "From quotes to stock",
+        "desc": "Start with invoices, add the rest when needed"
       },
       {
-        "title": "Your data",
-        "desc": "On your server, no lock-in"
+        "title": "Your data is yours",
+        "desc": "Kept on your server, and you can save a copy any time"
       }
     ],
     "philosophy": {
-      "badge": "The FatturaFacile philosophy",
-      "heading": "Not a complicated ERP with 500 buttons, but your everyday tool",
-      "lead": "Plumbers, electricians, installers, gardeners and freelancers issue 10 to 20 documents a month on average. They don't need to run a complex supply chain: they need to get paid on time.",
+      "badge": "How it works",
+      "heading": "A few steps, nothing complicated",
+      "lead": "People who work on site send few invoices a month and want to get paid fast. FatturaFacile does exactly that, without a hundred menus to learn.",
       "features": [
         {
-          "title": "Quote in 1 minute, invoice in 1 click",
-          "desc": "Fill in the quote while you're still at the customer's. Once it's approved, turn it into an invoice with one click, with automatic numbering."
+          "title": "From quote to invoice",
+          "desc": "Write the quote with labour and materials. When the customer accepts, turn it into an invoice with one click. The invoice number is automatic."
         },
         {
           "title": "Italy 🇮🇹 and Switzerland 🇨🇭",
-          "desc": "FatturaPA e-invoices for the Italian Exchange System (SDI) and Swiss QR-bills compliant with the SIX standard, with the VAT rates of both countries."
+          "desc": "In Italy it creates the electronic invoice file (FatturaPA). In Switzerland it adds the QR code to the invoice, as banks require. Each country has its own VAT."
         },
         {
-          "title": "Modules when you need them",
-          "desc": "Start with quotes and invoices and turn on only what you need: inventory, construction sites, field service, point of sale, rentals, subscriptions, treasury and accounting."
+          "title": "The rest, only if you need it",
+          "desc": "You can add stock, jobs, cash, subscriptions and accounting. If you don't need them, you don't see them."
         }
       ],
-      "more": "Learn more about our philosophy"
+      "more": "Why choose it"
     },
     "platforms": {
-      "badge": "Platforms",
-      "heading": "One suite, three ways to use it",
-      "lead": "The web version is available today and you can try it in the demo. Desktop and mobile are in development, with the same open code on GitHub.",
+      "badge": "Where you use it",
+      "heading": "On the web today, soon on your computer and phone",
+      "lead": "The web version is ready: try it in the demo. The Windows and phone apps are being built.",
       "available": "Available",
       "inDevelopment": "In development",
       "items": [
         {
           "name": "Web",
-          "stack": "Angular + Laravel API",
-          "desc": "The complete suite in your browser, multi-user. Use it in the demo or install it on your own server with Docker."
+          "stack": "In the browser",
+          "desc": "The full program, for several people at once. Try it in the demo or install it on your server."
         },
         {
-          "name": "Windows desktop",
-          "stack": ".NET (WPF) + SQLite",
-          "desc": "A native app that also works offline, with your data stored only on your computer."
+          "name": "Windows",
+          "stack": "Computer app",
+          "desc": "Works without internet, with data saved only on your computer."
         },
         {
-          "name": "Mobile",
-          "stack": "Flutter (iOS and Android)",
-          "desc": "Your business in your pocket: quick quotes, receipt photos and time clocking from the job site."
+          "name": "Phone",
+          "stack": "iPhone and Android",
+          "desc": "Quick quotes, photos of receipts and working hours from the job site."
         }
       ],
-      "compareCta": "Compare the versions",
-      "modulesCta": "Explore the modules"
+      "compareCta": "Compare web and desktop",
+      "modulesCta": "See the features"
     },
     "comingSoon": {
       "badge": "Coming Soon",
-      "heading": "Coming in the next releases",
-      "lead": "We're working on these right now: each one has a public issue on GitHub where you can follow it or lend a hand.",
+      "heading": "Coming soon",
+      "lead": "We are working on these. Each one has a public page on GitHub where you can follow it.",
       "items": [
         {
-          "title": "Sign-up with email verification",
-          "desc": "Create your own account, with confirmation of your email address."
+          "title": "Sign-up with email confirmation",
+          "desc": "Create your own account and confirm your email address."
         },
         {
-          "title": "Password recovery",
-          "desc": "Reset your password yourself with a secure link sent by email."
+          "title": "Forgotten password",
+          "desc": "Choose a new one with a link sent by email."
         },
         {
-          "title": "Daily email report",
-          "desc": "Every morning, a summary of payments, due dates and the previous day's documents."
+          "title": "Daily summary by email",
+          "desc": "Every morning you get yesterday's payments, due dates and documents."
         },
         {
-          "title": "Access and security log",
-          "desc": "Who did what and when: logins, changes and failed attempts."
+          "title": "Access log",
+          "desc": "See who did what and when, and failed login attempts."
         },
         {
-          "title": "Windows desktop app",
-          "desc": "First release of the offline app, with your data stored locally."
+          "title": "Windows app",
+          "desc": "The first version, which also works without internet."
         },
         {
-          "title": "Mobile time clocking",
-          "desc": "Clock in and out from your phone, linked to job sites and service calls."
+          "title": "Working hours from your phone",
+          "desc": "Clock in and out and link it to jobs and sites."
         }
       ],
-      "cta": "Follow the roadmap on GitHub"
+      "cta": "Follow the work on GitHub"
     },
     "territory": {
       "local": {
-        "badge": "Local assistance",
-        "title": "Nationwide support and consulting across Switzerland and Italy",
-        "desc": "Need help installing it on your server, setting up backups or working with your accountant or fiduciary? Find technicians and fiduciaries near you.",
-        "cta": "Browse the partner directory or apply"
+        "badge": "Help",
+        "title": "Someone near you to help",
+        "desc": "Need a hand to install it, make backups or talk to your accountant? Find technicians and accountants in Italy and Switzerland.",
+        "cta": "See who can help"
       },
       "schools": {
-        "badge": "Education and social impact",
-        "title": "Free software for schools and new businesses",
-        "desc": "Real source code (Laravel, Angular, .NET and Flutter) to teach software architecture, accounting labs at no cost and fewer digital barriers for people starting a new business.",
+        "badge": "Schools and new businesses",
+        "title": "Free for schools and for people starting out",
+        "desc": "Schools can use it to teach how software and bookkeeping work. If you are starting a business, you begin with no software costs.",
         "cta": "Discover the schools programme"
       }
     },
     "demoCta": {
       "badge": "Online demo",
-      "title": "Try it now, with nothing to install",
-      "lead": "The demo is the real web application, with a sample company already set up. The login details are filled in for you.",
+      "title": "Try it now, nothing to install",
+      "lead": "The demo is the real program, with a sample company already set up. The login details are already filled in: just open it.",
       "primary": "Open the demo",
-      "secondary": "Contribute to the project",
-      "notes": ["✓ No sign-up", "✓ Sample data, reset periodically", "✓ Don't enter real data"]
+      "secondary": "How to get involved",
+      "notes": [
+        "✓ No sign-up",
+        "✓ Sample data, erased from time to time",
+        "✓ Do not enter real data"
+      ]
+    },
+    "collabora": {
+      "badge": "Get involved",
+      "title": "Help us make it grow",
+      "lead": "FatturaFacile is an open source project: the code is public on GitHub and anyone can help.",
+      "items": [
+        {
+          "title": "Try it and report",
+          "desc": "Use the demo and tell us what does not work or is unclear."
+        },
+        {
+          "title": "Translate or fix the texts",
+          "desc": "Italian, English, French and German: every correction helps."
+        },
+        {
+          "title": "Write code",
+          "desc": "Pick an issue on GitHub and propose your change."
+        },
+        {
+          "title": "Check the tax rules",
+          "desc": "Are you an accountant? Check electronic invoices, QR-bill and VAT."
+        }
+      ],
+      "cta": "How to get involved",
+      "secondary": "Go to GitHub"
     }
   },
   "perche": {
     "seo": {
-      "title": "Why FatturaFacile – Open Source Offline-first ERP for Switzerland QR-Bill & Italy SdI FatturaPA",
-      "description": "Discover why FatturaFacile is the Open Source (MIT) Offline-first alternative to bloated SaaS ERPs: 1-minute quotes, Swiss QR-Bill, Italian SdI FatturaPA, and local SQLite.",
-      "keywords": "why fatturafacile, open source offline-first erp, swiss qr-bill, italy sdi fatturapa, zero subscription billing"
+      "title": "Why choose FatturaFacile | Free invoicing, no subscription",
+      "description": "Why FatturaFacile: free and open source, quote and invoice in a few clicks, electronic invoice for Italy and QR-bill for Switzerland, your data stays yours.",
+      "keywords": "why fatturafacile, subscription software alternative, free invoicing, electronic invoice, qr-bill"
     },
-    "eyebrow": "Our Design Philosophy",
-    "headingPre": "FatturaFacile: not a 500-button ERP, but your",
-    "headingHighlight": "Open Source Offline-first suite for Switzerland & Italy",
-    "lead": "If you work in the field, you have neither the time nor the patience to get lost in obscure accounting menus or wait 15 seconds for a slow web page to load. FatturaFacile exists to do one thing, and do it flawlessly: issue tax documents and get you paid right away.",
+    "eyebrow": "Why choose it",
+    "headingPre": "Simple invoicing software,",
+    "headingHighlight": "free and yours",
+    "lead": "People who work on site have no time for complicated menus. FatturaFacile does one thing well: it prepares quotes and invoices and helps you get paid.",
     "points": [
       {
-        "title": "Quote in 1 minute, invoice in 1 click",
-        "desc": "Still on the job site or at the customer's home? Open your laptop, put together the quote with labour and materials in under 60 seconds and hand it over on the spot. When the customer gives the go-ahead, just press a button: the quote is instantly converted into an official invoice with sequential numbering, without re-entering a single line."
+        "title": "From quote to invoice in a few clicks",
+        "desc": "Prepare the quote with labour and materials while you are at the customer's. If they accept, turn it into an invoice with one click: nothing to retype, and the number is automatic."
       },
       {
-        "title": "No cloud lock-in and full independence from the network",
-        "desc": "Monthly subscription services lock you out of your tax data as soon as you stop paying the fee. In FatturaFacile your files are stored in an open SQLite database right in the program folder. It works in the basement, in the van, in the workshop or without an internet connection: you are always 100% operational."
+        "title": "No subscription, no lock-in",
+        "desc": "The software is free. Your data stays on your server (or on your computer, with the upcoming app) and you can export and save it whenever you want. If you stop using it, you lose nothing."
       },
       {
-        "title": "Built with and for the craftspeople community",
-        "desc": "We are not a multinational selling enterprise licences. When an electrician or a plumber tells us about a practical need – such as a specific field for withholding tax (ritenuta d'acconto), the social security fund or a custom print template – we develop the module for free and release it to everyone."
+        "title": "Made with people who do this work",
+        "desc": "If an electrician or plumber asks for a useful feature (for example the withholding tax), we look at it and, if it helps everyone, we add it for free."
       }
     ],
     "story": {
-      "badge": "Our Roots",
-      "title": "Our Story: From a Real Need to Free Software",
-      "p1Pre": "The",
-      "p1Post": "project was born from watching the daily frustration of tradespeople, solo professionals, and small businesses throughout Switzerland and Italy. They were forced into ever more expensive monthly subscriptions for complex, slow programs that depend on an internet connection that is often missing on job sites or in workshops.",
+      "badge": "Where it comes from",
+      "title": "Born from a real problem",
+      "p1Pre": "The project",
+      "p1Post": "started when we saw how expensive and complicated invoicing software is for tradespeople and small businesses in Italy and Switzerland, often by subscription and useless without internet.",
       "askPre": "We asked ourselves:",
-      "quote": "\"Why should a professional who issues 15 invoices a month pay hundreds of euros a year and hand ownership of their records over to third-party cloud platforms?\"",
-      "p3": "So we built a first lean version on a USB stick, based on a robust SQLite database file and the native C#/.NET stack. Its word-of-mouth success among colleagues convinced the team to make the project completely open, free and available to the whole community in Italy and Switzerland."
+      "quote": "\"Why should someone who sends 15 invoices a month pay every year and hand their data to someone else's service?\"",
+      "p3": "So we built a simple program, and after the first feedback from colleagues we made it open and free for everyone, in Italy and Switzerland."
     },
     "team": {
       "title": "Open Team & Contributors",
-      "lead": "FatturaFacile is led by software engineers, Italian-Swiss tax advisors and an active community of craftspeople who test every new release.",
-      "joinBtn": "Join the Contributors",
-      "githubBtn": "GitHub repository"
+      "lead": "FatturaFacile is built by developers, Italian-Swiss tax advisers and tradespeople who test every new release.",
+      "joinBtn": "Get involved",
+      "githubBtn": "Code on GitHub"
     },
     "cta": {
-      "title": "Ready to simplify your invoicing?",
-      "lead": "No installation needed: open the online demo and create your first quote in moments.",
-      "features": "See All Features"
+      "title": "Want to try it?",
+      "lead": "Open the online demo and make your first quote in a few minutes, with nothing to install.",
+      "features": "See the features"
     }
   },
   "versioni": {
     "seo": {
-      "title": "FatturaFacile Editions – Offline-first Desktop (SQLite) vs Self-Hosted Web Docker | Open Source CH QR-Bill & IT SdI",
-      "description": "Compare FatturaFacile editions: Offline-first C# WPF Desktop with local SQLite and multi-user self-hosted Web Docker. Open Source (MIT) for Switzerland QR-Bill and Italy SdI FatturaPA.",
-      "keywords": "fatturafacile editions, offline-first usb sqlite invoicing, self-hosted docker erp, open source swiss qr-bill italy sdi"
+      "title": "Web or desktop? FatturaFacile versions compared",
+      "description": "FatturaFacile runs in the browser (available, also on your own server) or as a Windows app (in development, works without internet). Here are the differences.",
+      "keywords": "fatturafacile versions, web invoicing, windows invoicing app, self-hosted, docker"
     },
-    "eyebrow": "Architectural Freedom",
-    "heading": "FatturaFacile Open Source: Offline-first Desktop & Self-Hosted Web",
-    "lead": "No software licensing fees paid to our team. Work in total autonomy: offline on your desk or self-hosted on your private infrastructure.",
+    "eyebrow": "Versions",
+    "heading": "Web or desktop: how do you want to use it?",
+    "lead": "The software is free in both versions. Today you can use the web one. The Windows app is coming.",
     "desktopCard": {
-      "tag": "Windows desktop • Offline",
-      "badge": "In development • First release coming",
-      "title": "FatturaFacile Desktop (WPF / .NET)",
-      "subtitle": "Engineered in native C#/.NET (WPF) with zero-configuration embedded SQLite database.",
+      "tag": "Windows • No internet needed",
+      "badge": "In development • First version coming",
+      "title": "Windows app",
+      "subtitle": "A program installed on your computer, with data saved only there.",
       "features": [
-        "Zero installation: portable folder on hard drive or USB thumb drive with no cloud dependencies.",
-        "Local SQLite database: all your accounting documents remain strictly on your machine for maximum privacy.",
-        "Full offline operation: create estimates and invoices anywhere without an internet connection.",
-        "Dual compliance: generates valid Swiss QR-Bill payloads adhering to SIX guidelines and Italian FatturaPA XML."
+        "No internet needed to make quotes and invoices.",
+        "Data stays on your computer: it does not go to other servers.",
+        "Can be carried on a USB stick.",
+        "Italian electronic invoice and Swiss QR-bill are planned."
       ],
-      "limitation": "Single simultaneous operator per database file (local SQLite transaction lock).",
-      "cta": "Follow development on GitHub"
+      "limitation": "One person at a time for each archive.",
+      "cta": "Follow the work on GitHub"
     },
     "cloudCard": {
       "tag": "Web • Available",
-      "badge": "Release v0.1 • Online demo",
-      "title": "FatturaFacile Web (self-hosted with Docker)",
-      "subtitle": "The multi-user business suite in your browser, with a Laravel API and a PostgreSQL database. Try it in the demo or install it on your own server or VPS with Docker.",
+      "badge": "Version 0.1 • Online demo",
+      "title": "Web version",
+      "subtitle": "Used from the browser, by several people together. Try it in the demo or install it on your server.",
       "features": [
-        "Concurrent browser access for staff, teammates, and accounting advisors.",
-        "Self-hosted on your infrastructure: zero recurring fees to third-party SaaS vendors.",
-        "Open APIs for custom business integrations and database synchronization.",
-        "Community-driven development under the permissive MIT License."
+        "Several people work together, including your accountant.",
+        "Install it on your own server: you pay no provider.",
+        "It has an open interface (API) to connect other programs.",
+        "The code is open and the community improves it."
       ],
-      "migrationNote": "Status: available (v0.1), with new features in every release. Developed in the open on GitHub.",
+      "migrationNote": "Available (version 0.1). New features arrive with every update.",
       "cta": "Try the demo"
     },
     "comparisonTable": {
-      "title": "Technical Comparison Matrix",
-      "headers": ["Feature", "Standalone Desktop", "Web (self-hosted)"],
+      "title": "The differences in short",
+      "headers": ["", "Windows app (in development)", "Web version (available)"],
       "rows": [
         {
-          "feature": "Software License",
-          "desktop": "Free forever (Open-Source)",
-          "cloud": "Free forever (Open-Source)"
+          "feature": "Price",
+          "desktop": "Free",
+          "cloud": "Free"
         },
         {
-          "feature": "Subscription Cost",
-          "desktop": "None (€0 / CHF 0)",
-          "cloud": "None (€0 / CHF 0)"
+          "feature": "Internet needed?",
+          "desktop": "No",
+          "cloud": "Yes, to connect"
         },
         {
-          "feature": "Internet Connection",
-          "desktop": "Not required (100% offline)",
-          "cloud": "Required for remote access"
+          "feature": "Where the data is",
+          "desktop": "On your computer",
+          "cloud": "On your server"
         },
         {
-          "feature": "Database Engine",
-          "desktop": "Local SQLite (on disk or USB)",
-          "cloud": "PostgreSQL"
+          "feature": "People at once",
+          "desktop": "One",
+          "cloud": "Several"
         },
         {
-          "feature": "Concurrent Users",
-          "desktop": "1 operator per database file",
-          "cloud": "Multi-user concurrent"
+          "feature": "Electronic invoice and QR-bill",
+          "desktop": "Yes (Italy and Switzerland)",
+          "cloud": "Yes (Italy and Switzerland)"
         },
         {
-          "feature": "Tax Compliance",
-          "desktop": "Italy (SDI) & Switzerland (QR-Bill)",
-          "cloud": "Italy (SDI) & Switzerland (QR-Bill)"
-        },
-        {
-          "feature": "System Footprint",
-          "desktop": "Zero install (Portable executable)",
-          "cloud": "Docker Container / VPS"
+          "feature": "How to install",
+          "desktop": "Download and start",
+          "cloud": "Used in the browser; to host it yourself you need a server (Docker)"
         }
       ]
     }
   },
   "moduli": {
     "seo": {
-      "title": "FatturaFacile Features & Modules – Open Source ERP for Switzerland QR-Bill & Italy SdI FatturaPA Offline-first",
-      "description": "Explore FatturaFacile Open Source (MIT) ERP modules: 1-click quotes, Swiss SIX QR-Bill, Italian SdI FatturaPA XML, inventory, and Offline-first encrypted SQLite backups.",
-      "keywords": "fatturafacile modules, open source erp features, swiss qr-bill six, italy sdi fatturapa xml, offline-first invoicing"
+      "title": "FatturaFacile features | Quotes, invoices, stock, backup",
+      "description": "What you can do with FatturaFacile: quotes, invoices, Italian electronic invoice, Swiss QR-bill, backup. And what we are adding.",
+      "keywords": "fatturafacile features, quotes and invoices, electronic invoice, qr-bill, stock, backup"
     },
-    "eyebrow": "Modular & Transparent Ecosystem",
-    "heading": "FatturaFacile Open Source Modules: Swiss QR-Bill, Italian SdI FatturaPA & Offline-first ERP",
-    "lead": "FatturaFacile provides essential billing tools out of the box and expands based on practical community needs. Every approved module is developed free of charge and shipped in official public releases.",
-    "availableSectionTitle": "Available Modules",
-    "roadmapSectionTitle": "Transparent Development Roadmap",
+    "eyebrow": "Features",
+    "heading": "What you can do with FatturaFacile",
+    "lead": "Start with quotes and invoices. The rest grows with what users ask for: if a feature helps many people, we add it for free.",
+    "availableSectionTitle": "Available now",
+    "roadmapSectionTitle": "What we are preparing",
     "roadmapStages": {
-      "inDevelopment": "In Active Development",
-      "planned": "Next Up (Planned)",
-      "backlog": "Community Ideas Backlog"
+      "inDevelopment": "Being built",
+      "planned": "Next",
+      "backlog": "Community ideas"
     },
     "requestForm": {
       "badge": "Community-Driven & 100% Free",
-      "title": "Need a specific feature or missing trade module?",
-      "description": "Tell us about your business workflow or national regulatory requirements. If the feature benefits the community, our team will program it free of charge and include it in upcoming open releases.",
-      "nameLabel": "Full Name / Company Name",
-      "emailLabel": "Contact Email Address",
-      "marketLabel": "Target Market",
-      "tradeLabel": "Trade or Industry (e.g. Electrician, Plumber, Construction, Accounting)",
-      "detailsLabel": "Feature Requirements and Operational Problem to Solve",
-      "submitBtn": "Submit Free Module Proposal",
-      "disclaimer": "Our core development team reviews submissions directly to draft open architectural specifications."
+      "title": "Missing a feature?",
+      "description": "Tell us how you work and what you would need. If it helps others too, we add it for free.",
+      "nameLabel": "Full name or company name",
+      "emailLabel": "Your email",
+      "marketLabel": "Country",
+      "tradeLabel": "Your trade (e.g. plumber, electrician, firm)",
+      "detailsLabel": "What you need and what problem it would solve",
+      "submitBtn": "Send the request",
+      "disclaimer": "Someone from the team will reply to understand better what you need."
     },
     "pillars": [
       {
@@ -384,43 +408,42 @@
     "milestoneTbd": "To be defined",
     "modules": {
       "mod-core-invoicing": {
-        "title": "Fast Invoicing & 1-Click Quotes",
-        "description": "Instant creation and issuing of quotes and invoices with automatic sequential numbering and clean PDF output.",
+        "title": "Quotes and invoices",
+        "description": "Prepare a quote and turn it into an invoice with one click. The number is automatic and the PDF is ready to print or send.",
         "features": [
-          "Instant quote-to-invoice conversion in 1 click",
-          "Automatic sequential numbering and credit note handling",
-          "Vector PDF layout ready for printing or emailing",
-          "100% offline operation with an embedded SQLite database"
+          "From quote to invoice with one click",
+          "Automatic numbering and credit notes",
+          "PDF ready to print or send by email",
+          "Part payments and payment reminders"
         ]
       },
       "mod-sdi-fatturapa": {
-        "title": "FatturaPA XML & SDI Exchange",
-        "description": "Native support for the XML format required by the Italian Revenue Agency (Agenzia delle Entrate), for both flat-rate and ordinary tax regimes.",
+        "title": "Italian electronic invoice",
+        "description": "Creates the electronic invoice file (FatturaPA) for the Italian tax system (SdI).",
         "features": [
-          "Generation of standard FatturaPA XML files with no validation errors",
-          "Handling of the customer's Codice Destinatario (recipient code) or PEC (certified email)",
-          "Support for Italian tax regimes (RF19 flat-rate, RF01 ordinary)",
-          "Immediate XSD schema check before transmission"
+          "XML FatturaPA file ready to send",
+          "Customer's recipient code or certified email",
+          "Flat-rate and ordinary tax regimes",
+          "File check before sending"
         ]
       },
       "mod-six-qrbill": {
-        "title": "SIX QR-Bill Payment Slips & Swiss VAT",
-        "description": "Compliant generation of the Swiss QR-Bill with the standard SIX payment code and calculation of federal VAT rates.",
+        "title": "Swiss invoice with QR-bill",
+        "description": "Adds the payment slip with QR code to the invoice, as Swiss banks require.",
         "features": [
-          "Automatic generation of the SIX-certified payment QR code",
-          "QR-IBAN support with QR reference, and standard IBAN with SCOR/NON",
-          "Swiss VAT rates (standard, reduced, special rate for accommodation)",
-          "Dual currency supported natively (CHF / EUR)"
+          "Payment QR code in the official format (SIX)",
+          "Works with QR-IBAN and normal IBAN",
+          "Swiss VAT rates",
+          "Swiss francs and euros"
         ]
       },
       "mod-encrypted-backup": {
-        "title": "1-Click Encrypted Backup & Restore",
-        "description": "Encrypted snapshot of the local SQLite database to external storage, a network drive or a synchronised cloud folder.",
+        "title": "Backups",
+        "description": "Saves your data in a file and restores it when needed.",
         "features": [
-          "Encrypted ZIP archive ready with a single click",
-          "No dependency on external proprietary backup servers",
-          "Instant restore on any other Windows 10/11 machine",
-          "Database integrity verified before and after backup"
+          "Automatic copy every night, last 7 kept",
+          "Manual copy with one click and file download",
+          "Guided restore, with a safety copy before overwriting"
         ]
       },
       "mod-payments-schedule": {
@@ -740,61 +763,73 @@
   },
   "faq": {
     "seo": {
-      "title": "FatturaFacile FAQ – Open Source (MIT) License, Offline-first SQLite, Swiss QR-Bill & Italian SdI FatturaPA",
-      "description": "Frequently asked questions about FatturaFacile Open Source (MIT) ERP: Offline-first local SQLite database, encrypted backups, Swiss SIX QR-Bill, and Italian SdI FatturaPA XML.",
-      "keywords": "fatturafacile faq, open source mit invoicing, offline-first sqlite security, swiss qr-bill italy sdi fatturapa"
+      "title": "FAQ | FatturaFacile",
+      "description": "Simple answers about FatturaFacile: is it free? where is my data? does it work with Italian electronic invoices and the Swiss QR-bill? how do I try it?",
+      "keywords": "fatturafacile faq, free invoicing, electronic invoice, qr-bill, backup"
     },
-    "eyebrow": "Answers & Clarity",
-    "heading": "Frequently Asked Questions",
-    "lead": "Everything you need to know about our technology, fiscal compliance, and the open development philosophy of the project.",
-    "searchPlaceholder": "Search for answers (e.g., USB, backup, SDI, QR-Bill)...",
+    "eyebrow": "FAQ",
+    "heading": "Answers to the most common questions",
+    "lead": "What it costs, where the data is, how it works with tax rules and how to try it.",
+    "searchPlaceholder": "Search for an answer (e.g. backup, QR-bill, price)...",
     "categories": {
-      "general": "General & Philosophy",
-      "technical": "Architecture & Storage",
-      "compliance": "Regulations & Tax",
-      "partners": "Support & Community"
+      "general": "In general",
+      "technical": "Data and security",
+      "compliance": "Tax",
+      "partners": "Help and community"
     },
     "items": [
       {
         "id": "faq-free",
         "category": "general",
         "question": "Is it really free?",
-        "answer": "Yes, FatturaFacile is distributed under the permissive open source MIT license. There are no hidden fees, trial expirations, or paid subscriptions. The source code is publicly accessible to everyone."
+        "answer": "Yes. FatturaFacile is open source software under the MIT licence: you use it for free, with no subscription and no hidden costs. The code is public."
       },
       {
         "id": "faq-data-location",
         "category": "technical",
-        "question": "Where is my data stored?",
-        "answer": "With the desktop application, all your data resides locally in a SQLite database inside the application folder on your computer. No data is transmitted to external servers or third-party clouds."
+        "question": "Where is my data?",
+        "answer": "In the web version it is on the server where the program is installed: if you install it, it is on your server. In the upcoming Windows app it is only on your computer. The demo holds sample data only."
       },
       {
         "id": "faq-backup",
         "category": "technical",
-        "question": "How do I create a backup copy?",
-        "answer": "You simply export the .sqlite file using the built-in backup menu or copy it onto an external storage device (USB drive, NAS, or encrypted directory)."
+        "question": "How do I make a backup?",
+        "answer": "The web version makes an automatic copy every night and keeps the last 7. You can also make one by hand, download it and restore it whenever you want."
       },
       {
         "id": "faq-sdi-it",
         "category": "compliance",
-        "question": "Does it send invoices directly to Italian SdI?",
-        "answer": "FatturaFacile prepares standard-compliant FatturaPA XML files ready to be uploaded for free to the Italian Revenue Agency (Agenzia delle Entrate) portal or submitted through your accountant's channel."
+        "question": "Does it send the invoice straight to the Italian tax system (SdI)?",
+        "answer": "FatturaFacile creates the electronic invoice file (FatturaPA, XML format). To send it you can upload it to the free Fatture e Corrispettivi portal of the Italian Revenue Agency, or give it to your accountant."
       },
       {
         "id": "faq-qrbill-ch",
         "category": "compliance",
-        "question": "How does the Swiss QR-Bill work?",
-        "answer": "It generates valid Swiss QR-Bill payloads adhering to SIX guidelines, including verified payment QR codes (QR-IBAN, Creditor Reference) and accurate federal VAT calculations in CHF and EUR."
+        "question": "How does it work for Switzerland?",
+        "answer": "The invoice includes the payment slip with QR code (QR-bill), in the format Swiss banks require. It works with QR-IBAN and with a normal IBAN, in Swiss francs or euros, with Swiss VAT rates."
       },
       {
         "id": "faq-community",
         "category": "partners",
-        "question": "How can I contribute or request a new feature?",
-        "answer": "The project welcomes software developers, accountants, and translators on GitHub, and community suggestions are actively discussed in our public Telegram group."
+        "question": "Can I ask for a feature or help out?",
+        "answer": "Yes. Write to us in the Telegram group or open an issue on GitHub. We are also looking for people to translate, test the program or check the tax rules."
+      },
+      {
+        "id": "faq-try",
+        "category": "general",
+        "question": "How do I try it?",
+        "answer": "Open the online demo: it is the real program with sample data, no sign-up. Do not enter real data, because it is erased from time to time."
+      },
+      {
+        "id": "faq-who",
+        "category": "general",
+        "question": "Who is it for?",
+        "answer": "For tradespeople, small businesses and freelancers in Italy and Switzerland who make quotes and invoices and do not want to pay a subscription."
       }
     ],
     "noResults": {
-      "text": "No answer matches your search. Try different keywords or",
-      "link": "write to us directly"
+      "text": "No answer found. Try other words or",
+      "link": "write to us"
     }
   },
   "sponsor": {
@@ -1086,15 +1121,15 @@
   },
   "contribute": {
     "seo": {
-      "title": "Contribute to FatturaFacile – Open Source (MIT) ERP for Switzerland QR-Bill & Italy SdI FatturaPA Offline-first",
-      "description": "How to contribute to FatturaFacile Open Source (MIT) ERP: code (Laravel, Angular, .NET, Flutter), testing Swiss QR-Bill and Italian SdI FatturaPA, translations, and documentation.",
-      "keywords": "contribute fatturafacile, open source mit erp, swiss qr-bill, italy sdi fatturapa, laravel angular dotnet flutter"
+      "title": "Get involved in FatturaFacile | Open source project on GitHub",
+      "description": "How to help FatturaFacile: try the software, report problems, translate, write code or check the tax rules.",
+      "keywords": "contribute fatturafacile, open source contribution, github, translations, good first issue"
     },
     "eyebrow": "Open source • MIT licence",
-    "heading": "Contribute to FatturaFacile",
-    "lead": "FatturaFacile grows thanks to people who work on it in their spare time: developers, students, accountants, translators and testers. Every bit of help counts, however small.",
-    "ctaTelegram": "Say hello in the Telegram group",
-    "ctaIssues": "Issues to get started",
+    "heading": "Get involved in FatturaFacile",
+    "lead": "FatturaFacile grows thanks to people who give it a little time: developers, students, accountants, translators and people who try it. Even a small help counts.",
+    "ctaTelegram": "Say hello on Telegram",
+    "ctaIssues": "Issues to start from",
     "ways": {
       "badge": "What you can do",
       "title": "Six ways to help",

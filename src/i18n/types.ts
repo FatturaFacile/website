@@ -192,6 +192,14 @@ export interface HomeTranslations {
     local: { badge: string; title: string; desc: string; cta: string };
     schools: { badge: string; title: string; desc: string; cta: string };
   };
+  collabora: {
+    badge: string;
+    title: string;
+    lead: string;
+    items: TitleDesc[];
+    cta: string;
+    secondary: string;
+  };
   demoCta: {
     badge: string;
     title: string;
