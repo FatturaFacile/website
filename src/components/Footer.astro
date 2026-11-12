@@ -176,6 +176,15 @@ const t = useTranslations(lang);
             </button>
           </li>
           <li>
+            <button
+              type="button"
+              onclick="window.openCookiePreferences && window.openCookiePreferences()"
+              class="hover:text-white transition-colors text-left cursor-pointer"
+            >
+              {t.common.footer.cookiePreferences}
+            </button>
+          </li>
+          <li>
             <a
               href="https://github.com/FatturaFacile/FatturaFacile/blob/main/LICENSE"
               target="_blank"

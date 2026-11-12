@@ -67,7 +67,7 @@ const organizationSchema: Record<string, unknown> = {
   '@type': 'Organization',
   '@id': `${siteOrigin}/#organization`,
   name: 'FatturaFacile',
-  alternateName: 'FatturaFacile Open Source ERP & Invoicing Suite',
+  alternateName: 'FatturaFacile - free invoicing',
   url: `${siteOrigin}/`,
   logo: {
     '@type': 'ImageObject',
@@ -96,10 +96,10 @@ const defaultSoftwareSchema: Record<string, unknown> = {
   '@type': 'SoftwareApplication',
   '@id': `${siteOrigin}/#software`,
   name: t.common.siteName,
-  alternateName: 'FatturaFacile Open Source ERP (Svizzera QR-Bill & Italia SdI FatturaPA)',
+  alternateName: 'FatturaFacile',
   applicationCategory: 'BusinessApplication',
-  applicationSubCategory: 'ERP, E-Invoicing & Accounting Suite',
-  operatingSystem: 'Windows, Web, Android, iOS',
+  applicationSubCategory: 'Invoicing and quotes',
+  operatingSystem: 'Web',
   inLanguage: ['it', 'en', 'fr', 'de'],
   isAccessibleForFree: true,
   license: [MIT_LICENSE_OSI_URL, MIT_LICENSE_GITHUB_URL],
@@ -131,14 +131,7 @@ const defaultSoftwareSchema: Record<string, unknown> = {
   publisher: {
     '@id': `${siteOrigin}/#organization`,
   },
-  featureList: [
-    'Suite ERP e fatturazione Open Source con licenza MIT',
-    'Svizzera: Polizze QR-Bill standard SIX con QR-IBAN e aliquote IVA federali',
-    'Italia: Fatturazione elettronica XML FatturaPA per Sistema di Interscambio (SdI)',
-    'Architettura Offline-first su chiavetta USB o PC con database SQLite locale',
-    'Opzione Web Cloud Self-Hosted multi-utente con Docker, Laravel, Angular e PostgreSQL',
-    'Conformità nativa GDPR UE e nLPD Svizzera con zero telemetria',
-  ],
+  featureList: t.home.schemaFeatures,
 };
 
 const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];

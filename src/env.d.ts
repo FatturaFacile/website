@@ -16,3 +16,11 @@ interface Window {
     params?: Record<string, unknown> | unknown,
   ) => void;
 }
+
+interface Window {
+  ffConsent?: {
+    get: () => 'granted' | 'denied' | null;
+    set: (choice: 'granted' | 'denied') => void;
+  };
+  openCookiePreferences?: () => void;
+}

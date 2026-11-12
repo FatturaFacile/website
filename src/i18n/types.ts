@@ -57,6 +57,16 @@ export interface CommonTranslations {
     copyright: string;
     telegramCommunity: string;
     githubRepo: string;
+    cookiePreferences: string;
+  };
+  cookieBanner: {
+    title: string;
+    text: string;
+    privacyLink: string;
+    accept: string;
+    reject: string;
+    stateGranted: string;
+    stateDenied: string;
   };
   privacyModal: {
     title: string;
@@ -87,7 +97,8 @@ export type TeamDomainKey =
   | 'italian_compliance'
   | 'web_frontend'
   | 'docs_translation'
-  | 'community_advocacy';
+  | 'community_advocacy'
+  | 'mobile';
 
 export type SchoolTypeKey = 'Technical' | 'Commercial' | 'Vocational' | 'University';
 
@@ -181,6 +192,7 @@ export interface HomeTranslations {
     compareCta: string;
     modulesCta: string;
   };
+  schemaFeatures: string[];
   comingSoon: {
     badge: string;
     heading: string;
@@ -191,6 +203,14 @@ export interface HomeTranslations {
   territory: {
     local: { badge: string; title: string; desc: string; cta: string };
     schools: { badge: string; title: string; desc: string; cta: string };
+  };
+  collabora: {
+    badge: string;
+    title: string;
+    lead: string;
+    items: TitleDesc[];
+    cta: string;
+    secondary: string;
   };
   demoCta: {
     badge: string;
@@ -553,12 +573,26 @@ export interface PrivacyTranslations {
     title: string;
     desc: string;
   }[];
+  section2bTitle: string;
+  section2bIntro: string;
+  section2bBullets: {
+    title: string;
+    desc: string;
+  }[];
+  sectionGaTitle: string;
+  sectionGaIntro: string;
+  sectionGaBullets: {
+    title: string;
+    desc: string;
+  }[];
   section3Title: string;
   section3Intro: string;
   section3Bullets: {
     title: string;
     desc: string;
   }[];
+  controllerTitle: string;
+  controllerText: string;
   section4Title: string;
   section4Text: string;
   contactLabel: string;

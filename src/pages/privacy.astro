@@ -53,6 +53,21 @@ const pageSchema = {
         <strong class="font-bold">{p.calloutTitle}</strong> {p.calloutText}
       </div>
 
+      <!-- Data controller -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-600 dark:bg-teal-400"></span>
+          {p.controllerTitle}
+        </h2>
+        <p>{p.controllerText}</p>
+        <p class="mt-3 font-semibold text-teal-600 dark:text-teal-400">
+          {p.contactLabel}{' '}
+          <a href="mailto:info@fatturafacile.eu" class="hover:underline">
+            info@fatturafacile.eu
+          </a>
+        </p>
+      </div>
+
       <!-- Section 1 -->
       <div>
         <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
@@ -78,6 +93,38 @@ const pageSchema = {
         <p class="mb-3">{p.section2Intro}</p>
         <ul class="list-disc pl-6 space-y-2">
           {p.section2Bullets.map((item) => (
+            <li>
+              <strong>{item.title}:</strong> {item.desc}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Section 2b: web version and demo -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-700 dark:bg-teal-400" aria-hidden="true"></span>
+          {p.section2bTitle}
+        </h2>
+        <p class="mb-3">{p.section2bIntro}</p>
+        <ul class="list-disc pl-6 space-y-2">
+          {p.section2bBullets.map((item) => (
+            <li>
+              <strong>{item.title}:</strong> {item.desc}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Section GA -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-teal-700 dark:bg-teal-400" aria-hidden="true"></span>
+          {p.sectionGaTitle}
+        </h2>
+        <p class="mb-3">{p.sectionGaIntro}</p>
+        <ul class="list-disc pl-6 space-y-2">
+          {p.sectionGaBullets.map((item) => (
             <li>
               <strong>{item.title}:</strong> {item.desc}
             </li>

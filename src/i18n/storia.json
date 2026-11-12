@@ -1,818 +1,818 @@
 {
   "it": {
     "seo": {
-      "title": "FatturaFacile Storia – ERP & Fatturazione Open Source (MIT) Svizzera QR-Bill e Italia SdI FatturaPA Offline-first",
-      "description": "Scopri come è nato FatturaFacile: la suite ERP e fatturazione Open Source (MIT) Offline-first per Svizzera (QR-Bill SIX) e Italia (SdI FatturaPA), nata contro gli abbonamenti SaaS.",
-      "keywords": "storia fatturafacile, erp open source mit, software fatturazione offline-first, sqlite locale, fatturapa sdi italia, qr-bill svizzera, clean architecture dotnet"
+      "title": "La nostra storia | Come è nato FatturaFacile",
+      "description": "Come è nato FatturaFacile: dal problema degli artigiani con programmi cari e complicati a un programma gratuito e open source per l'Italia e la Svizzera.",
+      "keywords": "storia fatturafacile, chi siamo, open source, fatture gratis, artigiani"
     },
-    "eyebrow": "Le Nostre Radici & Visione",
-    "heading": "FatturaFacile: dalla frustrazione sul cantiere all'ERP Open Source Offline-first per Svizzera e Italia",
-    "lead": "FatturaFacile nasce con una missione chiara a copertura nazionale per Svizzera e Italia: restituire ad artigiani, micro-imprese e professionisti uno strumento di fatturazione veloce, conforme, gratuito e realmente di loro proprietà.",
-    "problemTitle": "Il Problema: Perché un artigiano dovrebbe usare un ERP da 500 bottoni?",
-    "problemText": "Idraulici, elettricisti, serramentisti, posatori e liberi professionisti emettono in media dalle 10 alle 20 fatture al mese. Eppure il mercato offre loro quasi solo gestionali pensati per grandi aziende manifatturiere: lenti, pieni di menu contabili indecifrabili e vincolati a canoni mensili perpetui.",
-    "philosophyTitle": "I Tre Pilastri della Nostra Architettura",
+    "eyebrow": "Da dove nasce",
+    "heading": "Come è nato FatturaFacile",
+    "lead": "FatturaFacile non è nato in una sala riunioni per fare ricavi, ma guardando idraulici, elettricisti e artigiani alle prese con programmi lenti, complicati e cari.",
+    "problemTitle": "Il problema: programmi troppo grandi",
+    "problemText": "Negli ultimi anni i programmi di gestione sono passati agli abbonamenti mensili. Per un'azienda grande può andare bene. Per chi lavora da solo o in pochi vuol dire costi pesanti, schermate piene di pulsanti inutili e il timore di non poter più vedere le proprie fatture se si smette di pagare.",
+    "philosophyTitle": "I quattro principi",
     "philosophyBullets": [
       {
-        "title": "SQLite Locale & Zero Telemetria",
-        "desc": "Sovranità assoluta sui dati: nessun server intermedio, nessun tracciamento, pieno controllo fisico dei propri archivi fiscali."
+        "title": "I dati sono tuoi",
+        "desc": "Nessun tracciamento pubblicitario e nessuna cessione di dati. Li puoi esportare e salvare quando vuoi."
       },
       {
-        "title": "Fondazione Dual-Market (IT & CH)",
-        "desc": "Progettato fin dal primo giorno per gestire nativamente sia il tracciato XML FatturaPA SDI italiano sia la QR-Bill standard SIX svizzera."
+        "title": "Italia e Svizzera",
+        "desc": "Fattura elettronica (FatturaPA) per l'Italia, QR-Bill per la Svizzera: entrambe previste fin dall'inizio."
       },
       {
-        "title": "Clean Architecture & C# .NET",
-        "desc": "Ingegneria del software rigorosa (SOLID, CQRS, MVVM nativo) invece di fragili wrapper web lenti ad avviarsi."
+        "title": "Codice ordinato",
+        "desc": "Parti separate e controlli automatici a ogni modifica, per un programma affidabile e facile da migliorare."
       }
     ],
     "timeline": [
       {
-        "year": "Fase 1 • Genesi",
-        "title": "L’Ascolto sul Campo tra Italia e Svizzera",
-        "desc": "Raccogliamo lo sfogo di artigiani e piccoli professionisti stanchi di pagare abbonamenti annuali per emettere poche decine di fatture e di restare bloccati nei cantieri senza internet."
+        "year": "Fase 1",
+        "title": "Ascoltare chi lavora",
+        "desc": "Raccogliamo le difficoltà di artigiani e piccoli professionisti stanchi di pagare abbonamenti per fare poche fatture."
       },
       {
-        "year": "Fase 2 • Prototipo",
-        "title": "Il Primo Motore Portabile C# WPF & SQLite su USB",
-        "desc": "Nasce il primo eseguibile standalone su chiavetta USB: avvio in meno di un secondo, zero scrittura nel registro di Windows e database SQLite autocontenuto."
+        "year": "Fase 2",
+        "title": "Le prime prove",
+        "desc": "Un primo prototipo per compilare in fretta le fatture, anche fuori sede."
       },
       {
-        "year": "Fase 3 • Dual-Market",
-        "title": "Integrazione Nativa FatturaPA SDI & Swiss QR-Bill SIX",
-        "desc": "Implementazione dei validatori ufficiali per l’Agenzia delle Entrate italiana (XML v1.2, regimi forfettario/ordinario) e per gli standard bancari elvetici SIX (QR-IBAN, aliquote IVA federali)."
+        "year": "Fase 3",
+        "title": "Fattura elettronica e QR-Bill",
+        "desc": "Si aggiungono la fattura elettronica italiana (FatturaPA, regime forfettario e ordinario) e la fattura svizzera con QR-Bill e aliquote IVA."
       },
       {
-        "year": "Fase 4 • Ecosistema Aperto",
-        "title": "Lancio Open-Source, Scuole & Rete Partner Nazionale",
-        "desc": "Apertura totale del codice sorgente, avvio del modello di sviluppo gratuito dei moduli su richiesta e creazione dei programmi didattici per istituti tecnici e commerciali."
+        "year": "Fase 4",
+        "title": "Codice aperto, scuole e assistenza",
+        "desc": "Il codice diventa pubblico, le funzioni richieste dalla community si sviluppano gratis e partono i contatti con le scuole."
       }
     ],
     "hero": {
-      "eyebrow": "La Nostra Storia & Manifesto",
-      "headingPart1": "FatturaFacile: dalla frustrazione sul cantiere all'",
-      "headingHighlight": "ERP Open Source Offline-first per Svizzera (QR-Bill) e Italia (SdI).",
-      "lead": "FatturaFacile nasce con una missione chiara e copertura completa per tutta la Svizzera e tutta l'Italia: liberare artigiani, micro-imprese e professionisti da gestionali sovradimensionati e abbonamenti SaaS perpetui con una suite Open Source (MIT) nativa per Svizzera QR-Bill e Italia SdI FatturaPA.",
-      "badgeDualMarket": "Copertura Nazionale Svizzera 🇨🇭 e Italia 🇮🇹",
-      "badgeOpenSource": "100% Gratuito, Offline & Open Source",
-      "ctaModules": "Esplora i Moduli",
-      "ctaCommunity": "Unisciti alla Community",
+      "eyebrow": "La nostra storia",
+      "headingPart1": "Dalla frustrazione in cantiere a",
+      "headingHighlight": "un programma di fatturazione gratuito.",
+      "lead": "FatturaFacile vuole dare ad artigiani, piccole imprese e professionisti un programma di fatturazione veloce, in regola con le norme, gratuito e davvero loro.",
+      "badgeDualMarket": "Italia 🇮🇹 e Svizzera 🇨🇭",
+      "badgeOpenSource": "Gratuito e open source",
+      "ctaModules": "Guarda le funzioni",
+      "ctaCommunity": "Entra nella community",
       "ctaDownload": "Prova la demo",
-      "langSelectorLabel": "Selettore lingua pagina Storia"
+      "langSelectorLabel": "Scelta della lingua della pagina Storia"
     },
     "origin": {
-      "badge": "1. La Genesi & Il Problema",
-      "heading": "Perché chi emette 15 fatture al mese deve pagare un ERP da 500 bottoni?",
-      "lead": "Tutto è iniziato davanti a un banco da lavoro, osservando colleghi e amici artigiani lottare la sera tardi con portali web lenti e complicati solo per incassare il proprio lavoro.",
-      "problemTitle": "La Frustrazione verso gli ERP Elefantiaci",
-      "problemText": "Un elettricista, un idraulico, un giardiniere o un consulente indipendente non ha bisogno di gestire una catena logistica multinazionale o la contabilità analitica a partita doppia. Ha bisogno di creare un preventivo chiaro in 60 secondi mentre è ancora dal cliente e trasformarlo in una fattura conforme in un solo click.",
-      "antiSaasTitle": "Filosofia Anti-SaaS: I Tuoi Dati Non Devono Essere in Ostaggio",
-      "antiSaasText": "Negli ultimi anni il software per piccole attività si è trasformato in un affitto infinito: se smetti di pagare il canone mensile o annuale, perdi la possibilità di operare o persino di consultare comodamente il tuo storico clienti. Noi crediamo che lo strumento di lavoro e i dati contabili debbano appartenere al 100% a chi lavora, senza scadenze e senza ricatti.",
+      "badge": "1. Il problema",
+      "heading": "Perché chi fa 15 fatture al mese deve pagare un programma con 500 pulsanti?",
+      "lead": "Tutto è iniziato vedendo colleghi e amici artigiani faticare la sera con programmi lenti e complicati, solo per farsi pagare il lavoro.",
+      "problemTitle": "Programmi pensati per le grandi aziende",
+      "problemText": "Un elettricista, un idraulico, un giardiniere o un consulente non ha bisogno di gestire una grande azienda. Gli serve un preventivo chiaro in un minuto, mentre è ancora dal cliente, e una fattura in regola con un clic.",
+      "antiSaasTitle": "I tuoi dati non devono restare in ostaggio",
+      "antiSaasText": "Oggi molti programmi si pagano come un affitto: se smetti di pagare, non puoi più lavorarci e a volte nemmeno rivedere i tuoi clienti. Noi pensiamo che gli strumenti di lavoro e i dati debbano restare di chi lavora, senza scadenze.",
       "quote": {
-        "text": "“Un software per artigiani dovrebbe comportarsi come un buon cacciavite nella cassetta degli attrezzi: è lì quando ti serve, non chiede un abbonamento ogni mese per girare una vite e funziona anche in un seminterrato senza segnale.”",
-        "author": "Team Fondatore FatturaFacile",
-        "role": "Manifesto Architetturale Italo-Svizzero"
+        "text": "“Un programma per artigiani dovrebbe essere come un buon cacciavite: c'è quando serve, non chiede un abbonamento per girare una vite.”",
+        "author": "Il team fondatore di FatturaFacile",
+        "role": "Il nostro punto di partenza"
       },
       "comparison": {
-        "erpTitle": "Gestionali SaaS / ERP Tradizionali",
+        "erpTitle": "Programmi in abbonamento",
         "erpPoints": [
-          "Canoni mensili o annuali obbligatori che aumentano ad ogni rinnovo",
-          "Interfacce affollate da centinaia di pulsanti inutili per le micro-imprese",
-          "Dipendenza totale da internet e caricamenti lenti in cantiere",
-          "Archivi clienti e fatture custoditi su server di terze parti"
+          "Canone mensile o annuale che sale a ogni rinnovo",
+          "Centinaia di pulsanti che a una piccola attività non servono",
+          "Spesso non funzionano senza internet",
+          "Clienti e fatture su server di altri"
         ],
-        "ffTitle": "Il Modello FatturaFacile",
+        "ffTitle": "FatturaFacile",
         "ffPoints": [
-          "0 € per sempre sulla versione Desktop, senza limiti di documenti",
-          "Interfaccia essenziale: preventivo in 1 minuto, fattura in 1 click",
-          "100% Offline su PC o chiavetta USB con avvio istantaneo (< 1 secondo)",
-          "Database SQLite locale di tua esclusiva proprietà fisica e legale"
+          "Gratuito, senza limiti di documenti",
+          "Preventivo in un minuto, fattura con un clic",
+          "Puoi installarlo sul tuo server",
+          "I dati restano tuoi e li puoi esportare"
         ]
       }
     },
     "architecture": {
-      "badge": "2. Filosofia Architetturale",
-      "heading": "Ingegneria Solida al Servizio della Semplicità",
-      "lead": "Sotto un’interfaccia volutamente minimale batte un cuore tecnologico progettato secondo i più alti standard di sicurezza, velocità e manutenibilità.",
+      "badge": "2. Come è fatto",
+      "heading": "Semplice da usare, solido dentro",
+      "lead": "L'interfaccia è semplice di proposito. Dietro, il programma è costruito con cura per essere sicuro, veloce e facile da mantenere.",
       "pillars": [
         {
           "id": "sqlite",
-          "tag": "Privacy by Design",
-          "title": "SQLite Locale & Zero Telemetria",
-          "desc": "Nessun dato fiscale, IBAN o anagrafica cliente lascia mai il tuo computer. L’imprenditore resta l’unico Titolare del Trattamento (Data Controller) ai sensi del GDPR UE e della nLPD svizzera, azzerando il rischio di data breach esterni.",
+          "tag": "Protezione dei dati",
+          "title": "I tuoi dati restano dove li metti",
+          "desc": "Nella versione web i dati stanno sul server dove è installato il programma. Se lo installi tu, restano tuoi. Non usiamo strumenti di tracciamento pubblicitari.",
           "highlights": [
-            "Singolo file database SQLite transazionale ACID",
-            "Zero chiamate di telemetria o tracker pubblicitari",
-            "Backup crittografati ZIP in 1 click su USB o NAS"
+            "Nessun tracciamento pubblicitario",
+            "Copia automatica ogni notte, ultime 7 conservate",
+            "Copia e ripristino anche a mano"
           ]
         },
         {
           "id": "dual_market",
-          "tag": "Copertura Nazionale Svizzera & Italia",
-          "title": "Fondazione Dual-Market: Italia & Svizzera",
-          "desc": "A differenza dei software adattati a posteriori con localizzazioni parziali, FatturaFacile è stato ingegnerizzato fin dal primo giorno per garantire la piena conformità fiscale e normativa per tutta la Svizzera (QR-Bill SIX, aliquote IVA ESTV, revLPD in tutti i 26 cantoni) e per tutta l'Italia (FatturaPA XML, SdI B2B/B2C, AgID, split payment e ritenute d'acconto in tutte le regioni).",
+          "tag": "Italia e Svizzera",
+          "title": "Due Paesi, un solo programma",
+          "desc": "FatturaFacile è pensato fin dall'inizio per l'Italia e per la Svizzera, non adattato dopo.",
           "highlights": [
-            "Italia 🇮🇹: Generatore XML FatturaPA v1.2 certificato per SDI, PEC, split payment e ritenute",
-            "Svizzera 🇨🇭: Polizze QR-Bill standard SIX con croce elvetica, QR-IBAN e IVA federale ESTV (8.1%, 2.6%, 3.8%)",
-            "Supporto multivaluta nativo EUR e CHF"
+            "Italia 🇮🇹: file della fattura elettronica (FatturaPA)",
+            "Svizzera 🇨🇭: polizza QR-Bill con QR-IBAN e IVA svizzera",
+            "Franchi svizzeri ed euro"
           ]
         },
         {
           "id": "clean_arch",
-          "tag": "Qualità del Codice",
-          "title": "Clean Architecture & C# .NET Nativo",
-          "desc": "Abbiamo rifiutato i pesanti wrapper web che consumano gigabyte di RAM. FatturaFacile è scritto in C# .NET con pattern CQRS e principi SOLID, garantendo reattività immediata anche su portatili d’officina meno recenti.",
+          "tag": "Qualità del codice",
+          "title": "Codice ordinato e controllato",
+          "desc": "Il codice è diviso in parti chiare e a ogni modifica partono controlli automatici. Questo rende il programma più affidabile e più facile da migliorare.",
           "highlights": [
-            "Separazione rigorosa Domain, Application, Infrastructure e UI",
-            "Qualità verificata con pipeline CI/CD SonarQube e Qodana",
-            "Opzione multi-utente Docker Self-Hosted per chi cresce in team"
+            "Parti separate: dati, regole, interfaccia",
+            "Test e controlli automatici su GitHub",
+            "Si può installare anche sul proprio server, per lavorare in più persone"
           ]
         }
       ]
     },
     "ethics": {
-      "badge": "3. Etica Open-Source & Impatto Sociale",
-      "heading": "Un Bene Comune per Artigiani, Studenti e Imprese",
-      "lead": "FatturaFacile non è una startup a caccia di venture capital, ma un progetto civico e tecnologico costruito insieme a chi lavora e insegna.",
+      "badge": "3. I nostri impegni",
+      "heading": "Un bene comune per artigiani, studenti e imprese",
+      "lead": "FatturaFacile non è una startup in cerca di investitori. È un progetto costruito insieme a chi lavora e a chi insegna.",
       "cards": [
         {
           "id": "free_forever",
-          "badge": "Impegno Perpetuo",
-          "title": "Core Desktop 100% Gratuito per Sempre",
-          "desc": "La versione desktop portabile non diventerà mai a pagamento e non introdurrà mai blocchi artificiali sul numero di fatture o clienti. Chi inizia un mestiere non deve avere barriere d’ingresso.",
+          "badge": "Per sempre",
+          "title": "Gratis, senza limiti",
+          "desc": "Il programma resta gratuito e non avrà limiti artificiali di fatture o clienti. Chi inizia un mestiere non deve trovare barriere.",
           "linkHref": "/versioni/",
-          "linkLabel": "Scopri le Versioni →"
+          "linkLabel": "Guarda le versioni →"
         },
         {
           "id": "community_modules",
-          "badge": "Sviluppo Condiviso",
-          "title": "Moduli su Richiesta a Costo Zero (0 €)",
-          "desc": "Quando un artigiano ci segnala un’esigenza reale per il suo mestiere, il nostro team sviluppa il modulo gratuitamente e lo rilascia pubblicamente a beneficio di tutta la categoria.",
+          "badge": "Si costruisce insieme",
+          "title": "Funzioni su richiesta, gratis",
+          "desc": "Se un artigiano ci segnala un bisogno vero del suo mestiere, lo valutiamo e, se serve a più persone, lo aggiungiamo gratis e per tutti.",
           "linkHref": "/community-richieste/",
-          "linkLabel": "Richiedi un Modulo Gratis →"
+          "linkLabel": "Chiedi una funzione →"
         },
         {
           "id": "schools_social",
-          "badge": "Futuro & Formazione",
-          "title": "Responsabilità verso Scuole e Apprendisti",
-          "desc": "Offriamo il nostro codice sorgente agli istituti tecnici informatici per studiare un’architettura reale e forniamo il gestionale agli istituti commerciali per simulazioni contabili senza costi di licenza.",
+          "badge": "Il futuro",
+          "title": "Scuole e apprendisti",
+          "desc": "Mettiamo il codice a disposizione delle scuole tecniche per studiare un programma vero, e il programma alle scuole commerciali per le simulazioni, senza licenze.",
           "linkHref": "/scuole-e-sociale/",
-          "linkLabel": "Programma Scuole & Sociale →"
+          "linkLabel": "Il programma per le scuole →"
         }
       ]
     },
     "chronicle": {
-      "badge": "4. Cronistoria & Tappe",
-      "heading": "Il Nostro Percorso Evolutivo",
-      "lead": "Dalla prima riga di codice scritta per aiutare gli artigiani fino alla creazione di un ecosistema aperto a copertura nazionale per tutta l'Italia e tutta la Svizzera.",
+      "badge": "4. Le tappe",
+      "heading": "Il nostro percorso",
+      "lead": "Dalle prime prove a un progetto aperto, per l'Italia e per la Svizzera.",
       "milestones": [
         {
           "year": "Tappa 01",
-          "phase": "L’Idea Originaria",
-          "title": "L’Ascolto sul Campo tra Italia e Svizzera",
-          "desc": "Nasce l’idea osservando idraulici, elettricisti e piccoli professionisti penalizzati da software in abbonamento troppo complessi e inutilizzabili offline nei cantieri.",
-          "badge": "Visione Anti-ERP"
+          "phase": "L'idea",
+          "title": "Ascoltare chi lavora",
+          "desc": "L'idea nasce guardando idraulici, elettricisti e piccoli professionisti in difficoltà con programmi in abbonamento troppo complicati.",
+          "badge": "Il punto di partenza"
         },
         {
           "year": "Tappa 02",
-          "phase": "Il Primo Prototipo",
-          "title": "Motore Portabile C# WPF & SQLite su Chiavetta USB",
-          "desc": "Sviluppo del nucleo standalone senza installazione: un unico archivio eseguibile con database SQLite integrato, capace di avviarsi in una frazione di secondo su qualsiasi PC Windows.",
-          "badge": "100% Offline & USB"
+          "phase": "Il prototipo",
+          "title": "Le prime prove",
+          "desc": "Un primo prototipo per fare fatture in modo rapido, anche fuori sede.",
+          "badge": "Prototipo"
         },
         {
           "year": "Tappa 03",
-          "phase": "Conformità Bivalente",
-          "title": "Integrazione FatturaPA SDI (IT) & QR-Bill SIX (CH)",
-          "desc": "Costruzione dei moduli fiscali certificati per il Sistema di Interscambio dell’Agenzia delle Entrate italiana e per lo standard bancario svizzero QR-Fattura con calcolo IVA multi-aliquota.",
-          "badge": "Dual-Market IT/CH"
+          "phase": "Le regole fiscali",
+          "title": "Fattura elettronica e QR-Bill",
+          "desc": "Si aggiungono la fattura elettronica italiana (FatturaPA) e la fattura svizzera con QR-Bill, con le aliquote IVA.",
+          "badge": "Italia e Svizzera"
         },
         {
           "year": "Tappa 04",
-          "phase": "Comunità & Istruzione",
-          "title": "Apertura Open-Source, Scuole & Rete Partner Nazionale",
-          "desc": "Pubblicazione del progetto aperto, lancio dei laboratori didattici per gli istituti tecnici/commerciali e nascita della rete nazionale di tecnici e fiduciarie per il supporto sul campo.",
-          "badge": "Ecosistema Aperto"
+          "phase": "La community",
+          "title": "Codice aperto, scuole e assistenza",
+          "desc": "Il progetto diventa pubblico. Si parla con le scuole e si costruisce un elenco di tecnici e fiduciarie che aiutano sul territorio.",
+          "badge": "Progetto aperto"
         }
       ]
     },
     "ctaBanner": {
-      "heading": "Fai parte anche tu della storia di FatturaFacile",
-      "subtitle": "Scarica il software gratuito, esplora i moduli disponibili o proponi la prossima funzionalità per il tuo settore.",
-      "btnModules": "Esplora i Moduli",
-      "btnCommunity": "Unisciti alla Community",
+      "heading": "Fai parte anche tu della storia",
+      "subtitle": "Prova il programma gratuito, guarda le funzioni o proponi quella che serve nel tuo lavoro.",
+      "btnModules": "Guarda le funzioni",
+      "btnCommunity": "Entra nella community",
       "btnDownload": "Prova la demo"
     }
   },
   "en": {
     "seo": {
-      "title": "FatturaFacile Story – Open Source (MIT) ERP & Invoicing for Switzerland QR-Bill & Italy SdI FatturaPA Offline-first",
-      "description": "Discover the story behind FatturaFacile: the Offline-first Open Source (MIT) ERP and invoicing suite for Switzerland (SIX QR-Bill) and Italy (SdI FatturaPA) with local SQLite.",
-      "keywords": "fatturafacile story, open source erp mit, offline-first invoicing software, local sqlite billing, italian fatturapa sdi, swiss qr-bill six, clean architecture dotnet"
+      "title": "Our story | How FatturaFacile began",
+      "description": "How FatturaFacile began: from tradespeople struggling with expensive, complicated programs to a free, open source invoicing program for Italy and Switzerland.",
+      "keywords": "fatturafacile story, about us, open source, free invoices, tradespeople"
     },
-    "eyebrow": "Our Roots & Vision",
-    "heading": "FatturaFacile: from job-site frustration to Open Source Offline-first ERP for Switzerland & Italy",
-    "lead": "Designed for professionals and businesses across Italy and Switzerland, FatturaFacile has a single mission: giving tradespeople, micro-businesses, and freelancers a fast, free invoicing tool they truly own.",
-    "problemTitle": "The Problem: Why should a tradesperson use a 500-button enterprise ERP?",
-    "problemText": "Plumbers, electricians, installers, and solo freelancers typically issue 10 to 20 invoices a month. Yet the software market pushes bloated enterprise ERPs designed for large corporations—slow, cluttered with obscure accounting menus, and locked behind perpetual monthly subscriptions.",
-    "philosophyTitle": "The Three Pillars of Our Architecture",
+    "eyebrow": "Where it comes from",
+    "heading": "How FatturaFacile began",
+    "lead": "FatturaFacile was not born in a meeting room to make revenue, but by watching plumbers, electricians and tradespeople struggle with slow, complicated, expensive programs.",
+    "problemTitle": "The problem: programs that are too big",
+    "problemText": "In recent years management programs have moved to monthly subscriptions. For a large company that can be fine. For someone working alone or in a small team it means heavy costs, screens full of useless buttons and the fear of losing access to their own invoices if they stop paying.",
+    "philosophyTitle": "The four principles",
     "philosophyBullets": [
       {
-        "title": "Local SQLite & Zero Telemetry",
-        "desc": "Absolute data sovereignty: no intermediary servers, zero tracking, and full physical control over your financial records."
+        "title": "Your data is yours",
+        "desc": "No advertising tracking and no data sold. You can export and save it whenever you want."
       },
       {
-        "title": "Dual-Market Foundation (IT & CH)",
-        "desc": "Engineered from day one to natively handle both Italian FatturaPA SDI XML e-invoicing and Swiss SIX standard QR-Bills."
+        "title": "Italy and Switzerland",
+        "desc": "E-invoicing (FatturaPA) for Italy, QR-bill for Switzerland: both planned from the start."
       },
       {
-        "title": "Clean Architecture & C# .NET",
-        "desc": "Built with rigorous software engineering standards (SOLID, CQRS, native WPF) rather than fragile, memory-hungry web wrappers."
+        "title": "Tidy code",
+        "desc": "Separate parts and automatic checks on every change, for a reliable program that is easy to improve."
       }
     ],
     "timeline": [
       {
-        "year": "Phase 1 • Genesis",
-        "title": "Listening to Tradespeople in Italy & Switzerland",
-        "desc": "Hearing first-hand from electricians, plumbers, and freelancers tired of paying recurring fees just to issue a dozen invoices—and getting stuck on job sites with no internet."
+        "year": "Phase 1",
+        "title": "Listening to people who work",
+        "desc": "We gather the difficulties of tradespeople and small professionals tired of paying subscriptions for a few invoices."
       },
       {
-        "year": "Phase 2 • Prototype",
-        "title": "First Portable C# WPF & SQLite Engine on USB",
-        "desc": "Creation of the first zero-install standalone executable on a USB flash drive: sub-second startup, zero Windows registry clutter, and a self-contained SQLite database."
+        "year": "Phase 2",
+        "title": "The first trials",
+        "desc": "A first prototype to fill in invoices quickly, even away from the office."
       },
       {
-        "year": "Phase 3 • Dual-Market",
-        "title": "Native Italian SDI & Swiss QR-Bill Integration",
-        "desc": "Implementation of compliant XML FatturaPA generators for the Italian Revenue Agency and vector SIX QR-Bill payment slips with federal VAT rates for Switzerland."
+        "year": "Phase 3",
+        "title": "E-invoicing and QR-bill",
+        "desc": "Italian e-invoicing (FatturaPA, flat-rate and ordinary regime) and the Swiss invoice with QR-bill and VAT rates are added."
       },
       {
-        "year": "Phase 4 • Open Ecosystem",
-        "title": "Open-Source Launch, Schools & National Partner Network",
-        "desc": "Opening the codebase to the public, launching the zero-cost community module workflow, and establishing partnerships with technical and commercial schools."
+        "year": "Phase 4",
+        "title": "Open code, schools and local help",
+        "desc": "The code becomes public, features requested by the community are built for free and contacts with schools begin."
       }
     ],
     "hero": {
-      "eyebrow": "Our Story & Manifesto",
-      "headingPart1": "FatturaFacile: from job-site frustration to",
-      "headingHighlight": "Open Source Offline-first ERP for Switzerland (QR-Bill) & Italy (SdI).",
-      "lead": "FatturaFacile was created with a clear purpose and full nationwide coverage for Switzerland and Italy: freeing tradespeople, micro-businesses, and solo professionals from bloated ERPs and SaaS subscriptions with an Open Source (MIT) suite native to Swiss QR-Bill and Italian SdI FatturaPA.",
-      "badgeDualMarket": "Nationwide Coverage Italy 🇮🇹 & Switzerland 🇨🇭",
-      "badgeOpenSource": "100% Free, Offline & Open Source",
-      "ctaModules": "Explore Modules",
-      "ctaCommunity": "Join the Community",
+      "eyebrow": "Our story",
+      "headingPart1": "From frustration on the job site to",
+      "headingHighlight": "a free invoicing program.",
+      "lead": "FatturaFacile wants to give tradespeople, small businesses and professionals a fast invoicing program that follows the rules, is free and truly theirs.",
+      "badgeDualMarket": "Italy 🇮🇹 and Switzerland 🇨🇭",
+      "badgeOpenSource": "Free and open source",
+      "ctaModules": "See the features",
+      "ctaCommunity": "Join the community",
       "ctaDownload": "Try the demo",
       "langSelectorLabel": "Language selector for the Story page"
     },
     "origin": {
-      "badge": "1. The Origin & Problem Statement",
-      "heading": "Why should someone issuing 15 invoices a month pay for a 500-button ERP?",
-      "lead": "It all started at a workbench, watching fellow tradespeople and small business owners struggle late at night with sluggish, over-complicated web portals just to get paid for their craft.",
-      "problemTitle": "The Frustration with Over-Engineered Enterprise Software",
-      "problemText": "An electrician, plumber, carpenter, or independent consultant does not need to manage a multinational supply chain or complex double-entry corporate ledgers. They need to draft a clean quote in 60 seconds while still on-site with the client and convert it into a legally compliant invoice in a single click.",
-      "antiSaasTitle": "The Anti-SaaS Philosophy: Your Data Shouldn’t Be Held Hostage",
-      "antiSaasText": "In recent years, small-business software has turned into a permanent rental trap: stop paying the monthly fee, and you lose the ability to operate or even access your own customer history. We believe your tools and financial records must belong 100% to you—with no expiration dates and no vendor lock-in.",
+      "badge": "1. The problem",
+      "heading": "Why should someone who writes 15 invoices a month pay for a program with 500 buttons?",
+      "lead": "It started by watching colleagues and friends in the trades struggle in the evening with slow, complicated programs, just to get paid for their work.",
+      "problemTitle": "Programs made for big companies",
+      "problemText": "An electrician, a plumber, a gardener or a consultant does not need to run a big company. They need a clear quote in one minute, while still at the customer's, and a correct invoice with one click.",
+      "antiSaasTitle": "Your data should not be held hostage",
+      "antiSaasText": "Today many programs are paid like rent: if you stop paying, you can no longer work with them and sometimes cannot even see your customers. We think work tools and data should stay with the people who work, with no expiry date.",
       "quote": {
-        "text": "“Invoicing software for tradespeople should work like a reliable screwdriver in your toolbox: ready the instant you need it, never asking for a monthly subscription to turn a screw, and working flawlessly in a basement with zero cell reception.”",
-        "author": "FatturaFacile Founding Team",
-        "role": "Italian-Swiss Architectural Manifesto"
+        "text": "“A program for tradespeople should be like a good screwdriver: it is there when you need it and does not ask for a subscription to turn a screw.”",
+        "author": "The FatturaFacile founding team",
+        "role": "Our starting point"
       },
       "comparison": {
-        "erpTitle": "Traditional SaaS / Enterprise ERPs",
+        "erpTitle": "Subscription programs",
         "erpPoints": [
-          "Mandatory monthly or annual subscriptions that increase every renewal cycle",
-          "Cluttered dashboards with hundreds of buttons micro-businesses never touch",
-          "Complete dependence on internet connectivity and slow cloud page loads",
-          "Customer lists and sensitive billing data stored on third-party servers"
+          "Monthly or yearly fee that rises at every renewal",
+          "Hundreds of buttons a small business does not need",
+          "Often do not work without internet",
+          "Customers and invoices on other people's servers"
         ],
-        "ffTitle": "The FatturaFacile Approach",
+        "ffTitle": "FatturaFacile",
         "ffPoints": [
-          "€0 forever for the Desktop edition, with unlimited invoices and clients",
-          "Streamlined workflow: 1-minute on-site quote, 1-click invoice conversion",
-          "100% Offline on PC or USB drive with instant startup (< 1 second)",
-          "Local SQLite database under your exclusive physical and legal ownership"
+          "Free, with no limit on documents",
+          "Quote in one minute, invoice with one click",
+          "You can install it on your own server",
+          "Your data stays yours and you can export it"
         ]
       }
     },
     "architecture": {
-      "badge": "2. Core Architectural Philosophy",
-      "heading": "Rock-Solid Engineering Serving Everyday Simplicity",
-      "lead": "Beneath a deliberately minimalist interface lies a software architecture built to the highest standards of data sovereignty, speed, and reliability.",
+      "badge": "2. How it is built",
+      "heading": "Simple to use, solid inside",
+      "lead": "The interface is simple on purpose. Behind it, the program is carefully built to be safe, fast and easy to maintain.",
       "pillars": [
         {
           "id": "sqlite",
-          "tag": "Privacy by Design",
-          "title": "Local SQLite & Zero Telemetry",
-          "desc": "No tax ID, IBAN, or customer record ever leaves your machine. The business owner remains the sole Data Controller under EU GDPR and Swiss FADP (nLPD), eliminating third-party data breach risks.",
+          "tag": "Data protection",
+          "title": "Your data stays where you put it",
+          "desc": "In the web version, data is on the server where the program is installed. If you install it yourself, it stays yours. We use no advertising tracking tools.",
           "highlights": [
-            "Single-file ACID transactional SQLite database",
-            "Zero telemetry calls, analytics, or background tracking",
-            "1-Click AES encrypted ZIP backups to USB or local NAS"
+            "No advertising tracking",
+            "Automatic backup every night, last 7 kept",
+            "Manual backup and restore too"
           ]
         },
         {
           "id": "dual_market",
-          "tag": "Full Swiss & Italian Compliance",
-          "title": "Dual-Market Foundation: Italy & Switzerland",
-          "desc": "Unlike software retrofitted as an afterthought with rough translations, FatturaFacile was engineered from day one to deliver complete fiscal and regulatory compliance for all of Switzerland (SIX QR-Bill, ESTV VAT, revLPD across all 26 cantons) and all of Italy (FatturaPA XML, SdI B2B/B2C, AgID, split payment, and withholding tax across all regions).",
+          "tag": "Italy and Switzerland",
+          "title": "Two countries, one program",
+          "desc": "FatturaFacile was designed for Italy and Switzerland from the start, not adapted afterwards.",
           "highlights": [
-            "Italy 🇮🇹: Certified FatturaPA v1.2 XML for SDI, PEC/Recipient Code, split payment, and withholding tax",
-            "Switzerland 🇨🇭: Official SIX standard QR-Bill slips with Swiss cross, QR-IBAN, and federal ESTV VAT rates",
-            "Native multi-currency support for EUR and CHF"
+            "Italy 🇮🇹: e-invoice file (FatturaPA)",
+            "Switzerland 🇨🇭: QR-bill payment slip with QR-IBAN and Swiss VAT",
+            "Swiss francs and euros"
           ]
         },
         {
           "id": "clean_arch",
-          "tag": "Engineering Excellence",
-          "title": "Clean Architecture & Native C# .NET",
-          "desc": "We rejected bloated web wrappers that consume gigabytes of RAM. FatturaFacile is crafted in native C# .NET using CQRS and SOLID principles, delivering instant responsiveness even on older workshop laptops.",
+          "tag": "Code quality",
+          "title": "Tidy, checked code",
+          "desc": "The code is split into clear parts and automatic checks run on every change. This makes the program more reliable and easier to improve.",
           "highlights": [
-            "Strict separation across Domain, Application, Infrastructure, and UI layers",
-            "Continuous quality gates powered by SonarQube and JetBrains Qodana",
-            "Optional Self-Hosted Docker edition for multi-user teams"
+            "Separate parts: data, rules, interface",
+            "Automatic tests and checks on GitHub",
+            "Can also be installed on your own server, to work with several people"
           ]
         }
       ]
     },
     "ethics": {
-      "badge": "3. Open-Source & Social Ethics",
-      "heading": "A Digital Commons for Tradespeople, Students & Businesses",
-      "lead": "FatturaFacile is not a VC-backed startup chasing recurring revenue—it is an open civic and technological initiative built alongside practitioners and educators.",
+      "badge": "3. Our commitments",
+      "heading": "A common good for tradespeople, students and businesses",
+      "lead": "FatturaFacile is not a startup chasing investors. It is a project built together with people who work and people who teach.",
       "cards": [
         {
           "id": "free_forever",
-          "badge": "Perpetual Commitment",
-          "title": "100% Free Core Desktop Software Forever",
-          "desc": "Our portable desktop application will never become paywalled and will never impose artificial caps on invoices or clients. Starting a trade should carry zero digital toll.",
+          "badge": "For good",
+          "title": "Free, with no limits",
+          "desc": "The program stays free and will have no artificial limits on invoices or customers. People starting a trade should find no barriers.",
           "linkHref": "/versioni/",
-          "linkLabel": "Compare Editions →"
+          "linkLabel": "See the versions →"
         },
         {
           "id": "community_modules",
-          "badge": "Collaborative Model",
-          "title": "Free Custom Modules Built for All (€0)",
-          "desc": "When a tradesperson requests a feature needed for their daily workflow, our team develops it free of charge and releases it openly so every colleague in the community benefits.",
+          "badge": "Built together",
+          "title": "Features on request, free",
+          "desc": "If a tradesperson tells us about a real need in their work, we look at it and, if it helps more people, we add it for free for everyone.",
           "linkHref": "/community-richieste/",
-          "linkLabel": "Request a Free Module →"
+          "linkLabel": "Ask for a feature →"
         },
         {
           "id": "schools_social",
-          "badge": "Education & Future",
-          "title": "Empowering Vocational Schools & Apprentices",
-          "desc": "We provide technical institutes with a real-world .NET Clean Architecture codebase to study, and equip commercial schools with a zero-cost compliant billing lab for classroom simulations.",
+          "badge": "The future",
+          "title": "Schools and apprentices",
+          "desc": "We offer the code to technical schools to study a real program, and the program to business schools for simulations, with no licences.",
           "linkHref": "/scuole-e-sociale/",
-          "linkLabel": "Schools & Social Impact →"
+          "linkLabel": "The schools programme →"
         }
       ]
     },
     "chronicle": {
-      "badge": "4. Timeline & Milestone Chronicle",
-      "heading": "Our Journey & Key Milestones",
-      "lead": "From the first line of code written for tradespeople to a comprehensive open ecosystem providing full nationwide coverage across Italy and Switzerland.",
+      "badge": "4. The milestones",
+      "heading": "Our path",
+      "lead": "From the first trials to an open project, for Italy and for Switzerland.",
       "milestones": [
         {
-          "year": "Milestone 01",
-          "phase": "The Genesis Idea",
-          "title": "Field Research Across Italy and Switzerland",
-          "desc": "Born from direct conversations with electricians, plumbers, and solo freelancers frustrated by costly subscription ERPs that fail offline on job sites.",
-          "badge": "Anti-ERP Vision"
+          "year": "Step 01",
+          "phase": "The idea",
+          "title": "Listening to people who work",
+          "desc": "The idea comes from watching plumbers, electricians and small professionals struggling with complicated subscription programs.",
+          "badge": "Starting point"
         },
         {
-          "year": "Milestone 02",
-          "phase": "First Prototype",
-          "title": "Portable C# WPF & SQLite Engine on a USB Drive",
-          "desc": "Development of the zero-installation standalone core: a self-contained executable with an embedded SQLite database that launches in under a second on any Windows PC.",
-          "badge": "100% Offline & USB"
+          "year": "Step 02",
+          "phase": "The prototype",
+          "title": "The first trials",
+          "desc": "A first prototype to make invoices quickly, even away from the office.",
+          "badge": "Prototype"
         },
         {
-          "year": "Milestone 03",
-          "phase": "Dual-Market Compliance",
-          "title": "Italian FatturaPA SDI & Swiss SIX QR-Bill Integration",
-          "desc": "Engineering of certified tax modules for the Italian Revenue Agency Exchange System (SDI) and the official Swiss SIX Interbank Clearing QR-Bill specification.",
-          "badge": "IT & CH Compliant"
+          "year": "Step 03",
+          "phase": "The tax rules",
+          "title": "E-invoicing and QR-bill",
+          "desc": "Italian e-invoicing (FatturaPA) and the Swiss invoice with QR-bill are added, with VAT rates.",
+          "badge": "Italy and Switzerland"
         },
         {
-          "year": "Milestone 04",
-          "phase": "Community & Education",
-          "title": "Open-Source Launch, Schools & National Partner Network",
-          "desc": "Public release of the open-source ecosystem, launch of free educational tracks for technical and commercial schools, and establishment of the nationwide qualified partner network.",
-          "badge": "Open Ecosystem"
+          "year": "Step 04",
+          "phase": "The community",
+          "title": "Open code, schools and local help",
+          "desc": "The project becomes public. We talk to schools and build a list of technicians and fiduciaries who help locally.",
+          "badge": "Open project"
         }
       ]
     },
     "ctaBanner": {
-      "heading": "Be part of the FatturaFacile story",
-      "subtitle": "Download the free portable software, explore our modules, or propose the next feature for your trade.",
-      "btnModules": "Explore Modules",
-      "btnCommunity": "Join the Community",
+      "heading": "Be part of the story too",
+      "subtitle": "Try the free program, see the features or suggest the one your work needs.",
+      "btnModules": "See the features",
+      "btnCommunity": "Join the community",
       "btnDownload": "Try the demo"
     }
   },
   "fr": {
     "seo": {
-      "title": "FatturaFacile Histoire – ERP & Facturation Open Source (MIT) Suisse QR-Bill & Italie SdI FatturaPA Offline-first",
-      "description": "Découvrez l’histoire de FatturaFacile : la suite ERP et facturation Open Source (MIT) Offline-first avec SQLite local pour la Suisse (QR-Bill SIX) et l’Italie (SdI FatturaPA).",
-      "keywords": "histoire fatturafacile, erp open source mit, logiciel facturation offline-first, sqlite local, qr-bill suisse six, fatturapa sdi italie, clean architecture dotnet"
+      "title": "Notre histoire | Comment FatturaFacile est né",
+      "description": "Comment FatturaFacile est né : d'artisans en difficulté avec des logiciels chers et compliqués à un logiciel de facturation gratuit et open source pour l'Italie et la Suisse.",
+      "keywords": "histoire fatturafacile, qui sommes-nous, open source, factures gratuites, artisans"
     },
-    "eyebrow": "Nos Racines & Notre Vision",
-    "heading": "FatturaFacile : de la frustration sur les chantiers à l'ERP Open Source Offline-first pour la Suisse et l'Italie",
-    "lead": "Conçu avec une pleine couverture nationale pour toute la Suisse et toute l’Italie, FatturaFacile poursuit une mission claire : redonner aux artisans, TPE et indépendants un outil de facturation rapide, conforme, gratuit et dont ils sont réellement propriétaires.",
-    "problemTitle": "Le Problème : Pourquoi un artisan devrait-il utiliser un ERP à 500 boutons ?",
-    "problemText": "Les installateurs sanitaires, électriciens, menuisiers et indépendants émettent en moyenne 10 à 20 factures par mois. Pourtant, le marché leur impose des progiciels conçus pour des multinationales : lents, surchargés de menus comptables complexes et liés à des abonnements mensuels sans fin.",
-    "philosophyTitle": "Les Trois Piliers de Notre Architecture",
+    "eyebrow": "D'où cela vient",
+    "heading": "Comment FatturaFacile est né",
+    "lead": "FatturaFacile n'est pas né dans une salle de réunion pour faire du chiffre d'affaires, mais en regardant des plombiers, des électriciens et des artisans aux prises avec des logiciels lents, compliqués et chers.",
+    "problemTitle": "Le problème : des logiciels trop grands",
+    "problemText": "Ces dernières années, les logiciels de gestion sont passés aux abonnements mensuels. Pour une grande entreprise, cela peut convenir. Pour qui travaille seul ou à quelques-uns, cela signifie des coûts lourds, des écrans pleins de boutons inutiles et la crainte de ne plus pouvoir consulter ses factures si l'on arrête de payer.",
+    "philosophyTitle": "Les quatre principes",
     "philosophyBullets": [
       {
-        "title": "SQLite Local & Zéro Télémétrie",
-        "desc": "Souveraineté totale sur vos données : aucun serveur intermédiaire, aucun pistage et un contrôle physique complet sur vos archives fiscales."
+        "title": "Vos données sont à vous",
+        "desc": "Pas de suivi publicitaire et aucune cession de données. Vous pouvez les exporter et les sauvegarder quand vous voulez."
       },
       {
-        "title": "Fondation Double Marché (CH & IT)",
-        "desc": "Conçu dès le premier jour pour gérer nativement la QR-Facture suisse (norme SIX) ainsi que la facture électronique italienne FatturaPA SDI."
+        "title": "Italie et Suisse",
+        "desc": "Facture électronique (FatturaPA) pour l'Italie, QR-facture pour la Suisse : les deux prévues dès le départ."
       },
       {
-        "title": "Clean Architecture & C# .NET",
-        "desc": "Une ingénierie logicielle rigoureuse (SOLID, CQRS, WPF natif) au lieu d’enveloppes web lourdes et fragiles."
+        "title": "Code bien rangé",
+        "desc": "Des parties séparées et des contrôles automatiques à chaque modification, pour un logiciel fiable et facile à améliorer."
       }
     ],
     "timeline": [
       {
-        "year": "Étape 1 • Genèse",
-        "title": "L’Écoute sur le Terrain entre la Suisse et l’Italie",
-        "desc": "Constat partagé avec des artisans fatigués de payer des abonnements coûteux pour quelques factures mensuelles et bloqués sur les chantiers sans connexion réseau."
+        "year": "Phase 1",
+        "title": "Écouter celles et ceux qui travaillent",
+        "desc": "Nous recueillons les difficultés d'artisans et de petits indépendants fatigués de payer des abonnements pour quelques factures."
       },
       {
-        "year": "Étape 2 • Prototype",
-        "title": "Premier Moteur Portable C# WPF & SQLite sur Clé USB",
-        "desc": "Création du premier exécutable autonome sans installation : démarrage en moins d’une seconde, aucune trace dans le registre Windows et base SQLite intégrée."
+        "year": "Phase 2",
+        "title": "Les premiers essais",
+        "desc": "Un premier prototype pour remplir rapidement les factures, même hors du bureau."
       },
       {
-        "year": "Étape 3 • Double Marché",
-        "title": "Intégration Native QR-Bill SIX (CH) & FatturaPA SDI (IT)",
-        "desc": "Implémentation des bulletins de versement QR suisses conformes aux directives SIX (QR-IBAN, taux TVA fédéraux) et du format XML FatturaPA pour l’Italie."
+        "year": "Phase 3",
+        "title": "Facture électronique et QR-facture",
+        "desc": "On ajoute la facture électronique italienne (FatturaPA, régime forfaitaire et ordinaire) et la facture suisse avec QR-facture et taux de TVA."
       },
       {
-        "year": "Étape 4 • Écosystème Ouvert",
-        "title": "Lancement Open-Source, Écoles & Réseau National de Partenaires",
-        "desc": "Ouverture du code source, développement gratuit de modules sur demande pour la communauté et partenariats pédagogiques avec les écoles techniques et de commerce."
+        "year": "Phase 4",
+        "title": "Code ouvert, écoles et aide locale",
+        "desc": "Le code devient public, les fonctions demandées par la communauté sont développées gratuitement et les contacts avec les écoles commencent."
       }
     ],
     "hero": {
-      "eyebrow": "Notre Histoire & Manifeste",
-      "headingPart1": "FatturaFacile : de la frustration sur les chantiers à l'",
-      "headingHighlight": "ERP Open Source Offline-first pour Suisse (QR-Bill) & Italie (SdI).",
-      "lead": "FatturaFacile a été conçu avec un objectif précis et une portée nationale exhaustive pour la Suisse et l'Italie : libérer les artisans, les TPE et les indépendants des ERP surdimensionnés et des abonnements SaaS avec une suite Open Source (MIT) native pour Suisse QR-Bill et Italie SdI FatturaPA.",
-      "badgeDualMarket": "Couverture Nationale Suisse 🇨🇭 & Italie 🇮🇹",
-      "badgeOpenSource": "100% Gratuit, Hors-Ligne & Open Source",
-      "ctaModules": "Explorer les Modules",
-      "ctaCommunity": "Rejoindre la Communauté",
+      "eyebrow": "Notre histoire",
+      "headingPart1": "De la frustration sur le chantier à",
+      "headingHighlight": "un logiciel de facturation gratuit.",
+      "lead": "FatturaFacile veut donner aux artisans, aux petites entreprises et aux indépendants un logiciel de facturation rapide, en règle avec les normes, gratuit et vraiment à eux.",
+      "badgeDualMarket": "Italie 🇮🇹 et Suisse 🇨🇭",
+      "badgeOpenSource": "Gratuit et open source",
+      "ctaModules": "Voir les fonctions",
+      "ctaCommunity": "Rejoindre la communauté",
       "ctaDownload": "Essayer la démo",
-      "langSelectorLabel": "Sélecteur de langue de la page Notre histoire"
+      "langSelectorLabel": "Choix de la langue de la page Histoire"
     },
     "origin": {
-      "badge": "1. La Genèse & Le Constat",
-      "heading": "Pourquoi payer un ERP à 500 boutons quand on émet 15 factures par mois ?",
-      "lead": "Tout a commencé dans un atelier, en observant des collègues artisans perdre leurs soirées sur des portails web lents et confus simplement pour facturer leur travail.",
-      "problemTitle": "La Frustration face aux Progiciels Surdimensionnés",
-      "problemText": "Un électricien, un plombier, un paysagiste ou un consultant indépendant n’a pas besoin de gérer une chaîne logistique internationale. Il a besoin de rédiger un devis clair en 60 secondes directement chez le client et de le convertir en facture officielle en un seul clic.",
-      "antiSaasTitle": "Philosophie Anti-SaaS : Vos Données Ne Doivent Pas Être Prises en Otage",
-      "antiSaasText": "Ces dernières années, les logiciels de gestion sont devenus une location perpétuelle : dès que vous cessez de payer la mensualité, vous perdez l’accès à votre outil ou à votre historique clients. Nous affirmons que votre outil de travail et vos données comptables doivent vous appartenir à 100 %, sans abonnement obligatoire.",
+      "badge": "1. Le problème",
+      "heading": "Pourquoi celui qui fait 15 factures par mois devrait-il payer un logiciel à 500 boutons ?",
+      "lead": "Tout a commencé en voyant des collègues et des amis artisans peiner le soir avec des logiciels lents et compliqués, juste pour se faire payer leur travail.",
+      "problemTitle": "Des logiciels pensés pour les grandes entreprises",
+      "problemText": "Un électricien, un plombier, un jardinier ou un consultant n'a pas besoin de gérer une grande entreprise. Il lui faut un devis clair en une minute, quand il est encore chez le client, et une facture en règle d'un clic.",
+      "antiSaasTitle": "Vos données ne doivent pas rester en otage",
+      "antiSaasText": "Aujourd'hui, beaucoup de logiciels se paient comme un loyer : si vous arrêtez de payer, vous ne pouvez plus travailler avec, et parfois même plus revoir vos clients. Nous pensons que les outils de travail et les données doivent rester à celles et ceux qui travaillent, sans échéance.",
       "quote": {
-        "text": "« Un logiciel pour artisans devrait fonctionner comme un bon tournevis dans sa boîte à outils : prêt dès qu’on en a besoin, sans réclamer un abonnement mensuel pour serrer une vis, et opérationnel même dans un sous-sol sans réseau. »",
-        "author": "L’Équipe Fondatrice FatturaFacile",
-        "role": "Manifeste Architectural Helvético-Italien"
+        "text": "« Un logiciel pour artisans devrait être comme un bon tournevis : il est là quand il faut, et ne demande pas d'abonnement pour tourner une vis. »",
+        "author": "L'équipe fondatrice de FatturaFacile",
+        "role": "Notre point de départ"
       },
       "comparison": {
-        "erpTitle": "Logiciels SaaS / ERP Traditionnels",
+        "erpTitle": "Logiciels par abonnement",
         "erpPoints": [
-          "Abonnements mensuels ou annuels obligatoires qui augmentent à chaque renouvellement",
-          "Interfaces surchargées de centaines de fonctions inutiles pour une TPE",
-          "Dépendance totale à Internet et temps de chargement lents en déplacement",
-          "Fichiers clients et factures stockés sur des serveurs tiers externes"
+          "Redevance mensuelle ou annuelle qui augmente à chaque renouvellement",
+          "Des centaines de boutons dont une petite activité n'a pas besoin",
+          "Souvent inutilisables sans internet",
+          "Clients et factures sur les serveurs d'autrui"
         ],
-        "ffTitle": "L’Approche FatturaFacile",
+        "ffTitle": "FatturaFacile",
         "ffPoints": [
-          "0 CHF / 0 € pour toujours sur l’édition Desktop, sans limite de documents",
-          "Flux ultra-rapide : devis en 1 minute, conversion en facture en 1 clic",
-          "100 % Hors-ligne sur PC ou clé USB avec démarrage instantané (< 1 seconde)",
-          "Base de données SQLite locale sous votre propriété physique et juridique exclusive"
+          "Gratuit, sans limite de documents",
+          "Devis en une minute, facture d'un clic",
+          "Vous pouvez l'installer sur votre propre serveur",
+          "Vos données restent à vous et vous pouvez les exporter"
         ]
       }
     },
     "architecture": {
-      "badge": "2. Philosophie Architecturale",
-      "heading": "Une Ingénierie Robuste au Service de la Simplicité",
-      "lead": "Derrière une interface volontairement épurée se cache une architecture logicielle conçue selon les normes les plus strictes de souveraineté des données, de rapidité et de fiabilité.",
+      "badge": "2. Comment c'est fait",
+      "heading": "Simple à utiliser, solide à l'intérieur",
+      "lead": "L'interface est simple volontairement. Derrière, le logiciel est construit avec soin pour être sûr, rapide et facile à entretenir.",
       "pillars": [
         {
           "id": "sqlite",
-          "tag": "Privacy by Design",
-          "title": "SQLite Local & Zéro Télémétrie",
-          "desc": "Aucune donnée fiscale, aucun IBAN ni fichier client ne quitte votre ordinateur. L’entrepreneur reste l’unique maître de ses données conformément à la nLPD suisse et au RGPD européen.",
+          "tag": "Protection des données",
+          "title": "Vos données restent là où vous les mettez",
+          "desc": "Dans la version web, les données sont sur le serveur où le logiciel est installé. Si vous l'installez vous-même, elles restent à vous. Nous n'utilisons pas d'outils de suivi publicitaire.",
           "highlights": [
-            "Fichier unique de base de données transactionnelle ACID SQLite",
-            "Aucune télémétrie, aucun pistage ni collecte en arrière-plan",
-            "Sauvegarde ZIP chiffrée AES en 1 clic sur clé USB ou NAS local"
+            "Aucun suivi publicitaire",
+            "Copie automatique chaque nuit, 7 dernières conservées",
+            "Copie et restauration aussi à la main"
           ]
         },
         {
           "id": "dual_market",
-          "tag": "Pleine Conformité Suisse & Italie",
-          "title": "Fondation Double Marché : Suisse & Italie",
-          "desc": "Contrairement aux logiciels adaptés à la hâte, FatturaFacile a été conçu dès l’origine pour assurer une conformité fiscale et réglementaire complète pour toute la Suisse (QR-Facture SIX, TVA AFC, revLPD dans tous les 26 cantons) et toute l'Italie (FatturaPA XML, SdI B2B/B2C, AgID, split payment et retenues à la source dans toutes les régions).",
+          "tag": "Italie et Suisse",
+          "title": "Deux pays, un seul logiciel",
+          "desc": "FatturaFacile est conçu dès le départ pour l'Italie et pour la Suisse, et non adapté après coup.",
           "highlights": [
-            "Suisse 🇨🇭 : QR-Facture officielle (norme SIX) avec croix suisse, QR-IBAN et taux TVA fédéraux (8.1%, 2.6%, 3.8%)",
-            "Italie 🇮🇹 : Génération XML FatturaPA v1.2 certifiée pour le SDI, code destinataire, split payment et timbre virtuel",
-            "Gestion native multi-devises CHF et EUR"
+            "Italie 🇮🇹 : fichier de facture électronique (FatturaPA)",
+            "Suisse 🇨🇭 : bulletin QR-facture avec QR-IBAN et TVA suisse",
+            "Francs suisses et euros"
           ]
         },
         {
           "id": "clean_arch",
-          "tag": "Excellence Technique",
-          "title": "Clean Architecture & C# .NET Natif",
-          "desc": "Nous avons écarté les enveloppes web gourmandes en mémoire. FatturaFacile est développé en C# .NET natif selon les principes SOLID et CQRS, assurant une réactivité immédiate sur tout PC d’atelier.",
+          "tag": "Qualité du code",
+          "title": "Un code bien rangé et contrôlé",
+          "desc": "Le code est divisé en parties claires et des contrôles automatiques s'exécutent à chaque modification. Cela rend le logiciel plus fiable et plus facile à améliorer.",
           "highlights": [
-            "Séparation stricte des couches Domain, Application, Infrastructure et UI",
-            "Contrôle qualité continu via SonarQube et JetBrains Qodana",
-            "Option Cloud Privé Docker auto-hébergé pour le travail en équipe"
+            "Parties séparées : données, règles, interface",
+            "Tests et contrôles automatiques sur GitHub",
+            "Peut aussi s'installer sur votre propre serveur, pour travailler à plusieurs"
           ]
         }
       ]
     },
     "ethics": {
-      "badge": "3. Éthique Open-Source & Impact Social",
-      "heading": "Un Bien Commun pour les Artisans, les Étudiants et les Entreprises",
-      "lead": "FatturaFacile n’est pas une start-up spéculative, mais une initiative technologique et citoyenne développée avec les professionnels de terrain et les enseignants.",
+      "badge": "3. Nos engagements",
+      "heading": "Un bien commun pour les artisans, les étudiants et les entreprises",
+      "lead": "FatturaFacile n'est pas une start-up en quête d'investisseurs. C'est un projet construit avec celles et ceux qui travaillent et qui enseignent.",
       "cards": [
         {
           "id": "free_forever",
-          "badge": "Engagement Permanent",
-          "title": "Version Desktop 100 % Gratuite pour Toujours",
-          "desc": "Notre application portable ne deviendra jamais payante et n’imposera jamais de limites artificielles sur vos factures. Se lancer à son compte ne doit pas être freiné par des coûts logiciels.",
+          "badge": "Pour toujours",
+          "title": "Gratuit, sans limites",
+          "desc": "Le logiciel reste gratuit et n'aura pas de limites artificielles de factures ou de clients. Celles et ceux qui débutent un métier ne doivent pas rencontrer de barrières.",
           "linkHref": "/versioni/",
-          "linkLabel": "Comparer les Versions →"
+          "linkLabel": "Voir les versions →"
         },
         {
           "id": "community_modules",
-          "badge": "Développement Collaboratif",
-          "title": "Modules sur Mesure Développés Gratuitement (0 €)",
-          "desc": "Lorsqu’un artisan nous fait part d’un besoin concret pour son métier, notre équipe développe la fonctionnalité gratuitement et la publie pour l’ensemble de la communauté.",
+          "badge": "On construit ensemble",
+          "title": "Des fonctions sur demande, gratuites",
+          "desc": "Si un artisan nous signale un vrai besoin de son métier, nous l'étudions et, si cela sert à plus de monde, nous l'ajoutons gratuitement pour tous.",
           "linkHref": "/community-richieste/",
-          "linkLabel": "Demander un Module Gratuit →"
+          "linkLabel": "Demander une fonction →"
         },
         {
           "id": "schools_social",
-          "badge": "Formation & Jeunesse",
-          "title": "Soutien aux Écoles Professionnelles et Apprentis",
-          "desc": "Nous mettons notre code .NET à disposition des écoles d’informatique comme cas d’étude réel, et offrons aux écoles de commerce un simulateur de facturation gratuit pour les cours pratiques.",
+          "badge": "L'avenir",
+          "title": "Écoles et apprentis",
+          "desc": "Nous mettons le code à disposition des écoles techniques pour étudier un vrai logiciel, et le logiciel aux écoles de commerce pour les simulations, sans licence.",
           "linkHref": "/scuole-e-sociale/",
-          "linkLabel": "Programme Écoles & Social →"
+          "linkLabel": "Le programme pour les écoles →"
         }
       ]
     },
     "chronicle": {
-      "badge": "4. Chronologie & Étapes Clés",
-      "heading": "Notre Parcours et Nos Jalons",
-      "lead": "De la première ligne de code écrite pour les artisans jusqu’à un écosystème ouvert à pleine couverture nationale en Suisse et en Italie.",
+      "badge": "4. Les étapes",
+      "heading": "Notre parcours",
+      "lead": "Des premiers essais à un projet ouvert, pour l'Italie et pour la Suisse.",
       "milestones": [
         {
-          "year": "Jalon 01",
-          "phase": "L’Idée Initiale",
-          "title": "Observation sur le Terrain en Suisse et en Italie",
-          "desc": "Naissance du projet au contact d’électriciens, installateurs et indépendants pénalisés par des ERP par abonnement trop lourds et inutilisables hors-ligne.",
-          "badge": "Vision Anti-ERP"
+          "year": "Étape 01",
+          "phase": "L'idée",
+          "title": "Écouter celles et ceux qui travaillent",
+          "desc": "L'idée naît en voyant des plombiers, des électriciens et de petits indépendants en difficulté avec des logiciels par abonnement trop compliqués.",
+          "badge": "Point de départ"
         },
         {
-          "year": "Jalon 02",
-          "phase": "Premier Prototype",
-          "title": "Moteur Portable C# WPF & SQLite sur Clé USB",
-          "desc": "Développement du cœur autonome sans installation : un exécutable léger avec base SQLite embarquée qui s’ouvre instantanément sur n’importe quel PC Windows.",
-          "badge": "100% Hors-Ligne & USB"
+          "year": "Étape 02",
+          "phase": "Le prototype",
+          "title": "Les premiers essais",
+          "desc": "Un premier prototype pour faire des factures rapidement, même hors du bureau.",
+          "badge": "Prototype"
         },
         {
-          "year": "Jalon 03",
-          "phase": "Conformité Binationale",
-          "title": "Intégration QR-Bill SIX (CH) & FatturaPA SDI (IT)",
-          "desc": "Création des moteurs fiscaux conformes aux directives bancaires suisses SIX Interbank Clearing et au Système d’Échange (SDI) de l’administration fiscale italienne.",
-          "badge": "Conforme CH & IT"
+          "year": "Étape 03",
+          "phase": "Les règles fiscales",
+          "title": "Facture électronique et QR-facture",
+          "desc": "On ajoute la facture électronique italienne (FatturaPA) et la facture suisse avec QR-facture, avec les taux de TVA.",
+          "badge": "Italie et Suisse"
         },
         {
-          "year": "Jalon 04",
-          "phase": "Communauté & Éducation",
-          "title": "Ouverture Open-Source, Écoles & Réseau National de Partenaires",
-          "desc": "Publication en open source, déploiement des parcours pédagogiques pour les écoles professionnelles et création du réseau national d’informaticiens, fiduciaires et experts-comptables.",
-          "badge": "Écosystème Ouvert"
+          "year": "Étape 04",
+          "phase": "La communauté",
+          "title": "Code ouvert, écoles et aide locale",
+          "desc": "Le projet devient public. On parle aux écoles et on construit une liste de techniciens et de fiduciaires qui aident sur place.",
+          "badge": "Projet ouvert"
         }
       ]
     },
     "ctaBanner": {
-      "heading": "Prenez part à l’histoire de FatturaFacile",
-      "subtitle": "Téléchargez le logiciel gratuit, découvrez nos modules ou proposez la prochaine fonctionnalité pour votre métier.",
-      "btnModules": "Explorer les Modules",
-      "btnCommunity": "Rejoindre la Communauté",
+      "heading": "Faites aussi partie de l'histoire",
+      "subtitle": "Essayez le logiciel gratuit, regardez les fonctions ou proposez celle dont votre métier a besoin.",
+      "btnModules": "Voir les fonctions",
+      "btnCommunity": "Rejoindre la communauté",
       "btnDownload": "Essayer la démo"
     }
   },
   "de": {
     "seo": {
-      "title": "FatturaFacile Geschichte – Open Source (MIT) ERP & Fakturierung Schweiz QR-Rechnung & Italien SdI FatturaPA Offline-first",
-      "description": "Erfahren Sie, wie FatturaFacile entstand: die Offline-first Open-Source (MIT) ERP- und Rechnungssoftware mit lokalem SQLite für die Schweiz (SIX QR-Bill) und Italien (SdI FatturaPA).",
-      "keywords": "fatturafacile geschichte, open source erp mit, offline-first rechnungssoftware, lokale sqlite datenbank, schweizer qr-rechnung six, fatturapa sdi italien, clean architecture dotnet"
+      "title": "Unsere Geschichte | Wie FatturaFacile entstand",
+      "description": "Wie FatturaFacile entstand: von Handwerkern mit teuren, komplizierten Programmen zu einem kostenlosen Open-Source-Fakturierungsprogramm für Italien und die Schweiz.",
+      "keywords": "fatturafacile geschichte, über uns, open source, kostenlose rechnungen, handwerker"
     },
-    "eyebrow": "Unsere Wurzeln & Vision",
-    "heading": "FatturaFacile: Vom Frust auf der Baustelle zum Open-Source Offline-first ERP für Schweiz & Italien",
-    "lead": "Entwickelt mit vollständiger nationaler Abdeckung für die gesamte Schweiz und ganz Italien verfolgt FatturaFacile eine klare Mission: Handwerkern, Kleinstunternehmen und Selbstständigen ein schnelles, rechtskonformes und kostenloses Fakturierungswerkzeug zu geben, das ihnen wirklich gehört.",
-    "problemTitle": "Das Problem: Warum sollte ein Handwerker ein ERP mit 500 Schaltflächen nutzen?",
-    "problemText": "Sanitärinstallateure, Elektriker, Schreiner und Freiberufler stellen im Schnitt 10 bis 20 Rechnungen pro Monat aus. Dennoch drängt ihnen der Markt überdimensionierte ERP-Pakete auf – langsam, voller unverständlicher Buchhaltungsmenüs und an endlose Monatsabonnements gekoppelt.",
-    "philosophyTitle": "Die Drei Säulen Unserer Architektur",
+    "eyebrow": "Woher es kommt",
+    "heading": "Wie FatturaFacile entstand",
+    "lead": "FatturaFacile entstand nicht in einem Sitzungszimmer, um Umsatz zu machen, sondern indem wir Sanitärinstallateuren, Elektrikern und Handwerkern zusahen, die mit langsamen, komplizierten und teuren Programmen kämpften.",
+    "problemTitle": "Das Problem: Programme, die zu gross sind",
+    "problemText": "In den letzten Jahren sind Verwaltungsprogramme zu monatlichen Abonnements übergegangen. Für ein grosses Unternehmen kann das passen. Wer allein oder zu wenigen arbeitet, hat dadurch hohe Kosten, Bildschirme voller unnötiger Knöpfe und die Sorge, die eigenen Rechnungen nicht mehr einsehen zu können, wenn er nicht mehr zahlt.",
+    "philosophyTitle": "Die vier Grundsätze",
     "philosophyBullets": [
       {
-        "title": "Lokales SQLite & Null Telemetrie",
-        "desc": "Volle Datensouveränität: keine Zwischenserver, kein Tracking und hundertprozentige physische Kontrolle über Ihre Geschäftsdaten."
+        "title": "Ihre Daten gehören Ihnen",
+        "desc": "Kein Werbe-Tracking und keine Weitergabe von Daten. Sie können sie jederzeit exportieren und sichern."
       },
       {
-        "title": "Dual-Market-Fundament (CH & IT)",
-        "desc": "Von Tag eins an nativ für die Schweizer QR-Rechnung (SIX-Standard) sowie die italienische E-Rechnung FatturaPA SDI entwickelt."
+        "title": "Italien und Schweiz",
+        "desc": "E-Rechnung (FatturaPA) für Italien, QR-Rechnung für die Schweiz: beides von Anfang an vorgesehen."
       },
       {
-        "title": "Clean Architecture & C# .NET",
-        "desc": "Solide Softwaretechnik (SOLID, CQRS, natives WPF) statt speicherhungriger und träger Web-Wrapper."
+        "title": "Aufgeräumter Code",
+        "desc": "Getrennte Teile und automatische Prüfungen bei jeder Änderung, für ein zuverlässiges und leicht zu verbesserndes Programm."
       }
     ],
     "timeline": [
       {
-        "year": "Phase 1 • Ursprung",
-        "title": "Praxiserfahrung zwischen der Schweiz und Italien",
-        "desc": "Direkter Austausch mit Handwerkern, die es leid waren, teure Jahresabos für wenige Rechnungen zu bezahlen und auf Baustellen ohne Internet blockiert zu sein."
+        "year": "Phase 1",
+        "title": "Zuhören, wie gearbeitet wird",
+        "desc": "Wir sammeln die Schwierigkeiten von Handwerkern und kleinen Selbstständigen, die es leid sind, für wenige Rechnungen ein Abonnement zu zahlen."
       },
       {
-        "year": "Phase 2 • Prototyp",
-        "title": "Erste Portable C# WPF & SQLite-Engine auf USB-Stick",
-        "desc": "Entwicklung der ersten installationsfreien Standalone-Version: Start in unter einer Sekunde, keine Einträge in der Windows-Registry und eingebettete SQLite-Datenbank."
+        "year": "Phase 2",
+        "title": "Die ersten Versuche",
+        "desc": "Ein erster Prototyp, um Rechnungen schnell auszufüllen, auch unterwegs."
       },
       {
-        "year": "Phase 3 • Dual-Market",
-        "title": "Native Integration von Swiss QR-Bill SIX & FatturaPA SDI",
-        "desc": "Umsetzung der offiziellen Schweizer QR-Zahlteile nach SIX-Vorgaben (QR-IBAN, eidgenössische MWST-Sätze) und des XML-Standards FatturaPA für Italien."
+        "year": "Phase 3",
+        "title": "E-Rechnung und QR-Rechnung",
+        "desc": "Die italienische E-Rechnung (FatturaPA, Pauschal- und Normalregime) und die Schweizer Rechnung mit QR-Rechnung und MWST-Sätzen kommen dazu."
       },
       {
-        "year": "Phase 4 • Offenes Ökosystem",
-        "title": "Open-Source-Start, Schulen & Nationales Partnernetzwerk",
-        "desc": "Veröffentlichung des Quellcodes, Start der kostenlosen Modulentwicklung auf Zuruf der Community sowie Bildungspartnerschaften mit Berufsfachschulen und Handelsmittelschulen."
+        "year": "Phase 4",
+        "title": "Offener Code, Schulen und Hilfe vor Ort",
+        "desc": "Der Code wird öffentlich, von der Community gewünschte Funktionen werden kostenlos entwickelt und die Kontakte zu Schulen beginnen."
       }
     ],
     "hero": {
-      "eyebrow": "Unsere Geschichte & Manifest",
-      "headingPart1": "FatturaFacile: Vom Frust auf der Baustelle zum",
-      "headingHighlight": "Open-Source Offline-first ERP für Schweiz (QR-Bill) & Italien (SdI).",
-      "lead": "FatturaFacile entstand mit einem klaren Ziel und voller nationaler Reichweite für die Schweiz und Italien: Handwerker, Kleinstbetriebe und Selbstständige von aufgeblähten ERP-Systemen und SaaS-Abos zu befreien – mit einer nativen Open-Source (MIT) Suite für Schweizer QR-Rechnung und Italien SdI FatturaPA.",
-      "badgeDualMarket": "Nationale Abdeckung Schweiz 🇨🇭 & Italien 🇮🇹",
-      "badgeOpenSource": "100 % Kostenlos, Offline & Open Source",
-      "ctaModules": "Module Entdecken",
-      "ctaCommunity": "Community Beitreten",
-      "ctaDownload": "Demo testen",
+      "eyebrow": "Unsere Geschichte",
+      "headingPart1": "Vom Frust auf der Baustelle zu",
+      "headingHighlight": "einem kostenlosen Fakturierungsprogramm.",
+      "lead": "FatturaFacile will Handwerkern, kleinen Betrieben und Selbstständigen ein schnelles, regelkonformes, kostenloses und wirklich eigenes Fakturierungsprogramm geben.",
+      "badgeDualMarket": "Italien 🇮🇹 und Schweiz 🇨🇭",
+      "badgeOpenSource": "Kostenlos und Open Source",
+      "ctaModules": "Funktionen ansehen",
+      "ctaCommunity": "Der Community beitreten",
+      "ctaDownload": "Demo ausprobieren",
       "langSelectorLabel": "Sprachauswahl der Seite Geschichte"
     },
     "origin": {
-      "badge": "1. Ursprung & Problemstellung",
-      "heading": "Warum für ein 500-Button-ERP zahlen, wenn man 15 Rechnungen im Monat schreibt?",
-      "lead": "Alles begann an einer Werkbank – als wir sahen, wie befreundete Handwerker spätabends mit langsamen, überkomplizierten Webportalen kämpften, nur um ihre geleistete Arbeit abzurechnen.",
-      "problemTitle": "Die Frustration über Aufgeblähte Unternehmenssoftware",
-      "problemText": "Ein Elektriker, Heizungsinstallateur, Gärtner oder freier Berater muss keine globale Lieferkette steuern. Er muss noch direkt beim Kunden auf der Baustelle in 60 Sekunden eine saubere Offerte erstellen und diese nach Auftragsabschluss mit einem einzigen Klick in eine rechtskonforme Rechnung umwandeln.",
-      "antiSaasTitle": "Anti-SaaS-Philosophie: Ihre Daten Dürfen Keine Geisel Sein",
-      "antiSaasText": "In den letzten Jahren ist Bürosoftware für Kleinbetriebe zur Dauer-Mietfalle geworden: Wer das monatliche Abo kündigt, verliert den Zugriff auf sein Werkzeug oder seine eigene Kundenhistorie. Wir sind überzeugt, dass Ihr Arbeitswerkzeug und Ihre Buchhaltungsdaten zu 100 % Ihnen gehören müssen – ohne Ablaufdatum und ohne Cloud-Zwang.",
+      "badge": "1. Das Problem",
+      "heading": "Warum soll, wer 15 Rechnungen im Monat schreibt, ein Programm mit 500 Knöpfen bezahlen?",
+      "lead": "Alles begann damit, dass wir Kollegen und befreundete Handwerker abends mit langsamen, komplizierten Programmen kämpfen sahen, nur um für ihre Arbeit bezahlt zu werden.",
+      "problemTitle": "Programme für grosse Unternehmen",
+      "problemText": "Ein Elektriker, ein Sanitärinstallateur, ein Gärtner oder ein Berater muss kein grosses Unternehmen führen. Er braucht in einer Minute eine klare Offerte, solange er noch beim Kunden ist, und mit einem Klick eine korrekte Rechnung.",
+      "antiSaasTitle": "Ihre Daten dürfen keine Geiseln sein",
+      "antiSaasText": "Heute werden viele Programme wie Miete bezahlt: Wer aufhört zu zahlen, kann nicht mehr damit arbeiten und manchmal nicht einmal mehr seine Kunden einsehen. Wir finden, Arbeitswerkzeuge und Daten sollen denen gehören, die arbeiten, ohne Ablaufdatum.",
       "quote": {
-        "text": "„Eine Rechnungssoftware für Handwerker sollte wie ein guter Schraubenzieher im Werkzeugkasten funktionieren: sofort griffbereit, ohne monatliche Abogebühr für jede Umdrehung und selbst im tiefsten Keller ohne Mobilfunknetz zuverlässig einsatzbereit.“",
-        "author": "Gründerteam FatturaFacile",
-        "role": "Schweizerisch-Italienisches Architektur-Manifest"
+        "text": "«Ein Programm für Handwerker sollte wie ein guter Schraubenzieher sein: Er ist da, wenn man ihn braucht, und verlangt kein Abonnement, um eine Schraube zu drehen.»",
+        "author": "Das Gründungsteam von FatturaFacile",
+        "role": "Unser Ausgangspunkt"
       },
       "comparison": {
-        "erpTitle": "Klassische SaaS-Lösungen / Groß-ERPs",
+        "erpTitle": "Programme im Abonnement",
         "erpPoints": [
-          "Verpflichtende Monats- oder Jahresabos mit regelmäßigen Preiserhöhungen",
-          "Überladene Masken mit hunderten Funktionen, die Kleinbetriebe nie benötigen",
-          "Vollständige Internetabhängigkeit und langsame Ladezeiten unterwegs",
-          "Kundenstamm und sensible Rechnungsdaten liegen auf fremden Drittservern"
+          "Monatliche oder jährliche Gebühr, die bei jeder Verlängerung steigt",
+          "Hunderte Knöpfe, die ein kleiner Betrieb nicht braucht",
+          "Funktionieren oft nicht ohne Internet",
+          "Kunden und Rechnungen auf Servern anderer"
         ],
-        "ffTitle": "Der Fattura-Facile-Weg",
+        "ffTitle": "FatturaFacile",
         "ffPoints": [
-          "0 CHF / 0 € dauerhaft in der Desktop-Version, ohne Beleg- oder Kundenlimit",
-          "Schlanker Ablauf: Offerte in 1 Minute, Rechnung per 1-Klick-Umwandlung",
-          "100 % Offline auf PC oder USB-Stick mit Blitzstart (< 1 Sekunde)",
-          "Lokale SQLite-Datenbank in Ihrem alleinigen physischen und rechtlichen Eigentum"
+          "Kostenlos, ohne Begrenzung der Dokumente",
+          "Offerte in einer Minute, Rechnung mit einem Klick",
+          "Sie können es auf Ihrem eigenen Server installieren",
+          "Ihre Daten bleiben Ihre und Sie können sie exportieren"
         ]
       }
     },
     "architecture": {
-      "badge": "2. Architektonische Grundpfeiler",
-      "heading": "Solide Ingenieurskunst im Dienst der Einfachheit",
-      "lead": "Hinter einer bewusst aufgeräumten Oberfläche arbeitet eine Softwarearchitektur, die höchsten Ansprüchen an Datensouveränität, Geschwindigkeit und Wartbarkeit genügt.",
+      "badge": "2. Wie es gebaut ist",
+      "heading": "Einfach in der Bedienung, solide im Innern",
+      "lead": "Die Oberfläche ist absichtlich einfach. Dahinter ist das Programm sorgfältig gebaut, damit es sicher, schnell und leicht zu pflegen ist.",
       "pillars": [
         {
           "id": "sqlite",
-          "tag": "Privacy by Design",
-          "title": "Lokales SQLite & Null Telemetrie",
-          "desc": "Keine Steuernummer, keine IBAN und kein Kundendatensatz verlässt jemals Ihren Computer. Der Betriebsinhaber bleibt alleiniger Verantwortlicher gemäß Schweizer revDSG (nLPD) und EU-DSGVO.",
+          "tag": "Datenschutz",
+          "title": "Ihre Daten bleiben, wo Sie sie ablegen",
+          "desc": "In der Webversion liegen die Daten auf dem Server, auf dem das Programm installiert ist. Wenn Sie es selbst installieren, bleiben sie Ihre. Wir nutzen keine Werbe-Tracking-Werkzeuge.",
           "highlights": [
-            "Einzelne transaktionssichere ACID-SQLite-Datenbankdatei",
-            "Keinerlei Telemetrie, Nutzungsanalyse oder Werbe-Tracker",
-            "1-Klick AES-verschlüsseltes ZIP-Backup auf USB oder lokales NAS"
+            "Kein Werbe-Tracking",
+            "Automatische Sicherung jede Nacht, die letzten 7 bleiben erhalten",
+            "Sicherung und Wiederherstellung auch von Hand"
           ]
         },
         {
           "id": "dual_market",
-          "tag": "Vollständige Konformität Schweiz & Italien",
-          "title": "Dual-Market-Fundament: Schweiz & Italien",
-          "desc": "Anders als nachträglich angepasste Programme wurde FatturaFacile von Grund auf für die vollständige gesetzliche und steuerliche Konformität in der gesamten Schweiz (SIX QR-Rechnung, ESTV-MWST, revDSG in allen 26 Kantonen) und ganz Italien (FatturaPA XML, SdI B2B/B2C, AgID, Split Payment und Quellensteuer in allen Regionen) konzipiert.",
+          "tag": "Italien und Schweiz",
+          "title": "Zwei Länder, ein Programm",
+          "desc": "FatturaFacile ist von Anfang an für Italien und die Schweiz gedacht, nicht erst nachträglich angepasst.",
           "highlights": [
-            "Schweiz 🇨🇭: Offizielle QR-Rechnung (SIX-Standard) mit Schweizerkreuz, QR-IBAN und ESTV-MWST-Sätzen (8.1 %, 2.6 %, 3.8 %)",
-            "Italien 🇮🇹: Zertifizierter FatturaPA v1.2 XML-Export für SDI, Empfängercode, Split Payment und Quellensteuer",
-            "Native Mehrwährungsfähigkeit für CHF und EUR"
+            "Italien 🇮🇹: Datei der E-Rechnung (FatturaPA)",
+            "Schweiz 🇨🇭: QR-Einzahlungsschein mit QR-IBAN und Schweizer MWST",
+            "Schweizer Franken und Euro"
           ]
         },
         {
           "id": "clean_arch",
-          "tag": "Software-Qualität",
-          "title": "Clean Architecture & Natives C# .NET",
-          "desc": "Wir verzichten bewusst auf speicherhungrige Web-Wrapper. FatturaFacile ist in nativem C# .NET mit CQRS- und SOLID-Prinzipien entwickelt und läuft selbst auf älteren Werkstatt-Notebooks blitzschnell.",
+          "tag": "Codequalität",
+          "title": "Aufgeräumter, geprüfter Code",
+          "desc": "Der Code ist in klare Teile gegliedert und bei jeder Änderung laufen automatische Prüfungen. Das macht das Programm zuverlässiger und leichter zu verbessern.",
           "highlights": [
-            "Saubere Schichtentrennung: Domain, Application, Infrastructure und UI",
-            "Automatisierte Qualitätsprüfung mit SonarQube und JetBrains Qodana",
-            "Optionale Self-Hosted Docker-Edition für Mehrbenutzer-Teams"
+            "Getrennte Teile: Daten, Regeln, Oberfläche",
+            "Automatische Tests und Prüfungen auf GitHub",
+            "Kann auch auf dem eigenen Server installiert werden, um zu mehreren zu arbeiten"
           ]
         }
       ]
     },
     "ethics": {
-      "badge": "3. Open-Source-Ethik & Gesellschaftlicher Beitrag",
-      "heading": "Ein Digitales Gemeingut für Handwerk, Bildung und Unternehmen",
-      "lead": "FatturaFacile ist kein renditegetriebenes Start-up, sondern ein offenes Technologie- und Bildungsprojekt, das gemeinsam mit Praktikern und Lehrkräften wächst.",
+      "badge": "3. Unsere Zusagen",
+      "heading": "Ein Gemeingut für Handwerker, Lernende und Betriebe",
+      "lead": "FatturaFacile ist kein Start-up auf der Suche nach Investoren. Es ist ein Projekt, das mit Menschen gebaut wird, die arbeiten und unterrichten.",
       "cards": [
         {
           "id": "free_forever",
-          "badge": "Dauerhaftes Versprechen",
-          "title": "Desktop-Kernversion 100 % Kostenlos für Immer",
-          "desc": "Unsere portable Desktop-Anwendung wird niemals kostenpflichtig und wird niemals künstliche Limits für Rechnungen oder Kunden einführen. Der Start in die Selbstständigkeit muss frei von digitalen Hürden sein.",
+          "badge": "Für immer",
+          "title": "Kostenlos, ohne Grenzen",
+          "desc": "Das Programm bleibt kostenlos und bekommt keine künstlichen Grenzen bei Rechnungen oder Kunden. Wer einen Beruf beginnt, soll keine Hürden finden.",
           "linkHref": "/versioni/",
-          "linkLabel": "Versionen Vergleichen →"
+          "linkLabel": "Versionen ansehen →"
         },
         {
           "id": "community_modules",
-          "badge": "Gemeinschaftliche Entwicklung",
-          "title": "Wunschmodule zum Nulltarif (0 €)",
-          "desc": "Wenn ein Handwerker eine spezifische Funktion für seinen Berufsalltag benötigt, entwickelt unser Team das Modul kostenlos und stellt es in der nächsten Version allen Betrieben frei zur Verfügung.",
+          "badge": "Gemeinsam gebaut",
+          "title": "Funktionen auf Wunsch, kostenlos",
+          "desc": "Wenn uns ein Handwerker ein echtes Bedürfnis seiner Arbeit meldet, prüfen wir es und fügen es, wenn es mehreren nützt, kostenlos für alle hinzu.",
           "linkHref": "/community-richieste/",
-          "linkLabel": "Kostenloses Modul Anfragen →"
+          "linkLabel": "Funktion wünschen →"
         },
         {
           "id": "schools_social",
-          "badge": "Berufsbildung & Jugend",
-          "title": "Verantwortung für Berufsfachschulen & Lernende",
-          "desc": "Informatikschulen nutzen unsere reale .NET-Codebasis für den Praxisunterricht, während Handelsschulen mit der kostenlosen Software realistische Buchhaltungs- und QR-Rechnungssimulationen durchführen.",
+          "badge": "Die Zukunft",
+          "title": "Schulen und Lernende",
+          "desc": "Wir stellen den Code technischen Schulen zur Verfügung, um ein echtes Programm zu studieren, und das Programm kaufmännischen Schulen für Übungen, ohne Lizenzen.",
           "linkHref": "/scuole-e-sociale/",
-          "linkLabel": "Schul- & Sozialprogramm →"
+          "linkLabel": "Das Programm für Schulen →"
         }
       ]
     },
     "chronicle": {
-      "badge": "4. Chronik & Meilensteine",
-      "heading": "Unser Entwicklungsweg",
-      "lead": "Von der ersten Codezeile für Handwerksbetriebe bis zum offenen Ökosystem mit voller nationaler Abdeckung in der Schweiz und in Italien.",
+      "badge": "4. Die Etappen",
+      "heading": "Unser Weg",
+      "lead": "Von den ersten Versuchen zu einem offenen Projekt, für Italien und für die Schweiz.",
       "milestones": [
         {
-          "year": "Meilenstein 01",
-          "phase": "Die Grundidee",
-          "title": "Praxisanalyse in der Schweiz und in Italien",
-          "desc": "Entstehung der Idee im direkten Gespräch mit Elektrikern, Installateuren und Selbstständigen, die unter teuren und offline unbrauchbaren Abo-ERPs litten.",
-          "badge": "Anti-ERP-Vision"
+          "year": "Etappe 01",
+          "phase": "Die Idee",
+          "title": "Zuhören, wie gearbeitet wird",
+          "desc": "Die Idee entsteht, als wir Sanitärinstallateure, Elektriker und kleine Selbstständige mit komplizierten Abo-Programmen kämpfen sehen.",
+          "badge": "Ausgangspunkt"
         },
         {
-          "year": "Meilenstein 02",
-          "phase": "Erster Prototyp",
-          "title": "Portable C# WPF & SQLite-Engine auf dem USB-Stick",
-          "desc": "Entwicklung des installationsfreien Kernsystems: eine eigenständige Programmdatei mit integrierter SQLite-Datenbank, die auf jedem Windows-PC sofort startet.",
-          "badge": "100 % Offline & USB"
+          "year": "Etappe 02",
+          "phase": "Der Prototyp",
+          "title": "Die ersten Versuche",
+          "desc": "Ein erster Prototyp, um schnell Rechnungen zu schreiben, auch unterwegs.",
+          "badge": "Prototyp"
         },
         {
-          "year": "Meilenstein 03",
-          "phase": "Zweistaaten-Konformität",
-          "title": "Integration von Swiss QR-Bill (SIX) & FatturaPA (SDI)",
-          "desc": "Aufbau der zertifizierten Steuermodule für den Schweizer Zahlungsverkehr nach SIX-Standard sowie für das elektronische Austauschsystem SDI der italienischen Steuerbehörde.",
-          "badge": "CH & IT Konform"
+          "year": "Etappe 03",
+          "phase": "Die Steuerregeln",
+          "title": "E-Rechnung und QR-Rechnung",
+          "desc": "Die italienische E-Rechnung (FatturaPA) und die Schweizer Rechnung mit QR-Rechnung kommen dazu, mit den MWST-Sätzen.",
+          "badge": "Italien und Schweiz"
         },
         {
-          "year": "Meilenstein 04",
-          "phase": "Community & Bildung",
-          "title": "Open-Source-Freigabe, Schulpartnerschaften & Nationales Netzwerk",
-          "desc": "Öffnung des gesamten Projekts, Einführung kostenloser Lehrpakete für Berufs- und Handelsschulen sowie Aufbau des landesweiten Verzeichnisses qualifizierter IT-Partner, Treuhänder und Steuerberater.",
-          "badge": "Offenes Ökosystem"
+          "year": "Etappe 04",
+          "phase": "Die Community",
+          "title": "Offener Code, Schulen und Hilfe vor Ort",
+          "desc": "Das Projekt wird öffentlich. Wir sprechen mit Schulen und bauen eine Liste von Technikern und Treuhändern auf, die vor Ort helfen.",
+          "badge": "Offenes Projekt"
         }
       ]
     },
     "ctaBanner": {
-      "heading": "Werden Sie Teil der Geschichte von FatturaFacile",
-      "subtitle": "Laden Sie die kostenlose Software herunter, entdecken Sie alle Module oder schlagen Sie die nächste Funktion für Ihr Handwerk vor.",
-      "btnModules": "Module Entdecken",
-      "btnCommunity": "Community Beitreten",
-      "btnDownload": "Demo testen"
+      "heading": "Werden Sie Teil der Geschichte",
+      "subtitle": "Probieren Sie das kostenlose Programm aus, sehen Sie sich die Funktionen an oder schlagen Sie die vor, die Ihre Arbeit braucht.",
+      "btnModules": "Funktionen ansehen",
+      "btnCommunity": "Der Community beitreten",
+      "btnDownload": "Demo ausprobieren"
     }
   }
 }
