@@ -1,17 +1,19 @@
-# Agent Optimization & Execution Guidelines
+# Copilot instructions
 
-## Context & Token Saving Rules
+Project: Astro 7 static website (TypeScript, pnpm).
 
-1. **Never read whole files unless strictly necessary:** Prefer inspecting interfaces, declarations, and method signatures over entire multi-thousand-line implementations.
-2. **Concise diffs only:** When modifying code, emit only the updated methods or focused contextual diffs. Do not reproduce the entire source file.
-3. **No conversational padding:** Do not start answers with polite filler phrases ("Sure, I can help with that", "Certainly!"). Start directly with the code solution, patch, or command.
-4. **No post-explanation unsolicited text:** Do not explain standard C# / PHP syntax or architectural concepts unless explicitly asked with "explain" or "why".
+Full cross-tool rules: `.ai/rules/project.md` (read it first).
 
-## Architectural Constraints
+## Essentials
 
-- Follow Clean Architecture and CQRS:
-  - Domain: pure business logic, entities, value objects.
-  - Application: MediatR/CQRS handlers, DTOs, interfaces.
-  - Infrastructure: EF Core, persistence, external adapters.
-  - Presentation: Thin controllers / minimal endpoints / UI components.
-- Do not add external third-party dependencies unless strictly required.
+- Write all code, comments, commit messages and documentation in English.
+- Fix every error you meet, also outside the request.
+- Never add dependencies or secrets; follow the sibling files of the area you change.
+- Static, content-first pages; keep every page accessible (WCAG AA) and fast.
+- Every user-facing text exists in all supported languages: `pnpm test:i18n` must pass.
+- No secrets or API hosts hardcoded in source; use `.env.example` names.
+
+## Commands
+
+- `pnpm dev` / `pnpm build` (the build runs the i18n parity check first)
+- `pnpm check` (astro check), `pnpm lint`, `pnpm format:check`, `pnpm test:i18n`

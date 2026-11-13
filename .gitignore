@@ -50,3 +50,7 @@ Thumbs.db
 .claude-build/
 .claude/settings.local.json
 .claude/*.local.md
+# AI tools: local state and scratch files
+.claude/worktrees/
+.sandbox/
+*.tmp
