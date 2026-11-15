@@ -81,11 +81,12 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Free quotes and invoices for small businesses (Italy and Switzerland)",
-      "description": "Free, open source software for quotes and invoices. Electronic invoices for Italy, QR-bill for Switzerland. Try it online, no sign-up.",
-      "keywords": "free invoicing software, electronic invoice Italy, quotes and invoices, swiss qr-bill, invoicing for tradespeople, open source"
+      "title": "FatturaFacile – Free open source ERP: quotes and invoices for small businesses",
+      "description": "Free, open source, modular ERP: start with quotes and invoices, then turn on only the modules you need. Electronic invoices for Italy, QR-bill for Switzerland. Try it online, no sign-up.",
+      "keywords": "free invoicing software, electronic invoice Italy, quotes and invoices, swiss qr-bill, invoicing for tradespeople, open source, free ERP, open source ERP, ERP for small businesses"
     },
     "hero": {
+      "eyebrow": "The open source ERP for tradespeople and small businesses",
       "badgeGeo": "Free • Open source • No subscription",
       "badgePrivacy": "Electronic invoice (Italy) • QR-bill (Switzerland)",
       "titlePart1": "Quotes and invoices",
@@ -128,7 +129,7 @@
         },
         {
           "title": "The rest, only if you need it",
-          "desc": "You can add stock, jobs, cash, subscriptions and accounting. If you don't need them, you don't see them."
+          "desc": "FatturaFacile is a modular ERP: start with quotes and invoices and turn on only what you need, such as stock, jobs, cash, subscriptions and accounting (some are still in development). If you don't need them, you don't see them."
         }
       ],
       "more": "Why choose it"
@@ -798,6 +799,12 @@
       "partners": "Help and community"
     },
     "items": [
+      {
+        "id": "faq-erp",
+        "category": "general",
+        "question": "Is it an ERP?",
+        "answer": "Yes, it is a free, open source, modular ERP. You start with quotes and invoices and turn on only the modules you need; some, like stock management, are still in development. It is not a heavy program: if invoices are all you need, it stays simple."
+      },
       {
         "id": "faq-free",
         "category": "general",

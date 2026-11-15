@@ -81,11 +81,12 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Kostenlose Offerten und Rechnungen für Kleinbetriebe (Italien und Schweiz)",
-      "description": "Kostenloses Open-Source-Programm für Offerten und Rechnungen. E-Rechnung für Italien, QR-Rechnung für die Schweiz. Online testen, ohne Anmeldung.",
-      "keywords": "kostenlose rechnungssoftware, elektronische rechnung italien, offerten und rechnungen, qr-rechnung schweiz, rechnungen handwerker, open source"
+      "title": "FatturaFacile – Kostenloses Open-Source-ERP: Offerten und Rechnungen für Kleinbetriebe",
+      "description": "Kostenloses, modulares Open-Source-ERP: Starten Sie mit Offerten und Rechnungen und aktivieren Sie nur die Module, die Sie brauchen. E-Rechnung für Italien, QR-Rechnung für die Schweiz. Online testen, ohne Anmeldung.",
+      "keywords": "kostenlose rechnungssoftware, elektronische rechnung italien, offerten und rechnungen, qr-rechnung schweiz, rechnungen handwerker, open source, erp kostenlos, open-source-erp, erp kleinbetriebe"
     },
     "hero": {
+      "eyebrow": "Das Open-Source-ERP für Handwerker und Kleinbetriebe",
       "badgeGeo": "Kostenlos • Open Source • Ohne Abonnement",
       "badgePrivacy": "E-Rechnung (Italien) • QR-Rechnung (Schweiz)",
       "titlePart1": "Offerten und Rechnungen",
@@ -128,7 +129,7 @@
         },
         {
           "title": "Der Rest nur bei Bedarf",
-          "desc": "Sie können Lager, Einsätze, Kasse, Abonnements und Buchhaltung dazunehmen. Brauchen Sie sie nicht, sehen Sie sie nicht."
+          "desc": "FatturaFacile ist ein modulares ERP: Sie starten mit Offerten und Rechnungen und aktivieren nur, was Sie brauchen, etwa Lager, Einsätze, Kasse, Abonnements und Buchhaltung (einiges ist noch in Entwicklung). Brauchen Sie es nicht, sehen Sie es nicht."
         }
       ],
       "more": "Warum FatturaFacile"
@@ -798,6 +799,12 @@
       "partners": "Hilfe und Community"
     },
     "items": [
+      {
+        "id": "faq-erp",
+        "category": "general",
+        "question": "Ist es ein ERP?",
+        "answer": "Ja, es ist ein kostenloses, modulares Open-Source-ERP. Sie starten mit Offerten und Rechnungen und aktivieren nur die Module, die Sie brauchen; einige, etwa die Lagerverwaltung, sind noch in Entwicklung. Es ist kein schwerfälliges Programm: Wenn Rechnungen genügen, bleibt es einfach."
+      },
       {
         "id": "faq-free",
         "category": "general",

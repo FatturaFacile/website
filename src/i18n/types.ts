@@ -165,6 +165,7 @@ export interface CommunityRequestsTranslations {
 export interface HomeTranslations {
   seo: SeoMetadata;
   hero: {
+    eyebrow: string;
     badgeGeo: string;
     badgePrivacy: string;
     titlePart1: string;

@@ -81,11 +81,12 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Preventivi e fatture gratis per artigiani e PMI (Italia e Svizzera)",
-      "description": "Programma gratuito e open source per fare preventivi e fatture. Fattura elettronica per l'Italia, QR-Bill per la Svizzera. Provalo online, senza registrazione.",
-      "keywords": "programma fatturazione gratuito, fattura elettronica, preventivi e fatture, qr-bill svizzera, software fatture artigiani, gestionale open source"
+      "title": "FatturaFacile – ERP e gestionale gratuito: preventivi e fatture per PMI",
+      "description": "Gestionale (ERP) gratuito e open source, modulare: parti da preventivi e fatture, poi attivi solo i moduli che ti servono. Fattura elettronica per l'Italia, QR-Bill per la Svizzera. Provalo online, senza registrazione.",
+      "keywords": "programma fatturazione gratuito, fattura elettronica, preventivi e fatture, qr-bill svizzera, software fatture artigiani, gestionale open source, erp open source, erp gratuito per pmi"
     },
     "hero": {
+      "eyebrow": "Il gestionale (ERP) open source per artigiani e PMI",
       "badgeGeo": "Gratuito • Open source • Senza abbonamento",
       "badgePrivacy": "Fattura elettronica (Italia) • QR-Bill (Svizzera)",
       "titlePart1": "Preventivi e fatture",
@@ -128,7 +129,7 @@
         },
         {
           "title": "Il resto, solo se ti serve",
-          "desc": "Puoi aggiungere magazzino, interventi, cassa, abbonamenti e contabilità. Se non ti servono, non li vedi."
+          "desc": "FatturaFacile è un gestionale (ERP) a moduli: parti da preventivi e fatture e attivi solo ciò che ti serve, come magazzino, interventi, cassa, abbonamenti e contabilità (alcuni sono ancora in sviluppo). Se non ti servono, non li vedi."
         }
       ],
       "more": "Perché sceglierlo"
@@ -798,6 +799,12 @@
       "partners": "Aiuto e community"
     },
     "items": [
+      {
+        "id": "faq-erp",
+        "category": "general",
+        "question": "È un ERP?",
+        "answer": "Sì, è un gestionale (ERP) a moduli, gratuito e open source. Parti da preventivi e fatture e attivi solo i moduli che ti servono; alcuni, come il magazzino, sono ancora in sviluppo. Non è un programma pesante: se ti basta fare fatture, resta semplice."
+      },
       {
         "id": "faq-free",
         "category": "general",
