@@ -81,11 +81,12 @@
   },
   "home": {
     "seo": {
-      "title": "FatturaFacile – Devis et factures gratuits pour petites entreprises (Italie et Suisse)",
-      "description": "Logiciel gratuit et open source pour devis et factures. Facture électronique pour l'Italie, QR-facture pour la Suisse. Essayez-le en ligne, sans inscription.",
-      "keywords": "logiciel de facturation gratuit, facture électronique italie, devis et factures, qr-facture suisse, facturation artisans, open source"
+      "title": "FatturaFacile – ERP gratuit et open source : devis et factures pour petites entreprises",
+      "description": "ERP gratuit, open source et modulaire : commencez par les devis et les factures, puis activez seulement les modules dont vous avez besoin. Facture électronique pour l'Italie, QR-facture pour la Suisse. Essayez-le en ligne, sans inscription.",
+      "keywords": "logiciel de facturation gratuit, facture électronique italie, devis et factures, qr-facture suisse, facturation artisans, open source, erp gratuit, erp open source, erp petites entreprises"
     },
     "hero": {
+      "eyebrow": "L'ERP open source pour artisans et petites entreprises",
       "badgeGeo": "Gratuit • Open source • Sans abonnement",
       "badgePrivacy": "Facture électronique (Italie) • QR-facture (Suisse)",
       "titlePart1": "Devis et factures",
@@ -128,7 +129,7 @@
         },
         {
           "title": "Le reste, seulement si besoin",
-          "desc": "Vous pouvez ajouter stock, interventions, caisse, abonnements et comptabilité. Si vous n'en avez pas besoin, vous ne les voyez pas."
+          "desc": "FatturaFacile est un ERP modulaire : commencez par les devis et les factures et n'activez que ce dont vous avez besoin, comme stock, interventions, caisse, abonnements et comptabilité (certains sont encore en développement). Si vous n'en avez pas besoin, vous ne les voyez pas."
         }
       ],
       "more": "Pourquoi le choisir"
@@ -798,6 +799,12 @@
       "partners": "Aide et communauté"
     },
     "items": [
+      {
+        "id": "faq-erp",
+        "category": "general",
+        "question": "Est-ce un ERP ?",
+        "answer": "Oui, c'est un ERP modulaire, gratuit et open source. Vous commencez par les devis et les factures et n'activez que les modules dont vous avez besoin ; certains, comme la gestion de stock, sont encore en développement. Ce n'est pas un logiciel lourd : si les factures vous suffisent, il reste simple."
+      },
       {
         "id": "faq-free",
         "category": "general",
