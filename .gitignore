@@ -72,3 +72,8 @@ Thumbs.db
 /.gemini/
 /.geminiignore
 /.windsurfrules
+
+# AI tools: local state and scratch files
+.sandbox/
+*.tmp
+

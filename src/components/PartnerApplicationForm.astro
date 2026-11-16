@@ -2,8 +2,10 @@
 import { SERVICE_CAPABILITIES } from '../data/partners';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { it } from '../i18n/locales/it';
+import { a11yLabels } from '../i18n/a11y';
 
-const t = useTranslations(getLangFromUrl(Astro.url)).supportoLocale;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang).supportoLocale;
 const f = t.form;
 // Submitted values stay in Italian so the team always receives the same wording.
 const submittedServices = it.supportoLocale.services;
@@ -12,7 +14,7 @@ const submittedServices = it.supportoLocale.services;
 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
   <div class="max-w-2xl mb-8">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 mb-3">
-      <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+      <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse" aria-hidden="true"></span>
       {f.badge}
     </div>
     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -47,7 +49,10 @@ const submittedServices = it.supportoLocale.services;
           for="companyName"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          {f.companyLabel} <span class="text-teal-600">*</span>
+          {f.companyLabel}{' '}
+          <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="text"
@@ -55,7 +60,7 @@ const submittedServices = it.supportoLocale.services;
           name="companyName"
           required
           placeholder={f.companyPlaceholder}
-          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
         />
       </div>
 
@@ -65,7 +70,10 @@ const submittedServices = it.supportoLocale.services;
           for="contactPerson"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          {f.contactLabel} <span class="text-teal-600">*</span>
+          {f.contactLabel}{' '}
+          <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="text"
@@ -73,7 +81,7 @@ const submittedServices = it.supportoLocale.services;
           name="contactPerson"
           required
           placeholder={f.contactPlaceholder}
-          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
         />
       </div>
 
@@ -83,7 +91,10 @@ const submittedServices = it.supportoLocale.services;
           for="email"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          {f.emailLabel} <span class="text-teal-600">*</span>
+          {f.emailLabel}{' '}
+          <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="email"
@@ -91,7 +102,7 @@ const submittedServices = it.supportoLocale.services;
           name="email"
           required
           placeholder={f.emailPlaceholder}
-          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
         />
       </div>
 
@@ -101,7 +112,10 @@ const submittedServices = it.supportoLocale.services;
           for="phone"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          {f.phoneLabel} <span class="text-teal-600">*</span>
+          {f.phoneLabel}{' '}
+          <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="tel"
@@ -109,7 +123,7 @@ const submittedServices = it.supportoLocale.services;
           name="phone"
           required
           placeholder={f.phonePlaceholder}
-          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
         />
       </div>
 
@@ -119,13 +133,16 @@ const submittedServices = it.supportoLocale.services;
           for="country"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          {f.countryLabel} <span class="text-teal-600">*</span>
+          {f.countryLabel}{' '}
+          <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+            *
+          </span>
         </label>
         <select
           id="country"
           name="country"
           required
-          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
         >
           <option value="" disabled selected>
             {f.countryPlaceholder}
@@ -141,7 +158,10 @@ const submittedServices = it.supportoLocale.services;
           for="region"
           class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
         >
-          {f.regionLabel} <span class="text-teal-600">*</span>
+          {f.regionLabel}{' '}
+          <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+            *
+          </span>
         </label>
         <input
           type="text"
@@ -149,7 +169,7 @@ const submittedServices = it.supportoLocale.services;
           name="region"
           required
           placeholder={f.regionPlaceholder}
-          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+          class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
         />
       </div>
     </div>
@@ -160,13 +180,16 @@ const submittedServices = it.supportoLocale.services;
         for="role"
         class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2"
       >
-        {f.roleLabel} <span class="text-teal-600">*</span>
+        {f.roleLabel}{' '}
+        <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+          *
+        </span>
       </label>
       <select
         id="role"
         name="role"
         required
-        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors"
       >
         <option value="IT Consultant">{t.roles.itConsultant}</option>
         <option value="System Integrator">{t.roles.systemIntegrator}</option>
@@ -176,10 +199,14 @@ const submittedServices = it.supportoLocale.services;
     </div>
 
     <!-- Servizi Offerti (Multi-Select Checkboxes) -->
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
-        {f.servicesLabel} <span class="text-teal-600">*</span>
-      </label>
+    <fieldset>
+      <legend class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        {f.servicesLabel}{' '}
+        <span class="text-teal-700 dark:text-teal-400" aria-hidden="true">
+          *
+        </span>
+        <span class="sr-only">({a11yLabels[lang].required})</span>
+      </legend>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {SERVICE_CAPABILITIES.map((srv) => (
           <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-teal-500/50 cursor-pointer transition-colors text-xs text-slate-700 dark:text-slate-200">
@@ -187,13 +214,13 @@ const submittedServices = it.supportoLocale.services;
               type="checkbox"
               name="services"
               value={submittedServices[srv]}
-              class="mt-0.5 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+              class="mt-0.5 rounded border-slate-300 text-teal-700 dark:text-teal-400 focus:ring-teal-700"
             />
             <span>{t.services[srv]}</span>
           </label>
         ))}
       </div>
-    </div>
+    </fieldset>
 
     <!-- Note & Esperienza -->
     <div>
@@ -208,12 +235,18 @@ const submittedServices = it.supportoLocale.services;
         name="notes"
         rows="3"
         placeholder={f.notesPlaceholder}
-        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors resize-none"
+        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-700 transition-colors resize-none"
       ></textarea>
     </div>
 
     <!-- Box Esito / Risultato -->
-    <div id="form-result-container" class="hidden rounded-xl p-4 text-sm font-medium"></div>
+    <div
+      id="form-result-container"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      class="hidden rounded-xl p-4 text-sm font-medium"
+    ></div>
 
     <!-- Submit CTA & Status -->
     <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -221,7 +254,7 @@ const submittedServices = it.supportoLocale.services;
       <button
         type="submit"
         id="partner-submit-btn"
-        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-teal-700 hover:bg-teal-800 text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
       >
         <svg id="btn-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path

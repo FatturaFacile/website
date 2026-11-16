@@ -2,6 +2,8 @@
 import type { Locale } from '../i18n/types';
 import { getLangFromUrl, getLocalizedPath, useTranslations } from '../i18n/utils';
 import { DEMO_URL } from '../data/links';
+import { getRouteKeyFromPath } from '../i18n/routes';
+import { a11yLabels } from '../i18n/a11y';
 
 export interface Props {
   lang?: Locale;
@@ -11,20 +13,17 @@ const currentPath = Astro.url.pathname;
 const lang: Locale = Astro.props.lang ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const routeKey = getRouteKeyFromPath(currentPath);
 const isProductActive =
-  currentPath.includes('/perche') ||
-  currentPath.includes('/funzionalita') ||
-  currentPath.includes('/moduli') ||
-  currentPath.includes('/versioni');
+  routeKey !== undefined && ['perche', 'funzionalita', 'moduli', 'versioni'].includes(routeKey);
 const isCommunityActive =
-  currentPath.includes('/community') ||
-  currentPath.includes('/contribuisci') ||
-  currentPath.includes('/scuole-e-sociale') ||
-  currentPath.includes('/sponsor');
-const isNetworkActive = currentPath.includes('/supporto-locale') || currentPath.includes('/faq');
+  routeKey !== undefined &&
+  ['community', 'community-richieste', 'contribuisci', 'scuole-e-sociale', 'sponsor'].includes(
+    routeKey,
+  );
+const isNetworkActive = routeKey !== undefined && ['supporto-locale', 'faq'].includes(routeKey);
 const isAboutActive =
-  currentPath.includes('/storia') ||
-  currentPath.includes('/team') ||
+  (routeKey !== undefined && ['storia', 'team'].includes(routeKey)) ||
   currentPath.includes('#storia') ||
   currentPath.includes('#team');
 
@@ -47,60 +46,60 @@ const dropdownSubtitles: Record<
   >
 > = {
   it: {
-    whyUs: 'Filosofia anti-ERP per artigiani e PMI',
-    features: 'FatturaPA, Swiss QR-Bill e roadmap',
-    versions: 'Web disponibile, desktop e mobile in arrivo',
-    requestModules: 'Sviluppo a costo zero rilasciato a tutti',
-    contribute: 'Devs, commercialisti, traduttori e tester',
-    contributeGuide: 'Issue, branch e pull request: come iniziare',
-    schools: 'Didattica per istituti e impatto sociale',
-    sponsors: 'Sostieni certificati e server CI/CD',
-    localSupport: 'Tecnici e fiduciarie sul territorio',
-    faq: 'Guida rapida a USB, backup e SDI/QR',
-    story: "Dall'esigenza reale all'open source",
-    team: 'Chi sviluppa e mantiene il progetto',
+    whyUs: 'Perché è gratis, semplice e tuo',
+    features: 'Preventivi, fatture e cosa stiamo aggiungendo',
+    versions: 'Web disponibile, Windows e telefono in arrivo',
+    requestModules: 'Ti manca qualcosa? Lo aggiungiamo gratis',
+    contribute: 'Programmatori, commercialisti, traduttori e chi prova',
+    contributeGuide: 'Come iniziare: issue, branch e pull request',
+    schools: 'Programma gratuito per scuole e chi inizia',
+    sponsors: 'Aiuta a coprire le spese del progetto',
+    localSupport: 'Tecnici e fiduciarie vicino a te',
+    faq: 'Prezzo, dati, backup, fattura elettronica e QR-Bill',
+    story: 'Come è nato il progetto',
+    team: 'Chi ci lavora',
   },
   en: {
-    whyUs: 'Anti-ERP philosophy for tradespeople & SMEs',
-    features: 'FatturaPA, Swiss QR-Bill & public roadmap',
-    versions: 'Web available, desktop and mobile coming',
-    requestModules: 'Zero-cost custom modules shared with all',
-    contribute: 'Devs, accountants, translators & testers',
-    contributeGuide: 'Issues, branches and pull requests: how to start',
-    schools: 'Vocational education & social impact',
-    sponsors: 'Support certificates & CI/CD build servers',
-    localSupport: 'IT technicians & fiduciaries near you',
-    faq: 'Quick guide to USB, backups & SDI/QR',
-    story: 'From real field needs to open source',
-    team: 'Who builds and maintains the project',
+    whyUs: 'Why it is free, simple and yours',
+    features: 'Quotes, invoices and what we are adding',
+    versions: 'Web available, Windows and phone coming',
+    requestModules: 'Missing something? We add it for free',
+    contribute: 'Developers, accountants, translators and testers',
+    contributeGuide: 'How to start: issues, branches and pull requests',
+    schools: 'Free program for schools and people starting out',
+    sponsors: 'Help cover the costs of the project',
+    localSupport: 'Technicians and fiduciaries near you',
+    faq: 'Price, data, backups, e-invoicing and QR-bill',
+    story: 'How the project began',
+    team: 'Who works on it',
   },
   fr: {
-    whyUs: 'Philosophie anti-ERP pour artisans et PME',
-    features: 'FatturaPA, QR-facture suisse et roadmap',
-    versions: 'Web disponible, desktop et mobile bientôt',
-    requestModules: 'Développement gratuit partagé avec tous',
-    contribute: 'Devs, fiduciaires, traducteurs et testeurs',
-    contributeGuide: 'Issues, branches et pull requests : par où commencer',
-    schools: 'Formation professionnelle et impact social',
-    sponsors: 'Soutenir certificats et serveurs CI/CD',
-    localSupport: 'Techniciens et fiduciaires de proximité',
-    faq: 'Guide rapide clé USB, sauvegardes et SDI/QR',
-    story: "Du besoin réel de terrain à l'open source",
-    team: 'Qui développe et maintient le projet',
+    whyUs: 'Pourquoi il est gratuit, simple et à vous',
+    features: 'Devis, factures et ce que nous ajoutons',
+    versions: 'Web disponible, Windows et téléphone bientôt',
+    requestModules: "Il vous manque quelque chose ? Nous l'ajoutons gratuitement",
+    contribute: 'Développeurs, comptables, traducteurs et testeurs',
+    contributeGuide: 'Par où commencer : issues, branches et pull requests',
+    schools: 'Logiciel gratuit pour les écoles et celles et ceux qui débutent',
+    sponsors: 'Aidez à couvrir les frais du projet',
+    localSupport: 'Techniciens et fiduciaires près de chez vous',
+    faq: 'Prix, données, sauvegardes, facture électronique et QR-facture',
+    story: 'Comment le projet est né',
+    team: 'Qui y travaille',
   },
   de: {
-    whyUs: 'Anti-ERP-Philosophie für Handwerk & KMU',
-    features: 'FatturaPA, Schweizer QR-Rechnung & Roadmap',
-    versions: 'Web verfügbar, Desktop und Mobile folgen',
-    requestModules: 'Kostenlose Module für alle veröffentlicht',
-    contribute: 'Entwickler, Treuhänder, Übersetzer & Tester',
-    contributeGuide: 'Issues, Branches und Pull Requests: so starten Sie',
-    schools: 'Berufsbildung & gesellschaftlicher Beitrag',
-    sponsors: 'Zertifikate & CI/CD-Server unterstützen',
-    localSupport: 'IT-Techniker und Treuhänder vor Ort',
-    faq: 'Kurzanleitung zu USB, Backups & SDI/QR',
-    story: 'Vom Praxisbedarf zur freien Software',
-    team: 'Wer das Projekt entwickelt und pflegt',
+    whyUs: 'Warum es kostenlos, einfach und Ihr eigenes ist',
+    features: 'Offerten, Rechnungen und was wir hinzufügen',
+    versions: 'Web verfügbar, Windows und Handy folgen',
+    requestModules: 'Fehlt etwas? Wir fügen es kostenlos hinzu',
+    contribute: 'Entwickler, Buchhalter, Übersetzer und Tester',
+    contributeGuide: 'So starten Sie: Issues, Branches und Pull Requests',
+    schools: 'Kostenloses Programm für Schulen und den Start',
+    sponsors: 'Helfen Sie, die Projektkosten zu decken',
+    localSupport: 'Techniker und Treuhänder in Ihrer Nähe',
+    faq: 'Preis, Daten, Sicherungen, E-Rechnung und QR-Rechnung',
+    story: 'Wie das Projekt entstand',
+    team: 'Wer daran arbeitet',
   },
 };
 
@@ -210,16 +209,16 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
 ---
 
 <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/95 dark:bg-slate-900/95 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
     <!-- Logo Branding -->
     <a
       href={getLocalizedPath('/', lang)}
-      class="flex items-center gap-3 group shrink-0"
+      class="flex items-center gap-2 sm:gap-3 group min-w-0"
       title={`${t.common.siteName} Home`}
       data-i18n-title="logo_aria"
     >
       <svg
-        class="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-105"
+        class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 transition-transform duration-300 group-hover:scale-105"
         width="40"
         height="40"
         viewBox="0 0 512 512"
@@ -308,12 +307,12 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
         />
         <circle cx="377" cy="399" r="9" fill="#FFFFFF" />
       </svg>
-      <div class="flex flex-col">
-        <span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
-          Fattura<span class="text-teal-600 dark:text-teal-400">Facile</span>
+      <div class="flex flex-col min-w-0">
+        <span class="text-base min-[400px]:text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none whitespace-nowrap">
+          Fattura<span class="text-teal-700 dark:text-teal-400">Facile</span>
         </span>
         <span
-          class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mt-1"
+          class="hidden sm:block text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1"
           data-i18n="logo_claim"
         >
           {t.common.tagline}
@@ -324,13 +323,16 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
     <!-- Desktop Navigation with Dropdowns -->
     <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
       {navGroups.map((group) => (
-        <div class="relative group py-2">
+        <div class="nav-dropdown relative group py-2">
           <button
             type="button"
-            class={`flex items-center gap-1.5 transition-colors group-hover:text-teal-600 dark:group-hover:text-teal-400 focus:outline-none ${
-              group.isActive ? 'text-teal-600 dark:text-teal-400 font-bold' : ''
+            class={`nav-dropdown-trigger flex items-center gap-1.5 rounded-md transition-colors group-hover:text-teal-700 dark:group-hover:text-teal-400 ${
+              group.isActive
+                ? 'text-teal-700 dark:text-teal-400 font-bold underline underline-offset-8 decoration-2'
+                : ''
             }`}
             aria-haspopup="true"
+            aria-expanded="false"
           >
             <span>{group.title}</span>
             <svg
@@ -348,7 +350,7 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
             </svg>
           </button>
           <div
-            class={`absolute ${group.alignRight ? 'right-0' : 'left-0'} mt-2 ${
+            class={`nav-dropdown-panel absolute ${group.alignRight ? 'right-0' : 'left-0'} mt-2 ${
               group.wide ? 'w-72' : 'w-64'
             } rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 p-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200 z-50`}
           >
@@ -359,7 +361,8 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
                   class="flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-t border-slate-100 dark:border-slate-800/80 mt-1"
                 >
                   <span class="font-bold text-slate-900 dark:text-white text-xs">{item.label}</span>
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
+                  <span class="sr-only">({a11yLabels[lang].compliant})</span>
                 </a>
               ) : (
                 <a
@@ -369,16 +372,14 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
                   <span
                     class={`font-bold text-xs ${
                       item.highlight
-                        ? 'text-teal-600 dark:text-teal-400'
+                        ? 'text-teal-700 dark:text-teal-400'
                         : 'text-slate-900 dark:text-white'
                     }`}
                   >
                     {item.label}
                   </span>
                   {item.subtitle && (
-                    <span class="text-[11px] text-slate-500 dark:text-slate-400">
-                      {item.subtitle}
-                    </span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">{item.subtitle}</span>
                   )}
                 </a>
               ),
@@ -389,7 +390,7 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
     </nav>
 
     <!-- Controls: Dark/Light Mode, Language & Mobile Hamburger -->
-    <div class="flex items-center gap-2 sm:gap-3">
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <!-- Theme Switcher -->
       <button
         id="theme-toggle"
@@ -398,7 +399,7 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
         title="Toggle light/dark theme"
         data-i18n-aria-label="theme_toggle_aria"
         data-i18n-title="theme_toggle_title"
-        class="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+        class="hidden sm:block p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
       >
         <svg
           id="theme-icon-light"
@@ -431,13 +432,13 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
       </button>
 
       <!-- Language Selector -->
-      <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">
+      <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 sm:p-1 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300">
         {langOptions.map((opt) => (
           <a
             id={`lang-${opt.code}-btn`}
             href={getLocalizedPath(currentPath, opt.code)}
             onclick={`localStorage.setItem('lang', '${opt.code}')`}
-            class={`px-2 py-1 rounded-lg transition-all duration-200 ${
+            class={`px-1.5 sm:px-2 py-1 rounded-lg transition-all duration-200 ${
               lang === opt.code ? 'tab-active' : ''
             }`}
             title={opt.title}
@@ -454,9 +455,10 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
       <button
         id="mobile-menu-btn"
         type="button"
-        class="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+        class="lg:hidden shrink-0 p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
         aria-label="Menu"
         aria-expanded="false"
+        aria-controls="mobile-menu"
       >
         <svg
           id="hamburger-icon"
@@ -493,11 +495,11 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
   <!-- Mobile Drawer Menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-4 pb-8 space-y-6 max-h-[calc(100vh-5rem)] overflow-y-auto"
+    class="lg:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-4 pb-8 space-y-6 max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto"
   >
     {navGroups.map((group) => (
       <div>
-        <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
+        <div class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400 mb-2">
           {group.title}
         </div>
         <div class="space-y-1 pl-2">
@@ -506,8 +508,8 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
               href={item.href}
               class={`block py-1.5 text-sm font-medium ${
                 item.highlight
-                  ? 'text-teal-600 dark:text-teal-400 font-bold'
-                  : 'text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400'
+                  ? 'text-teal-700 dark:text-teal-400 font-bold'
+                  : 'text-slate-700 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-400'
               }`}
             >
               {item.label}
@@ -517,13 +519,51 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
       </div>
     ))}
 
+    <!-- Theme toggle (the header one is hidden on very small screens) -->
+    <button
+      type="button"
+      onclick="window.toggleTheme()"
+      aria-label="Toggle light/dark theme"
+      data-i18n-aria-label="theme_toggle_aria"
+      class="sm:hidden flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+    >
+      <svg
+        class="w-5 h-5 dark:hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        ></path>
+      </svg>
+      <svg
+        class="w-5 h-5 hidden dark:block"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        ></path>
+      </svg>
+    </button>
+
     <!-- Direct CTA -->
     <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
       <a
         href={DEMO_URL}
         target="_blank"
         rel="noopener"
-        class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 text-white font-bold rounded-xl text-sm shadow-md"
+        class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-teal-700 text-white font-bold rounded-xl text-sm shadow-md"
       >
         {t.common.actions.tryDemo}
       </a>
@@ -539,13 +579,74 @@ const langOptions: Array<{ code: Locale; label: string; title: string; i18nKey: 
     const closeIcon = document.getElementById('close-icon');
 
     if (mobileBtn && mobileMenu) {
+      const setMenu = (open) => {
+        mobileBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        mobileMenu.classList.toggle('hidden', !open);
+        if (hamburgerIcon) hamburgerIcon.classList.toggle('hidden', open);
+        if (closeIcon) closeIcon.classList.toggle('hidden', !open);
+      };
       mobileBtn.addEventListener('click', () => {
-        const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-        mobileBtn.setAttribute('aria-expanded', (!isExpanded).toString());
-        mobileMenu.classList.toggle('hidden');
-        if (hamburgerIcon) hamburgerIcon.classList.toggle('hidden');
-        if (closeIcon) closeIcon.classList.toggle('hidden');
+        setMenu(mobileBtn.getAttribute('aria-expanded') !== 'true');
+      });
+      // Escape closes the menu and returns focus to the button.
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileBtn.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          mobileBtn.focus();
+        }
+      });
+      // Reset when the layout switches to the desktop navigation.
+      window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+        if (e.matches) setMenu(false);
       });
     }
+
+    // Desktop dropdowns: keep aria-expanded in sync with the CSS hover/focus-within
+    // visibility, and allow dismissing with Escape (focus returns to the trigger).
+    document.querySelectorAll('.nav-dropdown').forEach((group) => {
+      const trigger = group.querySelector('.nav-dropdown-trigger');
+      if (!trigger) return;
+
+      const setExpanded = (open) => {
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      const open = () => {
+        group.removeAttribute('data-dismissed');
+        setExpanded(true);
+      };
+      const close = () => {
+        group.setAttribute('data-dismissed', '');
+        setExpanded(false);
+      };
+
+      group.addEventListener('mouseenter', open);
+      group.addEventListener('mouseleave', () => {
+        group.removeAttribute('data-dismissed');
+        setExpanded(group.contains(document.activeElement));
+      });
+      group.addEventListener('focusin', (e) => {
+        // Tabbing into the menu items re-opens a menu dismissed with Escape.
+        if (e.target !== trigger) group.removeAttribute('data-dismissed');
+        if (!group.hasAttribute('data-dismissed')) setExpanded(true);
+      });
+      group.addEventListener('focusout', (e) => {
+        if (!group.contains(e.relatedTarget)) {
+          group.removeAttribute('data-dismissed');
+          setExpanded(group.matches(':hover'));
+        }
+      });
+      trigger.addEventListener('click', (e) => {
+        // Keyboard activation (detail === 0) toggles; a mouse click always opens.
+        if (e.detail === 0 && trigger.getAttribute('aria-expanded') === 'true') close();
+        else open();
+      });
+      group.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+          e.preventDefault();
+          close();
+          trigger.focus();
+        }
+      });
+    });
   });
 </script>

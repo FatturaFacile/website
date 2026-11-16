@@ -110,6 +110,9 @@ window.toggleFaq = function (button) {
 
   document.querySelectorAll('.faq-answer').forEach((el) => el.classList.add('hidden'));
   document.querySelectorAll('svg.faq-arrow').forEach((el) => el.classList.remove('rotate-180'));
+  document
+    .querySelectorAll('.faq-item > button[aria-expanded]')
+    .forEach((el) => el.setAttribute('aria-expanded', 'false'));
 
   if (isHidden) {
     content.classList.remove('hidden');
@@ -120,32 +123,62 @@ window.toggleFaq = function (button) {
   }
 };
 
+// Privacy modal: accessible dialog with focus trap and focus restoration (WCAG 2.4.3 / 4.1.2)
+let privacyModalOpener = null;
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function getFocusable(container) {
+  return Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR)).filter(
+    (el) => el instanceof HTMLElement && el.offsetParent !== null,
+  );
+}
+
+function isPrivacyModalOpen() {
+  const modal = document.getElementById('privacy-modal');
+  return !!modal && !modal.classList.contains('hidden');
+}
+
 window.openPrivacyModal = function () {
   const modal = document.getElementById('privacy-modal');
   const dialog = document.getElementById('privacy-dialog');
   if (!modal || !dialog) return;
 
+  privacyModalOpener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
   modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden', 'false');
   setTimeout(() => {
     modal.classList.remove('opacity-0');
     dialog.classList.remove('scale-95');
     dialog.classList.add('scale-100');
   }, 10);
   document.body.style.overflow = 'hidden';
+
+  const closeBtn = document.getElementById('privacy-modal-close');
+  const target = closeBtn || getFocusable(dialog)[0] || dialog;
+  if (target instanceof HTMLElement) target.focus();
 };
 
 window.closePrivacyModal = function () {
   const modal = document.getElementById('privacy-modal');
   const dialog = document.getElementById('privacy-dialog');
-  if (!modal || !dialog) return;
+  if (!modal || !dialog || modal.classList.contains('hidden')) return;
 
   modal.classList.add('opacity-0');
+  modal.setAttribute('aria-hidden', 'true');
   dialog.classList.remove('scale-100');
   dialog.classList.add('scale-95');
   setTimeout(() => {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
   }, 200);
+
+  if (privacyModalOpener && document.contains(privacyModalOpener)) {
+    privacyModalOpener.focus();
+  }
+  privacyModalOpener = null;
 };
 
 document.addEventListener('click', (e) => {
@@ -156,8 +189,32 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
+  if (!isPrivacyModalOpen()) return;
+
   if (e.key === 'Escape') {
     window.closePrivacyModal();
+    return;
+  }
+
+  if (e.key === 'Tab') {
+    const dialog = document.getElementById('privacy-dialog');
+    if (!dialog) return;
+    const focusable = getFocusable(dialog);
+    if (!focusable.length) {
+      e.preventDefault();
+      dialog.focus();
+      return;
+    }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && (active === first || !dialog.contains(active))) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && (active === last || !dialog.contains(active))) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 });
 
@@ -179,17 +236,19 @@ window.initCountryFilter = function (btnSelector, cardSelector, btnAttr) {
       filterBtns.forEach((b) => {
         b.classList.remove(
           'bg-white',
-          'dark:bg-teal-600',
+          'dark:bg-teal-700',
           'text-slate-900',
           'dark:text-white',
           'shadow-sm',
         );
         b.classList.add('text-slate-600', 'dark:text-slate-300');
+        b.setAttribute('aria-pressed', 'false');
       });
+      btn.setAttribute('aria-pressed', 'true');
       btn.classList.remove('text-slate-600', 'dark:text-slate-300');
       btn.classList.add(
         'bg-white',
-        'dark:bg-teal-600',
+        'dark:bg-teal-700',
         'text-slate-900',
         'dark:text-white',
         'shadow-sm',

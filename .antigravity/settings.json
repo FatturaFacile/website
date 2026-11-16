@@ -1,0 +1,15 @@
+{
+  "compactThresholdPercent": 50,
+  "maxBashOutputChars": 15000,
+  "permissions": {
+    "deny": [
+      "Read(./**/node_modules/**)",
+      "Read(./**/dist/**)",
+      "Read(./**/.astro/**)",
+      "Read(./**/*.sqlite*)",
+      "Read(./**/*.log)",
+      "Read(./**/.env*)",
+      "Read(./**/auth.json)"
+    ]
+  }
+}

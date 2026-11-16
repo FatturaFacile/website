@@ -78,7 +78,7 @@ const trackMeta = [
     dotClass: 'bg-teal-500',
     linkHref: 'https://github.com/FatturaFacile',
     linkExternal: true,
-    linkClass: 'text-teal-600 dark:text-teal-400',
+    linkClass: 'text-teal-700 dark:text-teal-400',
   },
   {
     borderClass: 'border-emerald-500/30',
@@ -87,23 +87,23 @@ const trackMeta = [
     dotClass: 'bg-emerald-500',
     linkHref: '#contatto-scuole',
     linkExternal: false,
-    linkClass: 'text-emerald-600 dark:text-emerald-400',
+    linkClass: 'text-emerald-700 dark:text-emerald-400',
   },
 ];
 
 // Style and icon of the three social pillars, in the same order as t.scuoleSociale.mission.pillars.
 const pillarMeta = [
   {
-    iconWrapClass: 'bg-teal-100 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400',
+    iconWrapClass: 'bg-teal-100 dark:bg-teal-950/80 text-teal-700 dark:text-teal-400',
     iconPath: 'M13 10V3L4 14h7v7l9-11h-7z',
   },
   {
-    iconWrapClass: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400',
+    iconWrapClass: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400',
     iconPath:
       'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   {
-    iconWrapClass: 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400',
+    iconWrapClass: 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-400',
     iconPath:
       'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
   },
@@ -122,7 +122,7 @@ const pillarMeta = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <!-- Eyebrow Badge -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60 mb-6 shadow-sm">
-        <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+        <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse" aria-hidden="true"></span>
         {sc.hero.badge}
       </div>
 
@@ -144,7 +144,7 @@ const pillarMeta = [
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="#contatto-scuole"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-bold text-white bg-teal-600 hover:bg-teal-500 dark:bg-teal-600 dark:hover:bg-teal-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-sm sm:text-base font-bold text-white bg-teal-700 hover:bg-teal-800 dark:bg-teal-700 dark:hover:bg-teal-800 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
@@ -180,7 +180,7 @@ const pillarMeta = [
   <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">
           {sc.tracks.badge}
         </span>
         <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
@@ -248,7 +248,7 @@ const pillarMeta = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+          <span class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">
             {sc.schools.badge}
           </span>
           <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
@@ -261,13 +261,15 @@ const pillarMeta = [
         <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shrink-0">
           <button
             type="button"
-            class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-teal-600 text-slate-900 dark:text-white shadow-sm cursor-pointer"
+            aria-pressed="true"
+            class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-teal-700 text-slate-900 dark:text-white shadow-sm cursor-pointer"
             data-filter="ALL"
           >
             {sc.schools.filterAll}
           </button>
           <button
             type="button"
+            aria-pressed="false"
             class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white cursor-pointer"
             data-filter="CH"
           >
@@ -275,6 +277,7 @@ const pillarMeta = [
           </button>
           <button
             type="button"
+            aria-pressed="false"
             class="school-filter-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white cursor-pointer"
             data-filter="IT"
           >
@@ -298,7 +301,7 @@ const pillarMeta = [
                 <div class="flex items-start justify-between gap-4 mb-4">
                   <div>
                     <span
-                      class={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold border mb-2 ${SCHOOL_TYPE_STYLES[school.type]}`}
+                      class={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold border mb-2 ${SCHOOL_TYPE_STYLES[school.type]}`}
                     >
                       {sc.schools.types[school.type]}
                     </span>
@@ -307,7 +310,7 @@ const pillarMeta = [
                     </h3>
                     <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5">
                       <svg
-                        class="w-3.5 h-3.5 text-slate-400"
+                        class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -343,7 +346,7 @@ const pillarMeta = [
 
                 <!-- Active Programs List -->
                 <div class="mb-6">
-                  <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+                  <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                     {sc.schools.programsLabel}
                   </div>
                   <div class="flex flex-wrap gap-2">
@@ -354,7 +357,10 @@ const pillarMeta = [
                           class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/80"
                           title={progMeta.summary}
                         >
-                          <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-teal-500"
+                            aria-hidden="true"
+                          ></span>
                           {progMeta.label}
                         </span>
                       );
@@ -367,7 +373,7 @@ const pillarMeta = [
               <div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
                 <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                   <svg
-                    class="w-4 h-4 text-teal-600 dark:text-teal-400"
+                    class="w-4 h-4 text-teal-700 dark:text-teal-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -391,7 +397,7 @@ const pillarMeta = [
                     href={school.contact.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-teal-600 dark:text-teal-400 font-bold hover:underline flex items-center gap-1"
+                    class="text-teal-700 dark:text-teal-400 font-bold hover:underline flex items-center gap-1"
                   >
                     <span>{sc.schools.website}</span>
                     <span>&rarr;</span>
@@ -409,7 +415,7 @@ const pillarMeta = [
   <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+        <span class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">
           {sc.mission.badge}
         </span>
         <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2">
@@ -448,7 +454,7 @@ const pillarMeta = [
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 mb-4">
-          <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+          <span class="w-2 h-2 rounded-full bg-teal-500" aria-hidden="true"></span>
           {sc.contact.badge}
         </div>
 
@@ -462,7 +468,7 @@ const pillarMeta = [
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={mailtoLink}
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-2xl text-sm sm:text-base shadow-lg hover:shadow-xl transition-all cursor-pointer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal-700 hover:bg-teal-800 text-white font-bold rounded-2xl text-sm sm:text-base shadow-lg hover:shadow-xl transition-all cursor-pointer"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -479,7 +485,7 @@ const pillarMeta = [
             href="https://t.me/+sRauQINBDFQ5NjU0"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#229ED9] hover:bg-[#1E88E5] text-white font-bold rounded-2xl text-sm sm:text-base shadow-md transition-all cursor-pointer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0F6F9F] hover:bg-[#0B5A82] text-white font-bold rounded-2xl text-sm sm:text-base shadow-md transition-all cursor-pointer"
           >
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.87 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.46c.536-.196 1.006.128.832.92z"></path>
