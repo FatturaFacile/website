@@ -48,7 +48,12 @@ Thumbs.db
 
 
 .claude-build/
-.claude/
+.claude/settings.local.json
+.claude/*.local.md
+# AI tools: local state and scratch files
+.claude/worktrees/
+.sandbox/
+*.tmp
 
 # Editor / assistant tool configuration (local only)
 /CLAUDE.md
@@ -72,8 +77,3 @@ Thumbs.db
 /.gemini/
 /.geminiignore
 /.windsurfrules
-
-# AI tools: local state and scratch files
-.sandbox/
-*.tmp
-
