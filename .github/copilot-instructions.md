@@ -2,8 +2,6 @@
 
 Project: Astro 7 static website (TypeScript, pnpm).
 
-Full cross-tool rules: `.ai/rules/project.md` (read it first).
-
 ## Essentials
 
 - Write all code, comments, commit messages and documentation in English.
