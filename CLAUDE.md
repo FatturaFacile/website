@@ -1,10 +1,14 @@
+# Claude Code Instructions
+
 @AGENTS.md
 
-# Agent rules
+## Execution Discipline
 
-Read, in this order, before planning or editing:
-1. `AGENTS.md` (stack and architecture guidelines)
-2. `.ai/rules/index.md` and every rule file it maps to your paths (always `.ai/rules/project.md`)
-
-Project: Astro 7 static website (TypeScript, pnpm).
-Write all code, comments and documentation in English.
+- Read and follow all architectural guidelines and quality standards in `AGENTS.md`.
+- Prior to completing any modification, run all quality gates:
+  - `npm run test:i18n` (i18n parity check)
+  - `npm run lint` (ESLint analysis)
+  - `npm run check` (Astro & TypeScript verification)
+  - `npm run format:check` (Prettier validation)
+- Keep all work confined to isolated feature branches or git worktrees.
+- Use Conventional Commits for all commit messages.
