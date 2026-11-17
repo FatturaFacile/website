@@ -1,0 +1,17 @@
+---
+description: Project conventions and guidelines for FatturaFacile website
+globs: *
+---
+
+# Project Guidelines
+
+Refer to [AGENTS.md](../../AGENTS.md) for full project architecture, conventions, and verification commands.
+
+## Essential Summary
+- **Stack**: Astro 7, TypeScript (strict), Tailwind CSS v4, i18n (`it`, `en`, `fr`, `de`).
+- **Commands**:
+  - `npm run test:i18n` (Verify translation parity)
+  - `npm run check` (Astro typecheck)
+  - `npm run lint` (ESLint)
+  - `npm run format:check` (Prettier check)
+- Maintain 100% key parity across `src/i18n/locales/*.ts`.

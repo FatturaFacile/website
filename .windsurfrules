@@ -1,0 +1,11 @@
+# Windsurf Rules
+
+Refer to [AGENTS.md](AGENTS.md) for full project architecture, conventions, and verification commands.
+
+- **Stack**: Astro 7, TypeScript, Tailwind CSS v4, i18n (`it`, `en`, `fr`, `de`).
+- **Quality Gates**:
+  - `npm run test:i18n` (i18n parity check)
+  - `npm run check` (Astro typecheck)
+  - `npm run lint` (ESLint)
+  - `npm run format:check` (Prettier)
+- **i18n**: All locales must remain 100% in sync with `src/i18n/locales/it.ts`.
