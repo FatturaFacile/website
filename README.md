@@ -1,198 +1,92 @@
-<div align="center">
+# FatturaFacile Website
 
-# FatturaFacile — Official Showcase & Documentation (`fatturafacile.eu`)
-
-### Official Institutional Showcase & Multi-Language Landing Page
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Website](https://img.shields.io/badge/Website-fatturafacile.eu-emerald)](https://fatturafacile.eu)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](src/CONTRIBUTING.md)
-[![GitHub Pages](https://github.com/FatturaFacile/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/FatturaFacile/website/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/FatturaFacile/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/FatturaFacile/website/actions/workflows/deploy.yml)
 
-The official public showcase, documentation, and institutional landing page ([fatturafacile.eu](https://fatturafacile.eu)) for the **FatturaFacile** open-source invoicing ecosystem — designed for tradespeople, freelancers, and small-to-medium businesses across **Italy** (FatturaPA / SDI) and **Switzerland** (SIX QR-Bill).
+Source of [fatturafacile.eu](https://fatturafacile.eu), the public website of the [FatturaFacile](https://github.com/FatturaFacile/FatturaFacile) open-source ERP: product and module overview, versions, FAQ, team, community and contribution pages, in four languages.
 
-[Overview](#-overview) • [Ecosystem Architecture](#-ecosystem--architecture) • [Tech Stack](#-tech-stack) • [Repository Structure](#-repository-structure) • [Local Development & Testing](#-local-development--testing) • [Deployment Pipeline](#-deployment-pipeline) • [Contributing](#-contributing) • [License](#-license)
+## Overview
 
-</div>
+- **Static site** built with [Astro](https://astro.build) 7 (static output, no server runtime) and Tailwind CSS 4, written in TypeScript.
+- **Languages:** Italian (default, no URL prefix), English, French and German (`/en/`, `/fr/`, `/de/`). Page slugs are translated per language (`src/i18n/routes.ts`); old Italian slugs on the other languages redirect to the translated ones.
+- **Pages** (`src/pages/`): home, features, modules, versions, why FatturaFacile, FAQ, team, community, contribute, sponsors, history, schools and social, local support, privacy. The module catalogue comes from `src/data/modules.ts` (status: available, in development or planned).
+- **SEO:** sitemap (`@astrojs/sitemap`), canonical and alternate language links, Open Graph, Schema.org JSON-LD, `robots.txt`.
+- Dark and light theme, cookie banner and optional Google Analytics.
+- A build fails when the four language files do not have the same keys (`scripts/test-i18n-parity.ts`).
 
----
+## Requirements
 
-## 🌐 Overview
+- Node.js 22.23.4 or later (`engines` in `package.json`) and npm (this repository uses `package-lock.json`)
 
-This repository contains the source code for **[fatturafacile.eu](https://fatturafacile.eu)**. It articulates the philosophy, high-level architecture, compliance guarantees (EU GDPR & Swiss FADP/nLPD), and distribution channels for the **FatturaFacile** ecosystem.
-
-### Key Highlights
-
-- **Zero-Build Static Architecture:** Ultra-fast page loading and high Lighthouse scores with zero build step overhead.
-- **Client-Side Internationalization (`EN`, `IT`, `FR`, `DE`):** Zero-dependency reactive i18n engine (`src/js/translations.js` + `src/js/main.js`) with persistent language selection and real-time attribute updates.
-- **Adaptive Dark / Light Theme:** First-class color scheme support reflecting OS preferences (`prefers-color-scheme`) with manual toggle persistence and vector brand adaptation.
-- **SEO & Compliance Ready:** Complete Open Graph, Twitter Cards, Schema.org (`SoftwareApplication` JSON-LD), canonical links, `robots.txt`, and `sitemap.xml`.
-- **Interactive Legal Modal:** Built-in EU GDPR (EU 2016/679) and Swiss nLPA/FADP data protection overview accessible directly from the interface.
-
----
-
-## 🏛 Ecosystem & Architecture
-
-The **FatturaFacile** suite is designed as a decoupled, multi-tier ecosystem adhering to **Clean Architecture**, **CQRS (Command Query Responsibility Segregation)**, and **SOLID** principles:
-
-```mermaid
-flowchart TD
-    subgraph Clients["Presentation & Client Layer"]
-        Website["Official Website (fatturafacile.eu)<br/><i>HTML5 / Tailwind CSS / Vanilla JS</i>"]
-        Desktop["Desktop App<br/><i>.NET 8/9 / C# / WPF / Modern UI</i>"]
-        WebPlatform["Web Cloud Platform<br/><i>Laravel 11+ / Filament / Livewire</i>"]
-        MobileApp["Mobile Companion<br/><i>Flutter / Dart (iOS & Android)</i>"]
-    end
-
-    subgraph CorePatterns["Architectural Core Principles"]
-        CleanArch["Clean Architecture<br/><i>Domain &bull; Application Use Cases &bull; Infrastructure</i>"]
-        CQRS["CQRS Pattern<br/><i>Separated Command and Query Pipelines</i>"]
-        Contracts["Decoupled Contracts & DTOs<br/><i>FatturaPA XML &bull; Swiss QR-Bill (SIX)</i>"]
-    end
-
-    subgraph Data["Data & Persistence Layer"]
-        LocalDB["Local-First SQLite<br/><i>Portable USB / Zero-Server</i>"]
-        CloudDB["Relational Databases<br/><i>PostgreSQL / MySQL</i>"]
-    end
-
-    Website -.->|Showcases & Links| Clients
-    Desktop --> CleanArch
-    WebPlatform --> CleanArch
-    MobileApp --> CleanArch
-    CleanArch --> CQRS
-    CQRS --> Contracts
-    Desktop --> LocalDB
-    WebPlatform --> CloudDB
-```
-
-### Sibling Repositories
-
-| Component            | Repository                                                          | Stack / Technology              | Purpose                                                                                              |
-| :------------------- | :------------------------------------------------------------------ | :------------------------------ | :--------------------------------------------------------------------------------------------------- |
-| **Official Website** | [`FatturaFacile/website`](https://github.com/FatturaFacile/website) | HTML5, Tailwind CSS, Vanilla JS | Public showcase, landing page, and documentation hub ([fatturafacile.eu](https://fatturafacile.eu)). |
-| **Desktop Client**   | [`FatturaFacile/desktop`](https://github.com/FatturaFacile/desktop) | .NET 8/9, C#, WPF, SQLite       | High-performance native Windows client with local-first, offline-first USB execution.                |
-| **Web Platform**     | [`FatturaFacile/web`](https://github.com/FatturaFacile/web)         | Laravel 11+, Filament, Livewire | Multi-user self-hosted cloud platform with admin portals, APIs, and team billing.                    |
-| **Mobile Companion** | [`FatturaFacile/mobile`](https://github.com/FatturaFacile/mobile)   | Flutter, Dart                   | iOS & Android companion for field invoicing, quick estimates, and receipt capture.                   |
-| **Brand Assets**     | [`FatturaFacile/assets`](https://github.com/FatturaFacile/assets)   | SVG, Figma, Design Tokens       | Official vector logos, typography guidelines, and digital media kits.                                |
-
----
-
-## 🛠 Tech Stack
-
-| Layer                   | Technology                    | Description                                                                                               |
-| :---------------------- | :---------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| **Markup**              | **HTML5 Semantic**            | Accessible (`ARIA`), SEO-optimized single-page layout (`src/index.html`).                                 |
-| **Styling**             | **Tailwind CSS (CDN) + CSS3** | Utility-first responsive design, dark mode class switching, custom scrollbars (`src/css/style.css`).      |
-| **Client Scripting**    | **Vanilla JavaScript (ES6+)** | Lightweight state management for theme, i18n, FAQ accordions, and modals (`src/js/main.js`).              |
-| **Localization**        | **JavaScript Dictionary**     | Typed client dictionary for English, Italian, French, and German (`src/js/translations.js`).              |
-| **Assets & Media**      | **SVG & WebManifest**         | Responsive vector graphics (`src/img/`) and multi-platform progressive app favicons (`src/img/favicon/`). |
-| **Continuous Delivery** | **GitHub Actions**            | Automated validation and deployment pipeline targeting **GitHub Pages** (`.github/workflows/deploy.yml`). |
-
----
-
-## 📁 Repository Structure
-
-```text
-website/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml              # GitHub Pages deployment (main → fatturafacile.eu)
-├── src/                            # Web root directory deployed to production
-│   ├── index.html                  # Main application markup & SEO entry point
-│   ├── robots.txt                  # Search crawler directives
-│   ├── sitemap.xml                 # Search engine XML index
-│   ├── CHANGELOG.md                # Project changelog (Keep a Changelog format)
-│   ├── CODE_OF_CONDUCT.md          # Contributor Covenant v2.1 code of conduct
-│   ├── CONTRIBUTING.md             # Contributor & translation guidelines
-│   ├── css/
-│   │   └── style.css               # Utility overlays, transitions, and scrollbar styles
-│   ├── js/
-│   │   ├── main.js                 # Theme controller, i18n engine, accordion, and modal handlers
-│   │   └── translations.js         # Multi-language dictionary (EN, IT, FR, DE)
-│   └── img/
-│       ├── fattura_facile.svg                      # Primary brand vector logo
-│       ├── fattura_facile_logo.svg                 # Open Graph and metadata vector logo
-│       ├── fattura_facile_logo_trasparente.svg     # Transparent background vector logo
-│       ├── fattura_facile_favicon.svg              # Vector favicon
-│       ├── fattura_facile_favicon_trasparente.svg  # Transparent vector favicon
-│       ├── logo-email.png                          # Raster signature logo
-│       └── favicon/                                # Multi-resolution app favicons & manifest
-│           ├── android-chrome-192x192.png
-│           ├── android-chrome-512x512.png
-│           ├── apple-touch-icon.png
-│           ├── favicon-16x16.png
-│           ├── favicon-32x32.png
-│           ├── favicon-43x44.png
-│           ├── favicon.ico
-│           └── site.webmanifest
-├── LICENSE                         # MIT License
-└── README.md                       # Repository documentation
-```
-
----
-
-## 🚀 Local Development & Testing
-
-The site is an [Astro](https://astro.build) project (sources in `src/`, static output in `dist/`).
-
-### 1. Clone the Repository
+## Getting started
 
 ```bash
-git clone https://github.com/FatturaFacile/website.git
+git clone -b dev https://github.com/FatturaFacile/website.git
 cd website
-```
-
-### 2. Run Local Development Server
-
-#### Option A — Node.js (22 or later)
-
-```bash
 npm ci
 npm run dev        # http://localhost:4321
+npm run build      # static output in dist/ (runs the i18n parity check first)
+npm run preview    # serve dist/ locally
 ```
 
-Other checks: `npm run lint`, `npm run format:check`, `npm run check` (types), `npm run test:i18n` (translation parity)
-and `npm run build` (writes `dist/`; `npm run preview` serves it).
-
-#### Option B — Docker (only Docker needed, no Node on your machine)
+Without Node on your machine:
 
 ```bash
 docker run --rm -p 4321:4321 -v "$PWD":/app -w /app node:22-alpine \
   sh -c "npm ci --no-audit --no-fund && npm run dev -- --host 0.0.0.0"
 ```
 
-Navigate to [http://localhost:4321](http://localhost:4321). The first start installs the dependencies into `node_modules/`
-(git-ignored), so it takes a minute.
+## Configuration
 
-### 3. Verification & Testing Checklist
+Copy `.env.example` to `.env` only if you need it. Variable: `PUBLIC_GA_ID` (optional, Google Analytics measurement ID; the site has a built-in default).
 
-- [ ] **Cross-Language Validation:** Toggle between `EN`, `IT`, `FR`, and `DE` in the top bar to verify all keys render cleanly without falling back to raw keys.
-- [ ] **Dark / Light Mode:** Switch themes via the sun/moon button and verify high-contrast readability across all cards and typography.
-- [ ] **Modal Verification:** Click the **GDPR & Privacy Guarantee** badge in the footer to ensure the modal opens, locks background scroll, and closes cleanly via `Escape` or the button.
-- [ ] **Responsive Breakpoints:** Verify navigation layout on mobile (`<640px`), tablet (`768px`), and desktop (`1024px+`).
+## Testing and linting
 
----
+```bash
+npm run test:i18n      # the IT, EN, FR and DE dictionaries have the same keys
+npm run check          # Astro and TypeScript type check
+npm run lint           # ESLint
+npm run format:check   # Prettier (npm run format to fix)
+npm run build          # a full build is the smoke test
+```
 
-## ☁️ Deployment Pipeline
+## CI/CD and branching
 
-Pull Request against `main` → review → merge → **production** on GitHub Pages
-(`.github/workflows/deploy.yml`, also runnable via `workflow_dispatch`).
+- `dev` is the default branch. Open pull requests against `dev`. Production is published from `main`.
+- `Deploy FatturaFacile Astro Site` (`deploy.yml`) runs on pull requests and pushes to `main`: i18n parity check, type check and build. On pushes to `main` (and manual runs) it also publishes `dist/` to GitHub Pages, served at [fatturafacile.eu](https://fatturafacile.eu) (`public/CNAME`). Changes merged into `dev` go live when `dev` is promoted to `main`.
+- `Qodana` runs static analysis; `Telegram Notifications` posts repository activity to the team chat.
 
-- **Artifact Path:** the Astro build in `./dist`.
-- **Custom Domain:** Configured for [fatturafacile.eu](https://fatturafacile.eu) with automatic SSL provisioning.
+## Project structure
 
----
+```text
+src/
+├── pages/          # one file per page; [lang]/ serves en, fr and de
+├── components/     # Header, Footer, ModuleCard, SEO, CookieBanner, ...
+├── layouts/        # BaseLayout
+├── data/           # modules, team, partners, schools, links
+├── i18n/           # route slugs, helpers and locales/ (it, en, fr, de)
+├── utils/          # analytics, i18n helper, security helpers
+└── styles/
+public/             # static files: images, favicon, CNAME, robots.txt
+scripts/            # test-i18n-parity.ts
+astro.config.mjs    # site URL, i18n routing, sitemap, Tailwind plugin
+```
 
-## 🤝 Contributing
+## Related repositories
 
-We welcome community feedback, translations, accessibility improvements, and documentation fixes! Please review:
+| Repository                                                        | Relation                                                                                            |
+| :---------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| [`web-frontend`](https://github.com/FatturaFacile/web-frontend)   | The web ERP that the site presents (demo at [demo.fatturafacile.eu](https://demo.fatturafacile.eu)) |
+| [`web-api`](https://github.com/FatturaFacile/web-api)             | Backend API                                                                                         |
+| [`assets`](https://github.com/FatturaFacile/assets)               | Logos, fonts and brand material                                                                     |
+| [`FatturaFacile`](https://github.com/FatturaFacile/FatturaFacile) | Organization overview and repository map                                                            |
 
-- [Contributing Guidelines](src/CONTRIBUTING.md)
-- [Code of Conduct](src/CODE_OF_CONDUCT.md)
-- [Changelog](src/CHANGELOG.md)
+## Documentation
 
----
+- [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [CHANGELOG.md](CHANGELOG.md)
+- Project wiki: [FatturaFacile/FatturaFacile wiki](https://github.com/FatturaFacile/FatturaFacile/wiki)
 
-## 📄 License
+## License
 
-Distributed under the **[MIT License](LICENSE)**. Copyright &copy; 2026 **FatturaFacile**.
+[MIT](LICENSE)
